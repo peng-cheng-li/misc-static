@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><title>AIP-C01 Quiz</title><style>
+body{font-family:sans-serif;max-width:800px;margin:2em auto;padding:0 1em;background:#f6f7f9}
+.card{background:#fff;padding:1.5em;border-radius:8px;box-shadow:0 1px 4px #0002}
+label{display:block;padding:.6em;margin:.4em 0;border:1px solid #ddd;border-radius:6px;cursor:pointer}
+.ok{background:#d4f7d4}.bad{background:#f9d0d0}button{padding:.6em 1.4em;margin:.8em .5em 0 0;border:0;border-radius:6px;background:#2563eb;color:#fff;font-size:1em;cursor:pointer}button:hover{background:#1d4ed8}button.sec{background:#e5e7eb;color:#111}
+label:hover{background:#f0f5ff}p{line-height:1.5}table{border-collapse:collapse;width:100%;margin:1em 0}td,th{border-bottom:1px solid #ddd;padding:.5em;text-align:left}
+pre{max-height:400px;overflow:auto}
+.meta{color:#666;font-size:.9em}pre{white-space:pre-wrap;font-size:.85em;background:#f3f3f3;padding:.5em}
+</style></head><body><h1>AIP-C01 Practice</h1><div class="card" id="app"></div><script>
+// ===== Password: change it here =====
+const QUIZ_PASSWORD="1234";
+let Q=[];let i=0,score=0,stats={},done=false;
+const app=document.getElementById('app');
+function show(){const q=Q[i];done=false;const multi=q.answer.length>1;
+app.innerHTML=`<div class="meta">${i+1}/${Q.length} · ${q.id} · ${q.domain} · Score ${score}</div><p>${q.question}</p>`+
+Object.entries(q.options).map(([k,v])=>`<label id="l${k}"><input type="${multi?'checkbox':'radio'}" name="o" value="${k}"> <b>${k}.</b> ${v}</label>`).join('')+
+`<button id="sb" onclick="check()">Submit</button><button class="sec" onclick="finish()">End</button><div id="fb"></div>`;}
+function check(){if(done)return;const q=Q[i];const sel=[...document.querySelectorAll('input:checked')].map(e=>e.value).sort().join('');if(!sel)return;done=true;document.getElementById("sb").style.display="none";document.querySelectorAll("input").forEach(e=>e.disabled=true);
+const ok=sel===q.answer.split('').sort().join('');const d=stats[q.domain]||(stats[q.domain]={c:0,t:0});d.t++;if(ok){score++;d.c++}
+for(const k of q.answer)document.getElementById('l'+k).classList.add('ok');for(const k of sel)if(!q.answer.includes(k))document.getElementById('l'+k).classList.add('bad');
+document.getElementById('fb').innerHTML=`<h3>${ok?'✅ Correct':'❌ Incorrect — answer '+q.answer}</h3>`+(q.explanation?`<details><summary>Explanation</summary><pre></pre></details>`:'')+
+`<button onclick="next()">${i+1<Q.length?'Next':'Finish'}</button>`;const p=document.querySelector('#fb pre');if(p)p.textContent=q.explanation;}
+function next(){i++;i<Q.length?show():finish()}
+function finish(){const t=Object.values(stats).reduce((a,d)=>a+d.t,0);
+app.innerHTML=`<h2>Score: ${score}/${t} (${t?Math.round(score*100/t):0}%)</h2><table>`+
+`<tr><th>Domain</th><th>Correct</th><th>%</th></tr>`+Object.entries(stats).map(([k,d])=>`<tr><td>${k}</td><td>${d.c}/${d.t}</td><td>${Math.round(d.c*100/d.t)}%</td></tr>`).join('')+
+`</table><button onclick="i=0;score=0;stats={};show()">Restart</button>`}
+function start(){fetch("question-bank.json").then(r=>r.json()).then(d=>{Q=d.questions.filter(q=>q.answer);show()}).catch(e=>app.innerHTML="Failed to load questions: "+e+"<br>Serve via: cd /home/box/aws-genai-study && python3 -m http.server 8000, then open http://localhost:8000/app/quiz.html");}
+function gate(){if(sessionStorage.getItem("qa")==="1")return start();app.innerHTML='<h2>Enter password</h2><input id="pw" type="password" style="padding:.6em;font-size:1em;width:60%"> <button onclick="tryPw()">Unlock</button><div id="pe" style="color:#c00"></div>';const e=document.getElementById("pw");e.focus();e.onkeydown=k=>{if(k.key==="Enter")tryPw()}}
+function tryPw(){if(document.getElementById("pw").value===QUIZ_PASSWORD){sessionStorage.setItem("qa","1");start()}else document.getElementById("pe").textContent="Wrong password"}
+gate();</script></body></html>
