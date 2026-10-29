@@ -1,50 +1,104 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIP-C01 Quiz</title><style>
-body{font-family:sans-serif;max-width:800px;margin:2em auto;padding:0 1em;background:#f6f7f9}
-.card{background:#fff;padding:1.5em;border-radius:8px;box-shadow:0 1px 4px #0002}
-label{display:block;padding:.6em;margin:.4em 0;border:1px solid #ddd;border-radius:6px;cursor:pointer}
-.ok{background:#d4f7d4}.bad{background:#f9d0d0}button{padding:.6em 1.4em;margin:.8em .5em 0 0;border:0;border-radius:6px;background:#2563eb;color:#fff;font-size:1em;cursor:pointer}button:hover{background:#1d4ed8}button.sec{background:#e5e7eb;color:#111}
-label:hover{background:#f0f5ff}p{line-height:1.5}table{border-collapse:collapse;width:100%;margin:1em 0}td,th{border-bottom:1px solid #ddd;padding:.5em;text-align:left}
-pre{max-height:400px;overflow:auto}
-.meta{color:#666;font-size:.9em}pre{white-space:pre-wrap;font-size:.85em;background:#f3f3f3;padding:.5em}
-html{font-size:16px}body{font-size:1rem;line-height:1.55}
-.meta{font-size:.85rem}p{font-size:1.1rem}label{font-size:1rem;padding:.9em;min-height:44px}
-input[type=radio],input[type=checkbox]{width:1.2em;height:1.2em;vertical-align:middle}
-button{font-size:1.05rem;min-height:48px}pre{font-size:.85rem}
-@media(max-width:600px){html{font-size:16.5px}body{margin:.5em auto;padding:0 .5em}.card{padding:1em}h1{font-size:1.4rem}
-button{width:100%;margin:.5em 0}p{font-size:1.05rem}}
-.ex{background:#f6f7f9;padding:.6em .9em;border-radius:6px;max-height:60vh;overflow:auto;font-size:.95rem}.ex p{font-size:.95rem;margin:.4em 0}
-.pdf{display:inline-block;color:#2563eb;text-decoration:none;font-size:.95rem;padding:.3em 0}
-.login{max-width:380px;margin:12vh auto 0;text-align:center;padding:2.2em 1.8em;border-radius:16px;box-shadow:0 10px 30px #0f172a1a,0 1px 3px #0f172a14}
-.login .logo{width:56px;height:56px;margin:0 auto 1em;border-radius:14px;background:linear-gradient(135deg,#ff9900,#ff6a00);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;letter-spacing:.5px}
-.login h2{margin:.2em 0;font-size:1.5rem;color:#0f172a}.login .sub{color:#64748b;font-size:.85rem;margin:.3em 0 1.6em}
-.login input{box-sizing:border-box;width:100%;padding:.8em 1em;font-size:1rem;border:1px solid #cbd5e1;border-radius:10px;outline:none;text-align:center;letter-spacing:.2em}
-.login input:focus{border-color:#2563eb;box-shadow:0 0 0 3px #2563eb33}.login button{width:100%;margin:1em 0 0;border-radius:10px;font-weight:600}
-#pe{color:#dc2626;font-size:.85rem;min-height:1.2em;margin-top:.6em}
-.prog{margin:-.2em 0 1em}.pt{display:flex;justify-content:space-between;font-size:.9rem;color:#334155;margin-bottom:.4em}.pt span{color:#64748b}
-.bar{height:6px;background:#e5e7eb;border-radius:99px;overflow:hidden}.bar div{height:100%;background:linear-gradient(90deg,#2563eb,#60a5fa);border-radius:99px;transition:width .3s}
-</style></head><body><h1>AIP-C01 Practice</h1><div class="card" id="app"></div><script>
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#1e1b4b"><title>AWS GenAI 刷题</title><style>
+:root{--ink:#0f172a;--mut:#64748b;--line:#e2e8f0;--bg:#f4f5fb;--pri:#4f46e5;--pri2:#7c3aed;--acc:#f59e0b;--ok:#059669;--okb:#ecfdf5;--bad:#e11d48;--badb:#fff1f2}
+*{box-sizing:border-box}html{font-size:16px}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-tap-highlight-color:transparent}
+header{position:sticky;top:0;z-index:5;background:linear-gradient(120deg,#1e1b4b,#312e81 60%,#4c1d95);color:#fff;padding:calc(.7em + env(safe-area-inset-top)) 1em .7em;box-shadow:0 2px 12px #1e1b4b40}
+.hd{max-width:760px;margin:auto;display:flex;align-items:center;gap:.6em}.hd b{font-size:1.05rem;letter-spacing:.3px;flex:1;cursor:pointer}.hd b i{font-style:normal;color:#fbbf24}
+.chip{background:#ffffff1f;border:1px solid #ffffff33;color:#fff;border-radius:99px;padding:.25em .7em;font-size:.8rem;cursor:pointer;white-space:nowrap}
+main{max-width:760px;margin:auto;padding:1em}
+.card{background:#fff;border-radius:18px;padding:1.4em;box-shadow:0 1px 2px #0f172a0d,0 8px 24px #0f172a0f;border:1px solid #eef0f6}
+.prog{margin-bottom:1.1em}.pt{display:flex;justify-content:space-between;align-items:center;font-size:.88rem;color:#334155;margin-bottom:.45em}.pt span{color:var(--mut)}
+.bar{height:7px;background:#eceefe;border-radius:99px;overflow:hidden}.bar div{height:100%;background:linear-gradient(90deg,var(--pri),var(--pri2));border-radius:99px;transition:width .35s}
+.tags{display:flex;gap:.4em;flex-wrap:wrap;align-items:center;margin-bottom:.8em}.tag{font-size:.75rem;padding:.2em .6em;border-radius:6px;background:#eef2ff;color:#4338ca;font-weight:600}.tag.d{background:#f1f5f9;color:#475569;font-weight:500}.tag.m{background:#fef3c7;color:#92400e}
+.star{margin-left:auto;background:none;border:0;font-size:1.45rem;line-height:1;cursor:pointer;color:#cbd5e1;padding:.1em .2em;min-height:0;width:auto}.star.on{color:var(--acc)}
+.qt{font-size:1.06rem;font-weight:500;line-height:1.65;margin:.2em 0 1.1em;color:#0b1220}
+.opt{display:flex;gap:.7em;align-items:flex-start;padding:.85em .95em;margin:.55em 0;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;background:#fff;transition:border-color .15s,background .15s,transform .05s;font-size:.97rem}
+.opt:hover{border-color:#c7d2fe;background:#fafaff}.opt:active{transform:scale(.995)}.opt input{display:none}
+.opt .k{flex:none;width:1.9em;height:1.9em;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;background:#f1f5f9;color:#334155;transition:.15s}
+.multi .opt .k{border-radius:8px}.opt.sel{border-color:var(--pri);background:#f5f3ff}.opt.sel .k{background:var(--pri);color:#fff}
+.opt.ok{border-color:var(--ok);background:var(--okb)}.opt.ok .k{background:var(--ok);color:#fff}.opt.bad{border-color:var(--bad);background:var(--badb)}.opt.bad .k{background:var(--bad);color:#fff}
+.hint{font-size:.8rem;color:var(--mut);margin:-.4em 0 .4em}
+button{font:inherit;font-size:1rem;font-weight:600;min-height:48px;padding:.7em 1.3em;border:0;border-radius:12px;cursor:pointer;background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;box-shadow:0 4px 14px #4f46e540;transition:filter .15s,transform .05s}
+button:hover{filter:brightness(1.07)}button:active{transform:translateY(1px)}button:disabled{opacity:.45;box-shadow:none}
+button.sec{background:#eef0f6;color:#334155;box-shadow:none}button.ghost{background:none;color:var(--pri);box-shadow:none;padding:.5em}
+.row{display:flex;gap:.6em;margin-top:1.1em}.row button{flex:1}
+.fb{margin-top:1.2em;padding:1em;border-radius:14px}.fb.ok{background:var(--okb);border:1px solid #a7f3d0}.fb.bad{background:var(--badb);border:1px solid #fecdd3}
+.fb h3{margin:0 0 .3em;font-size:1.05rem}.fb.ok h3{color:var(--ok)}.fb.bad h3{color:var(--bad)}
+.pdf{display:inline-flex;align-items:center;gap:.3em;color:var(--pri);text-decoration:none;font-size:.9rem;font-weight:600;margin:.3em 0}
+details{margin-top:.5em}summary{cursor:pointer;font-weight:600;font-size:.92rem;color:#334155;padding:.3em 0}
+.ex{background:#fff;padding:.6em .9em;border-radius:10px;max-height:55vh;overflow:auto;font-size:.9rem;border:1px solid var(--line);margin-top:.4em}.ex p{margin:.4em 0}.meta{color:var(--mut);font-size:.85rem}
+.login{max-width:380px;margin:10vh auto 0;text-align:center;padding:2.3em 1.8em}
+.logo{width:60px;height:60px;margin:0 auto 1em;border-radius:16px;background:linear-gradient(135deg,#ff9900,#f97316);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px #f9731655}
+.login h2{margin:.2em 0;font-size:1.5rem}.sub{color:var(--mut);font-size:.85rem;margin:.3em 0 1.6em}
+.login input{width:100%;padding:.85em 1em;font-size:1rem;border:1.5px solid #cbd5e1;border-radius:12px;outline:none;text-align:center;letter-spacing:.25em}.login input:focus{border-color:var(--pri);box-shadow:0 0 0 4px #4f46e522}
+.login button{width:100%;margin-top:1em}#pe{color:var(--bad);font-size:.85rem;min-height:1.2em;margin-top:.6em}
+.home h2{margin:.1em 0 .2em;font-size:1.3rem}.menu{display:grid;gap:.7em;margin-top:1.2em}
+.mi{display:flex;align-items:center;gap:.9em;text-align:left;background:#fff;color:var(--ink);border:1.5px solid var(--line);box-shadow:none;padding:1em;border-radius:14px;font-weight:500}
+.mi:hover{border-color:#c7d2fe;filter:none;background:#fafaff}.mi .ic{width:2.4em;height:2.4em;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex:none}
+.mi b{display:block;font-size:1rem}.mi small{color:var(--mut);font-size:.8rem}.mi.hi{border-color:var(--pri);background:linear-gradient(135deg,#eef2ff,#f5f3ff)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.6em;margin-top:1em}.st{background:#f8fafc;border-radius:12px;padding:.7em;text-align:center}.st b{display:block;font-size:1.25rem}.st small{color:var(--mut);font-size:.75rem}
+.ring{width:130px;height:130px;margin:.5em auto 1em;border-radius:50%;display:flex;align-items:center;justify-content:center}.ring div{width:104px;height:104px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}.ring b{font-size:1.6rem}.ring small{color:var(--mut);font-size:.75rem}
+.dr{margin:.7em 0}.dr .pt{margin-bottom:.3em;font-size:.85rem}
+@media(max-width:600px){html{font-size:16.5px}main{padding:.7em}.card{padding:1.1em;border-radius:16px}.qt{font-size:1.02rem}}
+</style></head><body>
+<header><div class="hd"><b onclick="home()">AWS GenAI <i>刷题</i></b><span class="chip" id="cw" onclick="startMode('wrong')"></span><span class="chip" id="cm" onclick="startMode('mark')"></span></div></header>
+<main><div class="card" id="app"></div></main><script>
 // ===== Password: change it here =====
 const QUIZ_PASSWORD="1234";
 const PDF_URL="AIP-C01-ExamTopics.pdf";
-let Q=[];let i=0,score=0,stats={},done=false;
+const BANK_URL="question-bank.json";
+const KEY="aipc01-progress-v1";
+let Q=[],byId={},S,mode,list=[],k=0,sess,done=false;
 const app=document.getElementById('app');
-function show(){scrollTo(0,0);const q=Q[i];done=false;const multi=q.answer.length>1;
-app.innerHTML=`<div class="prog"><div class="pt"><b>第 ${i+1} / ${Q.length} 题</b><span>得分 ${score}</span></div><div class="bar"><div style="width:${((i+1)/Q.length*100).toFixed(1)}%"></div></div></div><div class="meta">${q.id} · ${q.domain}</div><p>${esc(q.question)}</p>`+
-Object.entries(q.options).map(([k,v])=>`<label id="l${k}"><input type="${multi?'checkbox':'radio'}" name="o" value="${k}"> <b>${k}.</b> ${esc(v)}</label>`).join('')+
-`<button id="sb" onclick="check()">Submit</button><button class="sec" onclick="finish()">End</button><div id="fb"></div>`;}
-function check(){if(done)return;const q=Q[i];const sel=[...document.querySelectorAll('input:checked')].map(e=>e.value).sort().join('');if(!sel)return;done=true;document.getElementById("sb").style.display="none";document.querySelectorAll("input").forEach(e=>e.disabled=true);
-const ok=sel===q.answer.split('').sort().join('');const d=stats[q.domain]||(stats[q.domain]={c:0,t:0});d.t++;if(ok){score++;d.c++}
-for(const k of q.answer)document.getElementById('l'+k).classList.add('ok');for(const k of sel)if(!q.answer.includes(k))document.getElementById('l'+k).classList.add('bad');
-document.getElementById('fb').innerHTML=`<h3>${ok?'✅ Correct':'❌ Incorrect — answer '+q.answer}</h3>`+(q.explanation?(q.source_pdf_page?`<p><a class="pdf" target="_blank" rel="noopener" href="${PDF_URL}#page=${q.source_pdf_page}">📄 查看 PDF 原文 (p.${q.source_pdf_page})</a></p>`:'')+`<details><summary>Explanation</summary><div class="ex"></div></details>`:'<p class="meta">No explanation in source PDF.</p>')+
-`<button onclick="next()">${i+1<Q.length?'Next':'Finish'}</button>`;const p=document.querySelector('#fb .ex');if(p)p.innerHTML=md(q.explanation);}
-function esc(t){return t.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function load(){try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}S=Object.assign({pos:0,ans:{},wrong:{},marks:[]},S||{})}
+function save(){localStorage.setItem(KEY,JSON.stringify(S));chips()}
+function chips(){const w=Object.keys(S.wrong).length,m=S.marks.length;document.getElementById('cw').textContent='错题 '+w;document.getElementById('cm').textContent='★ '+m;document.querySelector('header').style.display=''}
+function esc(t){return String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function md(t){return esc(t).split(/\n{2,}/).map(x=>'<p>'+x.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>').join('')}
-function next(){i++;i<Q.length?show():finish()}
-function finish(){const t=Object.values(stats).reduce((a,d)=>a+d.t,0);
-app.innerHTML=`<h2>Score: ${score}/${t} (${t?Math.round(score*100/t):0}%)</h2><table>`+
-`<tr><th>Domain</th><th>Correct</th><th>%</th></tr>`+Object.entries(stats).map(([k,d])=>`<tr><td>${k}</td><td>${d.c}/${d.t}</td><td>${Math.round(d.c*100/d.t)}%</td></tr>`).join('')+
-`</table><button onclick="i=0;score=0;stats={};show()">Restart</button>`}
-function start(){fetch("question-bank.json").then(r=>r.json()).then(d=>{Q=d.questions.filter(q=>q.answer);show()}).catch(e=>app.innerHTML="Failed to load questions: "+e+"<br>Serve via: cd /home/box/aws-genai-study && python3 -m http.server 8000, then open http://localhost:8000/app/quiz.html");}
-function gate(){if(sessionStorage.getItem("qa")==="1")return start();document.querySelector("h1").style.display="none";app.className="card login";app.innerHTML='<div class="logo">AWS</div><h2>AWS GenAI 刷题</h2><p class="sub">AIP-C01 · Generative AI Developer – Professional</p><input id="pw" type="password" inputmode="numeric" placeholder="输入密码" autocomplete="current-password"><button id="ub" onclick="tryPw()">进入练习</button><div id="pe"></div>';const e=document.getElementById("pw");e.focus();e.onkeydown=k=>{if(k.key==="Enter")tryPw()}}
-function tryPw(){if(document.getElementById("pw").value===QUIZ_PASSWORD){sessionStorage.setItem("qa","1");document.querySelector("h1").style.display="";app.className="card";start()}else{document.getElementById("pe").textContent="密码不正确，请重试";document.getElementById("pw").select()}}
+function home(){if(!Q.length)return;scrollTo(0,0);const a=Object.values(S.ans),c=a.filter(x=>x.ok).length,w=Object.keys(S.wrong).length,m=S.marks.length,has=S.pos>0&&S.pos<Q.length;
+app.className='card home';app.innerHTML=`<h2>AIP-C01 练习</h2><div class="meta">AWS Certified Generative AI Developer – Professional · ${Q.length} 题</div>
+<div class="stats"><div class="st"><b>${a.length}</b><small>已做</small></div><div class="st"><b>${a.length?Math.round(c*100/a.length):0}%</b><small>正确率</small></div><div class="st"><b>${w}</b><small>待复习错题</small></div></div>
+<div class="menu">${has?`<button class="mi hi" onclick="startMode('all',true)"><span class="ic" style="background:#4f46e5;color:#fff">▶</span><span><b>继续上次进度</b><small>第 ${S.pos+1} / ${Q.length} 题</small></span></button>`:''}
+<button class="mi" onclick="startMode('all',false)"><span class="ic" style="background:#eef2ff">📘</span><span><b>${has?'从头开始':'顺序练习'}</b><small>按题号逐题练习，进度自动保存</small></span></button>
+<button class="mi" onclick="startMode('wrong')" ${w?'':'disabled'}><span class="ic" style="background:#fff1f2">🔁</span><span><b>错题重练 (${w})</b><small>答错的题优先出现，连续答对 2 次移出</small></span></button>
+<button class="mi" onclick="startMode('mark')" ${m?'':'disabled'}><span class="ic" style="background:#fef3c7">★</span><span><b>收藏 (${m})</b><small>只练习已收藏的题目</small></span></button></div>
+${a.length?'<div class="row"><button class="ghost" onclick="if(confirm(\'清除全部进度、错题和收藏？\')){localStorage.removeItem(KEY);load();chips();home()}">重置所有进度</button></div>':''}`}
+function startMode(md,resume){if(!Q.length)return;mode=md;sess={c:0,t:0,stats:{}};
+if(md==='all'){if(!resume)S.pos=0;list=Q.map((_,x)=>x);k=S.pos}
+else if(md==='wrong'){list=Object.entries(S.wrong).sort((a,b)=>a[1].box-b[1].box||a[1].t-b[1].t).map(e=>byId[e[0]]).filter(x=>x!=null);k=0}
+else{list=S.marks.map(id=>byId[id]).filter(x=>x!=null);k=0}
+if(!list.length)return home();save();show()}
+const MN={all:'顺序练习',wrong:'错题重练',mark:'收藏'};
+function show(){scrollTo(0,0);done=false;app.className='card';const q=Q[list[k]],multi=q.answer.length>1,mk=S.marks.includes(q.id);
+app.innerHTML=`<div class="prog"><div class="pt"><b>第 ${k+1} / ${list.length} 题${mode==='all'?'':' · '+MN[mode]}</b><span>本次 ${sess.c}/${sess.t}</span></div><div class="bar"><div style="width:${((k+1)/list.length*100).toFixed(1)}%"></div></div></div>
+<div class="tags"><span class="tag">${q.id}</span><span class="tag d">${esc(q.domain)}</span>${multi?`<span class="tag m">多选 ${q.answer.length}</span>`:''}<button class="star ${mk?'on':''}" id="st" onclick="mark('${q.id}')" title="收藏">${mk?'★':'☆'}</button></div>
+<div class="qt">${esc(q.question)}</div>${multi?'<div class="hint">选择 '+q.answer.length+' 项</div>':''}<div class="${multi?'multi':''}">`+
+Object.entries(q.options).map(([o,v])=>`<label class="opt" id="l${o}"><input type="${multi?'checkbox':'radio'}" name="o" value="${o}" onchange="pick()"><span class="k">${o}</span><span>${esc(v)}</span></label>`).join('')+
+`</div><div class="row" id="ac"><button class="sec" onclick="finish()">结束</button><button id="sb" onclick="check()" disabled>提交</button></div><div id="fb"></div>`}
+function pick(){document.querySelectorAll('.opt').forEach(l=>l.classList.toggle('sel',l.querySelector('input').checked));document.getElementById('sb').disabled=!document.querySelector('input:checked')}
+function mark(id){const x=S.marks.indexOf(id);x<0?S.marks.push(id):S.marks.splice(x,1);save();const b=document.getElementById('st');if(b){b.classList.toggle('on',x<0);b.textContent=x<0?'★':'☆'}}
+function check(){if(done)return;const q=Q[list[k]];const sel=[...document.querySelectorAll('input:checked')].map(e=>e.value).sort().join('');if(!sel)return;done=true;
+document.querySelectorAll("input").forEach(e=>e.disabled=true);
+const ok=sel===q.answer.split('').sort().join('');sess.t++;if(ok)sess.c++;const d=sess.stats[q.domain]||(sess.stats[q.domain]={c:0,t:0});d.t++;if(ok)d.c++;
+S.ans[q.id]={sel,ok,t:Date.now()};
+const w=S.wrong[q.id];
+if(!ok){S.wrong[q.id]={box:0,t:Date.now()};if(mode==='wrong'){const at=Math.min(k+3,list.length);list.splice(at,0,list[k])}}
+else if(w){w.box++;w.t=Date.now();if(w.box>=2)delete S.wrong[q.id]}
+if(mode==='all')S.pos=k+1;save();
+document.querySelectorAll('.opt').forEach(l=>l.classList.remove('sel'));
+for(const o of q.answer)document.getElementById('l'+o).classList.add('ok');for(const o of sel)if(!q.answer.includes(o))document.getElementById('l'+o).classList.add('bad');
+const last=k+1>=list.length;
+document.getElementById('ac').innerHTML=`<button class="sec" onclick="finish()">结束</button><button onclick="next()">${last?'查看结果':'下一题 →'}</button>`;
+let note='';if(mode==='wrong')note=ok?(S.wrong[q.id]?'<div class="meta">再答对 1 次即可移出错题本</div>':'<div class="meta">已移出错题本 🎉</div>'):'<div class="meta">稍后会再次出现</div>';
+document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><h3>${ok?'✅ 回答正确':'❌ 回答错误 · 正确答案 '+q.answer}</h3>${note}`+
+(q.source_pdf_page?`<a class="pdf" target="_blank" rel="noopener" href="${PDF_URL}#page=${q.source_pdf_page}">📄 查看 PDF 原文 (p.${q.source_pdf_page})</a>`:'')+
+(q.explanation?`<details><summary>解析 / 讨论</summary><div class="ex"></div></details>`:'<div class="meta">原 PDF 无解析</div>')+(q.note?`<div class="meta">⚠️ ${esc(q.note)}</div>`:'')+`</div>`;
+const p=document.querySelector('#fb .ex');if(p)p.innerHTML=md(q.explanation);document.getElementById('fb').scrollIntoView({behavior:'smooth',block:'nearest'})}
+function next(){k++;k<list.length?show():finish()}
+function finish(){scrollTo(0,0);const t=sess.t,c=sess.c,pc=t?Math.round(c*100/t):0,col=pc>=72?'#059669':pc>=50?'#f59e0b':'#e11d48';
+app.className='card';app.innerHTML=`<div style="text-align:center"><div class="meta">${MN[mode]} · 本次结果</div><div class="ring" style="background:conic-gradient(${col} ${pc*3.6}deg,#eceefe 0)"><div><b>${pc}%</b><small>${c} / ${t}</small></div></div></div>`+
+(t?'<h3 style="margin:.2em 0 .6em;font-size:1rem">各领域正确率</h3>'+Object.entries(sess.stats).map(([d,s])=>{const p=Math.round(s.c*100/s.t);return`<div class="dr"><div class="pt"><span style="color:#334155">${esc(d)}</span><b>${s.c}/${s.t} · ${p}%</b></div><div class="bar"><div style="width:${p}%"></div></div></div>`}).join(''):'<p class="meta" style="text-align:center">本次未作答</p>')+
+`<div class="row"><button class="sec" onclick="home()">返回首页</button><button onclick="startMode('${mode}',${mode==='all'})">${mode==='all'?'继续练习':'再来一轮'}</button></div>`}
+function start(){load();chips();fetch(BANK_URL).then(r=>r.json()).then(d=>{Q=d.questions.filter(q=>q.answer);Q.forEach((q,x)=>byId[q.id]=x);home()}).catch(e=>app.innerHTML="题库加载失败: "+esc(e))}
+function gate(){if(sessionStorage.getItem("qa")==="1")return start();document.querySelector("header").style.display="none";app.className="card login";app.innerHTML='<div class="logo">AWS</div><h2>AWS GenAI 刷题</h2><p class="sub">AIP-C01 · Generative AI Developer – Professional</p><input id="pw" type="password" inputmode="numeric" placeholder="输入密码" autocomplete="current-password"><button id="ub" onclick="tryPw()">进入练习</button><div id="pe"></div>';const e=document.getElementById("pw");e.focus();e.onkeydown=x=>{if(x.key==="Enter")tryPw()}}
+function tryPw(){if(document.getElementById("pw").value===QUIZ_PASSWORD){sessionStorage.setItem("qa","1");start()}else{document.getElementById("pe").textContent="密码不正确，请重试";document.getElementById("pw").select()}}
 gate();</script></body></html>
