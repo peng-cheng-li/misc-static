@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><title>AWS GenAI 刷题</title><style>:root{--bg:#fff;--ink:#111418;--ink2:#3d434b;--mut:#8b9098;--rule:#ebedf0;--soft:#f6f7f8;--acc:#0e5c58;--accs:#e8f1f0;--ok:#0e5c58;--okb:#eef5f4;--bad:#b42318;--badb:#fdf3f2}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><title>AIP-C01 Practice</title><style>:root{--bg:#fff;--ink:#111418;--ink2:#3d434b;--mut:#8b9098;--rule:#ebedf0;--soft:#f6f7f8;--acc:#0e5c58;--accs:#e8f1f0;--ok:#0e5c58;--okb:#eef5f4;--bad:#b42318;--badb:#fdf3f2}
 *{box-sizing:border-box}html{font-size:16px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","PingFang SC",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 header{position:sticky;top:0;z-index:5;background:#ffffffeb;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:calc(.8em + env(safe-area-inset-top)) 1.25em .8em}
@@ -42,8 +42,24 @@ details{margin-top:.6em}summary{cursor:pointer;font-weight:500;font-size:.88rem;
 .big{font-size:3rem;line-height:1;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}.big small{font-size:.95rem;font-weight:400;color:var(--mut);margin-left:.5em;letter-spacing:0}
 .dr{margin:1.1em 0}.dr .pt{margin-bottom:.4em;font-size:.84rem}.dr .pt span{color:var(--ink2)}
 @media(max-width:600px){main{padding:1.5em 1.2em 3.5em}.qt{font-size:1.06rem}}
+
+body{background:#f3f5f6}header{background:#f3f5f6eb}
+.card{background:#fff;border:1px solid #e6e9ec;border-radius:16px;padding:1.6em 1.4em;box-shadow:0 1px 2px #1114180a,0 6px 20px #1114180d}
+.card.home{background:none;border:0;box-shadow:none;padding:0}
+.card.login{max-width:360px;margin:14vh auto 0;padding:2.2em 1.8em;box-shadow:0 1px 2px #1114180a,0 10px 30px #11141812}
+.stats{gap:.7em;margin:1.6em 0}.st{flex:1;background:#fff;border:1px solid #e6e9ec;border-radius:12px;padding:.9em 1em;box-shadow:0 1px 2px #1114180a}
+.menu{display:grid;gap:.7em}.mi,.menu .mi:last-child{background:#fff;border:1px solid #e6e9ec;border-radius:14px;padding:1.05em 1.1em;box-shadow:0 1px 2px #1114180a,0 4px 14px #1114180a;transition:box-shadow .15s,border-color .15s}
+.mi:hover{border-color:#cfe0de;box-shadow:0 1px 2px #1114180d,0 8px 22px #11141814}.mi.hi{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc) inset,0 6px 20px #0e5c581a}
+.mi .ic{display:flex;flex:none;width:2.3em;height:2.3em;border-radius:10px;background:var(--accs);color:var(--acc);align-items:center;justify-content:center;font-size:.9rem;font-weight:700}
+.mi.hi .ic{background:var(--acc);color:#fff}.mi:disabled{box-shadow:none}
+.prog{margin:-.2em 0 1.5em;padding-bottom:1.2em;border-bottom:1px solid var(--rule)}
+.opt{background:#fff;box-shadow:0 1px 2px #1114180a}.opt:hover{background:#fafbfb}
+.fb{margin:1.6em -1.4em -1.6em;padding:1.3em 1.4em 1.5em;border-top:1px solid var(--rule);border-radius:0 0 16px 16px}.fb.ok{background:#f3f8f7}.fb.bad{background:#fdf6f5}
+.ex{background:#fff;border:1px solid var(--rule)}
+.dr{background:#f8f9fa;border-radius:10px;padding:.7em .9em}
+@media(max-width:600px){.card{padding:1.3em 1.1em}.fb{margin:1.4em -1.1em -1.3em;padding:1.2em 1.1em 1.3em}.st{padding:.75em .8em}}
 </style></head><body>
-<header><div class="hd"><b onclick="home()">AIP-C01 <i>刷题</i></b><span class="chip" id="cw" onclick="startMode('wrong')"></span><span class="chip" id="cm" onclick="startMode('mark')"></span></div></header>
+<header><div class="hd"><b onclick="home()">AIP-C01 <i>Practice</i></b><span class="chip" id="cw" onclick="startMode('wrong')"></span><span class="chip" id="cm" onclick="startMode('mark')"></span></div></header>
 <main><div class="card" id="app"></div></main><script>
 // ===== Password: change it here =====
 const QUIZ_PASSWORD="1234";
@@ -54,29 +70,29 @@ let Q=[],byId={},S,mode,list=[],k=0,sess,done=false;
 const app=document.getElementById('app');
 function load(){try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}S=Object.assign({pos:0,ans:{},wrong:{},marks:[]},S||{})}
 function save(){localStorage.setItem(KEY,JSON.stringify(S));chips()}
-function chips(){const w=Object.keys(S.wrong).length,m=S.marks.length;document.getElementById('cw').innerHTML='错题<em>'+w+'</em>';document.getElementById('cm').innerHTML='收藏<em>'+m+'</em>';document.querySelector('header').style.display=''}
+function chips(){const w=Object.keys(S.wrong).length,m=S.marks.length;document.getElementById('cw').innerHTML='Review<em>'+w+'</em>';document.getElementById('cm').innerHTML='Saved<em>'+m+'</em>';document.querySelector('header').style.display=''}
 function esc(t){return String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function md(t){return esc(t).split(/\n{2,}/).map(x=>'<p>'+x.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>').join('')}
 function home(){if(!Q.length)return;scrollTo(0,0);const a=Object.values(S.ans),c=a.filter(x=>x.ok).length,w=Object.keys(S.wrong).length,m=S.marks.length,has=S.pos>0&&S.pos<Q.length;
-app.className='card home';app.innerHTML=`<h2>练习</h2><div class="meta">AWS Generative AI Developer – Professional · ${Q.length} 题</div>
-<div class="stats"><div class="st"><b>${a.length}</b><small>已做</small></div><div class="st"><b>${a.length?Math.round(c*100/a.length):0}%</b><small>正确率</small></div><div class="st"><b>${w}</b><small>待复习错题</small></div></div>
-<div class="menu">${has?`<button class="mi hi" onclick="startMode('all',true)"><span class="ic" style="background:#4f46e5;color:#fff">▶</span><span><b>继续上次进度</b><small>第 ${S.pos+1} / ${Q.length} 题</small></span><span class="go">›</span></button>`:''}
-<button class="mi" onclick="startMode('all',false)"><span class="ic" style="background:#eef2ff">📘</span><span><b>${has?'从头开始':'顺序练习'}</b><small>按题号逐题练习，进度自动保存</small></span><span class="go">›</span></button>
-<button class="mi" onclick="startMode('wrong')" ${w?'':'disabled'}><span class="ic" style="background:#fff1f2">🔁</span><span><b>错题重练 (${w})</b><small>答错的题优先出现，连续答对 2 次移出</small></span><span class="go">›</span></button>
-<button class="mi" onclick="startMode('mark')" ${m?'':'disabled'}><span class="ic" style="background:#fef3c7">★</span><span><b>收藏 (${m})</b><small>只练习已收藏的题目</small></span><span class="go">›</span></button></div>
-${a.length?'<div class="row"><button class="ghost" onclick="if(confirm(\'清除全部进度、错题和收藏？\')){localStorage.removeItem(KEY);load();chips();home()}">重置所有进度</button></div>':''}`}
+app.className='card home';app.innerHTML=`<h2>Practice</h2><div class="meta">AWS Generative AI Developer – Professional · ${Q.length} questions</div>
+<div class="stats"><div class="st"><b>${a.length}</b><small>Answered</small></div><div class="st"><b>${a.length?Math.round(c*100/a.length):0}%</b><small>Accuracy</small></div><div class="st"><b>${w}</b><small>To review</small></div></div>
+<div class="menu">${has?`<button class="mi hi" onclick="startMode('all',true)"><span class="ic">▶</span><span><b>Continue where you left off</b><small>Question ${S.pos+1} of ${Q.length}</small></span><span class="go">›</span></button>`:''}
+<button class="mi" onclick="startMode('all',false)"><span class="ic">≡</span><span><b>${has?'Start over':'Practice all'}</b><small>All questions in order. Progress is saved automatically.</small></span><span class="go">›</span></button>
+<button class="mi" onclick="startMode('wrong')" ${w?'':'disabled'}><span class="ic">↺</span><span><b>Review mistakes (${w})</b><small>Missed questions come back first. Two correct answers in a row clears one.</small></span><span class="go">›</span></button>
+<button class="mi" onclick="startMode('mark')" ${m?'':'disabled'}><span class="ic">★</span><span><b>Saved (${m})</b><small>Practice only the questions you’ve saved.</small></span><span class="go">›</span></button></div>
+${a.length?'<div class="row"><button class="ghost" onclick="if(confirm(\'Clear all progress, mistakes and saved questions?\')){localStorage.removeItem(KEY);load();chips();home()}">Reset all progress</button></div>':''}`}
 function startMode(md,resume){if(!Q.length)return;mode=md;sess={c:0,t:0,stats:{}};
 if(md==='all'){if(!resume)S.pos=0;list=Q.map((_,x)=>x);k=S.pos}
 else if(md==='wrong'){list=Object.entries(S.wrong).sort((a,b)=>a[1].box-b[1].box||a[1].t-b[1].t).map(e=>byId[e[0]]).filter(x=>x!=null);k=0}
 else{list=S.marks.map(id=>byId[id]).filter(x=>x!=null);k=0}
 if(!list.length)return home();save();show()}
-const MN={all:'顺序练习',wrong:'错题重练',mark:'收藏'};
+const MN={all:'All questions',wrong:'Review mistakes',mark:'Saved'};
 function show(){scrollTo(0,0);done=false;app.className='card';const q=Q[list[k]],multi=q.answer.length>1,mk=S.marks.includes(q.id);
-app.innerHTML=`<div class="prog"><div class="pt"><b>第 ${k+1} / ${list.length} 题${mode==='all'?'':' · '+MN[mode]}</b><span>本次 ${sess.c}/${sess.t}</span></div><div class="bar"><div style="width:${((k+1)/list.length*100).toFixed(1)}%"></div></div></div>
-<div class="tags"><span class="tag">${q.id}</span><span class="tag d">${esc(q.domain)}</span>${multi?`<span class="tag m">多选 ${q.answer.length}</span>`:''}<button class="star ${mk?'on':''}" id="st" onclick="mark('${q.id}')" title="收藏">${mk?'★':'☆'}</button></div>
-<div class="qt">${esc(q.question)}</div>${multi?'<div class="hint">选择 '+q.answer.length+' 项</div>':''}<div class="opts ${multi?'multi':''}">`+
+app.innerHTML=`<div class="prog"><div class="pt"><b>Question ${k+1} / ${list.length}${mode==='all'?'':' · '+MN[mode]}</b><span>${sess.c}/${sess.t} correct</span></div><div class="bar"><div style="width:${((k+1)/list.length*100).toFixed(1)}%"></div></div></div>
+<div class="tags"><span class="tag">${q.id}</span><span class="tag d">${esc(q.domain)}</span>${multi?`<span class="tag m">Choose ${q.answer.length}</span>`:''}<button class="star ${mk?'on':''}" id="st" onclick="mark('${q.id}')" title="Save question">${mk?'★':'☆'}</button></div>
+<div class="qt">${esc(q.question)}</div>${multi?'<div class="hint">Select '+q.answer.length+' answers</div>':''}<div class="opts ${multi?'multi':''}">`+
 Object.entries(q.options).map(([o,v])=>`<label class="opt" id="l${o}"><input type="${multi?'checkbox':'radio'}" name="o" value="${o}" onchange="pick()"><span class="k">${o}</span><span>${esc(v)}</span></label>`).join('')+
-`</div><div class="row" id="ac"><button class="sec" onclick="finish()">结束</button><button id="sb" onclick="check()" disabled>提交</button></div><div id="fb"></div>`}
+`</div><div class="row" id="ac"><button class="sec" onclick="finish()">End</button><button id="sb" onclick="check()" disabled>Submit</button></div><div id="fb"></div>`}
 function pick(){document.querySelectorAll('.opt').forEach(l=>l.classList.toggle('sel',l.querySelector('input').checked));document.getElementById('sb').disabled=!document.querySelector('input:checked')}
 function mark(id){const x=S.marks.indexOf(id);x<0?S.marks.push(id):S.marks.splice(x,1);save();const b=document.getElementById('st');if(b){b.classList.toggle('on',x<0);b.textContent=x<0?'★':'☆'}}
 function check(){if(done)return;const q=Q[list[k]];const sel=[...document.querySelectorAll('input:checked')].map(e=>e.value).sort().join('');if(!sel)return;done=true;
@@ -90,18 +106,18 @@ if(mode==='all')S.pos=k+1;save();
 document.querySelectorAll('.opt').forEach(l=>l.classList.remove('sel'));
 for(const o of q.answer)document.getElementById('l'+o).classList.add('ok');for(const o of sel)if(!q.answer.includes(o))document.getElementById('l'+o).classList.add('bad');
 const last=k+1>=list.length;
-document.getElementById('ac').innerHTML=`<button class="sec" onclick="finish()">结束</button><button onclick="next()">${last?'查看结果':'下一题'}</button>`;
-let note='';if(mode==='wrong')note=ok?(S.wrong[q.id]?'<div class="meta">再答对 1 次即可移出错题本</div>':'<div class="meta">已移出错题本</div>'):'<div class="meta">稍后会再次出现</div>';
-document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><h3>${ok?'回答正确':'回答错误 · 正确答案 '+q.answer}</h3>${note}`+
-(q.source_pdf_page?`<a class="pdf" target="_blank" rel="noopener" href="${PDF_URL}#page=${q.source_pdf_page}">查看 PDF 原文 · 第 ${q.source_pdf_page} 页 ↗</a>`:'')+
-(q.explanation?`<details><summary>解析 / 讨论</summary><div class="ex"></div></details>`:'<div class="meta">原 PDF 无解析</div>')+(q.note?`<div class="meta">注：${esc(q.note)}</div>`:'')+`</div>`;
+document.getElementById('ac').innerHTML=`<button class="sec" onclick="finish()">End</button><button onclick="next()">${last?'See results':'Next'}</button>`;
+let note='';if(mode==='wrong')note=ok?(S.wrong[q.id]?'<div class="meta">One more correct answer clears it</div>':'<div class="meta">Cleared from your mistakes</div>'):'<div class="meta">You’ll see this again shortly</div>';
+document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><h3>${ok?'Correct':'Incorrect · Answer: '+q.answer}</h3>${note}`+
+(q.source_pdf_page?`<a class="pdf" target="_blank" rel="noopener" href="${PDF_URL}#page=${q.source_pdf_page}">View in source PDF · p. ${q.source_pdf_page} ↗</a>`:'')+
+(q.explanation?`<details><summary>Explanation & discussion</summary><div class="ex"></div></details>`:'<div class="meta">No explanation in the source PDF</div>')+(q.note?`<div class="meta">Note: ${esc(q.note)}</div>`:'')+`</div>`;
 const p=document.querySelector('#fb .ex');if(p)p.innerHTML=md(q.explanation);document.getElementById('fb').scrollIntoView({behavior:'smooth',block:'nearest'})}
 function next(){k++;k<list.length?show():finish()}
 function finish(){scrollTo(0,0);const t=sess.t,c=sess.c,pc=t?Math.round(c*100/t):0;
-app.className='card';app.innerHTML=`<div class="logo">${MN[mode]} · 本次结果</div><div class="big">${pc}%<small>${c} / ${t}</small></div><div class="meta" style="margin:.8em 0 2.2em">${t?'':'本次未作答'}</div>`+
+app.className='card';app.innerHTML=`<div class="logo">${MN[mode]} · Results</div><div class="big">${pc}%<small>${c} / ${t}</small></div><div class="meta" style="margin:.8em 0 2.2em">${t?'':'No questions answered'}</div>`+
 (t?Object.entries(sess.stats).map(([d,s])=>{const p=Math.round(s.c*100/s.t);return`<div class="dr"><div class="pt"><span>${esc(d)}</span><b>${s.c}/${s.t}</b></div><div class="bar"><div style="width:${p}%"></div></div></div>`}).join(''):'')+
-`<div class="row"><button class="sec" onclick="home()">返回首页</button><button onclick="startMode('${mode}',${mode==='all'})">${mode==='all'?'继续练习':'再来一轮'}</button></div>`}
-function start(){load();chips();fetch(BANK_URL).then(r=>r.json()).then(d=>{Q=d.questions.filter(q=>q.answer);Q.forEach((q,x)=>byId[q.id]=x);home()}).catch(e=>app.innerHTML="题库加载失败: "+esc(e))}
-function gate(){if(sessionStorage.getItem("qa")==="1")return start();document.querySelector("header").style.display="none";app.className="card login";app.innerHTML='<div class="logo">AWS · AIP-C01</div><h2>GenAI 刷题</h2><p class="sub">AIP-C01 · Generative AI Developer – Professional</p><input id="pw" type="password" inputmode="numeric" placeholder="输入密码" autocomplete="current-password"><button id="ub" onclick="tryPw()">进入练习</button><div id="pe"></div>';const e=document.getElementById("pw");e.focus();e.onkeydown=x=>{if(x.key==="Enter")tryPw()}}
-function tryPw(){if(document.getElementById("pw").value===QUIZ_PASSWORD){sessionStorage.setItem("qa","1");start()}else{document.getElementById("pe").textContent="密码不正确，请重试";document.getElementById("pw").select()}}
+`<div class="row"><button class="sec" onclick="home()">Home</button><button onclick="startMode('${mode}',${mode==='all'})">${mode==='all'?'Keep going':'Go again'}</button></div>`}
+function start(){load();chips();fetch(BANK_URL).then(r=>r.json()).then(d=>{Q=d.questions.filter(q=>q.answer);Q.forEach((q,x)=>byId[q.id]=x);home()}).catch(e=>app.innerHTML="Couldn’t load questions: "+esc(e))}
+function gate(){if(sessionStorage.getItem("qa")==="1")return start();document.querySelector("header").style.display="none";app.className="card login";app.innerHTML='<div class="logo">AWS · AIP-C01</div><h2>GenAI Practice</h2><p class="sub">AIP-C01 · Generative AI Developer – Professional</p><input id="pw" type="password" inputmode="numeric" placeholder="Password" autocomplete="current-password"><button id="ub" onclick="tryPw()">Start practicing</button><div id="pe"></div>';const e=document.getElementById("pw");e.focus();e.onkeydown=x=>{if(x.key==="Enter")tryPw()}}
+function tryPw(){if(document.getElementById("pw").value===QUIZ_PASSWORD){sessionStorage.setItem("qa","1");start()}else{document.getElementById("pe").textContent="Incorrect password. Try again.";document.getElementById("pw").select()}}
 gate();</script></body></html>
