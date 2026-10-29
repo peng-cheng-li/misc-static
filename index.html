@@ -76,6 +76,16 @@ button{border-radius:14px}button.sec{background:#ffffff99;border-color:#ffffffe0
 .ex{background:#ffffffb3;border:1px solid #ffffffe0;border-radius:12px}.dr{background:#ffffff73;border-radius:14px}
 .login input{background:#ffffffcc;border-color:#d4e0df;border-radius:12px}
 @media(max-width:600px){.fb{border-radius:0 0 24px 24px}}
+/* opaque glass */
+.card,.card.login,.st,.mi,.menu .mi:last-child{background:#fffffff2}
+.card.home{background:none}.mi:hover{background:#fffffffa}
+.opt{background:#f7faf9;border-color:#e3ebea}.opt:hover{background:#f0f5f4}.opt.sel{background:#e6f1ef}.opt.ok{background:#e6f1ef}.opt.bad{background:#fbeeed}
+button.sec{background:#f4f7f7;border-color:#e3ebea}
+.fb{background:#f7faf9}.fb.ok{background:#eaf3f1}.fb.bad{background:#fcf0ef}
+.ex{background:#fff;border-color:#e3ebea}.dr{background:#f4f7f7}
+header{background:#ffffffe6}
+.mi:disabled{opacity:.55}.mi:disabled b,.mi:disabled small{color:#3d434b}
+
 </style></head><body>
 <header><div class="hd"><b onclick="home()">AIP-C01 <i>Practice</i></b><span class="chip" id="cw" onclick="startMode('wrong')"></span><span class="chip" id="cm" onclick="startMode('mark')"></span></div></header>
 <main><div class="card" id="app"></div></main><script>
