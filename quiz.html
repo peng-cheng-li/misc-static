@@ -1,63 +1,56 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><title>AIP-C01 Practice</title><style>:root{--bg:#fff;--ink:#111418;--ink2:#3d434b;--mut:#8b9098;--rule:#ebedf0;--soft:#f6f7f8;--acc:#0e5c58;--accs:#e8f1f0;--ok:#0e5c58;--okb:#eef5f4;--bad:#b42318;--badb:#fdf3f2}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="Cache-Control" content="no-cache"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f2f2f7"><title>AIP-C01 Practice</title><style>
+:root{--bg:#f2f2f7;--ink:#000;--ink2:#3c3c43;--mut:#8e8e93;--rule:#e5e5ea;--soft:#f2f2f7;--acc:#0e5c58;--accs:#e7f0ef;--ok:#0e5c58;--okb:#eef6f4;--bad:#d70015;--badb:#fdf0f1}
 *{box-sizing:border-box}html{font-size:16px}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","PingFang SC",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
-header{position:sticky;top:0;z-index:5;background:#ffffffeb;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:calc(.8em + env(safe-area-inset-top)) 1.25em .8em}
-.hd{max-width:680px;margin:auto;display:flex;align-items:center;gap:1.2em}.hd b{flex:1;font-size:.95rem;font-weight:600;cursor:pointer}.hd b i{font-style:normal;font-weight:400;color:var(--mut)}
-.chip{font-size:.82rem;color:var(--mut);cursor:pointer}.chip em{font-style:normal;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;margin-left:.2em}
-main{max-width:680px;margin:auto;padding:2em 1.25em 4em}
-.prog{margin-bottom:2em}.pt{display:flex;justify-content:space-between;align-items:baseline;font-size:.82rem;color:var(--mut);margin-bottom:.6em;font-variant-numeric:tabular-nums}.pt b{color:var(--ink);font-weight:600}
-.bar{height:3px;background:var(--rule);border-radius:2px;overflow:hidden}.bar div{height:100%;background:var(--acc);transition:width .3s}
-.tags{display:flex;gap:1em;align-items:center;flex-wrap:wrap;margin-bottom:1em;font-size:.8rem;color:var(--mut)}.tag{font-weight:600;color:var(--ink2)}.tag.d,.tag.m{font-weight:400;color:var(--mut)}
-.star{margin-left:auto;background:none;border:0;font-size:1.2rem;line-height:1;cursor:pointer;color:#c5c9cf;padding:.2em;min-height:0;width:auto}.star.on{color:var(--acc)}.star:hover{background:none}
-.qt{font-size:1.1rem;line-height:1.7;margin:0 0 1.6em;font-weight:500;letter-spacing:-.003em}
-.hint{font-size:.8rem;color:var(--mut);margin:-1em 0 .8em}
-.opt{display:flex;gap:.9em;align-items:flex-start;padding:.9em 1em;margin:.5em 0;border:1px solid var(--rule);border-radius:10px;cursor:pointer;font-size:.95rem;color:var(--ink2);transition:border-color .12s,background .12s}
-.opt:hover{border-color:#d5d9de}.opt input{display:none}
-.opt .k{flex:none;width:1.55em;height:1.55em;margin-top:.1em;border:1px solid #cfd3d8;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:600;color:var(--mut)}
-.multi .opt .k{border-radius:4px}
-.opt.sel{border-color:var(--acc);background:var(--accs);color:var(--ink)}.opt.sel .k{background:var(--acc);border-color:var(--acc);color:#fff}
-.opt.ok{border-color:var(--ok);background:var(--okb);color:var(--ink)}.opt.ok .k{background:var(--ok);border-color:var(--ok);color:#fff}
-.opt.bad{border-color:var(--bad);background:var(--badb)}.opt.bad .k{background:var(--bad);border-color:var(--bad);color:#fff}
-button{font:inherit;font-size:.95rem;font-weight:600;min-height:46px;padding:.65em 1.4em;border:1px solid var(--acc);border-radius:10px;cursor:pointer;background:var(--acc);color:#fff;transition:opacity .12s}
-button:hover{opacity:.92}button:disabled{opacity:.3;cursor:default}
-button.sec{background:none;color:var(--ink2);border-color:var(--rule)}button.sec:hover{background:var(--soft);opacity:1}
-button.ghost{background:none;border:0;color:var(--mut);padding:.4em 0;font-weight:400;min-height:0;font-size:.85rem}
-.row{display:flex;gap:.7em;margin-top:1.8em}.row button{flex:1}
-.fb{margin-top:1.8em;padding-top:1.4em;border-top:1px solid var(--rule)}
-.fb h3{margin:0 0 .3em;font-size:1rem;font-weight:600}.fb.ok h3{color:var(--ok)}.fb.bad h3{color:var(--bad)}
-.pdf{display:inline-block;color:var(--acc);font-size:.88rem;font-weight:500;margin:.4em 0;text-decoration:none}.pdf:hover{text-decoration:underline}
-details{margin-top:.6em}summary{cursor:pointer;font-weight:500;font-size:.88rem;color:var(--ink2)}
-.ex{margin-top:.6em;padding:.8em 1em;background:var(--soft);border-radius:10px;max-height:55vh;overflow:auto;font-size:.87rem;color:var(--ink2)}.ex p{margin:.4em 0}.meta{color:var(--mut);font-size:.84rem}
-.login{max-width:320px;margin:18vh auto 0}
-.logo{font-size:.78rem;font-weight:600;color:var(--acc);margin-bottom:.8em;letter-spacing:.02em}
-.login h2{margin:0;font-size:1.75rem;font-weight:600;letter-spacing:-.01em}.sub{color:var(--mut);font-size:.85rem;margin:.4em 0 2.2em}
-.login input{width:100%;padding:.8em 1em;font-size:1rem;border:1px solid #d5d9de;border-radius:10px;outline:none;background:#fff;color:var(--ink)}.login input:focus{border-color:var(--acc)}
-.login button{width:100%;margin-top:.9em}#pe{color:var(--bad);font-size:.84rem;min-height:1.2em;margin-top:.7em}
-.home h2{margin:0;font-size:1.75rem;font-weight:600;letter-spacing:-.01em}.home>.meta{margin-top:.3em}
-.stats{display:flex;gap:2.4em;margin:2em 0 2.2em}.st b{display:block;font-size:1.5rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}.st small{color:var(--mut);font-size:.78rem}
-.mi{display:flex;width:100%;align-items:center;gap:1em;text-align:left;background:none;color:var(--ink);border:0;border-top:1px solid var(--rule);border-radius:0;padding:1.05em 0;min-height:0;font-weight:400}
-.menu .mi:last-child{border-bottom:1px solid var(--rule)}.mi:hover{opacity:1;background:none}.mi:hover b{color:var(--acc)}.mi:disabled{opacity:.35}
-.mi .ic{display:none}.mi b{display:block;font-size:1rem;font-weight:600}.mi small{color:var(--mut);font-size:.82rem}
-.mi .go{margin-left:auto;color:#c5c9cf;font-size:1.2rem}.mi.hi b{color:var(--acc)}
-.big{font-size:3rem;line-height:1;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}.big small{font-size:.95rem;font-weight:400;color:var(--mut);margin-left:.5em;letter-spacing:0}
-.dr{margin:1.1em 0}.dr .pt{margin-bottom:.4em;font-size:.84rem}.dr .pt span{color:var(--ink2)}
-@media(max-width:600px){main{padding:1.5em 1.2em 3.5em}.qt{font-size:1.06rem}}
-
-body{background:#f3f5f6}header{background:#f3f5f6eb}
-.card{background:#fff;border:1px solid #e6e9ec;border-radius:16px;padding:1.6em 1.4em;box-shadow:0 1px 2px #1114180a,0 6px 20px #1114180d}
-.card.home{background:none;border:0;box-shadow:none;padding:0}
-.card.login{max-width:360px;margin:14vh auto 0;padding:2.2em 1.8em;box-shadow:0 1px 2px #1114180a,0 10px 30px #11141812}
-.stats{gap:.7em;margin:1.6em 0}.st{flex:1;background:#fff;border:1px solid #e6e9ec;border-radius:12px;padding:.9em 1em;box-shadow:0 1px 2px #1114180a}
-.menu{display:grid;gap:.7em}.mi,.menu .mi:last-child{background:#fff;border:1px solid #e6e9ec;border-radius:14px;padding:1.05em 1.1em;box-shadow:0 1px 2px #1114180a,0 4px 14px #1114180a;transition:box-shadow .15s,border-color .15s}
-.mi:hover{border-color:#cfe0de;box-shadow:0 1px 2px #1114180d,0 8px 22px #11141814}.mi.hi{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc) inset,0 6px 20px #0e5c581a}
-.mi .ic{display:flex;flex:none;width:2.3em;height:2.3em;border-radius:10px;background:var(--accs);color:var(--acc);align-items:center;justify-content:center;font-size:.9rem;font-weight:700}
-.mi.hi .ic{background:var(--acc);color:#fff}.mi:disabled{box-shadow:none}
-.prog{margin:-.2em 0 1.5em;padding-bottom:1.2em;border-bottom:1px solid var(--rule)}
-.opt{background:#fff;box-shadow:0 1px 2px #1114180a}.opt:hover{background:#fafbfb}
-.fb{margin:1.6em -1.4em -1.6em;padding:1.3em 1.4em 1.5em;border-top:1px solid var(--rule);border-radius:0 0 16px 16px}.fb.ok{background:#f3f8f7}.fb.bad{background:#fdf6f5}
-.ex{background:#fff;border:1px solid var(--rule)}
-.dr{background:#f8f9fa;border-radius:10px;padding:.7em .9em}
-@media(max-width:600px){.card{padding:1.3em 1.1em}.fb{margin:1.4em -1.1em -1.3em;padding:1.2em 1.1em 1.3em}.st{padding:.75em .8em}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Inter,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+header{position:sticky;top:0;z-index:5;background:#f2f2f7d9;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid #c6c6c8;padding:calc(.7em + env(safe-area-inset-top)) 1.1em .7em}
+.hd{max-width:680px;margin:auto;display:flex;align-items:center;gap:1.1em}.hd b{flex:1;font-size:1rem;font-weight:600;cursor:pointer}.hd b i{font-style:normal;font-weight:400;color:var(--mut)}
+.chip{font-size:.85rem;color:var(--acc);cursor:pointer;font-weight:500}.chip em{font-style:normal;font-weight:700;margin-left:.25em;font-variant-numeric:tabular-nums}
+main{max-width:680px;margin:auto;padding:1.2em 1.1em 4em}
+.card{background:#fff;border-radius:20px;padding:1.3em 1.2em}
+.card.home{background:none;padding:0}
+.prog{margin-bottom:1.3em}.pt{display:flex;justify-content:space-between;align-items:baseline;font-size:.85rem;color:var(--mut);margin-bottom:.55em;font-variant-numeric:tabular-nums}.pt b{color:var(--acc);font-weight:600}
+.bar{height:6px;background:var(--accs);border-radius:3px;overflow:hidden}.bar div{height:100%;background:var(--acc);border-radius:3px;transition:width .3s}
+.tags{display:flex;gap:.5em;align-items:center;flex-wrap:wrap;margin-bottom:.9em;font-size:.78rem}.tag{font-weight:600;color:var(--acc);background:var(--accs);border-radius:999px;padding:.2em .7em}.tag.d,.tag.m{font-weight:500;color:var(--ink2);background:var(--soft)}
+.star{margin-left:auto;background:none;border:0;font-size:1.35rem;line-height:1;cursor:pointer;color:#c7c7cc;padding:.1em;min-height:0;width:auto}.star.on{color:var(--acc)}
+.qt{font-size:1.1rem;line-height:1.55;margin:0 0 1.3em;font-weight:600}
+.hint{font-size:.82rem;color:var(--mut);margin:-.8em 0 .8em}
+.opt{display:flex;gap:.85em;align-items:flex-start;padding:.9em 1em;margin:.55em 0;background:var(--soft);border:1.5px solid transparent;border-radius:14px;cursor:pointer;font-size:.95rem;color:var(--ink);transition:background .12s,border-color .12s}
+.opt:hover{background:#ebebf0}.opt input{display:none}
+.opt .k{flex:none;width:1.6em;height:1.6em;margin-top:.05em;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--mut)}
+.multi .opt .k{border-radius:6px}
+.opt.sel{border-color:var(--acc);background:var(--accs)}.opt.sel .k{background:var(--acc);color:#fff}
+.opt.ok{border-color:var(--ok);background:var(--okb)}.opt.ok .k{background:var(--ok);color:#fff}
+.opt.bad{border-color:var(--bad);background:var(--badb)}.opt.bad .k{background:var(--bad);color:#fff}
+button{font:inherit;font-size:1rem;font-weight:600;min-height:50px;padding:.7em 1.3em;border:0;border-radius:14px;cursor:pointer;background:var(--acc);color:#fff}
+button:active{opacity:.85}button:disabled{opacity:.3;cursor:default}
+button.sec{background:var(--soft);color:var(--acc)}
+button.ghost{background:none;color:var(--bad);padding:.4em 0;font-weight:500;min-height:0;font-size:.95rem}
+.row{display:flex;gap:.7em;margin-top:1.5em}.row button{flex:1}
+.fb{margin-top:1em;padding:1.1em 1.2em;border-radius:16px;background:var(--soft)}.fb.ok{background:var(--okb)}.fb.bad{background:var(--badb)}
+.fb h3{margin:0 0 .3em;font-size:1.05rem;font-weight:700}.fb.ok h3{color:var(--ok)}.fb.bad h3{color:var(--bad)}
+.pdf{display:inline-block;color:var(--acc);font-size:.9rem;font-weight:600;margin:.4em 0;text-decoration:none}
+details{margin-top:.5em}summary{cursor:pointer;font-weight:600;font-size:.9rem;color:var(--ink2)}
+.ex{margin-top:.6em;padding:.8em 1em;background:#fff;border-radius:12px;max-height:55vh;overflow:auto;font-size:.88rem;color:var(--ink2)}.ex p{margin:.4em 0}.meta{color:var(--mut);font-size:.85rem}
+.card.login{max-width:380px;margin:12vh auto 0;padding:2.2em 1.6em}
+.logo{font-size:.8rem;font-weight:600;color:var(--mut);text-transform:uppercase;letter-spacing:.02em}
+.login h2,.home h2{margin:.05em 0 0;font-size:2.1rem;font-weight:700;letter-spacing:.005em}.login .meta{margin:.3em 0 1.8em}
+.login input{width:100%;padding:.85em 1em;font-size:1rem;border:0;border-radius:12px;outline:none;background:var(--soft);color:var(--ink)}.login input:focus{box-shadow:0 0 0 2px var(--acc)}
+.login button{width:100%;margin-top:.8em}#pe{color:var(--bad);font-size:.85rem;min-height:1.2em;margin-top:.7em}
+.top{display:flex;align-items:flex-end;margin:.6em 0 1em}.top>div:first-child{flex:1}.av{flex:none;width:2.4em;height:2.4em;border-radius:50%;background:var(--acc);color:#fff;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.cta{width:100%;display:flex;flex-direction:column;align-items:center;gap:.1em}.cta small{font-weight:500;opacity:.8;font-size:.8rem}
+.home h4{font-size:1.3rem;font-weight:700;margin:1.4em 0 .5em}
+.hc{background:#fff;border-radius:20px;padding:1em 1.1em;margin:.7em 0;display:block;width:100%;text-align:left;color:var(--ink);font-weight:400;min-height:0}
+button.hc:disabled{opacity:.5}
+.ch{display:flex;align-items:center;font-size:.92rem;font-weight:600;color:var(--acc)}.ch span{flex:1}.ch em{font-style:normal;color:var(--mut);font-weight:400;font-size:.85rem}
+.ring{display:flex;gap:1.3em;align-items:center;margin-top:.8em}.rg{flex:none;width:6.2em;height:6.2em;border-radius:50%;display:flex;align-items:center;justify-content:center}.rg i{width:4.7em;height:4.7em;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:1.1rem}
+.kv small{display:block;color:var(--mut);font-size:.78rem;font-weight:600}.kv b{font-size:1.4rem;font-weight:700;font-variant-numeric:tabular-nums}.kv b span{color:var(--mut);font-size:.85rem;font-weight:600}.kv>div{margin:.2em 0}
+.big{font-size:2.1rem;font-weight:700;margin-top:.35em;line-height:1.1;font-variant-numeric:tabular-nums}.big small{font-size:.95rem;color:var(--mut);font-weight:600;margin-left:.25em}
+.bars{display:flex;gap:5px;align-items:flex-end;height:3.2em;margin-top:.7em}.bars i{flex:1;background:var(--acc);border-radius:4px;min-height:3px}.bars i.z{background:var(--rule)}.bl{display:flex;gap:5px;margin-top:.3em}.bl span{flex:1;text-align:center;font-size:.68rem;color:var(--mut)}
+.two{display:flex;gap:.7em}.two .hc{flex:1;margin:0}
+.dm{padding:.75em 0;border-bottom:.5px solid var(--rule)}.dm:last-child{border:0}.dm .pt{margin-bottom:.4em}.dm .pt span{color:var(--ink);font-size:.9rem}
+.big.res{font-size:3rem}
+.dr{margin:1em 0}.dr .pt span{color:var(--ink)}
+@media(max-width:600px){.qt{font-size:1.06rem}}
 </style></head><body>
 <header><div class="hd"><b onclick="home()">AIP-C01 <i>Practice</i></b><span class="chip" id="cw" onclick="startMode('wrong')"></span><span class="chip" id="cm" onclick="startMode('mark')"></span></div></header>
 <main><div class="card" id="app"></div></main><script>
@@ -73,14 +66,18 @@ function save(){localStorage.setItem(KEY,JSON.stringify(S));chips()}
 function chips(){const w=Object.keys(S.wrong).length,m=S.marks.length;document.getElementById('cw').innerHTML='Review<em>'+w+'</em>';document.getElementById('cm').innerHTML='Saved<em>'+m+'</em>';document.querySelector('header').style.display=''}
 function esc(t){return String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function md(t){return esc(t).split(/\n{2,}/).map(x=>'<p>'+x.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>').join('')}
-function home(){if(!Q.length)return;scrollTo(0,0);const a=Object.values(S.ans),c=a.filter(x=>x.ok).length,w=Object.keys(S.wrong).length,m=S.marks.length,has=S.pos>0&&S.pos<Q.length;
-app.className='card home';app.innerHTML=`<h2>Practice</h2><div class="meta">AWS Generative AI Developer – Professional · ${Q.length} questions</div>
-<div class="stats"><div class="st"><b>${a.length}</b><small>Answered</small></div><div class="st"><b>${a.length?Math.round(c*100/a.length):0}%</b><small>Accuracy</small></div><div class="st"><b>${w}</b><small>To review</small></div></div>
-<div class="menu">${has?`<button class="mi hi" onclick="startMode('all',true)"><span class="ic">▶</span><span><b>Continue where you left off</b><small>Question ${S.pos+1} of ${Q.length}</small></span><span class="go">›</span></button>`:''}
-<button class="mi" onclick="startMode('all',false)"><span class="ic">≡</span><span><b>${has?'Start over':'Practice all'}</b><small>All questions in order. Progress is saved automatically.</small></span><span class="go">›</span></button>
-<button class="mi" onclick="startMode('wrong')" ${w?'':'disabled'}><span class="ic">↺</span><span><b>Review mistakes (${w})</b><small>Missed questions come back first. Two correct answers in a row clears one.</small></span><span class="go">›</span></button>
-<button class="mi" onclick="startMode('mark')" ${m?'':'disabled'}><span class="ic">★</span><span><b>Saved (${m})</b><small>Practice only the questions you’ve saved.</small></span><span class="go">›</span></button></div>
-${a.length?'<div class="row"><button class="ghost" onclick="if(confirm(\'Clear all progress, mistakes and saved questions?\')){localStorage.removeItem(KEY);load();chips();home()}">Reset all progress</button></div>':''}`}
+function home(){if(!Q.length)return;scrollTo(0,0);const A=S.ans,ids=Object.keys(A),a=ids.length,c=ids.filter(i=>A[i].ok).length,w=Object.keys(S.wrong).length,m=S.marks.length,has=S.pos>0&&S.pos<Q.length,pc=a?Math.round(c*100/a):0,done=Math.round(a*100/Q.length);
+const day=864e5,t0=new Date();t0.setHours(0,0,0,0);const wk=[0,0,0,0,0,0,0];ids.forEach(i=>{const d=Math.floor((t0-new Date(A[i].t).setHours(0,0,0,0))/day);if(d>=0&&d<7)wk[6-d]++});const mx=Math.max(1,...wk),wt=wk.reduce((x,y)=>x+y,0),dn=['S','M','T','W','T','F','S'];
+const dom={};ids.forEach(i=>{const q=Q[byId[i]];if(!q)return;const d=dom[q.domain]||(dom[q.domain]={c:0,t:0});d.t++;if(A[i].ok)d.c++});
+const date=new Date().toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'}).toUpperCase();
+app.className='card home';app.innerHTML=`<div class="top"><div><div class="logo">${date}</div><h2>Summary</h2></div><div class="av">AIP</div></div>
+<button class="cta" onclick="startMode('all',${has})">${has?`▶ Continue<small>Question ${S.pos+1} of ${Q.length}</small>`:`▶ ${a?'Start over':'Start practicing'}<small>${Q.length} questions in order</small>`}</button>
+<h4>Overview</h4><div class="hc"><div class="ch"><span>◎ Overall Progress</span><em>${done}% complete</em></div><div class="ring"><div class="rg" style="background:conic-gradient(var(--acc) 0 ${done}%,var(--accs) 0)"><i>${done}%</i></div><div class="kv"><div><small>Answered</small><b>${a}<span> / ${Q.length}</span></b></div><div><small>Accuracy</small><b style="color:var(--acc)">${a?pc+'%':'—'}</b></div></div></div></div>
+<div class="hc"><div class="ch"><span>▮ Last 7 Days</span></div><div class="big">${wt}<small>answered</small></div><div class="bars">${wk.map(v=>`<i class="${v?'':'z'}" style="height:${v?Math.max(8,v/mx*100):6}%"></i>`).join('')}</div><div class="bl">${wk.map((v,j)=>`<span>${dn[new Date(t0-(6-j)*day).getDay()]}</span>`).join('')}</div></div>
+<div class="two"><button class="hc" onclick="startMode('wrong')" ${w?'':'disabled'}><div class="ch"><span>↺ Mistakes</span><em>›</em></div><div class="big">${w}<small>to review</small></div></button><button class="hc" onclick="startMode('mark')" ${m?'':'disabled'}><div class="ch"><span>★ Saved</span><em>›</em></div><div class="big">${m}<small>saved</small></div></button></div>
+${has?`<button class="hc" onclick="startMode('all',false)"><div class="ch"><span>≡ Start Over</span><em>›</em></div><div class="meta" style="margin-top:.3em">Practice all ${Q.length} questions from the beginning.</div></button>`:''}
+<h4>By Domain</h4><div class="hc">${Object.keys(dom).length?Object.entries(dom).map(([d,s])=>{const p=Math.round(s.c*100/s.t);return`<div class="dm"><div class="pt"><span>${esc(d)}</span><b>${p}%</b></div><div class="bar"><div style="width:${p}%"></div></div></div>`}).join(''):'<div class="meta">Answer some questions to see your scores by domain.</div>'}</div>
+${a?'<div class="row" style="justify-content:center"><button class="ghost" onclick="if(confirm(\'Clear all progress, mistakes and saved questions?\')){localStorage.removeItem(KEY);load();chips();home()}">Reset All Progress</button></div>':''}`}
 function startMode(md,resume){if(!Q.length)return;mode=md;sess={c:0,t:0,stats:{}};
 if(md==='all'){if(!resume)S.pos=0;list=Q.map((_,x)=>x);k=S.pos}
 else if(md==='wrong'){list=Object.entries(S.wrong).sort((a,b)=>a[1].box-b[1].box||a[1].t-b[1].t).map(e=>byId[e[0]]).filter(x=>x!=null);k=0}
@@ -114,7 +111,7 @@ document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><h3>${
 const p=document.querySelector('#fb .ex');if(p)p.innerHTML=md(q.explanation);document.getElementById('fb').scrollIntoView({behavior:'smooth',block:'nearest'})}
 function next(){k++;k<list.length?show():finish()}
 function finish(){scrollTo(0,0);const t=sess.t,c=sess.c,pc=t?Math.round(c*100/t):0;
-app.className='card';app.innerHTML=`<div class="logo">${MN[mode]} · Results</div><div class="big">${pc}%<small>${c} / ${t}</small></div><div class="meta" style="margin:.8em 0 2.2em">${t?'':'No questions answered'}</div>`+
+app.className='card';app.innerHTML=`<div class="logo">${MN[mode]} · Results</div><div class="big res">${pc}%<small>${c} / ${t}</small></div><div class="meta" style="margin:.8em 0 2.2em">${t?'':'No questions answered'}</div>`+
 (t?Object.entries(sess.stats).map(([d,s])=>{const p=Math.round(s.c*100/s.t);return`<div class="dr"><div class="pt"><span>${esc(d)}</span><b>${s.c}/${s.t}</b></div><div class="bar"><div style="width:${p}%"></div></div></div>`}).join(''):'')+
 `<div class="row"><button class="sec" onclick="home()">Home</button><button onclick="startMode('${mode}',${mode==='all'})">${mode==='all'?'Keep going':'Go again'}</button></div>`}
 function start(){load();chips();fetch(BANK_URL).then(r=>r.json()).then(d=>{Q=d.questions.filter(q=>q.answer);Q.forEach((q,x)=>byId[q.id]=x);home()}).catch(e=>app.innerHTML="Couldn’t load questions: "+esc(e))}
