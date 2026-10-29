@@ -86,8 +86,18 @@ button.sec{background:#f4f7f7;border-color:#e3ebea}
 header{background:#ffffffe6}
 .mi:disabled{opacity:.55}.mi:disabled b,.mi:disabled small{color:#3d434b}
 
+
+/* list mode */
+.seg{display:flex;background:#0e5c5812;border-radius:12px;padding:3px;margin:0 0 1.2em}.seg button{flex:1;min-height:36px;padding:.3em;border-radius:10px;background:none;color:#3d434b;font-size:.88rem;border:0;box-shadow:none}.seg button.on{background:#fff;color:#0e5c58;box-shadow:0 1px 3px #0e3a381f}
+.lsearch{width:100%;padding:.75em 1em;font-size:1rem;border:1px solid #e3ebea;border-radius:12px;background:#fff;outline:none;margin-bottom:.8em}.lsearch:focus{border-color:#0e5c58}
+.flt{display:flex;gap:.4em;flex-wrap:wrap;margin-bottom:1em}.flt button{min-height:32px;padding:.25em .85em;font-size:.8rem;border-radius:999px;background:#f4f7f7;color:#3d434b;border:1px solid #e3ebea;font-weight:500}.flt button.on{background:#0e5c58;color:#fff;border-color:#0e5c58}
+.ql{display:flex;flex-direction:column}.qi{display:flex;gap:.8em;align-items:center;padding:.8em .2em;border-bottom:1px solid #edf1f1;cursor:pointer}.qi:last-child{border:0}.qi:hover{background:#f7faf9}
+.qi .n{flex:none;width:3.2em;font-weight:700;font-size:.85rem;color:#0e5c58;font-variant-numeric:tabular-nums}.qi .tx{flex:1;min-width:0;font-size:.88rem;color:#3d434b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qi .s{flex:none;width:1.4em;height:1.4em;border-radius:50%;font-size:.7rem;display:flex;align-items:center;justify-content:center;font-weight:700}.s.ok{background:#e6f1ef;color:#0e5c58}.s.bad{background:#fbeeed;color:#b42318}.s.no{background:#f1f3f4}.qi .bm{flex:none;color:#0e5c58;font-size:.85rem;width:1em}
+.lsum{font-size:.8rem;color:#8b9098;margin-bottom:.5em}
+.vt{background:none;border:1px solid #e3ebea;color:#0e5c58;min-height:0;padding:.2em .7em;font-size:.78rem;border-radius:999px;font-weight:600;width:auto}
 </style></head><body>
-<header><div class="hd"><b onclick="home()">AIP-C01 <i>Practice</i></b><span class="chip" id="cw" onclick="startMode('wrong')"></span><span class="chip" id="cm" onclick="startMode('mark')"></span></div></header>
+<header><div class="hd"><b onclick="home()">AIP-C01 <i>Practice</i></b><span class="chip" onclick="listView()">List</span><span class="chip" id="cw" onclick="startMode('wrong')"></span><span class="chip" id="cm" onclick="startMode('mark')"></span></div></header>
 <main><div class="card" id="app"></div></main><script>
 // ===== Password: change it here =====
 const QUIZ_PASSWORD="1234";
@@ -106,6 +116,7 @@ app.className='card home';app.innerHTML=`<h2>Practice</h2><div class="meta">AWS 
 <div class="stats"><div class="st"><b>${a.length}</b><small>Answered</small></div><div class="st"><b>${a.length?Math.round(c*100/a.length):0}%</b><small>Accuracy</small></div><div class="st"><b>${w}</b><small>To review</small></div></div>
 <div class="menu">${has?`<button class="mi hi" onclick="startMode('all',true)"><span class="ic">▶</span><span><b>Continue where you left off</b><small>Question ${S.pos+1} of ${Q.length}</small></span><span class="go">›</span></button>`:''}
 <button class="mi" onclick="startMode('all',false)"><span class="ic">≡</span><span><b>${has?'Start over':'Practice all'}</b><small>All questions in order. Progress is saved automatically.</small></span><span class="go">›</span></button>
+<button class="mi" onclick="listView()"><span class="ic">#</span><span><b>Browse all questions</b><small>Numbered list. Search, filter and jump to any question.</small></span><span class="go">›</span></button>
 <button class="mi" onclick="startMode('wrong')" ${w?'':'disabled'}><span class="ic">↺</span><span><b>Review mistakes (${w})</b><small>Missed questions come back first. Two correct answers in a row clears one.</small></span><span class="go">›</span></button>
 <button class="mi" onclick="startMode('mark')" ${m?'':'disabled'}><span class="ic">★</span><span><b>Saved (${m})</b><small>Practice only the questions you’ve saved.</small></span><span class="go">›</span></button></div>
 ${a.length?'<div class="row"><button class="ghost" onclick="if(confirm(\'Clear all progress, mistakes and saved questions?\')){localStorage.removeItem(KEY);load();chips();home()}">Reset all progress</button></div>':''}`}
@@ -114,9 +125,21 @@ if(md==='all'){if(!resume)S.pos=0;list=Q.map((_,x)=>x);k=S.pos}
 else if(md==='wrong'){list=Object.entries(S.wrong).sort((a,b)=>a[1].box-b[1].box||a[1].t-b[1].t).map(e=>byId[e[0]]).filter(x=>x!=null);k=0}
 else{list=S.marks.map(id=>byId[id]).filter(x=>x!=null);k=0}
 if(!list.length)return home();save();show()}
+let LF={q:'',f:'all'};
+function seg(on){return `<div class="seg"><button class="${on==='card'?'on':''}" onclick="startMode('all',true)">Card</button><button class="${on==='list'?'on':''}" onclick="listView()">List</button></div>`}
+function listView(){if(!Q.length)return;scrollTo(0,0);mode='all';app.className='card';
+app.innerHTML=seg('list')+`<input class="lsearch" id="ls" type="search" inputmode="numeric" placeholder="Jump to question number or search text" value="${esc(LF.q)}"><div class="flt">${[['all','All'],['todo','Unanswered'],['ok','Correct'],['bad','Wrong'],['mark','Saved']].map(([k,l])=>`<button class="${LF.f===k?'on':''}" onclick="LF.f='${k}';listView()">${l}</button>`).join('')}</div><div class="lsum" id="lsum"></div><div class="ql" id="ql"></div>`;
+const e=document.getElementById('ls');e.oninput=()=>{LF.q=e.value;renderList()};e.onkeydown=x=>{if(x.key==='Enter'){const n=parseInt(e.value,10);if(n>=1&&n<=Q.length)jump(n-1)}};renderList()}
+function renderList(){const t=LF.q.trim().toLowerCase(),n=/^\d+$/.test(t)?parseInt(t,10):null;
+const r=Q.map((q,i)=>({q,i,a:S.ans[q.id],m:S.marks.includes(q.id)})).filter(x=>{
+if(LF.f==='todo'&&x.a)return false;if(LF.f==='ok'&&!(x.a&&x.a.ok))return false;if(LF.f==='bad'&&!(x.a&&!x.a.ok))return false;if(LF.f==='mark'&&!x.m)return false;
+if(!t)return true;if(n!=null)return String(x.i+1).startsWith(String(n))||x.q.id.toLowerCase().includes(t);return x.q.question.toLowerCase().includes(t)||x.q.id.toLowerCase().includes(t)});
+document.getElementById('lsum').textContent=r.length+' of '+Q.length+' questions';
+document.getElementById('ql').innerHTML=r.map(x=>`<div class="qi" onclick="jump(${x.i})"><span class="n">${x.q.id}</span><span class="tx">${esc(x.q.question)}</span><span class="bm">${x.m?'★':''}</span><span class="s ${x.a?(x.a.ok?'ok':'bad'):'no'}">${x.a?(x.a.ok?'✓':'✕'):''}</span></div>`).join('')||'<div class="meta" style="padding:1em 0">No matching questions</div>'}
+function jump(i){mode='all';sess={c:0,t:0,stats:{}};list=Q.map((_,x)=>x);k=i;S.pos=i;save();show()}
 const MN={all:'All questions',wrong:'Review mistakes',mark:'Saved'};
 function show(){scrollTo(0,0);done=false;app.className='card';const q=Q[list[k]],multi=q.answer.length>1,mk=S.marks.includes(q.id);
-app.innerHTML=`<div class="prog"><div class="pt"><b>Question ${k+1} / ${list.length}${mode==='all'?'':' · '+MN[mode]}</b><span>${sess.c}/${sess.t} correct</span></div><div class="bar"><div style="width:${((k+1)/list.length*100).toFixed(1)}%"></div></div></div>
+app.innerHTML=(mode==='all'?seg('card'):'')+`<div class="prog"><div class="pt"><b>Question ${k+1} / ${list.length}${mode==='all'?'':' · '+MN[mode]}</b><span>${sess.c}/${sess.t} correct</span></div><div class="bar"><div style="width:${((k+1)/list.length*100).toFixed(1)}%"></div></div></div>
 <div class="tags"><span class="tag">${q.id}</span><span class="tag d">${esc(q.domain)}</span>${multi?`<span class="tag m">Choose ${q.answer.length}</span>`:''}<button class="star ${mk?'on':''}" id="st" onclick="mark('${q.id}')" title="Save question">${mk?'★':'☆'}</button></div>
 <div class="qt">${esc(q.question)}</div>${multi?'<div class="hint">Select '+q.answer.length+' answers</div>':''}<div class="opts ${multi?'multi':''}">`+
 Object.entries(q.options).map(([o,v])=>`<label class="opt" id="l${o}"><input type="${multi?'checkbox':'radio'}" name="o" value="${o}" onchange="pick()"><span class="k">${o}</span><span>${esc(v)}</span></label>`).join('')+
