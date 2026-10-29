@@ -20,6 +20,8 @@ button{width:100%;margin:.5em 0}p{font-size:1.05rem}}
 .login input{box-sizing:border-box;width:100%;padding:.8em 1em;font-size:1rem;border:1px solid #cbd5e1;border-radius:10px;outline:none;text-align:center;letter-spacing:.2em}
 .login input:focus{border-color:#2563eb;box-shadow:0 0 0 3px #2563eb33}.login button{width:100%;margin:1em 0 0;border-radius:10px;font-weight:600}
 #pe{color:#dc2626;font-size:.85rem;min-height:1.2em;margin-top:.6em}
+.prog{margin:-.2em 0 1em}.pt{display:flex;justify-content:space-between;font-size:.9rem;color:#334155;margin-bottom:.4em}.pt span{color:#64748b}
+.bar{height:6px;background:#e5e7eb;border-radius:99px;overflow:hidden}.bar div{height:100%;background:linear-gradient(90deg,#2563eb,#60a5fa);border-radius:99px;transition:width .3s}
 </style></head><body><h1>AIP-C01 Practice</h1><div class="card" id="app"></div><script>
 // ===== Password: change it here =====
 const QUIZ_PASSWORD="1234";
@@ -27,7 +29,7 @@ const PDF_URL="AIP-C01-ExamTopics.pdf";
 let Q=[];let i=0,score=0,stats={},done=false;
 const app=document.getElementById('app');
 function show(){const q=Q[i];done=false;const multi=q.answer.length>1;
-app.innerHTML=`<div class="meta">${i+1}/${Q.length} · ${q.id} · ${q.domain} · Score ${score}</div><p>${esc(q.question)}</p>`+
+app.innerHTML=`<div class="prog"><div class="pt"><b>第 ${i+1} / ${Q.length} 题</b><span>得分 ${score}</span></div><div class="bar"><div style="width:${((i+1)/Q.length*100).toFixed(1)}%"></div></div></div><div class="meta">${q.id} · ${q.domain}</div><p>${esc(q.question)}</p>`+
 Object.entries(q.options).map(([k,v])=>`<label id="l${k}"><input type="${multi?'checkbox':'radio'}" name="o" value="${k}"> <b>${k}.</b> ${esc(v)}</label>`).join('')+
 `<button id="sb" onclick="check()">Submit</button><button class="sec" onclick="finish()">End</button><div id="fb"></div>`;}
 function check(){if(done)return;const q=Q[i];const sel=[...document.querySelectorAll('input:checked')].map(e=>e.value).sort().join('');if(!sel)return;done=true;document.getElementById("sb").style.display="none";document.querySelectorAll("input").forEach(e=>e.disabled=true);
