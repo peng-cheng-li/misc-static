@@ -28,7 +28,7 @@ const QUIZ_PASSWORD="1234";
 const PDF_URL="AIP-C01-ExamTopics.pdf";
 let Q=[];let i=0,score=0,stats={},done=false;
 const app=document.getElementById('app');
-function show(){const q=Q[i];done=false;const multi=q.answer.length>1;
+function show(){scrollTo(0,0);const q=Q[i];done=false;const multi=q.answer.length>1;
 app.innerHTML=`<div class="prog"><div class="pt"><b>第 ${i+1} / ${Q.length} 题</b><span>得分 ${score}</span></div><div class="bar"><div style="width:${((i+1)/Q.length*100).toFixed(1)}%"></div></div></div><div class="meta">${q.id} · ${q.domain}</div><p>${esc(q.question)}</p>`+
 Object.entries(q.options).map(([k,v])=>`<label id="l${k}"><input type="${multi?'checkbox':'radio'}" name="o" value="${k}"> <b>${k}.</b> ${esc(v)}</label>`).join('')+
 `<button id="sb" onclick="check()">Submit</button><button class="sec" onclick="finish()">End</button><div id="fb"></div>`;}
