@@ -17,7 +17,8 @@
    },
    "answer": "C",
    "explanation": "Aspect\n\nOption B (My Original Pick)\n\nOption C (Correct)\n\nFairness measurement\n\n❌ Guardrails detect harmful content, not bias/fairness across demographics — this is a proxy at best\n\n✅ SageMaker Clarify is purposebuilt for bias detection with actual statistical fairness metrics (DPL, KL divergence, demographic parity)\n\n15% discrepancy detection\n\n❌ InvocationsIntervened measures guardrail triggers, not recommendation disparity between demographic groups\n\n✅ Clarify computes actual fairness metrics that can directly measure % discrepancy between demographic groups\n\n✅ Guardrails are inline\n\n✅ Publishing Clarify metrics to CloudWatch enables continuous monitoring and alerting\n\nReal-time monitoring\n\nComprehensive ❌ Content filtering is oneevaluation dimensional\n\n✅ Composite alarms combine bias metrics + latency (if the system is systematically slower for certain groups, that's also a fairness concern)",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 1
   },
   {
    "id": "Q002",
@@ -35,7 +36,8 @@
    },
    "answer": "ADF",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 2
   },
   {
    "id": "Q003",
@@ -51,7 +53,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 3
   },
   {
    "id": "Q004",
@@ -67,7 +70,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 3
   },
   {
    "id": "Q005",
@@ -83,7 +87,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 4
   },
   {
    "id": "Q006",
@@ -99,7 +104,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 5
   },
   {
    "id": "Q007",
@@ -115,7 +121,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 6
   },
   {
    "id": "Q008",
@@ -131,7 +138,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 6
   },
   {
    "id": "Q009",
@@ -147,7 +155,8 @@
    },
    "answer": "B",
    "explanation": "Requirement\n\nHow Option B Addresses It\n\nVersion control for hundreds of templates\n\nAmazon Bedrock Prompt Management natively supports creating, organizing, and versioning prompt templates — purpose-built for this exact use case\n\nMulti-team, multi-Region usage\n\nBedrock Prompt Management is a managed service accessible across regions; IAM policies ensure consistent access control across teams\n\nApproval workflows with permissions\n\nIAM policies control who can create, update, publish, or approve prompt versions — enforcing role-based approval gates (e.g., only reviewers can promote a draft to production)\n\nDetailed audit trails\n\nAWS CloudTrail captures all Bedrock API calls including CreatePrompt, UpdatePrompt, GetPrompt, and CreatePromptVersion — providing comprehensive documentation of all prompt activities\n\nBedrock Prompt Management natively supports parameterized Consistent templates with variables (e.g., {{tone}}, {{audience}}, parameterization {{content_type}}), enforcing quality standards across teams",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 7
   },
   {
    "id": "Q010",
@@ -163,7 +172,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 8
   },
   {
    "id": "Q011",
@@ -180,7 +190,8 @@
    },
    "answer": "AD",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 9
   },
   {
    "id": "Q012",
@@ -196,7 +207,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 10
   },
   {
    "id": "Q013",
@@ -213,7 +225,8 @@
    },
    "answer": "BD",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 10
   },
   {
    "id": "Q014",
@@ -229,7 +242,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 11
   },
   {
    "id": "Q015",
@@ -245,7 +259,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 12
   },
   {
    "id": "Q016",
@@ -262,7 +277,8 @@
    },
    "answer": "AB",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 13
   },
   {
    "id": "Q017",
@@ -278,7 +294,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 14
   },
   {
    "id": "Q018",
@@ -294,7 +311,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 14
   },
   {
    "id": "Q019",
@@ -310,7 +328,8 @@
    },
    "answer": "D",
    "explanation": "This solution satisfies all three requirements:\n•\n\n•\n\n•\n\nData source registration — AWS Glue Data Catalog serves as a centralized metadata repository where you can register and catalog all internal and external data sources used by the GenAI application.\nMetadata tagging for attribution — Glue Data Catalog natively supports metadata tagging on cataloged objects (databases, tables, columns), allowing you to attribute generated content back to its original source.\nAudit logs across the pipeline — AWS CloudTrail provides comprehensive logging of API activity across services, giving you a full audit trail of data access and usage throughout the entire pipeline.",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 15
   },
   {
    "id": "Q020",
@@ -326,7 +345,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 16
   },
   {
    "id": "Q021",
@@ -342,7 +362,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 16
   },
   {
    "id": "Q022",
@@ -359,7 +380,8 @@
    "answer": "A",
    "explanation": "",
    "note": "No answer in PDF; A chosen (only fully automated metric-driven rollback option)",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 17
   },
   {
    "id": "Q023",
@@ -375,7 +397,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 19
   },
   {
    "id": "Q024",
@@ -391,7 +414,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 20
   },
   {
    "id": "Q025",
@@ -407,7 +431,8 @@
    },
    "answer": "A",
    "explanation": "Architecture Flow Business Unit Request │ ▼ ┌────────────────────┐ │ Lambda Function │ │ (Model-specific │ │ tokenizer) │ │ │ │ 1. Count tokens │──▶ Publish metrics to CloudWatch │ 2. Check threshold │──▶ Alarm if approaching limit ⚠ │ 3. Log to DynamoDB │──▶ Cost allocation by BU │ 4. If within limit │ │ → Send to │ │ Bedrock │ └────────────────────┘ │ ▼ ┌────────────────────┐ ┌────────────────────┐ │ Amazon Bedrock FM │ │ CloudWatch │ │ (Invoke model) │ │ • Token usage │ └────────────────────┘ │ dashboards │ │ • Threshold alarms │ │ • Per-BU metrics │ └────────────────────┘",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 20
   },
   {
    "id": "Q026",
@@ -423,7 +448,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 22
   },
   {
    "id": "Q027",
@@ -439,7 +465,8 @@
    },
    "answer": "B",
    "explanation": "DynamoDB has a 400 KB item size limit — may still be insufficient for large reasoning traces. Map state is designed for parallel iteration, not sequential data retrieval. Adds an entirely new service (DynamoDB) to manage\n\nCompression/decompression Lambda functions at every state boundary adds 6 additional Lambda invocations (compress + decompress × 3 states). No guarantee compressed output fits under 256 KB. Significant development and maintenance overhead",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 22
   },
   {
    "id": "Q028",
@@ -455,7 +482,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 23
   },
   {
    "id": "Q029",
@@ -471,7 +499,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 24
   },
   {
    "id": "Q030",
@@ -488,7 +517,8 @@
    },
    "answer": "AB",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 25
   },
   {
    "id": "Q031",
@@ -504,7 +534,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 26
   },
   {
    "id": "Q032",
@@ -520,7 +551,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 27
   },
   {
    "id": "Q033",
@@ -537,7 +569,8 @@
    "answer": "B",
    "explanation": "",
    "explanationSource": "none in source PDF",
-   "note": "Answer from PDF; reviewer considers it debatable"
+   "note": "Answer from PDF; reviewer considers it debatable",
+   "source_pdf_page": 27
   },
   {
    "id": "Q034",
@@ -554,7 +587,8 @@
    },
    "answer": "AC",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 28
   },
   {
    "id": "Q035",
@@ -570,7 +604,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 29
   },
   {
    "id": "Q036",
@@ -589,7 +624,8 @@
    "answer": "ABE",
    "explanation": "but the AI and me picked ABD\n\nRequirement\n\nHow A Addresses It\n\nExtract structured data from scanned documents\n\nTextract is purpose-built for extracting structured data (forms, tables, key-value pairs) from scanned financial documents\n\nRoute low-confidence to human reviewers in same Region\n\nA2I natively routes low-confidence extraction results to human review workflows, deployed within the same Region as the applicant\n\nRequirement\n\nHow B Addresses It\n\nRedact PII before inference\n\nLambda functions detect and redact PII from documents before they're sent to Bedrock — ensuring no PII enters the model\n\nSafe model outputs\n\nBedrock guardrails prevent inappropriate or unauthorized content in generated loan decisions\n\nRegional data residency\n\nRegion-specific IAM roles enforce that data stays within the required Region and controls access to extracted data\n\nRequirement\n\nHow D Addresses It\n\nRegional data residency\n\nIAM policies enforce that original documents are stored in the same Region as each applicant — strict compliance\n\nAuditability\n\nObject metadata and tagging create a durable, queryable audit trail for every document processed\n\nDurable storage\n\nS3 provides 99.999999999% durability for original loan documents\n\nEnd-to-End Architecture Flow Scanned Documents │ ▼ ┌──────────────┐ ┌───────────────┐ ┌──────────────┐ │ Amazon S3 │────▶│ Amazon │────▶│ AWS Lambda │ │ (Regional │ │ Textract │ │ (PII │ │ storage + │ │ (Extract │ │ Redaction) │ │ tagging) │ │ structured │ │ │ │ [D] │ │ data) [A] │ │ [B] │ └──────────────┘ └───────┬───────┘ └──────┬───────┘ │ │ Low confidence?\n▼ │ ┌──────────────┐ ▼ │ Amazon │ ┌──────────────┐ │ Bedrock │ │ Amazon A2I │ │ (Generate │ │ (Human │ │ approval + │ │ review, │ │ guardrails) │ │ same Region)│ │ [B] │ │ [A] │ └──────────────┘ └──────────────┘",
    "explanationSource": "ExamTopics PDF (community discussion)",
-   "note": "PDF says ABE; commenter argues ABD — debatable"
+   "note": "PDF says ABE; commenter argues ABD — debatable",
+   "source_pdf_page": 30
   },
   {
    "id": "Q037",
@@ -605,7 +641,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 32
   },
   {
    "id": "Q038",
@@ -621,7 +658,8 @@
    },
    "answer": "B",
    "explanation": "The key differentiator between B and D: RetrieveAndGenerate is purpose-built to return grounded, cited responses in a single managed API call. Option D manually replicates this with Retrieve + InvokeModel + custom verification — achieving the same outcome with significantly more operational overhead.",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 33
   },
   {
    "id": "Q039",
@@ -637,7 +675,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 34
   },
   {
    "id": "Q040",
@@ -653,7 +692,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 35
   },
   {
    "id": "Q041",
@@ -669,7 +709,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 35
   },
   {
    "id": "Q042",
@@ -685,7 +726,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 36
   },
   {
    "id": "Q043",
@@ -701,7 +743,8 @@
    },
    "answer": "C",
    "explanation": "Requirement\n\nHow C Addresses It\n\nOmitted key context\n\nSemantic chunking keeps legally connected information together — a complete court opinion or statute reference stays in one chunk instead of being split mid-argument\n\nOutdated citations\n\nProperly bounded chunks ensure full context for each legal concept, enabling the model to distinguish current vs. superseded law\n\nImproved retrieval relevance\n\nSemantically coherent chunks produce higher quality embeddings — vectors better represent the actual meaning of the legal content\n\n40% latency increase / p95 > 2s\n\nBetter embeddings = more relevant results in fewer retrieval passes, reducing unnecessary re-ranking and post-processing overhead\n\n90 GB → 360 GB growth\n\nSemantic chunks are typically more efficient — fewer redundant/fragmented chunks means a cleaner, more scalable index",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 37
   },
   {
    "id": "Q044",
@@ -718,7 +761,8 @@
    "answer": "B",
    "explanation": "Requirement\n\nHow B Addresses It\n\nConversational context\n\nDynamoDB provides single-digit millisecond key-value lookups by session/user ID — ideal for retrieving conversation history across interactions\n\nClarification workflows\n\nStandard workflows support Wait for Callback (.waitForTaskToken) — the workflow pauses, sends a clarification prompt to the user, and resumes only when the user responds. Purpose-built for human-inthe-loop patterns\n\nEncrypted conversation records\n\nDynamoDB server-side encryption encrypts all data at rest using AWS KMS — meets the encryption requirement natively\n\nPersonalization\n\nDynamoDB is a durable, persistent store — conversation history remains available for long-term personalization\n\nThousands of concurrent users\n\nDynamoDB on-demand capacity auto-scales instantly with no capacity planning — handles spiky, high-concurrency workloads\n\nFast response times\n\nDynamoDB single-digit ms latency + Standard workflows efficiently orchestrate steps\n\nClarification Workflow Pattern User sends ambiguous query │ ▼ ┌────────────────────┐ │ Step Functions │ │ Standard Workflow │ │ │ │ 1. Detect ambiguity│ │ 2. Send clarifying │──── Pause (Wait for Callback) ────┐ │ question │ │\n\n│ │◀── User responds with taskToken ────┘ │ 3. Resume with │ │ clarified input │ │ 4. Call Bedrock FM │ │ 5. Return response │ └────────────────────┘ Why Option C is wrong:\n\nS3 with separate JSON files per interaction is high-latency for conversational context retrieval (S3 GET per turn). No orchestration mechanism for clarification workflows — API Gateway + Lambda alone can't pause and wait for user responses",
    "explanationSource": "ExamTopics PDF (community discussion)",
-   "note": "PDF says B; Step Functions Standard for thousands of concurrent fast chats is debatable (Express lacks callbacks)"
+   "note": "PDF says B; Step Functions Standard for thousands of concurrent fast chats is debatable (Express lacks callbacks)",
+   "source_pdf_page": 38
   },
   {
    "id": "Q045",
@@ -734,7 +778,8 @@
    },
    "answer": "B",
    "explanation": "AWS Glue crawler to catalog → Glue ETL for transformations → Glue Data Quality for validation/monitoring → Load into Bedrock.\n\nRequirement\n\nHow B Addresses It\n\nValidate data quality\n\nAWS Glue Data Quality is purpose-built for this — define rules, validate datasets, and flag quality issues automatically\n\nCreate auditable metadata\n\nGlue crawler automatically catalogs data sources, creating a searchable, auditable metadata catalog in the Glue Data Catalog\n\nMonitor data metrics\n\nGlue Data Quality natively tracks and monitors quality metrics over time with built-in dashboards and CloudWatch integration\n\nCustomize text chunking\n\nGlue ETL jobs support custom transformation scripts (Python/Spark) — full flexibility to implement domain-specific chunking strategies for financial documents\n\nLeast Glue provides an end-to-end managed pipeline — cataloging, development transformation, and quality validation in one service. No custom effort infrastructure to manage\n\nWhy Option A is wrong: SageMaker Data Wrangler is focused on ML feature engineering, not unstructured text pre-processing. Custom Lambda for pre-processing adds development effort.\nCloudWatch alone doesn't provide structured data quality validation and auditable metadata",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 40
   },
   {
    "id": "Q046",
@@ -750,7 +795,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 41
   },
   {
    "id": "Q047",
@@ -766,7 +812,8 @@
    },
    "answer": "A",
    "explanation": "Algorithm\n\nType\n\nAccuracy\n\nBest For\n\nFlat\n\nExact Nearest Neighbor\n\n100% (no approximation)\n\nSmall datasets — scans all vectors\n\nHNSW\n\nApproximate Nearest Neighbor\n\n~95-99% (tunable)\n\nLarge datasets — trades accuracy for speed\n\nIVFFlat\n\nApproximate Nearest Neighbor\n\nVariable (probedependent)\n\nMedium-large datasets — clusters vectors first",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 42
   },
   {
    "id": "Q048",
@@ -782,7 +829,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 43
   },
   {
    "id": "Q049",
@@ -798,7 +846,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 44
   },
   {
    "id": "Q050",
@@ -814,7 +863,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 44
   },
   {
    "id": "Q051",
@@ -830,7 +880,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 45
   },
   {
    "id": "Q052",
@@ -846,7 +897,8 @@
    },
    "answer": "C",
    "explanation": "Requirement\n\nHow C Addresses It\n\nHost MCP server\n\nLambda function runs the MCP server logic — serverless, scalable\n\nAI agent accesses MCP server\n\nAPI Gateway HTTP API provides a stable HTTP endpoint that proxies to the Lambda function\n\nMCP transport protocol\n\nStreamable HTTP is the MCP spec's standard transport for remote servers — purpose-built for client-server MCP communication over HTTP\n\nOnly authorized users\n\nAmazon Cognito with OAuth 2.1 is the MCP specification's recommended authorization framework — enforces token-based access control at the API layer\n\nArchitecture Flow ┌──────────────┐ Streamable HTTP ┌──────────────┐ Proxy ┌──────────────┐ │ AI Agent │──────────────────────▶│ API Gateway │───────────▶│ Lambda │ │ (Lambda │ + OAuth 2.1 Token │ HTTP API │ │ MCP Server │ │ functions) │◀──────────────────────│ │◀───────────│ │ │ │ MCP Responses │ + Cognito │ │ (User Info) │ └──────────────┘ │ Authorizer │ └──────────────┘ └──────────────┘",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 46
   },
   {
    "id": "Q053",
@@ -862,7 +914,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 47
   },
   {
    "id": "Q054",
@@ -878,7 +931,8 @@
    },
    "answer": "B",
    "explanation": "Workflow Flow ┌──────────────┐ ┌──────────────────┐ ┌─────────────────┐ ┌──────────────┐ │ S3 GetObject │───▶│ Pass State │───▶│ Bedrock │───▶│ S3 PutObject │ │ (Retrieve │ │ (Intrinsic fn │ │ InvokeModel │ │ (Store model │ │ template) │ │ parses specific │ │ (Review content)│ │ response) │ │ │ │ portion) │ │ │ │ │ └──────────────┘ └──────────────────┘ └─────────────────┘ └──────────────┘\n\nRequirement\n\nHow B Addresses It\n\nRetrieve communications from S3\n\nNative S3 SDK integration with GetObject step — no Lambda needed\n\nCapture a specific portion from template\n\nIntrinsic functions in a Pass state can parse, extract, and transform JSON data deterministically — perfect for extracting specific template sections\n\nSend to Bedrock model\n\nNative Bedrock InvokeModel SDK integration — direct service call, no intermediary\n\nStore responses back to S3\n\nNative S3 PutObject integration writes results back to the original bucket\n\nWorkflow orchestration\n\nExpress workflows handle short-duration, high-volume sequential processing efficiently\n\nWhy option A is not correct: Bedrock Flows does not have native S3 action nodes for reading/writing objects or expression nodes for deterministic template parsing. It's designed for FM-centric orchestration, not file-level S3 operations",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 48
   },
   {
    "id": "Q055",
@@ -894,7 +948,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 50
   },
   {
    "id": "Q056",
@@ -910,7 +965,8 @@
    },
    "answer": "A",
    "explanation": "Architecture Flow Patient Query │ ▼\n\n┌─────────────┐ │ Supervisor │ ← NLU intent classification │ Agent │ └──────┬──────┘ │ Routes based on intent ├──────────────┬──────────────┬──────────────┐ ▼ ▼ ▼ ▼ ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐ │ Clinical │ │ Insurance │ │ Scheduling│ │ Claims │ │ Agent │ │ Verify │ │ Agent │ │ Agent │ │ │ │ Agent │ │ │ │ │ └─────┬─────┘ └─────┬─────┘ └─────┬─────┘ └─────┬─────┘ ▼ ▼ ▼ ▼ ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐ │ Clinical │ │ Insurance │ │ Scheduling│ │ Claims │ │ KB │ │ KB │ │ KB │ │ KB │ └───────────┘ └───────────┘ └───────────┘ └───────────┘",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 50
   },
   {
    "id": "Q057",
@@ -926,7 +982,8 @@
    },
    "answer": "C",
    "explanation": "Requirement\n\nHow C Addresses It\n\nDev and Single CodePipeline with separate deployment stages for each production environment — clean, consistent CI/CD environments Easily switch between FMs\n\nfromFoundationModelId() references on-demand FMs by a simple model ID string (e.g., anthropic.claude-3-sonnet). Switching models is just a parameter change — no infrastructure reprovisioning needed\n\nTest various FMs\n\nEach environment stage can use different model IDs via environmentspecific configuration/context variables, letting product owners swap FMs without code changes\n\nSingle codebase\n\nOne CDK app ensures consistency across environments — DRY principle, easy maintenance\n\nVisual Pipeline Flow ┌──────────┐ ┌───────┐ ┌────────────┐ ┌──────────┐ ┌─────────────┐ │ Source │───▶│ Build │───▶│ Deploy Dev │───▶│ Approval │───▶│ Deploy Prod │ │ (GitHub) │ │ (CDK) │ │ (Claude │ │ (Manual) │ │ (Claude │ │ │ │ │ │ Haiku) │ │ │ │ Sonnet) │\n\n└──────────┘ └───────┘ └─────────────┘\n\n└────────────┘\n\n└──────────┘",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 52
   },
   {
    "id": "Q058",
@@ -942,7 +999,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 54
   },
   {
    "id": "Q059",
@@ -958,7 +1016,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 54
   },
   {
    "id": "Q060",
@@ -974,7 +1033,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 55
   },
   {
    "id": "Q061",
@@ -990,7 +1050,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 56
   },
   {
    "id": "Q062",
@@ -1006,7 +1067,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 56
   },
   {
    "id": "Q063",
@@ -1022,7 +1084,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 57
   },
   {
    "id": "Q064",
@@ -1038,7 +1101,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 58
   },
   {
    "id": "Q065",
@@ -1054,7 +1118,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 59
   },
   {
    "id": "Q066",
@@ -1071,7 +1136,8 @@
    },
    "answer": "BC",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 59
   },
   {
    "id": "Q067",
@@ -1088,7 +1154,8 @@
    },
    "answer": "BC",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 60
   },
   {
    "id": "Q068",
@@ -1104,7 +1171,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 61
   },
   {
    "id": "Q069",
@@ -1120,7 +1188,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 61
   },
   {
    "id": "Q070",
@@ -1136,7 +1205,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 62
   },
   {
    "id": "Q071",
@@ -1152,7 +1222,8 @@
    },
    "answer": "B",
    "explanation": "🗳\n\nRequirement\n\nHow B solves it\n\nEuropean data residency\n\nGeographic codes like eu.* in the inference profile ID guarantee that all European inference stays within European Regions — built into the profile, not custom logic\n\nLow latency (EU + NA)\n\nSeparate API Gateway HTTP APIs route European users to eu.* profiles and North American users to us.* profiles — each geography served locally\n\nTraffic spike resilience\n\nCross-Region inference profiles automatically distribute load across multiple Regions within the geography — if eu-west-1 hits quota, traffic routes to eu-central-1 seamlessly\n\nMinimize operational complexity\n\nTwo configurations: geographic inference profiles + API Gateway routing. No custom failover code, no retry logic, no manual monitoring",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 63
   },
   {
    "id": "Q072",
@@ -1168,7 +1239,8 @@
    },
    "answer": "B",
    "explanation": "🗳 Requirement\n\nHow B solves it\n\nData residency\n\nKnowledge bases stored in S3 in each Region — proprietary data never leaves its geographic area. Vector databases via Bedrock Knowledge Bases are also Regional\n\nNear realtime, low latency\n\nBedrock model available in each Region + cross-Region inference profile provides geographic routing with automatic failover — users always hit the nearest available model\n\nMultiple geographic areas\n\nEach Region has its own S3 bucket + Knowledge Base + vector database — complete RAG stack per geography\n\nRAG architecture\n\nBedrock Knowledge Bases with vector database is the native, managed RAG solution — retrieval and generation are integrated\n\nGeographic inference boundary\n\nCross-Region inference profiles (e.g., us.*, eu.*) guarantee inference stays within the geographic boundary — proprietary data in prompts doesn't leave the continent",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 64
   },
   {
    "id": "Q073",
@@ -1184,7 +1256,8 @@
    },
    "answer": "D",
    "explanation": "🗳\n\nRequirement\n\nHow D solves it\n\nTwo environments (Python + JavaScript)\n\nAWS SDKs provide the same Converse API interface in both languages — boto3 (Python/Lambda) and @aws-sdk/client-bedrockruntime (JavaScript/EKS). Identical API structure, native language implementation\n\nConverse API's messages array natively carries conversation history Conversational — pass previous turns in each request. No external state store context needed Same FM across environments\n\nConverse API uses a unified, model-agnostic interface — same request/response format regardless of which FM is selected. Switch models without code changes\n\nConsistent authentication\n\nIAM roles for both environments — Lambda execution role and EKS pod IAM role (via IRSA/Pod Identity). Same authentication mechanism everywhere",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 66
   },
   {
    "id": "Q074",
@@ -1200,7 +1273,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 67
   },
   {
    "id": "Q075",
@@ -1217,7 +1291,8 @@
    "answer": "C",
    "explanation": "🗳\n\nRequirement\n\nHow C solves it\n\nMCP server compatibility\n\nStreamable HTTP is the standard MCP transport protocol — Lambda function URLs support streaming responses natively, enabling proper MCP communication\n\nStateless Lambda deployment\n\nMCP servers \"do not maintain states between invocations\" — aligns perfectly with Lambda's stateless execution model. Function URLs expose each Lambda directly as an HTTP endpoint\n\nInternal + third-party access\n\nInternal apps use IAM roles natively. Third-party partners are granted IAM users/roles with InvokeFunctionUrl permissions — standard cross-account access pattern\n\nSigV4 signing + IAM authentication provides the strictest Strict auth & authentication mechanism in AWS. Fine-grained InvokeFunctionUrl authorization permissions control exactly who can invoke each MCP server Least operational overhead\n\nNo API Gateway, no Cognito, no additional services — Lambda function URLs are a zero-cost, built-in feature of Lambda",
    "explanationSource": "ExamTopics PDF (community discussion)",
-   "note": "PDF says C; D (API Gateway + Cognito OAuth for third parties) is a strong alternative"
+   "note": "PDF says C; D (API Gateway + Cognito OAuth for third parties) is a strong alternative",
+   "source_pdf_page": 68
   },
   {
    "id": "Q076",
@@ -1233,7 +1308,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 69
   },
   {
    "id": "Q077",
@@ -1249,7 +1325,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 70
   },
   {
    "id": "Q078",
@@ -1265,7 +1342,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 70
   },
   {
    "id": "Q079",
@@ -1281,7 +1359,8 @@
    },
    "answer": "B",
    "explanation": "🗳\n\nSure, . Let me break down Option B in detail.\n\nOption B — Component-by-Component Analysis 1. Retrieve-and-Generate Evaluation Job Aspect\n\nDetail\n\nWhat it does\n\nEvaluates the full RAG pipeline end-to-end — from document retrieval through FM response generation\n\nWhy it matters\n\nRetrieval quality alone doesn't guarantee generation quality. A chunking strategy might retrieve perfect passages, but the FM might still hallucinate.\nOnly retrieve-and-generate captures this interaction\n\nMedical For medical information, you need confidence that the final answer (not just context the retrieved chunks) is accurate and complete\n\n2. Custom Precision at K Metrics Aspect\n\nDetail\n\nWhat it measures\n\nOf the top K retrieved chunks, how many are actually relevant to the query\n\nHow it compares chunking strategies\n\nStrategy A (500-token chunks) might achieve precision@5 = 0.80, while Strategy B (1000-token chunks) might achieve 0.60 — directly quantifiable comparison\n\nWhy \"custom\"\n\nThe company defines what \"relevant\" means for medical content — stricter than generic relevance for a healthcare use case\n\nExample:\nChunking Strategy\n\nPrecision@3\n\nPrecision@5\n\nPrecision@10\n\n500-token fixed\n\n0.67\n\n0.60\n\n0.50\n\n1000-token semantic\n\n0.83\n\n0.78\n\n0.65\n\nHierarchical\n\n0.90\n\n0.82\n\n0.70\n\n3. LLM-as-a-Judge with 1-5 Scale Aspect\n\nDetail\n\nHow it works\n\nClaude Sonnet reads the original query, retrieved context, and generated response — then scores the response on a 1-5 scale\n\nWhy 1-5 scale\n\nProvides granular, quantitative scoring — enables threshold enforcement (e.g., \"must average ≥ 4.0 to deploy\")\n\nEvaluating Both FMs answer the same queries with the same retrieved context — 2 FMs Claude judges both, producing directly comparable scores Scoring example:\n\nFM A Score\n\nFM B Score\n\n\"Dosage for metformin?\"\n\n5\n\n4\n\nFM A cited exact guidelines; FM B was slightly vague\n\n\"Contraindications for aspirin?\"\n\n3\n\n5\n\nFM A missed renal impairment; FM B was comprehensive\n\n\"Symptoms of Type 2 diabetes?\"\n\n4\n\n4\n\nBoth accurate and complete\n\nQuery\n\nReasoning\n\n4. Evaluation Dataset Design Each entry in the evaluation dataset combines a chunking strategy with test queries:\nQuery: \"What are the side effects of lisinopril?\" ├── Chunking Strategy A (500-token) → retrieves chunks → FM A generates → scored ├── Chunking Strategy A (500-token) → retrieves chunks → FM B generates → scored ├── Chunking Strategy B (semantic) → retrieves chunks → FM A generates → scored └── Chunking Strategy B (semantic) → retrieves chunks → FM B generates → scored\n\n5. Quality Threshold Enforcement The 1-5 scoring directly enables deployment gating:\nMetric\n\nThreshold\n\nStrategy A + FM A\n\nStrategy B + FM B\n\nAvg generation score\n\n≥ 4.0\n\n3.8 ❌\n\n4.5 ✅\n\nPrecision@5\n\n≥ 0.75\n\n0.60 ❌\n\n0.82 ✅\n\nFaithfulness\n\n≥ 4.0\n\n4.2 ✅\n\n4.7 ✅\n\nOnly combinations meeting all thresholds are approved for deployment.\n\nWhy This Matters for Medical Use Cases Medical RAG systems have zero tolerance for inaccuracy. Option B's configuration ensures:\n• • • •\n\nChunking comparison → best retrieval strategy selected via precision metrics FM comparison → best generation model selected via judge scores Threshold enforcement → only combinations exceeding quality bars reach production Single unified evaluation → chunking × FM interactions are captured holistically\n\nThis is why a retrieve-and-generate evaluation with quantitative scoring is essential — you're making deployment decisions that directly impact patient safety.",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 71
   },
   {
    "id": "Q080",
@@ -1297,7 +1376,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 75
   },
   {
    "id": "Q081",
@@ -1314,7 +1394,8 @@
    },
    "answer": "BD",
    "explanation": "🗳\n\nD → Stack sets deploy guardrails (block policy) to every account B → SCP ensures employees can ONLY use approved models AND must specify the guardrail ID in every call\n\nWhy Option A is wrong: Result: every Bedrock invocation is restricted to approved models and filtered through the deployed guardrail\n\nplits enforcement across two different mechanisms unnecessarily. Permissions boundaries must be managed per IAM role — more overhead than a single SCP that handles both constraints. B consolidates both requirements into one SCP",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 76
   },
   {
    "id": "Q082",
@@ -1330,7 +1411,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 77
   },
   {
    "id": "Q083",
@@ -1346,7 +1428,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 77
   },
   {
    "id": "Q084",
@@ -1362,7 +1445,8 @@
    },
    "answer": "A",
    "explanation": "🗳\n\nRequirement\n\nHow A solves it\n\n99.5% output consistency\n\nPrompt Management with approval workflows ensures identical, vetted prompts are used consistently across all Regions — no prompt drift or unauthorized changes. Provisioned throughput provides dedicated model capacity, eliminating variability from shared infrastructure\n\nInference latency < 1 second\n\nProvisioned throughput guarantees dedicated compute capacity — eliminates queuing delays, cold starts, and throttling that cause slow inference during the retrieval step\n\nGuardrails with semantic denial rules evaluate outputs against Block unsafe safety policies — detects and blocks dangerous recommendations recommendations (e.g., excessive brewing temperatures) before they reach users",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 78
   },
   {
    "id": "Q085",
@@ -1379,7 +1463,8 @@
    "answer": "C",
    "explanation": "🗳\n\nRequirement\n\nHow C solves it\n\nData residency & storage compliance\n\nRegion-specific S3 bucket policies enforce that data stays in the correct geographic Region. S3 Object Lock provides WORM (Write Once Read Many) compliance — data cannot be tampered with or deleted, meeting strict regulatory retention requirements\n\nProcessing within same continent\n\nPre-processing data within the Region based on geographic origin ensures that European data is processed in European Regions, Asian data in Asian Regions, etc. — before it ever reaches Bedrock\n\nAudit trails of decisionmaking\n\nCloudTrail immutable logs provide tamper-proof, regulatory-grade audit trails of all application activities and AI decision processes\n\nData classification capabilities\n\nAmazon Macie automatically discovers, classifies, and protects sensitive data — identifying PII, financial data, and other regulated content across the S3 data stores",
    "explanationSource": "ExamTopics PDF (community discussion)",
-   "note": "Answer from PDF; reviewer considers it debatable"
+   "note": "Answer from PDF; reviewer considers it debatable",
+   "source_pdf_page": 79
   },
   {
    "id": "Q086",
@@ -1395,7 +1480,8 @@
    },
    "answer": "A",
    "explanation": "🗳\n\nAspect Services involved\n\nOption A Guardrails, Model Evaluation, DynamoDB, CloudWatch\n\nAll fully Infrastructure serverless/managed — management zero cluster management\n\nOption C Agents, Knowledge Bases, Guardrails, OpenSearch, QuickSight OpenSearch requires cluster sizing, node management, scaling policies, index lifecycle\n\nSetup complexity\n\nConfigure guardrails + DynamoDB table + CloudWatch metrics\n\nSet up KB (vector store, data ingestion, chunking), Agents, OpenSearch cluster, QuickSight dashboards\n\nOperational overhead\n\nMinimal\n\nSignificantly more",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 81
   },
   {
    "id": "Q087",
@@ -1411,7 +1497,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 82
   },
   {
    "id": "Q088",
@@ -1427,7 +1514,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 83
   },
   {
    "id": "Q089",
@@ -1443,7 +1531,8 @@
    },
    "answer": "A",
    "explanation": "🗳\n\nCustomer Message → [Parallel Execution] ├── Toxicity Detection ├── Prompt Safety Classification\n\n└── PII Detection → [All pass?] → FM processing → [Any fail?] → Block/Flag",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 84
   },
   {
    "id": "Q090",
@@ -1459,7 +1548,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 85
   },
   {
    "id": "Q091",
@@ -1475,7 +1565,8 @@
    },
    "answer": "B",
    "explanation": "🗳\n\nRequirement\n\nHow B solves it\n\nPrevent PII exposure\n\nSensitive information filters are the specific Bedrock guardrail type designed to detect personal information (names, SSNs, account numbers, etc.)\n\nEvaluate effectiveness before production\n\nMask mode during development replaces detected PII with placeholders (e.g., {NAME}) — developers can see exactly where and what the guardrail catches, measure detection accuracy, and identify gaps without exposing real data\n\nProduction protection\n\nBlock mode in production prevents any response containing PII from reaching customers — strictest enforcement\n\nData residency\n\nDeploying a copy of the guardrail to each Region ensures all processing occurs locally where each customer is located — no crossRegion data movement\n\nOption A : Cross-Region directly violates data residency — customer data would traverse Regions. Detect mode only logs PII detections but still passes PII through to the user — doesn't prevent exposure in production",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 86
   },
   {
    "id": "Q092",
@@ -1492,7 +1583,8 @@
    "answer": "D",
    "explanation": "",
    "explanationSource": "none in source PDF",
-   "note": "Answer from PDF; reviewer considers it debatable"
+   "note": "Answer from PDF; reviewer considers it debatable",
+   "source_pdf_page": 88
   },
   {
    "id": "Q093",
@@ -1510,7 +1602,8 @@
    "answer": "CD",
    "explanation": "🗳\n\nRequirement\n\nHow D solves it\n\n\"As soon as new files are created\"\n\nS3 event notifications to EventBridge trigger immediately on object creation\n\nReliable invocation\n\nEventBridge rule matches S3 PutObject events and invokes the Step Functions workflow — this is the supported pattern for S3 → Step Functions\n\nRequirement\n\nHow C solves it\n\nAudio → text conversion\n\nTranscribe converts MP3 recordings to text with validated job completion\n\nStructured summaries + sentiment\n\nLambda constructs a well-engineered prompt with the transcript text, then invokes Bedrock FMs to produce structured analysis output\n\n20 MB recordings\n\nLambda handles reading large transcripts from S3 (Transcribe outputs to S3), avoiding Step Functions' 256 KB state payload limit",
    "explanationSource": "ExamTopics PDF (community discussion)",
-   "note": "PDF says CD; B+D (direct Bedrock invoke from Step Functions) is a plausible alternative"
+   "note": "PDF says CD; B+D (direct Bedrock invoke from Step Functions) is a plausible alternative",
+   "source_pdf_page": 88
   },
   {
    "id": "Q094",
@@ -1526,7 +1619,8 @@
    },
    "answer": "C",
    "explanation": "🗳 Requirement\n\nHow C solves it\n\nSurgeons see PII\n\nSurgeon Cognito group → ApplyGuardrail with a permissive configuration (no PII redaction) — full patient data visible\n\nEngineers get PII redacted\n\nEngineer Cognito group → ApplyGuardrail with sensitive information filters enabled — PII automatically masked in responses\n\nOnly reports < 3 years old\n\nS3 Lifecycle configuration automatically deletes reports older than 3 years from the bucket\n\nKnowledge base stays current\n\nDaily Lambda sync ensures the KB reflects the bucket's current state — including removals from Lifecycle expiration\n\nExisting architecture\n\nBuilds on the existing Bedrock KB and Cognito authentication — minimal new infrastructure",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 90
   },
   {
    "id": "Q095",
@@ -1542,7 +1636,8 @@
    },
    "answer": "D",
    "explanation": "🗳\n\nRequirement\n\nHow D solves it\n\nCorrelate technical + business metrics\n\nCloudWatch custom dashboards integrate operational metrics alongside imported business metrics — single pane of glass showing both dimensions\n\nAutomatic degradation alerts\n\nAnomaly detection automatically learns baseline patterns and detects deviations — no manual threshold tuning needed for \"degradation\" detection\n\nCorrelated alerting\n\nComposite alarms combine multiple individual alarms (e.g., latency spike AND conversion drop) — triggering only when correlated metrics together indicate a real issue\n\nStakeholder notifications\n\nSNS alarm actions deliver alerts to appropriate stakeholders when composite alarm conditions are met\n\nComprehensive Unified dashboards show technical metrics (token usage, latency, visibility errors) alongside business metrics (conversion, revenue)",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 91
   },
   {
    "id": "Q096",
@@ -1558,7 +1653,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 93
   },
   {
    "id": "Q097",
@@ -1574,7 +1670,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 94
   },
   {
    "id": "Q098",
@@ -1590,7 +1687,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 95
   },
   {
    "id": "Q099",
@@ -1606,7 +1704,8 @@
    },
    "answer": "D",
    "explanation": "🗳 This is fundamentally a prompt engineering problem — the FM isn't consistently following the instruction to include the promotional message. An output indicator is the standard technique to solve this:",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 96
   },
   {
    "id": "Q100",
@@ -1622,7 +1721,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 97
   },
   {
    "id": "Q101",
@@ -1638,7 +1738,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 98
   },
   {
    "id": "Q102",
@@ -1655,7 +1756,8 @@
    },
    "answer": "AD",
    "explanation": "🗳\n\nProblem\n\nHow D solves it\n\nCold start latency\n\nSetting minimum instances > 0 ensures at least one warm instance is always running — eliminates cold start delays that cause multi-second waits\n\nTime-tofirsttoken (TTFT)\n\nResponse streaming sends tokens to the user as they're generated rather than waiting for the full response — directly addresses the \"abandoned after 2 seconds waiting for the first token\" problem\n\np95 latency under 800ms\n\nStreaming delivers the first token in milliseconds once inference begins, combined with warm instances means no startup delay\n\nProblem\n\nHow A solves it\n\nModel loading latency\n\nModel preload upon container startup ensures weights are in GPU memory before any request arrives — no lazy loading delays\n\nDynamic batching groups concurrent requests into a single inference Throughput pass, improving GPU utilization and reducing per-request queuing time under load during peak traffic Uneven response times\n\nBatching smooths out latency variance by processing requests efficiently rather than sequentially\n\nTogether: warm instances (D) + preloaded models (A) = zero cold start. Streaming (D) = instant first token. Dynamic batching (A) = consistent performance under load.",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 98
   },
   {
    "id": "Q103",
@@ -1671,7 +1773,8 @@
    },
    "answer": "A",
    "explanation": "🗳 Requirement\n\nHow A solves it\n\nDynamic model selection\n\nFeature flags in AppConfig define model selection criteria — switch between models by updating configuration, not code\n\nNo code changes or redeployment\n\nThe AppConfig Agent Lambda extension retrieves configurations at runtime — model preferences are decoupled from application code entirely\n\nGradual 20% traffic rollout\n\nAppConfig's linear deployment strategy natively supports percentage-based rollouts (e.g., start at 20%, increment over time)\n\nAuto-rollback at >1% error rate\n\nAppConfig validation rules monitor error rates during deployment and automatically roll back if the threshold is exceeded\n\nMulti-Region\n\nAppConfig is a Regional service that can be configured identically across all three Regions",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 100
   },
   {
    "id": "Q104",
@@ -1688,7 +1791,8 @@
    },
    "answer": "AB",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 102
   },
   {
    "id": "Q105",
@@ -1704,7 +1808,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 102
   },
   {
    "id": "Q106",
@@ -1720,7 +1825,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 103
   },
   {
    "id": "Q107",
@@ -1736,7 +1842,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 104
   },
   {
    "id": "Q108",
@@ -1752,7 +1859,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 105
   },
   {
    "id": "Q109",
@@ -1768,7 +1876,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 106
   },
   {
    "id": "Q110",
@@ -1785,7 +1894,8 @@
    },
    "answer": "AC",
    "explanation": "Together: Prompt Management governs the prompt lifecycle (version, test, audit) → Flows operationalizes those prompts into integrated application workflows.\n\nRequirement\n\nHow A solves it\n\nVersion control\n\nPrompt Management provides native prompt versioning — create, iterate, and track prompt versions within the Bedrock console\n\nTest prompt variations\n\nParameterized variables allow testing different prompt variants against the same FM or across different FMs for each use case (assistants, graders, analytics)\n\nAudit trails\n\nPrompt Management natively integrates with CloudTrail — all prompt changes and usage are automatically logged without additional configuration\n\nConsistency\n\nVersioned prompts with parameters ensure all sub-applications reference the same approved prompt version\n\nRequirement\n\nHow C solves it\n\nIntegration into main application\n\nFlows creates managed workflows that chain FMs, prompts, and AWS services into production-ready pipelines for each subapplication\n\nConsistency across subapplications\n\nFlows connects directly with Prompt Management versioned prompts — all workflow nodes reference the same governed prompt versions\n\nLeast operational overhead\n\nFully managed, visual workflow builder — no custom orchestration code needed\n\nWhy C is not correct: Adds redundant operational overhead — Bedrock Prompt Management already integrates with CloudTrail for audit trails natively. AWS Config rules for prompt tracking require custom configuration and maintenance",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 106
   },
   {
    "id": "Q111",
@@ -1801,7 +1911,8 @@
    },
    "answer": "A",
    "explanation": "Issue\n\nHow A solves it\n\nExpired secrets not refreshed in time\n\nLambda functions retrieve and pass updated secret metadata as outputs at each workflow step — agents always receive fresh credentials because the data flows through the current execution, not a stale cache\n\nAgents using stale data despite drift alerts\n\nStep Functions Map states run agent workflows in parallel with freshly resolved secrets passed via Lambda outputs — the execution pipeline itself guarantees current data at each invocation rather than relying on alerts to trigger manual refresh\n\nOutdated templates causing cascading failures\n\nAWS AppConfig versions all prompt flows with feature gating — faulty templates can be instantly rolled back to a known-good version, preventing cascading propagation. AppConfig's deployment strategies (percentagebased rollout, automatic rollback on alarms) provide production-safe template management",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 108
   },
   {
    "id": "Q112",
@@ -1817,7 +1928,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 109
   },
   {
    "id": "Q113",
@@ -1834,7 +1946,8 @@
    },
    "answer": "AE",
    "explanation": "The combined architecture:\nKnowledge Base (E) → indexes all customer data with embeddings → retrieves only semantically relevant information Chunking (A) → if retrieved data still exceeds context limits → divides into processable segments → synthesizes comprehensive recommendation",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 110
   },
   {
    "id": "Q114",
@@ -1850,7 +1963,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 112
   },
   {
    "id": "Q115",
@@ -1866,7 +1980,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 112
   },
   {
    "id": "Q116",
@@ -1882,7 +1997,8 @@
    },
    "answer": "C",
    "explanation": "Requirement\n\nHow C solves it\n\nNear real-time for highconfidence\n\nFargate processes messages from the first queue, invokes the small model, and returns results immediately for scores ≥ 0.65\n\nAsync for lowconfidence\n\nRequests with confidence < 0.65 are placed on a second SQS queue — true asynchronous processing with the larger model\n\nScale for sudden spikes\n\nSQS absorbs traffic bursts as a buffer; Fargate auto-scales task count based on queue depth\n\nCost optimization\n\nThe large model is invoked only for requests routed to the second queue — requests with high confidence never touch it\n\nDecoupled components / high resiliency\n\nTwo SQS queues completely decouple: ingest → small model processing → large model processing. If any component fails, messages persist in the queue and are retried\n\nWhy Option A is wrong:\n\nThe larger model is called synchronously, directly violating the asynchronous processing requirement for low-confidence requests. Tightly coupled — API Gateway → small model → large\n\nmodel is a synchronous chain with no decoupling. A failure in the large model blocks the entire request",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 113
   },
   {
    "id": "Q117",
@@ -1898,7 +2014,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 115
   },
   {
    "id": "Q118",
@@ -1914,7 +2031,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 115
   },
   {
    "id": "Q119",
@@ -1930,7 +2048,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 116
   },
   {
    "id": "Q120",
@@ -1946,7 +2065,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 117
   },
   {
    "id": "Q121",
@@ -1962,7 +2082,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 117
   },
   {
    "id": "Q122",
@@ -1978,7 +2099,8 @@
    },
    "answer": "C",
    "explanation": ":\n\nRequirement Multi-step workflow orchestration\n\nHow C solves it Bedrock AgentCore orchestrates: input sanitization → knowledge retrieval → fact consistency check → recommendation generation\n\nTrusted knowledge retrieval\n\nCurated Amazon Kendra indexes provide retrieval from verified internal documents and real-time market data sources\n\nInput validation\n\nDedicated Lambda function sanitizes and validates inputs before FM processing\n\nReal-time problematic response detection\n\nPost-generation Lambda checks fact consistency on every response; SageMaker Model Monitor continuously tracks anomalies\n\nExplicit user ratings / feedback\n\nDynamoDB stores user feedback with low-latency writes\n\nA/B testing\n\nLambda function splits traffic between prompt/model variants — a clean, controllable approach\n\nTrack performance over time\n\nSageMaker Model Monitor provides continuous data drift and output anomaly tracking with historical dashboards\n\nImmutable, compliance-ready storage\n\nCloudTrail audit logs → S3 with Object Lock = write-once, tamperevident (WORM) storage meeting regulated audit retention requirements",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 118
   },
   {
    "id": "Q123",
@@ -1994,7 +2116,8 @@
    },
    "answer": "A",
    "explanation": ":\n\nRequirement\n\nHow A solves it\n\nMillions of embeddings\n\nOpenSearch's k-NN plugin (HNSW/Faiss/Lucene engines) natively indexes and searches millions of vectors efficiently\n\nHourly updates + new products\n\nMulti-node architecture supports index refresh operations and dynamic document ingestion without downtime\n\nMemory circuit breakers prevent out-of-memory crashes during Peak event traffic surges. Dedicated vector operation queues (thread pools) latency/failures isolate similarity search from other operations, preventing resource contention\n\nSurge capacity\n\nWhy C is wrong\n\nMulti-node horizontal scaling distributes vector search load across data nodes, and dedicated queues ensure vector operations get priority during peaks\n\nDesigned for RAG-based Q&A, not high-throughput product recommendation engines processing millions of embeddings. \"Custom vector partitioning\" and \"hierarchical metadata structures\" are not standard KB configuration options. Doesn't address the core performance/scaling problem",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 120
   },
   {
    "id": "Q124",
@@ -2010,7 +2133,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 122
   },
   {
    "id": "Q125",
@@ -2026,7 +2150,8 @@
    },
    "answer": "C",
    "explanation": "Requirement\n\nPII redaction\n\nHow C solves it Bedrock Guardrails sensitive information filters automatically detect and mask/block PII in both inputs and outputs — no separate service pipeline needed\n\nFormatting Lambda preprocessing functions standardize document formats inconsistencies before inference — straightforward, serverless, and scalable Consistent FM performance\n\nFew-shot prompting with standardized examples teaches the model how to handle different document types consistently — a technique, not additional infrastructure\n\nRegulatory compliance\n\nGuardrails natively log all PII handling decisions for audit trails, meeting financial regulation requirements out of the box\n\nLeast operational overhead\n\nGuardrails are configured once in the Bedrock console — no model training, no multi-service orchestration, no custom ML pipelines",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 122
   },
   {
    "id": "Q126",
@@ -2042,7 +2167,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 124
   },
   {
    "id": "Q127",
@@ -2058,7 +2184,8 @@
    },
    "answer": "A",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 125
   },
   {
    "id": "Q128",
@@ -2074,7 +2201,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 126
   },
   {
    "id": "Q129",
@@ -2090,7 +2218,8 @@
    },
    "answer": "B",
    "explanation": ":\n\nRequirement\n\nHow B solves it\n\nRelevant precedents at positions 15-40\n\nInitial retrieval still fetches 50 documents (capturing those buried results), then the cross-encoder reranker evaluates each querydocument pair holistically to re-score and surface the truly relevant ones to the top\n\nContext window (10 docs)\n\nAfter reranking, only the top 10 highest-scored documents are passed to the FM — perfectly fitting the constraint\n\n3-second latency\n\nReranking adds minimal overhead (typically hundreds of milliseconds).\nAmazon Bedrock knowledge bases support reranking natively, keeping the pipeline well within the SLA\n\nImproved relevance\n\nCross-encoders are fundamentally more accurate than bi-encoders (used in initial semantic search) because they process the query and document together rather than comparing pre-computed embeddings independently",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 127
   },
   {
    "id": "Q130",
@@ -2106,7 +2235,8 @@
    },
    "answer": "D",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 128
   },
   {
    "id": "Q131",
@@ -2122,7 +2252,8 @@
    },
    "answer": "A",
    "explanation": ":\nRequirement\n\nHow A solves it\n\nDetect >10% errors in 60s\n\nDynamoDB tracks invocation success/failure counts with TTL-based records, enabling precise error rate calculation within any sliding window\n\nSwitch to alternate path\n\nCircuit breaker transitions from Closed → Open state when the threshold is breached, and Step Functions routes to the alternate processing path\n\nAutomatic recovery\n\nCircuit breaker's Half-Open state periodically tests Bedrock availability and automatically transitions back to Closed (normal) when the service recovers — no manual intervention\n\n15-minute processing SLA\n\nStep Functions (Express Workflows) supports up to 5-minute executions, and Standard Workflows can orchestrate the full pipeline well within 15 minutes\n\nOption C is Retry/Catch handles individual invocation failures, not aggregate error rate monitoring. EventBridge cannot dynamically re-route traffic within a running Step Functions execution. CloudWatch alarm evaluation periods introduce latency that may miss the precise 60second window requirement",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 129
   },
   {
    "id": "Q132",
@@ -2138,7 +2269,8 @@
    },
    "answer": "B",
    "explanation": "Claude's multimodal capabilities generate rich, natural-language scene descriptions from video frames — something no single-purpose service can do Incorrect Option C Rekognition detects text/labels but cannot generate rich scene descriptions (only a multimodal LLM can). Each service (Rekognition, Comprehend, Transcribe) processes independently, making cross-metadata synchronization difficult. Comprehend only analyzes textbased sentiment, missing visual emotional cues",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 131
   },
   {
    "id": "Q133",
@@ -2154,7 +2286,8 @@
    },
    "answer": "C",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 132
   },
   {
    "id": "Q134",
@@ -2170,7 +2303,8 @@
    },
    "answer": "B",
    "explanation": "",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 133
   },
   {
    "id": "Q135",
@@ -2187,7 +2321,8 @@
    "answer": "A",
    "explanation": "",
    "note": "ExamTopics says A; commenter picked D. A kept (geo inference profile keeps EU data in EU)",
-   "explanationSource": "none in source PDF"
+   "explanationSource": "none in source PDF",
+   "source_pdf_page": 133
   },
   {
    "id": "Q136",
@@ -2203,7 +2338,8 @@
    },
    "answer": "A",
    "explanation": ". Create a trust policy that defines Amazon Bedrock as the service principal. Attach the trust policy to the service role.\nHere's why:\nThe scenario describes creating a service role and attaching an IAM permissions policy (what the role can do), but it never mentions creating a trust policy (who can assume the role). Every IAM service role requires both:\n•\n\nPermissions policy — grants actions like invoking FMs and accessing S3 ✅ (already done)\n\n•\n\nTrust policy — defines which AWS service (e.g., bedrock.amazonaws.com) is allowed to assume the role ❌ (missing)\n\nWithout the trust policy, Amazon Bedrock cannot assume the service role, which directly causes the AccessDenied exception.\n\nWhy the other options are wrong Table Option\n\nB – Configure CORS on S3\n\nC – Change TREX to Gigaword\n\nWhy it's incorrect CORS governs browser-based cross-origin requests; it's irrelevant to a server-side Bedrock evaluation job and wouldn't cause an AccessDenied on role assumption TREX is a valid built-in evaluation dataset for text generation; switching datasets doesn't resolve IAM permission issues\n\nD – Change to Summarization/Correctness\n\nChanging the evaluation type/metric is a configuration choice, not a fix for an access control error",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "source_pdf_page": 134
   }
  ],
  "note": "Answers from ExamTopics PDF (7 filled/judged). Explanations are community discussion text from the PDF where present.",

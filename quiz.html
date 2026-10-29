@@ -6,16 +6,24 @@ label{display:block;padding:.6em;margin:.4em 0;border:1px solid #ddd;border-radi
 label:hover{background:#f0f5ff}p{line-height:1.5}table{border-collapse:collapse;width:100%;margin:1em 0}td,th{border-bottom:1px solid #ddd;padding:.5em;text-align:left}
 pre{max-height:400px;overflow:auto}
 .meta{color:#666;font-size:.9em}pre{white-space:pre-wrap;font-size:.85em;background:#f3f3f3;padding:.5em}
-html{font-size:18px}body{font-size:1rem;line-height:1.55}
+html{font-size:16px}body{font-size:1rem;line-height:1.55}
 .meta{font-size:.85rem}p{font-size:1.1rem}label{font-size:1rem;padding:.9em;min-height:44px}
 input[type=radio],input[type=checkbox]{width:1.2em;height:1.2em;vertical-align:middle}
 button{font-size:1.05rem;min-height:48px}pre{font-size:.85rem}
-@media(max-width:600px){html{font-size:19px}body{margin:.5em auto;padding:0 .5em}.card{padding:1em}h1{font-size:1.4rem}
-button{width:100%;margin:.5em 0}p{font-size:1.15rem}}
+@media(max-width:600px){html{font-size:16.5px}body{margin:.5em auto;padding:0 .5em}.card{padding:1em}h1{font-size:1.4rem}
+button{width:100%;margin:.5em 0}p{font-size:1.05rem}}
 .ex{background:#f6f7f9;padding:.6em .9em;border-radius:6px;max-height:60vh;overflow:auto;font-size:.95rem}.ex p{font-size:.95rem;margin:.4em 0}
+.pdf{display:inline-block;color:#2563eb;text-decoration:none;font-size:.95rem;padding:.3em 0}
+.login{max-width:380px;margin:12vh auto 0;text-align:center;padding:2.2em 1.8em;border-radius:16px;box-shadow:0 10px 30px #0f172a1a,0 1px 3px #0f172a14}
+.login .logo{width:56px;height:56px;margin:0 auto 1em;border-radius:14px;background:linear-gradient(135deg,#ff9900,#ff6a00);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;letter-spacing:.5px}
+.login h2{margin:.2em 0;font-size:1.5rem;color:#0f172a}.login .sub{color:#64748b;font-size:.85rem;margin:.3em 0 1.6em}
+.login input{box-sizing:border-box;width:100%;padding:.8em 1em;font-size:1rem;border:1px solid #cbd5e1;border-radius:10px;outline:none;text-align:center;letter-spacing:.2em}
+.login input:focus{border-color:#2563eb;box-shadow:0 0 0 3px #2563eb33}.login button{width:100%;margin:1em 0 0;border-radius:10px;font-weight:600}
+#pe{color:#dc2626;font-size:.85rem;min-height:1.2em;margin-top:.6em}
 </style></head><body><h1>AIP-C01 Practice</h1><div class="card" id="app"></div><script>
 // ===== Password: change it here =====
 const QUIZ_PASSWORD="1234";
+const PDF_URL="AIP-C01-ExamTopics.pdf";
 let Q=[];let i=0,score=0,stats={},done=false;
 const app=document.getElementById('app');
 function show(){const q=Q[i];done=false;const multi=q.answer.length>1;
@@ -25,7 +33,7 @@ Object.entries(q.options).map(([k,v])=>`<label id="l${k}"><input type="${multi?'
 function check(){if(done)return;const q=Q[i];const sel=[...document.querySelectorAll('input:checked')].map(e=>e.value).sort().join('');if(!sel)return;done=true;document.getElementById("sb").style.display="none";document.querySelectorAll("input").forEach(e=>e.disabled=true);
 const ok=sel===q.answer.split('').sort().join('');const d=stats[q.domain]||(stats[q.domain]={c:0,t:0});d.t++;if(ok){score++;d.c++}
 for(const k of q.answer)document.getElementById('l'+k).classList.add('ok');for(const k of sel)if(!q.answer.includes(k))document.getElementById('l'+k).classList.add('bad');
-document.getElementById('fb').innerHTML=`<h3>${ok?'✅ Correct':'❌ Incorrect — answer '+q.answer}</h3>`+(q.explanation?`<details><summary>Explanation</summary><div class="ex"></div></details>`:'<p class="meta">No explanation in source PDF.</p>')+
+document.getElementById('fb').innerHTML=`<h3>${ok?'✅ Correct':'❌ Incorrect — answer '+q.answer}</h3>`+(q.explanation?(q.source_pdf_page?`<p><a class="pdf" target="_blank" rel="noopener" href="${PDF_URL}#page=${q.source_pdf_page}">📄 查看 PDF 原文 (p.${q.source_pdf_page})</a></p>`:'')+`<details><summary>Explanation</summary><div class="ex"></div></details>`:'<p class="meta">No explanation in source PDF.</p>')+
 `<button onclick="next()">${i+1<Q.length?'Next':'Finish'}</button>`;const p=document.querySelector('#fb .ex');if(p)p.innerHTML=md(q.explanation);}
 function esc(t){return t.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function md(t){return esc(t).split(/\n{2,}/).map(x=>'<p>'+x.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>').join('')}
@@ -35,6 +43,6 @@ app.innerHTML=`<h2>Score: ${score}/${t} (${t?Math.round(score*100/t):0}%)</h2><t
 `<tr><th>Domain</th><th>Correct</th><th>%</th></tr>`+Object.entries(stats).map(([k,d])=>`<tr><td>${k}</td><td>${d.c}/${d.t}</td><td>${Math.round(d.c*100/d.t)}%</td></tr>`).join('')+
 `</table><button onclick="i=0;score=0;stats={};show()">Restart</button>`}
 function start(){fetch("question-bank.json").then(r=>r.json()).then(d=>{Q=d.questions.filter(q=>q.answer);show()}).catch(e=>app.innerHTML="Failed to load questions: "+e+"<br>Serve via: cd /home/box/aws-genai-study && python3 -m http.server 8000, then open http://localhost:8000/app/quiz.html");}
-function gate(){if(sessionStorage.getItem("qa")==="1")return start();app.innerHTML='<h2>Enter password</h2><input id="pw" type="password" style="padding:.6em;font-size:1em;width:60%"> <button onclick="tryPw()">Unlock</button><div id="pe" style="color:#c00"></div>';const e=document.getElementById("pw");e.focus();e.onkeydown=k=>{if(k.key==="Enter")tryPw()}}
-function tryPw(){if(document.getElementById("pw").value===QUIZ_PASSWORD){sessionStorage.setItem("qa","1");start()}else document.getElementById("pe").textContent="Wrong password"}
+function gate(){if(sessionStorage.getItem("qa")==="1")return start();document.querySelector("h1").style.display="none";app.className="card login";app.innerHTML='<div class="logo">AWS</div><h2>AWS GenAI 刷题</h2><p class="sub">AIP-C01 · Generative AI Developer – Professional</p><input id="pw" type="password" inputmode="numeric" placeholder="输入密码" autocomplete="current-password"><button id="ub" onclick="tryPw()">进入练习</button><div id="pe"></div>';const e=document.getElementById("pw");e.focus();e.onkeydown=k=>{if(k.key==="Enter")tryPw()}}
+function tryPw(){if(document.getElementById("pw").value===QUIZ_PASSWORD){sessionStorage.setItem("qa","1");document.querySelector("h1").style.display="";app.className="card";start()}else{document.getElementById("pe").textContent="密码不正确，请重试";document.getElementById("pw").select()}}
 gate();</script></body></html>
