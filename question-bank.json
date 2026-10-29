@@ -358,7 +358,7 @@
    },
    "answer": "A",
    "explanation": "",
-   "note": "Answer uncertain; verify",
+   "note": "No answer in PDF; A chosen (only fully automated metric-driven rollback option)",
    "explanationSource": "none in source PDF"
   },
   {
@@ -717,7 +717,8 @@
    },
    "answer": "B",
    "explanation": "Requirement\n\nHow B Addresses It\n\nConversational context\n\nDynamoDB provides single-digit millisecond key-value lookups by session/user ID — ideal for retrieving conversation history across interactions\n\nClarification workflows\n\nStandard workflows support Wait for Callback (.waitForTaskToken) — the workflow pauses, sends a clarification prompt to the user, and resumes only when the user responds. Purpose-built for human-inthe-loop patterns\n\nEncrypted conversation records\n\nDynamoDB server-side encryption encrypts all data at rest using AWS KMS — meets the encryption requirement natively\n\nPersonalization\n\nDynamoDB is a durable, persistent store — conversation history remains available for long-term personalization\n\nThousands of concurrent users\n\nDynamoDB on-demand capacity auto-scales instantly with no capacity planning — handles spiky, high-concurrency workloads\n\nFast response times\n\nDynamoDB single-digit ms latency + Standard workflows efficiently orchestrate steps\n\nClarification Workflow Pattern User sends ambiguous query │ ▼ ┌────────────────────┐ │ Step Functions │ │ Standard Workflow │ │ │ │ 1. Detect ambiguity│ │ 2. Send clarifying │──── Pause (Wait for Callback) ────┐ │ question │ │\n\n│ │◀── User responds with taskToken ────┘ │ 3. Resume with │ │ clarified input │ │ 4. Call Bedrock FM │ │ 5. Return response │ └────────────────────┘ Why Option C is wrong:\n\nS3 with separate JSON files per interaction is high-latency for conversational context retrieval (S3 GET per turn). No orchestration mechanism for clarification workflows — API Gateway + Lambda alone can't pause and wait for user responses",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "note": "PDF says B; Step Functions Standard for thousands of concurrent fast chats is debatable (Express lacks callbacks)"
   },
   {
    "id": "Q045",
@@ -1215,7 +1216,8 @@
    },
    "answer": "C",
    "explanation": "🗳\n\nRequirement\n\nHow C solves it\n\nMCP server compatibility\n\nStreamable HTTP is the standard MCP transport protocol — Lambda function URLs support streaming responses natively, enabling proper MCP communication\n\nStateless Lambda deployment\n\nMCP servers \"do not maintain states between invocations\" — aligns perfectly with Lambda's stateless execution model. Function URLs expose each Lambda directly as an HTTP endpoint\n\nInternal + third-party access\n\nInternal apps use IAM roles natively. Third-party partners are granted IAM users/roles with InvokeFunctionUrl permissions — standard cross-account access pattern\n\nSigV4 signing + IAM authentication provides the strictest Strict auth & authentication mechanism in AWS. Fine-grained InvokeFunctionUrl authorization permissions control exactly who can invoke each MCP server Least operational overhead\n\nNo API Gateway, no Cognito, no additional services — Lambda function URLs are a zero-cost, built-in feature of Lambda",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "note": "PDF says C; D (API Gateway + Cognito OAuth for third parties) is a strong alternative"
   },
   {
    "id": "Q076",
@@ -1507,7 +1509,8 @@
    },
    "answer": "CD",
    "explanation": "🗳\n\nRequirement\n\nHow D solves it\n\n\"As soon as new files are created\"\n\nS3 event notifications to EventBridge trigger immediately on object creation\n\nReliable invocation\n\nEventBridge rule matches S3 PutObject events and invokes the Step Functions workflow — this is the supported pattern for S3 → Step Functions\n\nRequirement\n\nHow C solves it\n\nAudio → text conversion\n\nTranscribe converts MP3 recordings to text with validated job completion\n\nStructured summaries + sentiment\n\nLambda constructs a well-engineered prompt with the transcript text, then invokes Bedrock FMs to produce structured analysis output\n\n20 MB recordings\n\nLambda handles reading large transcripts from S3 (Transcribe outputs to S3), avoiding Step Functions' 256 KB state payload limit",
-   "explanationSource": "ExamTopics PDF (community discussion)"
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "note": "PDF says CD; B+D (direct Bedrock invoke from Step Functions) is a plausible alternative"
   },
   {
    "id": "Q094",
@@ -2183,7 +2186,7 @@
    },
    "answer": "A",
    "explanation": "",
-   "note": "Answer uncertain; verify",
+   "note": "ExamTopics says A; commenter picked D. A kept (geo inference profile keeps EU data in EU)",
    "explanationSource": "none in source PDF"
   },
   {
@@ -2203,5 +2206,6 @@
    "explanationSource": "ExamTopics PDF (community discussion)"
   }
  ],
- "note": "Answers from ExamTopics PDF (7 filled/judged). Explanations are community discussion text from the PDF where present."
+ "note": "Answers from ExamTopics PDF (7 filled/judged). Explanations are community discussion text from the PDF where present.",
+ "reviewed": "2026-10-30 full-text review of all 136; 0 changes, 9 flagged"
 }
