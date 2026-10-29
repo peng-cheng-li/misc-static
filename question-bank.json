@@ -16,7 +16,8 @@
     "D": "Create an Amazon Bedrock model evaluation job to compare fairness between the two prompt variants. Enable model invocation logging in Amazon CloudWatch. Set up CloudWatch alarms for InvocationsIntervened metrics with a dimension for each demographic group."
    },
    "answer": "C",
-   "explanation": "Aspect           Option B (My Original Pick)               Option C (Correct)\n\n                      ❌ Guardrails detect harmful         ✅ SageMaker Clarify is purpose-\n Fairness             content, not bias/fairness          built for bias detection with actual\n measurement          across demographics — this is       statistical fairness metrics (DPL,\n                      a proxy at best                     KL divergence, demographic parity)\n\n                      ❌ InvocationsIntervened             ✅ Clarify computes actual fairness\n 15%\n                      measures guardrail triggers,        metrics that can directly\n discrepancy\n                      not recommendation disparity        measure % discrepancy between\n detection\n                      between demographic groups          demographic groups\n\n                                                          ✅ Publishing Clarify metrics to\n Real-time\n                      ✅ Guardrails are inline             CloudWatch enables continuous\n monitoring\n                                                          monitoring and alerting\n\n                                                          ✅ Composite alarms combine\n                                                          bias metrics + latency (if the\n Comprehensive ❌ Content filtering is one-\n                                                          system is systematically slower for\n evaluation    dimensional\n                                                          certain groups, that's also a\n                                                          fairness concern)"
+   "explanation": "Aspect\n\nOption B (My Original Pick)\n\nOption C (Correct)\n\nFairness measurement\n\n❌ Guardrails detect harmful content, not bias/fairness across demographics — this is a proxy at best\n\n✅ SageMaker Clarify is purposebuilt for bias detection with actual statistical fairness metrics (DPL, KL divergence, demographic parity)\n\n15% discrepancy detection\n\n❌ InvocationsIntervened measures guardrail triggers, not recommendation disparity between demographic groups\n\n✅ Clarify computes actual fairness metrics that can directly measure % discrepancy between demographic groups\n\n✅ Guardrails are inline\n\n✅ Publishing Clarify metrics to CloudWatch enables continuous monitoring and alerting\n\nReal-time monitoring\n\nComprehensive ❌ Content filtering is oneevaluation dimensional\n\n✅ Composite alarms combine bias metrics + latency (if the system is systematically slower for certain groups, that's also a fairness concern)",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q002",
@@ -33,7 +34,8 @@
     "F": "Set a high grounding score threshold."
    },
    "answer": "ADF",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q003",
@@ -48,7 +50,8 @@
     "D": "Change the RetrieveAndGenerate API to the InvokeModelWithResponseStream API. Update the application to use an Amazon API Gateway WebSocket API to support the streaming response."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q004",
@@ -63,7 +66,8 @@
     "D": "Use AWS Lambda authorizers for an Amazon API Gateway REST API to evaluate routing rules that are stored in AWS AppConfig. Return authorization contexts based on business logic. Route requests to model-specific Lambda functions for each Amazon Bedrock FM."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q005",
@@ -78,7 +82,8 @@
     "D": "Use Amazon Bedrock with custom prompt templates that are stored in Amazon DynamoDB. Create one AWS Lambda function to select business unit-specific prompts. Create a second Lambda function to call Amazon Comprehend to filter prohibited content from responses."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q006",
@@ -93,7 +98,8 @@
     "D": "Set up an Amazon Neptune Analytics graph database. Configure a vector index that has appropriate dimensionality to store document embeddings. Use Amazon Bedrock to perform graph-based retrieval and to generate responses."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q007",
@@ -108,7 +114,8 @@
     "D": "Implement a two-stage retrieval architecture in which initial vector search results are re-ranked by an ML model that is hosted on Amazon SageMaker AI."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q008",
@@ -123,7 +130,8 @@
     "D": "Use VPC endpoints to provide access to Amazon Bedrock and Amazon S3 in the application account. Use only IAM path-based policies to manage data lake access. Send AWS CloudTrail logs to Amazon CloudWatch Logs. Periodically create dashboards and allow public fallback for cross- Region reads to reduce setup time."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q009",
@@ -138,7 +146,8 @@
     "D": "Deploy Amazon SageMaker Canvas with prompt templates that are stored in Amazon S3. Use AWS CloudFormation to implement version control. Use AWS Config to enforce approval policies."
    },
    "answer": "B",
-   "explanation": "Requirement                             How Option B Addresses It\n\n Version control       Amazon Bedrock Prompt Management natively supports creating,\n for hundreds of       organizing, and versioning prompt templates — purpose-built for\n templates             this exact use case\n\n Multi-team,           Bedrock Prompt Management is a managed service accessible\n multi-Region          across regions; IAM policies ensure consistent access control\n usage                 across teams\n\n Approval              IAM policies control who can create, update, publish, or approve\n workflows with        prompt versions — enforcing role-based approval gates (e.g., only\n permissions           reviewers can promote a draft to production)\n\n                       AWS CloudTrail captures all Bedrock API calls including\n Detailed audit        CreatePrompt, UpdatePrompt, GetPrompt, and\n trails                CreatePromptVersion — providing comprehensive documentation\n                       of all prompt activities\n\n                  Bedrock Prompt Management natively supports parameterized\n Consistent\n                  templates with variables (e.g., {{tone}}, {{audience}},\n parameterization\n                  {{content_type}}), enforcing quality standards across teams"
+   "explanation": "Requirement\n\nHow Option B Addresses It\n\nVersion control for hundreds of templates\n\nAmazon Bedrock Prompt Management natively supports creating, organizing, and versioning prompt templates — purpose-built for this exact use case\n\nMulti-team, multi-Region usage\n\nBedrock Prompt Management is a managed service accessible across regions; IAM policies ensure consistent access control across teams\n\nApproval workflows with permissions\n\nIAM policies control who can create, update, publish, or approve prompt versions — enforcing role-based approval gates (e.g., only reviewers can promote a draft to production)\n\nDetailed audit trails\n\nAWS CloudTrail captures all Bedrock API calls including CreatePrompt, UpdatePrompt, GetPrompt, and CreatePromptVersion — providing comprehensive documentation of all prompt activities\n\nBedrock Prompt Management natively supports parameterized Consistent templates with variables (e.g., {{tone}}, {{audience}}, parameterization {{content_type}}), enforcing quality standards across teams",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q010",
@@ -153,7 +162,8 @@
     "D": "Configure an Amazon API Gateway HTTP API with an AWS Lambda integration. Configure the HTTP API to cache complete responses in an Amazon DynamoDB table and serve the responses through multiple paginated GET requests to frontend clients."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q011",
@@ -169,7 +179,8 @@
     "E": "Create an Amazon Bedrock application inference profile that specifies an Amazon Nova Pro FM. Specify the output format for the response in the description. Include a tag for each of the input variables. Add the profile to the prompts node of the flow."
    },
    "answer": "AD",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q012",
@@ -184,7 +195,8 @@
     "D": "Deploy a hybrid evaluation system that uses an automated LLM-as-a-judge evaluation to initially screen responses and targeted human reviews for edge cases. Use Amazon SageMaker Feature Store to maintain evaluation datasets. Use a built-in Amazon Bedrock evaluation to track retrieval precision and hallucination rates."
    },
    "answer": "D",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q013",
@@ -200,7 +212,8 @@
     "E": "Extend the existing SCP to enable CRI for the eu.* inference profile."
    },
    "answer": "BD",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q014",
@@ -215,7 +228,8 @@
     "D": "Create a separate guardrail for each use case. Create one guardrail that applies a harmful content filter. Create a guardrail to apply topic filters for investment advice. Create a guardrail to apply sensitive information filters to block PII. Use AWS Step Functions to chain the guardrails together sequentially. Use conditional logic based on content classification."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q015",
@@ -230,7 +244,8 @@
     "D": "Store product catalog data in Amazon OpenSearch Service. Validate the model's product recommendations against the product catalog. Use Amazon DynamoDB to implement response caching."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q016",
@@ -246,7 +261,8 @@
     "E": "Build a custom RAG pipeline by using Amazon Kendra and Amazon Bedrock. Use AWS Lambda to orchestrate tool invocations. Store the agent state in Amazon S3."
    },
    "answer": "AB",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q017",
@@ -261,7 +277,8 @@
     "D": "Use Amazon DynamoDB to store financial data in a custom indexing system. Use an AWS Lambda function to query relevant records based on input questions. Use Amazon SageMaker AI to generate responses."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q018",
@@ -276,7 +293,8 @@
     "D": "Use AWS CloudTrail to log all Amazon Bedrock API calls. Create a custom dashboard in Amazon QuickSight to visualize token usage patterns. Use Amazon SageMaker Model Monitor to detect quality drift in generated summaries."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q019",
@@ -291,7 +309,8 @@
     "D": "Use AWS Glue Data Catalog to register all data sources. Apply metadata tags to attribute data sources. Use AWS CloudTrail to log access and activity across services."
    },
    "answer": "D",
-   "explanation": "This solution satisfies all three requirements:\n\n   •   Data source registration — AWS Glue Data Catalog serves as a centralized metadata\n       repository where you can register and catalog all internal and external data sources used\n       by the GenAI application.\n   •   Metadata tagging for attribution — Glue Data Catalog natively supports metadata\n       tagging on cataloged objects (databases, tables, columns), allowing you to attribute\n       generated content back to its original source.\n   •   Audit logs across the pipeline — AWS CloudTrail provides comprehensive logging of API\n       activity across services, giving you a full audit trail of data access and usage throughout the\n       entire pipeline."
+   "explanation": "This solution satisfies all three requirements:\n•\n\n•\n\n•\n\nData source registration — AWS Glue Data Catalog serves as a centralized metadata repository where you can register and catalog all internal and external data sources used by the GenAI application.\nMetadata tagging for attribution — Glue Data Catalog natively supports metadata tagging on cataloged objects (databases, tables, columns), allowing you to attribute generated content back to its original source.\nAudit logs across the pipeline — AWS CloudTrail provides comprehensive logging of API activity across services, giving you a full audit trail of data access and usage throughout the entire pipeline.",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q020",
@@ -306,7 +325,8 @@
     "D": "Deploy an Amazon ECS cluster that runs containers that process each report sequentially. Use a load balancer to distribute batch workloads. Configure an auto-scaling policy based on CPU utilization to handle demand fluctuations."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q021",
@@ -321,7 +341,8 @@
     "D": "Configure Amazon Bedrock guardrails to use custom content filters to protect against harmful content. Set the content filters to high. Use word filters to protect against known attack patterns. Configure cross-Region guardrail replication to provide failover capabilities. Store logs in AWS CloudTrail for compliance auditing."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q022",
@@ -336,8 +357,9 @@
     "D": "Use Amazon OpenSearch Service to track inference logs. Configure OpenSearch Service to invoke an AWS Systems Manager Automation runbook to update Amazon Bedrock model endpoints to shift traffic based on the inference logs."
    },
    "answer": "A",
-   "explanation": "Canary Deployment Flow New Model Version Released │ ▼ ┌─────────────────┐ │ EventBridge Rule │──── Triggers automatically └────────┬────────┘ ▼ ┌──────────────────────────────────────────────────┐ │ Step Functions Workflow │ │ │ │ Stage 1: Shift 5% traffic → Wait → Check metrics │ │ ✅ Healthy → Continue │ │ ❌ Degraded → Rollback to previous version │ │ │ │ Stage 2: Shift 25% traffic → Wait → Check metrics│ │ ✅ Healthy → Continue │ │ ❌ Degraded → Rollback │ │ │ │ Stage 3: Shift 50% traffic → Wait → Check metrics│ │ ✅ Healthy → Continue │ │ ❌ Degraded → Rollback │ │ │ │ Stage 4: Shift 100% traffic → Complete ✅ │ └──────────────────────────────────────────────────┘ │ │ ┌────┴─────┐ ┌─────┴──────┐ │ Lambda │ │ CloudWatch │ │ (Check │◀─── Queries ────│ (Latency, │ │ metrics)│ │ Errors) │ └──────────┘ └────────────┘",
-   "note": "Answer uncertain; verify"
+   "explanation": "",
+   "note": "Answer uncertain; verify",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q023",
@@ -352,7 +374,8 @@
     "D": "Modify the application to use the InvokeModelWithResponseStream API instead of the InvokeModel API."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q024",
@@ -367,7 +390,8 @@
     "D": "Use Amazon Bedrock with Anthropic Claude models and chain-of-thought reasoning. Configure custom retrieval tracking with the Amazon Bedrock Knowledge Bases API. Use Amazon CloudWatch to monitor response latency metrics."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q025",
@@ -382,7 +406,8 @@
     "D": "Use Amazon API Gateway to create a proxy for all Amazon Bedrock API calls. Configure request throttling based on custom usage plans with predefined token quotas. Configure API Gateway to reject requests that will exceed token limits."
    },
    "answer": "A",
-   "explanation": "Architecture Flow\n\nBusiness Unit Request\n        │\n        ▼\n┌────────────────────┐\n│ Lambda Function     │\n│ (Model-specific    │\n│ tokenizer)         │\n│                    │\n│ 1. Count tokens    │──▶ Publish metrics to CloudWatch\n│ 2. Check threshold │──▶ Alarm if approaching limit ⚠\n│ 3. Log to DynamoDB │──▶ Cost allocation by BU\n│ 4. If within limit │\n│    → Send to       │\n│      Bedrock       │\n└────────────────────┘\n        │\n        ▼\n┌────────────────────┐    ┌────────────────────┐\n│ Amazon Bedrock FM │     │ CloudWatch         │\n│ (Invoke model)     │    │ • Token usage      │\n└────────────────────┘    │   dashboards       │\n                          │ • Threshold alarms │\n                          │ • Per-BU metrics   │\n                          └────────────────────┘"
+   "explanation": "Architecture Flow Business Unit Request │ ▼ ┌────────────────────┐ │ Lambda Function │ │ (Model-specific │ │ tokenizer) │ │ │ │ 1. Count tokens │──▶ Publish metrics to CloudWatch │ 2. Check threshold │──▶ Alarm if approaching limit ⚠ │ 3. Log to DynamoDB │──▶ Cost allocation by BU │ 4. If within limit │ │ → Send to │ │ Bedrock │ └────────────────────┘ │ ▼ ┌────────────────────┐ ┌────────────────────┐ │ Amazon Bedrock FM │ │ CloudWatch │ │ (Invoke model) │ │ • Token usage │ └────────────────────┘ │ dashboards │ │ • Threshold alarms │ │ • Per-BU metrics │ └────────────────────┘",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q026",
@@ -397,7 +422,8 @@
     "D": "Use an Amazon Bedrock agent with action groups to integrate with the order management API. Associate an Amazon Bedrock knowledge base with the agent to search product documentation by using Retrieval Augmentation Generation (RAG). Enable trace events to capture audit trails."
    },
    "answer": "D",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q027",
@@ -412,7 +438,8 @@
     "D": "Configure a separate Step Functions state machine to handle each agent's processing. Use Amazon EventBridge to coordinate the execution flow between state machines. Use S3 references for the outputs as event data."
    },
    "answer": "B",
-   "explanation": "DynamoDB has a 400 KB item size limit — may still be insufficient for large reasoning traces. Map\nstate is designed for parallel iteration, not sequential data retrieval. Adds an entirely new service\n(DynamoDB) to manage\n\nCompression/decompression Lambda functions at every state boundary adds 6 additional\nLambda invocations (compress + decompress × 3 states). No guarantee compressed output fits\nunder 256 KB. Significant development and maintenance overhead"
+   "explanation": "DynamoDB has a 400 KB item size limit — may still be insufficient for large reasoning traces. Map state is designed for parallel iteration, not sequential data retrieval. Adds an entirely new service (DynamoDB) to manage\n\nCompression/decompression Lambda functions at every state boundary adds 6 additional Lambda invocations (compress + decompress × 3 states). No guarantee compressed output fits under 256 KB. Significant development and maintenance overhead",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q028",
@@ -427,7 +454,8 @@
     "D": "Migrate restaurant data to an Amazon Bedrock knowledge base by using a custom ingestion pipeline. Configure the knowledge base to automatically generate embeddings from restaurant information. Use the Amazon Bedrock Retrieve API with built-in vector search capabilities to query the knowledge base directly by using natural language input. Factor pgvector (C) OpenSearch (B) Relational data with vector Full-text + vector search at Designed for extension scale 220M vectors Performance degrades significantly Native sharding across nodes High Connection pooling bottlenecks Distributed query execution concurrency p95 < 500ms Challenging at this scale Achievable with HNSW k-NN Works but impacts query Near-real-time, non- Hourly updates performance disruptive"
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q029",
@@ -442,7 +470,8 @@
     "D": "Create a custom prompt evaluation flow in Amazon Bedrock Flows that applies the same clinical document inputs to different prompt variants. Use Amazon Comprehend Medical to analyze and score the factual accuracy of each version."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q030",
@@ -458,7 +487,8 @@
     "E": "Prompt the Amazon Bedrock model to summarize each full document in one pass."
    },
    "answer": "AB",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q031",
@@ -473,7 +503,8 @@
     "D": "Use Amazon OpenSearch Service with the Observability plugin. Ingest model metrics and logs by using Amazon Kinesis. Create custom Piped Processing Language (PPL) queries to analyze model behavior patterns. Establish operational dashboards to visualize anomalies in real time."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q032",
@@ -488,7 +519,8 @@
     "D": "Create a pre-processing AWS Lambda function that analyzes document token count by using the FM's tokenizer. Configure the lambda function to split documents into equal segments that fit within 80% of the context window. Configure the Lambda function to process each segment independently before aggregating the results."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q033",
@@ -503,7 +535,9 @@
     "D": "Deploy a mid-sized language model on an Amazon SageMaker AI serverless endpoint that is optimized for batch processing."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF",
+   "note": "Answer from PDF; reviewer considers it debatable"
   },
   {
    "id": "Q034",
@@ -519,7 +553,8 @@
     "E": "Run an Amazon SageMaker AI notebook job on a schedule by using the fmevals or ragas framework to run evaluations that use the datasets in the S3 bucket. Write Python code in the notebook that makes direct InvokeModel API calls to the FMs and processes their responses for evaluation. Publish job status and results to Amazon CloudWatch Logs to measure the real world knowledge (RWK) score for text generation and toxicity for summarization as metrics for accuracy. Create a custom CloudWatch Logs Insights dashboard."
    },
    "answer": "AC",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q035",
@@ -534,7 +569,8 @@
     "D": "Configure Amazon EventBridge rules with custom event patterns to route AI recommendations to human technicians for review. Create AWS Glue jobs to process human technician approval queues. Use Amazon ElastiCache to cache all human technician review decisions."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q036",
@@ -551,7 +587,9 @@
     "F": "Use Amazon SageMaker Clarify to generate fairness and bias reports based on model scoring decisions that Amazon Bedrock makes."
    },
    "answer": "ABE",
-   "explanation": "but the AI and me picked ABD\n\n        Requirement                                  How A Addresses It\n\nExtract structured data    Textract is purpose-built for extracting structured data\nfrom scanned               (forms, tables, key-value pairs) from scanned financial\ndocuments                  documents\n\nRoute low-confidence to    A2I natively routes low-confidence extraction results to\nhuman reviewers in         human review workflows, deployed within the same\nsame Region                Region as the applicant\n\nRequirement                               How B Addresses It\n\nRedact PII\n                Lambda functions detect and redact PII from documents before\nbefore\n                they're sent to Bedrock — ensuring no PII enters the model\ninference\n\nSafe model      Bedrock guardrails prevent inappropriate or unauthorized content in\noutputs         generated loan decisions\n\nRegional data   Region-specific IAM roles enforce that data stays within the required\nresidency       Region and controls access to extracted data\n\nRequirement                              How D Addresses It\n\nRegional data   IAM policies enforce that original documents are stored in the same\nresidency       Region as each applicant — strict compliance\n\n                Object metadata and tagging create a durable, queryable audit trail for\nAuditability\n                every document processed\n\nDurable\n                S3 provides 99.999999999% durability for original loan documents\nstorage\n\nEnd-to-End Architecture Flow\n\nScanned Documents\n       │\n       ▼\n┌──────────────┐     ┌───────────────┐     ┌──────────────┐\n│ Amazon S3    │────▶│ Amazon        │────▶│ AWS Lambda   │\n│ (Regional    │     │ Textract      │     │ (PII         │\n│   storage + │      │ (Extract      │     │ Redaction) │\n│   tagging)   │     │ structured    │     │              │\n│   [D]        │     │ data) [A]     │     │   [B]        │\n└──────────────┘     └───────┬───────┘     └──────┬───────┘\n                             │                     │\n                    Low confidence?                 ▼\n                             │              ┌──────────────┐\n                             ▼              │ Amazon       │\n                     ┌──────────────┐       │ Bedrock      │\n                     │ Amazon A2I   │       │ (Generate    │\n                     │ (Human       │       │ approval + │\n                     │ review,      │       │ guardrails) │\n                     │ same Region)│        │   [B]        │\n                     │   [A]        │       └──────────────┘\n                     └──────────────┘"
+   "explanation": "but the AI and me picked ABD\n\nRequirement\n\nHow A Addresses It\n\nExtract structured data from scanned documents\n\nTextract is purpose-built for extracting structured data (forms, tables, key-value pairs) from scanned financial documents\n\nRoute low-confidence to human reviewers in same Region\n\nA2I natively routes low-confidence extraction results to human review workflows, deployed within the same Region as the applicant\n\nRequirement\n\nHow B Addresses It\n\nRedact PII before inference\n\nLambda functions detect and redact PII from documents before they're sent to Bedrock — ensuring no PII enters the model\n\nSafe model outputs\n\nBedrock guardrails prevent inappropriate or unauthorized content in generated loan decisions\n\nRegional data residency\n\nRegion-specific IAM roles enforce that data stays within the required Region and controls access to extracted data\n\nRequirement\n\nHow D Addresses It\n\nRegional data residency\n\nIAM policies enforce that original documents are stored in the same Region as each applicant — strict compliance\n\nAuditability\n\nObject metadata and tagging create a durable, queryable audit trail for every document processed\n\nDurable storage\n\nS3 provides 99.999999999% durability for original loan documents\n\nEnd-to-End Architecture Flow Scanned Documents │ ▼ ┌──────────────┐ ┌───────────────┐ ┌──────────────┐ │ Amazon S3 │────▶│ Amazon │────▶│ AWS Lambda │ │ (Regional │ │ Textract │ │ (PII │ │ storage + │ │ (Extract │ │ Redaction) │ │ tagging) │ │ structured │ │ │ │ [D] │ │ data) [A] │ │ [B] │ └──────────────┘ └───────┬───────┘ └──────┬───────┘ │ │ Low confidence?\n▼ │ ┌──────────────┐ ▼ │ Amazon │ ┌──────────────┐ │ Bedrock │ │ Amazon A2I │ │ (Generate │ │ (Human │ │ approval + │ │ review, │ │ guardrails) │ │ same Region)│ │ [B] │ │ [A] │ └──────────────┘ └──────────────┘",
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "note": "PDF says ABE; commenter argues ABD — debatable"
   },
   {
    "id": "Q037",
@@ -566,7 +604,8 @@
     "D": "Create a metadata file named metadata.json at the top level of the S3 bucket. Add an AccessControlList object to the file that specifies the S3 path of each department's prefix. Specify the IAM Identity Center group that should have access to each department's prefix. Reference the file location in the data source metadata settings."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q038",
@@ -581,7 +620,8 @@
     "D": "Use an Amazon Bedrock knowledge base with Retrieve API calls and InvokeModel API calls to retrieve approved clinical source documents. Implement verification logic to compare against retrieved sources and to cite sources."
    },
    "answer": "B",
-   "explanation": "The key differentiator between B and D: RetrieveAndGenerate is purpose-built to return\ngrounded, cited responses in a single managed API call. Option D manually replicates this with\nRetrieve + InvokeModel + custom verification — achieving the same outcome with\nsignificantly more operational overhead."
+   "explanation": "The key differentiator between B and D: RetrieveAndGenerate is purpose-built to return grounded, cited responses in a single managed API call. Option D manually replicates this with Retrieve + InvokeModel + custom verification — achieving the same outcome with significantly more operational overhead.",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q039",
@@ -596,7 +636,8 @@
     "D": "Use the Amazon Transcribe streaming API with an AWS Lambda function to transcribe each audio segment. Configure the Lambda function to call the Amazon Titan Embeddings model on Amazon Bedrock by using the InvokeModel API. Configure the Lambda function to publish results to an Amazon SNS topic. Subscribe the call center agents to the SNS topic."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q040",
@@ -611,7 +652,8 @@
     "D": "Create an AWS Step Functions workflow that uses built-in Amazon Bedrock guardrails to filter content. Use Amazon Comprehend PII detection to pre-process the content. Use Amazon Rekognition image moderation."
    },
    "answer": "D",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q041",
@@ -626,7 +668,8 @@
     "D": "Create an Amazon Q Developer customization that includes the approved data sources. Ensure that the developers use the customization to develop the application."
    },
    "answer": "D",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q042",
@@ -641,7 +684,8 @@
     "D": "Use AWS Lambda functions to pre-process requests by using a custom prompt routing mechanism. Use Amazon DynamoDB as a caching layer to handle frequently asked questions."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q043",
@@ -656,7 +700,8 @@
     "D": "Migrate from OpenSearch Service to Amazon DynamoDB. Implement keyword-based indexes to enable faster lookups for legal concepts."
    },
    "answer": "C",
-   "explanation": "Requirement                                   How C Addresses It\n\n                    Semantic chunking keeps legally connected information together — a\n Omitted key\n                    complete court opinion or statute reference stays in one chunk instead\n context\n                    of being split mid-argument\n\n Outdated           Properly bounded chunks ensure full context for each legal concept,\n citations          enabling the model to distinguish current vs. superseded law\n\n Improved\n                    Semantically coherent chunks produce higher quality embeddings —\n retrieval\n                    vectors better represent the actual meaning of the legal content\n relevance\n\n 40% latency\n                    Better embeddings = more relevant results in fewer retrieval passes,\n increase /\n                    reducing unnecessary re-ranking and post-processing overhead\n p95 > 2s\n\n 90 GB → 360        Semantic chunks are typically more efficient — fewer\n GB growth          redundant/fragmented chunks means a cleaner, more scalable index"
+   "explanation": "Requirement\n\nHow C Addresses It\n\nOmitted key context\n\nSemantic chunking keeps legally connected information together — a complete court opinion or statute reference stays in one chunk instead of being split mid-argument\n\nOutdated citations\n\nProperly bounded chunks ensure full context for each legal concept, enabling the model to distinguish current vs. superseded law\n\nImproved retrieval relevance\n\nSemantically coherent chunks produce higher quality embeddings — vectors better represent the actual meaning of the legal content\n\n40% latency increase / p95 > 2s\n\nBetter embeddings = more relevant results in fewer retrieval passes, reducing unnecessary re-ranking and post-processing overhead\n\n90 GB → 360 GB growth\n\nSemantic chunks are typically more efficient — fewer redundant/fragmented chunks means a cleaner, more scalable index",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q044",
@@ -671,7 +716,8 @@
     "D": "Use AWS Lambda functions to call Amazon Bedrock inference APIs. Use Amazon SQS queues to orchestrate clarification steps. Store conversation history in an Amazon ElastiCache (Redis OSS) cluster. Configure encryption at rest."
    },
    "answer": "B",
-   "explanation": "Requirement                              How B Addresses It\n\n                   DynamoDB provides single-digit millisecond key-value lookups by\n Conversational\n                   session/user ID — ideal for retrieving conversation history across\n context\n                   interactions\n\n                   Standard workflows support Wait for Callback (.waitForTaskToken)\n Clarification     — the workflow pauses, sends a clarification prompt to the user, and\n workflows         resumes only when the user responds. Purpose-built for human-in-\n                   the-loop patterns\n\n Encrypted\n                   DynamoDB server-side encryption encrypts all data at rest using\n conversation\n                   AWS KMS — meets the encryption requirement natively\n records\n\n                   DynamoDB is a durable, persistent store — conversation history\n Personalization\n                   remains available for long-term personalization\n\n Thousands of\n                   DynamoDB on-demand capacity auto-scales instantly with no\n concurrent\n                   capacity planning — handles spiky, high-concurrency workloads\n users\n\n Fast response     DynamoDB single-digit ms latency + Standard workflows efficiently\n times             orchestrate steps\n\nClarification Workflow Pattern\n\nUser sends ambiguous query\n         │\n         ▼\n┌────────────────────┐\n│ Step Functions      │\n│ Standard Workflow   │\n│                    │\n│ 1. Detect ambiguity│\n│ 2. Send clarifying │──── Pause (Wait for Callback) ────┐\n│     question        │                                   │\n\n│                    │◀── User responds with taskToken ────┘\n│ 3. Resume with      │\n│     clarified input │\n│ 4. Call Bedrock FM │\n│ 5. Return response │\n└────────────────────┘\n\nWhy Option C is wrong:\n\nS3 with separate JSON files per interaction is high-latency for conversational context retrieval (S3\nGET per turn). No orchestration mechanism for clarification workflows — API Gateway + Lambda\nalone can't pause and wait for user responses"
+   "explanation": "Requirement\n\nHow B Addresses It\n\nConversational context\n\nDynamoDB provides single-digit millisecond key-value lookups by session/user ID — ideal for retrieving conversation history across interactions\n\nClarification workflows\n\nStandard workflows support Wait for Callback (.waitForTaskToken) — the workflow pauses, sends a clarification prompt to the user, and resumes only when the user responds. Purpose-built for human-inthe-loop patterns\n\nEncrypted conversation records\n\nDynamoDB server-side encryption encrypts all data at rest using AWS KMS — meets the encryption requirement natively\n\nPersonalization\n\nDynamoDB is a durable, persistent store — conversation history remains available for long-term personalization\n\nThousands of concurrent users\n\nDynamoDB on-demand capacity auto-scales instantly with no capacity planning — handles spiky, high-concurrency workloads\n\nFast response times\n\nDynamoDB single-digit ms latency + Standard workflows efficiently orchestrate steps\n\nClarification Workflow Pattern User sends ambiguous query │ ▼ ┌────────────────────┐ │ Step Functions │ │ Standard Workflow │ │ │ │ 1. Detect ambiguity│ │ 2. Send clarifying │──── Pause (Wait for Callback) ────┐ │ question │ │\n\n│ │◀── User responds with taskToken ────┘ │ 3. Resume with │ │ clarified input │ │ 4. Call Bedrock FM │ │ 5. Return response │ └────────────────────┘ Why Option C is wrong:\n\nS3 with separate JSON files per interaction is high-latency for conversational context retrieval (S3 GET per turn). No orchestration mechanism for clarification workflows — API Gateway + Lambda alone can't pause and wait for user responses",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q045",
@@ -686,7 +732,8 @@
     "D": "Create an AWS Step Functions workflow to orchestrate data pre-processing tasks. Run custom code on Amazon EC2 instances to process the data. Use Amazon SageMaker Model Monitor to monitor data quality. Load processed data into Amazon Bedrock."
    },
    "answer": "B",
-   "explanation": "AWS Glue crawler to catalog → Glue ETL for transformations → Glue Data Quality for\nvalidation/monitoring → Load into Bedrock.\n\n Requirement                                  How B Addresses It\n\n Validate         AWS Glue Data Quality is purpose-built for this — define rules, validate\n data quality     datasets, and flag quality issues automatically\n\n Create\n                  Glue crawler automatically catalogs data sources, creating a\n auditable\n                  searchable, auditable metadata catalog in the Glue Data Catalog\n metadata\n\n Monitor data     Glue Data Quality natively tracks and monitors quality metrics over time\n metrics          with built-in dashboards and CloudWatch integration\n\n Customize        Glue ETL jobs support custom transformation scripts (Python/Spark)\n text             — full flexibility to implement domain-specific chunking strategies for\n chunking         financial documents\n\n Least       Glue provides an end-to-end managed pipeline — cataloging,\n development transformation, and quality validation in one service. No custom\n effort      infrastructure to manage\n\nWhy Option A is wrong: SageMaker Data Wrangler is focused on ML feature engineering, not\nunstructured text pre-processing. Custom Lambda for pre-processing adds development effort.\nCloudWatch alone doesn't provide structured data quality validation and auditable metadata"
+   "explanation": "AWS Glue crawler to catalog → Glue ETL for transformations → Glue Data Quality for validation/monitoring → Load into Bedrock.\n\nRequirement\n\nHow B Addresses It\n\nValidate data quality\n\nAWS Glue Data Quality is purpose-built for this — define rules, validate datasets, and flag quality issues automatically\n\nCreate auditable metadata\n\nGlue crawler automatically catalogs data sources, creating a searchable, auditable metadata catalog in the Glue Data Catalog\n\nMonitor data metrics\n\nGlue Data Quality natively tracks and monitors quality metrics over time with built-in dashboards and CloudWatch integration\n\nCustomize text chunking\n\nGlue ETL jobs support custom transformation scripts (Python/Spark) — full flexibility to implement domain-specific chunking strategies for financial documents\n\nLeast Glue provides an end-to-end managed pipeline — cataloging, development transformation, and quality validation in one service. No custom effort infrastructure to manage\n\nWhy Option A is wrong: SageMaker Data Wrangler is focused on ML feature engineering, not unstructured text pre-processing. Custom Lambda for pre-processing adds development effort.\nCloudWatch alone doesn't provide structured data quality validation and auditable metadata",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q046",
@@ -701,7 +748,8 @@
     "D": "Migrate to an Amazon Q Business index to perform structured metadata filtering and document categorization during retrieval."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q047",
@@ -716,7 +764,8 @@
     "D": "Launch an Amazon DocumentDB cluster that has an Inverted File with Flat Compression (IVFFlat) index and a high probe value. Configure connections to the cluster as a replica set Distribute reads to replica instances."
    },
    "answer": "A",
-   "explanation": "Algorithm             Type                 Accuracy                     Best For\n\n              Exact Nearest            100% (no               Small datasets — scans all\n Flat\n              Neighbor                 approximation)         vectors\n\n              Approximate                                     Large datasets — trades\n HNSW                                  ~95-99% (tunable)\n              Nearest Neighbor                                accuracy for speed\n\n              Approximate              Variable (probe-       Medium-large datasets —\n IVFFlat\n              Nearest Neighbor         dependent)             clusters vectors first"
+   "explanation": "Algorithm\n\nType\n\nAccuracy\n\nBest For\n\nFlat\n\nExact Nearest Neighbor\n\n100% (no approximation)\n\nSmall datasets — scans all vectors\n\nHNSW\n\nApproximate Nearest Neighbor\n\n~95-99% (tunable)\n\nLarge datasets — trades accuracy for speed\n\nIVFFlat\n\nApproximate Nearest Neighbor\n\nVariable (probedependent)\n\nMedium-large datasets — clusters vectors first",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q048",
@@ -731,7 +780,8 @@
     "D": "Implement a data processing pipeline that uses AWS Step Functions to orchestrate a workload that uses Amazon Comprehend to detect PII and Amazon Bedrock to generate embeddings. Directly integrate the workflow with Amazon OpenSearch Serverless to store vectors and provide similarity search capabilities."
    },
    "answer": "D",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q049",
@@ -746,7 +796,8 @@
     "D": "Create an Amazon ElastiCache (Redis OSS) cluster to store model configurations. Set short TTL values. Run custom validation logic in Lambda functions. Use Amazon CloudWatch metrics to monitor configuration usage."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q050",
@@ -761,7 +812,8 @@
     "D": "Implement batch inference for all requests by using Amazon S3 buckets across multiple Regions. Use Amazon SQS to set up an asynchronous retrieval process."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q051",
@@ -776,7 +828,8 @@
     "D": "Create a caching solution by using Amazon DynamoDB to create a global secondary index on the normalized query text. Apply stemming to incoming queries. Query the index of cached customer queries."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q052",
@@ -791,7 +844,8 @@
     "D": "Use a Lambda layer to host the MCP server. Add the Lambda layer to the AI agent Lambda functions. Configure the agentic AI solution to use the STDIO transport to send requests to the MCP server. In the AI agent's MCP configuration, specify the Lambda layer ARN as the command. Specify the user credentials as environment variables."
    },
    "answer": "C",
-   "explanation": "Requirement                                 How C Addresses It\n\n Host MCP\n                    Lambda function runs the MCP server logic — serverless, scalable\n server\n\n AI agent\n                    API Gateway HTTP API provides a stable HTTP endpoint that proxies to\n accesses\n                    the Lambda function\n MCP server\n\n MCP                Streamable HTTP is the MCP spec's standard transport for remote\n transport          servers — purpose-built for client-server MCP communication over\n protocol           HTTP\n\n Only            Amazon Cognito with OAuth 2.1 is the MCP specification's\n authorized      recommended authorization framework — enforces token-based\n users           access control at the API layer\n\nArchitecture Flow\n\n┌──────────────┐    Streamable HTTP    ┌──────────────┐    Proxy\n┌──────────────┐\n│ AI Agent     │──────────────────────▶│ API Gateway │───────────▶│\nLambda     │\n│ (Lambda      │   + OAuth 2.1 Token   │ HTTP API     │            │ MCP\nServer │\n│   functions) │◀──────────────────────│              │◀───────────│\n│\n│              │    MCP Responses       │ + Cognito    │            │\n(User Info) │\n└──────────────┘                       │ Authorizer │\n└──────────────┘\n                                       └──────────────┘"
+   "explanation": "Requirement\n\nHow C Addresses It\n\nHost MCP server\n\nLambda function runs the MCP server logic — serverless, scalable\n\nAI agent accesses MCP server\n\nAPI Gateway HTTP API provides a stable HTTP endpoint that proxies to the Lambda function\n\nMCP transport protocol\n\nStreamable HTTP is the MCP spec's standard transport for remote servers — purpose-built for client-server MCP communication over HTTP\n\nOnly authorized users\n\nAmazon Cognito with OAuth 2.1 is the MCP specification's recommended authorization framework — enforces token-based access control at the API layer\n\nArchitecture Flow ┌──────────────┐ Streamable HTTP ┌──────────────┐ Proxy ┌──────────────┐ │ AI Agent │──────────────────────▶│ API Gateway │───────────▶│ Lambda │ │ (Lambda │ + OAuth 2.1 Token │ HTTP API │ │ MCP Server │ │ functions) │◀──────────────────────│ │◀───────────│ │ │ │ MCP Responses │ + Cognito │ │ (User Info) │ └──────────────┘ │ Authorizer │ └──────────────┘ └──────────────┘",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q053",
@@ -806,7 +860,8 @@
     "D": "Create a second Lambda function to orchestrate the calls to the agents and the rewards Lambda function. Create an AWS Step Functions state machine with one task that runs the second Lambda function. Set up retry and catch branches for the task step."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q054",
@@ -821,7 +876,8 @@
     "D": "Create an Amazon Bedrock agent that has a single action group. Configure three AWS Lambda functions in the action group. Configure the functions to retrieve the communications from the S3 bucket, parse the communications and invoke the Amazon Bedrock model, and store the model responses back to the S3 bucket."
    },
    "answer": "B",
-   "explanation": "Workflow Flow\n\n┌──────────────┐    ┌──────────────────┐    ┌─────────────────┐\n┌──────────────┐\n│ S3 GetObject │───▶│ Pass State       │───▶│ Bedrock         │───▶│ S3\nPutObject │\n│ (Retrieve    │    │ (Intrinsic fn    │    │ InvokeModel     │    │\n(Store model │\n│ template)    │    │ parses specific │     │ (Review content)│    │\nresponse)   │\n│              │    │ portion)         │    │                 │    │\n│\n└──────────────┘    └──────────────────┘    └─────────────────┘\n└──────────────┘\n\n   Requirement                                How B Addresses It\n\n Retrieve\n                      Native S3 SDK integration with GetObject step — no Lambda\n communications\n                      needed\n from S3\n\n Capture a            Intrinsic functions in a Pass state can parse, extract, and\n specific portion     transform JSON data deterministically — perfect for extracting\n from template        specific template sections\n\n Send to Bedrock      Native Bedrock InvokeModel SDK integration — direct service call,\n model                no intermediary\n\n Store responses      Native S3 PutObject integration writes results back to the original\n back to S3           bucket\n\n Workflow               Express workflows handle short-duration, high-volume sequential\n orchestration          processing efficiently\n\nWhy option A is not correct: Bedrock Flows does not have native S3 action nodes for\nreading/writing objects or expression nodes for deterministic template parsing. It's designed for\nFM-centric orchestration, not file-level S3 operations"
+   "explanation": "Workflow Flow ┌──────────────┐ ┌──────────────────┐ ┌─────────────────┐ ┌──────────────┐ │ S3 GetObject │───▶│ Pass State │───▶│ Bedrock │───▶│ S3 PutObject │ │ (Retrieve │ │ (Intrinsic fn │ │ InvokeModel │ │ (Store model │ │ template) │ │ parses specific │ │ (Review content)│ │ response) │ │ │ │ portion) │ │ │ │ │ └──────────────┘ └──────────────────┘ └─────────────────┘ └──────────────┘\n\nRequirement\n\nHow B Addresses It\n\nRetrieve communications from S3\n\nNative S3 SDK integration with GetObject step — no Lambda needed\n\nCapture a specific portion from template\n\nIntrinsic functions in a Pass state can parse, extract, and transform JSON data deterministically — perfect for extracting specific template sections\n\nSend to Bedrock model\n\nNative Bedrock InvokeModel SDK integration — direct service call, no intermediary\n\nStore responses back to S3\n\nNative S3 PutObject integration writes results back to the original bucket\n\nWorkflow orchestration\n\nExpress workflows handle short-duration, high-volume sequential processing efficiently\n\nWhy option A is not correct: Bedrock Flows does not have native S3 action nodes for reading/writing objects or expression nodes for deterministic template parsing. It's designed for FM-centric orchestration, not file-level S3 operations",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q055",
@@ -836,7 +892,8 @@
     "D": "Configure Amazon CloudWatch to monitor response patterns from the AI assistant. Configure CloudWatch alerts for potential compliance violations. Establish a team of human evaluators to review flagged interactions."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q056",
@@ -851,7 +908,8 @@
     "D": "Implement multiple independent supervisor agents that run in parallel to respond to patient inquiries for each department. Configure multiple collaborator agents for each supervisor agent. Integrate all agents with the same knowledge base. Use external routing logic to merge responses from multiple supervisor agents."
    },
    "answer": "A",
-   "explanation": "Architecture Flow\n\nPatient Query\n     │\n     ▼\n\n┌─────────────┐\n│ Supervisor │ ← NLU intent classification\n│   Agent     │\n└──────┬──────┘\n       │ Routes based on intent\n       ├──────────────┬──────────────┬──────────────┐\n       ▼              ▼              ▼              ▼\n┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐\n│ Clinical │ │ Insurance │ │ Scheduling│ │ Claims      │\n│   Agent   │ │ Verify     │ │    Agent   │ │    Agent │\n│           │ │    Agent   │ │            │ │          │\n└─────┬─────┘ └─────┬─────┘ └─────┬─────┘ └─────┬─────┘\n      ▼              ▼              ▼              ▼\n┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐\n│ Clinical │ │ Insurance │ │ Scheduling│ │ Claims      │\n│    KB     │ │     KB     │ │     KB     │ │     KB   │\n└───────────┘ └───────────┘ └───────────┘ └───────────┘"
+   "explanation": "Architecture Flow Patient Query │ ▼\n\n┌─────────────┐ │ Supervisor │ ← NLU intent classification │ Agent │ └──────┬──────┘ │ Routes based on intent ├──────────────┬──────────────┬──────────────┐ ▼ ▼ ▼ ▼ ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐ │ Clinical │ │ Insurance │ │ Scheduling│ │ Claims │ │ Agent │ │ Verify │ │ Agent │ │ Agent │ │ │ │ Agent │ │ │ │ │ └─────┬─────┘ └─────┬─────┘ └─────┬─────┘ └─────┬─────┘ ▼ ▼ ▼ ▼ ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐ │ Clinical │ │ Insurance │ │ Scheduling│ │ Claims │ │ KB │ │ KB │ │ KB │ │ KB │ └───────────┘ └───────────┘ └───────────┘ └───────────┘",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q057",
@@ -866,7 +924,8 @@
     "D": "Create one AWS CDK application for the production environment. Configure the application to invoke the Amazon Bedrock FMs by using the aws_bedrock.ProvisionedModel.fromProvisionedModelArn() method. Create a pipeline in AWS CodePipeline. Configure the pipeline to deploy to the production environment by using an AWS CodeBuild deploy action. For the development environment, manually recreate the resources by referring to the production application code."
    },
    "answer": "C",
-   "explanation": "Requirement                                 How C Addresses It\n\n Dev and\n              Single CodePipeline with separate deployment stages for each\n production\n              environment — clean, consistent CI/CD\n environments\n\n                    fromFoundationModelId() references on-demand FMs by a simple\n Easily switch\n                    model ID string (e.g., anthropic.claude-3-sonnet). Switching models is\n between FMs\n                    just a parameter change — no infrastructure reprovisioning needed\n\n                    Each environment stage can use different model IDs via environment-\n Test various\n                    specific configuration/context variables, letting product owners\n FMs\n                    swap FMs without code changes\n\n Single             One CDK app ensures consistency across environments — DRY\n codebase           principle, easy maintenance\n\nVisual Pipeline Flow\n\n┌──────────┐    ┌───────┐    ┌────────────┐    ┌──────────┐\n┌─────────────┐\n│ Source    │───▶│ Build │───▶│ Deploy Dev │───▶│ Approval │───▶│ Deploy\nProd │\n│ (GitHub) │    │ (CDK) │    │ (Claude    │    │ (Manual) │    │ (Claude\n│\n│          │    │       │    │   Haiku)   │    │          │    │   Sonnet)\n│\n\n└──────────┘    └───────┘             └────────────┘          └──────────┘\n└─────────────┘"
+   "explanation": "Requirement\n\nHow C Addresses It\n\nDev and Single CodePipeline with separate deployment stages for each production environment — clean, consistent CI/CD environments Easily switch between FMs\n\nfromFoundationModelId() references on-demand FMs by a simple model ID string (e.g., anthropic.claude-3-sonnet). Switching models is just a parameter change — no infrastructure reprovisioning needed\n\nTest various FMs\n\nEach environment stage can use different model IDs via environmentspecific configuration/context variables, letting product owners swap FMs without code changes\n\nSingle codebase\n\nOne CDK app ensures consistency across environments — DRY principle, easy maintenance\n\nVisual Pipeline Flow ┌──────────┐ ┌───────┐ ┌────────────┐ ┌──────────┐ ┌─────────────┐ │ Source │───▶│ Build │───▶│ Deploy Dev │───▶│ Approval │───▶│ Deploy Prod │ │ (GitHub) │ │ (CDK) │ │ (Claude │ │ (Manual) │ │ (Claude │ │ │ │ │ │ Haiku) │ │ │ │ Sonnet) │\n\n└──────────┘ └───────┘ └─────────────┘\n\n└────────────┘\n\n└──────────┘",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q058",
@@ -881,7 +940,8 @@
     "D": "Build a centralized Amazon Bedrock agent that uses multiple knowledge bases. Implement AWS IAM Identity Center with hotel-specific permission sets to control hotel staff data access."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q059",
@@ -896,7 +956,8 @@
     "D": "Store the active model provider in a JSON file hosted on Amazon S3. Use AWS AppConfig to reference the S3 file as a hosted configuration source. Configure a Lambda function to read the file through AppConfig at runtime to determine which model to invoke."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q060",
@@ -911,7 +972,8 @@
     "D": "Set Amazon Bedrock client request timeouts to 30 seconds. Implement client-side load shedding. Buffer partial results and stop new requests when the application performance begins to degrade. Set static token usage caps for all requests. Configure exponential backoff retries, dynamic chunk sizing, and context-aware token limits."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q061",
@@ -926,7 +988,8 @@
     "D": "Use regex controls to match patterns for PII. Apply prompt engineering techniques to avoid returning PII or investment advice topics to customers. Enable model invocation logging, delivery logging, and image logging to Amazon S3."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q062",
@@ -941,7 +1004,8 @@
     "D": "Store generated responses and supporting evidence in an Amazon S3 bucket. Enable versioning on the bucket for audits. Use AWS Glue to catalog retrieved documents. Process the retrieved documents in Amazon Athena to generate periodic compliance reports."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q063",
@@ -956,7 +1020,8 @@
     "D": "Use custom user-defined metadata to store author information. Use S3 Object Lock retention periods to track document timestamps. Use S3 Event Notifications to implement domain classification."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q064",
@@ -971,7 +1036,8 @@
     "D": "Configure Amazon Kendra to crawl customer data sources. Share the resulting indexes across accounts so Example Corp can query each customer's Amazon Kendra index to retrieve augmentation data."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q065",
@@ -986,7 +1052,8 @@
     "D": "Use Amazon OpenSearch Service with vector search and Amazon Bedrock Titan embeddings to index and search legal documents. Use custom AWS Lambda functions to merge results with keyword-based filters that are stored in an Amazon RDS database."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q066",
@@ -1002,7 +1069,8 @@
     "E": "Implement Amazon EventBridge rules to capture Amazon Bedrock model invocation events. Route token usage data to an Amazon Data Firehose delivery stream that targets Amazon OpenSearch Serverless. Use OpenSearch dashboards to analyze usage patterns."
    },
    "answer": "BC",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q067",
@@ -1018,7 +1086,8 @@
     "E": "Use Amazon SageMaker JumpStart to host and invoke the FMs."
    },
    "answer": "BC",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q068",
@@ -1033,7 +1102,8 @@
     "D": "Document security controls, observability requirements, and RAG patterns based on the AWS Well-Architected Generative AI Lens in a shared design document. Use Amazon Macie to enforce deployment. Delegate implementation responsibility to each business unit."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q069",
@@ -1048,7 +1118,8 @@
     "D": "Set up standardized multilingual test conversations with identical meaning. Run the test conversations in parallel by using Amazon Bedrock model evaluation jobs. Apply similarity and hallucination thresholds. Integrate the process into the CI/CD pipeline to block releases that fail."
    },
    "answer": "D",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q070",
@@ -1063,7 +1134,8 @@
     "D": "Store model invocation logs in an Amazon S3 bucket. Create an AWS Lambda function to process logs in real time. Manually update Amazon CloudWatch alarm thresholds based on token consumption trends that the Lambda function identifies."
    },
    "answer": "C",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q071",
@@ -1078,7 +1150,8 @@
     "D": "Configure provisioned throughput for Amazon Bedrock in multiple Regions. Implement failover logic in the application code to switch between Regions when throttling occurs. Use AWS Global Accelerator to route traffic to the appropriate endpoints based on user location."
    },
    "answer": "B",
-   "explanation": "🗳\n\n Requirement                                     How B solves it\n\n European         Geographic codes like eu.* in the inference profile ID guarantee that all\n data             European inference stays within European Regions — built into the\n residency        profile, not custom logic\n\n                  Separate API Gateway HTTP APIs route European users to eu.* profiles\n Low latency\n                  and North American users to us.* profiles — each geography served\n (EU + NA)\n                  locally\n\n                  Cross-Region inference profiles automatically distribute load across\n Traffic spike\n                  multiple Regions within the geography — if eu-west-1 hits quota, traffic\n resilience\n                  routes to eu-central-1 seamlessly\n\n Minimize\n                  Two configurations: geographic inference profiles + API Gateway\n operational\n                  routing. No custom failover code, no retry logic, no manual monitoring\n complexity"
+   "explanation": "🗳\n\nRequirement\n\nHow B solves it\n\nEuropean data residency\n\nGeographic codes like eu.* in the inference profile ID guarantee that all European inference stays within European Regions — built into the profile, not custom logic\n\nLow latency (EU + NA)\n\nSeparate API Gateway HTTP APIs route European users to eu.* profiles and North American users to us.* profiles — each geography served locally\n\nTraffic spike resilience\n\nCross-Region inference profiles automatically distribute load across multiple Regions within the geography — if eu-west-1 hits quota, traffic routes to eu-central-1 seamlessly\n\nMinimize operational complexity\n\nTwo configurations: geographic inference profiles + API Gateway routing. No custom failover code, no retry logic, no manual monitoring",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q072",
@@ -1093,7 +1166,8 @@
     "D": "Configure a knowledge base stored in the Amazon S3 Express One Zone storage class in each AWS Local Zone the company operates in. Use Amazon RDS to deploy a vector database in each Local Zone the company operates in. Deploy a large language model (LLM) to Amazon EC2 instances in each Local Zone. Configure the AI assistant to route prompts to the model in the respective Local Zone."
    },
    "answer": "B",
-   "explanation": "🗳\n\n Requirement                                   How B solves it\n\n                 Knowledge bases stored in S3 in each Region — proprietary data never\n Data\n                 leaves its geographic area. Vector databases via Bedrock Knowledge\n residency\n                 Bases are also Regional\n\n Near real-      Bedrock model available in each Region + cross-Region inference\n time, low       profile provides geographic routing with automatic failover — users\n latency         always hit the nearest available model\n\n Multiple\n                 Each Region has its own S3 bucket + Knowledge Base + vector database\n geographic\n                 — complete RAG stack per geography\n areas\n\n RAG             Bedrock Knowledge Bases with vector database is the native,\n architecture    managed RAG solution — retrieval and generation are integrated\n\n Geographic      Cross-Region inference profiles (e.g., us.*, eu.*) guarantee inference\n inference       stays within the geographic boundary — proprietary data in prompts\n boundary        doesn't leave the continent"
+   "explanation": "🗳 Requirement\n\nHow B solves it\n\nData residency\n\nKnowledge bases stored in S3 in each Region — proprietary data never leaves its geographic area. Vector databases via Bedrock Knowledge Bases are also Regional\n\nNear realtime, low latency\n\nBedrock model available in each Region + cross-Region inference profile provides geographic routing with automatic failover — users always hit the nearest available model\n\nMultiple geographic areas\n\nEach Region has its own S3 bucket + Knowledge Base + vector database — complete RAG stack per geography\n\nRAG architecture\n\nBedrock Knowledge Bases with vector database is the native, managed RAG solution — retrieval and generation are integrated\n\nGeographic inference boundary\n\nCross-Region inference profiles (e.g., us.*, eu.*) guarantee inference stays within the geographic boundary — proprietary data in prompts doesn't leave the continent",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q073",
@@ -1108,7 +1182,8 @@
     "D": "Use the Amazon Bedrock Converse API and IAM roles for authentication. Pass previous messages in the request messages array to maintain conversational context. Use programming language-specific SDKs to establish consistent API interfaces."
    },
    "answer": "D",
-   "explanation": "🗳\n\n  Requirement                                     How D solves it\n\n Two                  AWS SDKs provide the same Converse API interface in both\n environments         languages — boto3 (Python/Lambda) and @aws-sdk/client-bedrock-\n (Python +            runtime (JavaScript/EKS). Identical API structure, native language\n JavaScript)          implementation\n\n                Converse API's messages array natively carries conversation history\n Conversational\n                — pass previous turns in each request. No external state store\n context\n                needed\n\n Same FM             Converse API uses a unified, model-agnostic interface — same\n across              request/response format regardless of which FM is selected. Switch\n environments        models without code changes\n\n                     IAM roles for both environments — Lambda execution role and EKS\n Consistent\n                     pod IAM role (via IRSA/Pod Identity). Same authentication mechanism\n authentication\n                     everywhere"
+   "explanation": "🗳\n\nRequirement\n\nHow D solves it\n\nTwo environments (Python + JavaScript)\n\nAWS SDKs provide the same Converse API interface in both languages — boto3 (Python/Lambda) and @aws-sdk/client-bedrockruntime (JavaScript/EKS). Identical API structure, native language implementation\n\nConverse API's messages array natively carries conversation history Conversational — pass previous turns in each request. No external state store context needed Same FM across environments\n\nConverse API uses a unified, model-agnostic interface — same request/response format regardless of which FM is selected. Switch models without code changes\n\nConsistent authentication\n\nIAM roles for both environments — Lambda execution role and EKS pod IAM role (via IRSA/Pod Identity). Same authentication mechanism everywhere",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q074",
@@ -1123,7 +1198,8 @@
     "D": "Enable invocation logging in Amazon Bedrock. Monitor InvocationLatency, InvocationClientErrors, and InvocationServerErrors metrics. Distribute traffic across multiple versions of the same model."
    },
    "answer": "C",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q075",
@@ -1138,7 +1214,8 @@
     "D": "Expose the Lambda function through Amazon API Gateway HTTP API endpoints with the Streamable HTTP transport. Use Amazon Cognito to implement OAuth authentication. Configure API Gateway to validate OAuth tokens."
    },
    "answer": "C",
-   "explanation": "🗳\n\n Requirement                                     How C solves it\n\n                   Streamable HTTP is the standard MCP transport protocol — Lambda\n MCP server\n                   function URLs support streaming responses natively, enabling proper\n compatibility\n                   MCP communication\n\n Stateless         MCP servers \"do not maintain states between invocations\" — aligns\n Lambda            perfectly with Lambda's stateless execution model. Function URLs\n deployment        expose each Lambda directly as an HTTP endpoint\n\n Internal +        Internal apps use IAM roles natively. Third-party partners are granted\n third-party       IAM users/roles with InvokeFunctionUrl permissions — standard\n access            cross-account access pattern\n\n               SigV4 signing + IAM authentication provides the strictest\n Strict auth &\n               authentication mechanism in AWS. Fine-grained InvokeFunctionUrl\n authorization\n               permissions control exactly who can invoke each MCP server\n\n Least\n                   No API Gateway, no Cognito, no additional services — Lambda\n operational\n                   function URLs are a zero-cost, built-in feature of Lambda\n overhead"
+   "explanation": "🗳\n\nRequirement\n\nHow C solves it\n\nMCP server compatibility\n\nStreamable HTTP is the standard MCP transport protocol — Lambda function URLs support streaming responses natively, enabling proper MCP communication\n\nStateless Lambda deployment\n\nMCP servers \"do not maintain states between invocations\" — aligns perfectly with Lambda's stateless execution model. Function URLs expose each Lambda directly as an HTTP endpoint\n\nInternal + third-party access\n\nInternal apps use IAM roles natively. Third-party partners are granted IAM users/roles with InvokeFunctionUrl permissions — standard cross-account access pattern\n\nSigV4 signing + IAM authentication provides the strictest Strict auth & authentication mechanism in AWS. Fine-grained InvokeFunctionUrl authorization permissions control exactly who can invoke each MCP server Least operational overhead\n\nNo API Gateway, no Cognito, no additional services — Lambda function URLs are a zero-cost, built-in feature of Lambda",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q076",
@@ -1153,7 +1230,8 @@
     "D": "Configure the AWS SDK with adaptive retry mode. Use AWS CloudTrail distributed tracing to monitor throttling events."
    },
    "answer": "B",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q077",
@@ -1168,7 +1246,8 @@
     "D": "Configure AWS CloudTrail Insights to analyze API call patterns across accounts and detect anomalous activity in Amazon Bedrock, Amazon Rekognition, Amazon S3, and AWS KMS. Deploy Amazon Macie to scan and classify the video archive. Use server-side encryption with AWS KMS keys (SSE-KMS) to encrypt all stored data. Configure CloudTrail to capture KMS API usage events for audit purposes. Configure Amazon EventBridge rules to process CloudTrail Insights anomalies and Macie findings. Use CloudWatch alarms to trigger automated notifications and security responses when potential security issues are detected."
    },
    "answer": "B",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q078",
@@ -1183,7 +1262,8 @@
     "D": "Create an AWS Step Functions Standard workflow. Configure the first state to call an AWS Lambda function to respond when an employee uploads a new file to the S3 bucket. Use a pipeline in SageMaker Pipelines to re-deploy the model after it has been re-trained on the updated customer dataset. Use the next state in the workflow to run the pipeline when the first state receives a response."
    },
    "answer": "D",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q079",
@@ -1198,7 +1278,8 @@
     "D": "Set up a pipeline that uses multiple retrieve-only evaluation jobs to assess retrieval quality. Create separate evaluation jobs for both FMs that use Amazon Nova Pro as the LLM-as-a-judge model. Evaluate based on faithfulness and citation precision metrics."
    },
    "answer": "B",
-   "explanation": "🗳\n\nSure, . Let me break down Option B in detail.\n\nOption B — Component-by-Component Analysis\n\n1. Retrieve-and-Generate Evaluation Job\n\n Aspect                                             Detail\n\n What it     Evaluates the full RAG pipeline end-to-end — from document retrieval\n does        through FM response generation\n\n             Retrieval quality alone doesn't guarantee generation quality. A chunking\n Why it\n             strategy might retrieve perfect passages, but the FM might still hallucinate.\n matters\n             Only retrieve-and-generate captures this interaction\n\n Medical For medical information, you need confidence that the final answer (not just\n context the retrieved chunks) is accurate and complete\n\n2. Custom Precision at K Metrics\n\n     Aspect                                         Detail\n\n What it            Of the top K retrieved chunks, how many are actually relevant to the\n measures           query\n\n How it\n                    Strategy A (500-token chunks) might achieve precision@5 = 0.80,\n compares\n                    while Strategy B (1000-token chunks) might achieve 0.60 — directly\n chunking\n                    quantifiable comparison\n strategies\n\n                    The company defines what \"relevant\" means for medical content —\n Why \"custom\"\n                    stricter than generic relevance for a healthcare use case\n\nExample:\n\n    Chunking Strategy             Precision@3        Precision@5         Precision@10\n\n 500-token fixed                0.67               0.60                0.50\n\n 1000-token semantic            0.83               0.78                0.65\n\n Hierarchical                   0.90               0.82                0.70\n\n3. LLM-as-a-Judge with 1-5 Scale\n\n  Aspect                                          Detail\n\n How it         Claude Sonnet reads the original query, retrieved context, and generated\n works          response — then scores the response on a 1-5 scale\n\n Why 1-5        Provides granular, quantitative scoring — enables threshold enforcement\n scale          (e.g., \"must average ≥ 4.0 to deploy\")\n\n Evaluating Both FMs answer the same queries with the same retrieved context —\n 2 FMs      Claude judges both, producing directly comparable scores\n\nScoring example:\n\n                            FM A       FM B\n          Query                                                    Reasoning\n                            Score      Score\n\n \"Dosage for                                        FM A cited exact guidelines; FM B was\n                           5          4\n metformin?\"                                        slightly vague\n\n \"Contraindications for                             FM A missed renal impairment; FM B was\n                           3          5\n aspirin?\"                                          comprehensive\n\n \"Symptoms of Type 2\n                           4          4             Both accurate and complete\n diabetes?\"\n\n4. Evaluation Dataset Design\n\nEach entry in the evaluation dataset combines a chunking strategy with test queries:\n\nQuery: \"What are the side effects of lisinopril?\"\n├── Chunking Strategy A (500-token) → retrieves chunks → FM A generates → scored\n├── Chunking Strategy A (500-token) → retrieves chunks → FM B generates → scored\n├── Chunking Strategy B (semantic) → retrieves chunks → FM A generates → scored\n└── Chunking Strategy B (semantic) → retrieves chunks → FM B generates → scored\n\n5. Quality Threshold Enforcement\n\nThe 1-5 scoring directly enables deployment gating:\n\n          Metric               Threshold       Strategy A + FM A         Strategy B + FM B\n\n Avg generation score       ≥ 4.0           3.8 ❌                      4.5 ✅\n\n Precision@5                ≥ 0.75          0.60 ❌                     0.82 ✅\n\n Faithfulness               ≥ 4.0           4.2 ✅                      4.7 ✅\n\nOnly combinations meeting all thresholds are approved for deployment.\n\nWhy This Matters for Medical Use Cases\nMedical RAG systems have zero tolerance for inaccuracy. Option B's configuration\nensures:\n\n   •   Chunking comparison → best retrieval strategy selected via precision metrics\n   •   FM comparison → best generation model selected via judge scores\n   •   Threshold enforcement → only combinations exceeding quality bars reach\n       production\n   •   Single unified evaluation → chunking × FM interactions are captured holistically\n\nThis is why a retrieve-and-generate evaluation with quantitative scoring is essential —\nyou're making deployment decisions that directly impact patient safety."
+   "explanation": "🗳\n\nSure, . Let me break down Option B in detail.\n\nOption B — Component-by-Component Analysis 1. Retrieve-and-Generate Evaluation Job Aspect\n\nDetail\n\nWhat it does\n\nEvaluates the full RAG pipeline end-to-end — from document retrieval through FM response generation\n\nWhy it matters\n\nRetrieval quality alone doesn't guarantee generation quality. A chunking strategy might retrieve perfect passages, but the FM might still hallucinate.\nOnly retrieve-and-generate captures this interaction\n\nMedical For medical information, you need confidence that the final answer (not just context the retrieved chunks) is accurate and complete\n\n2. Custom Precision at K Metrics Aspect\n\nDetail\n\nWhat it measures\n\nOf the top K retrieved chunks, how many are actually relevant to the query\n\nHow it compares chunking strategies\n\nStrategy A (500-token chunks) might achieve precision@5 = 0.80, while Strategy B (1000-token chunks) might achieve 0.60 — directly quantifiable comparison\n\nWhy \"custom\"\n\nThe company defines what \"relevant\" means for medical content — stricter than generic relevance for a healthcare use case\n\nExample:\nChunking Strategy\n\nPrecision@3\n\nPrecision@5\n\nPrecision@10\n\n500-token fixed\n\n0.67\n\n0.60\n\n0.50\n\n1000-token semantic\n\n0.83\n\n0.78\n\n0.65\n\nHierarchical\n\n0.90\n\n0.82\n\n0.70\n\n3. LLM-as-a-Judge with 1-5 Scale Aspect\n\nDetail\n\nHow it works\n\nClaude Sonnet reads the original query, retrieved context, and generated response — then scores the response on a 1-5 scale\n\nWhy 1-5 scale\n\nProvides granular, quantitative scoring — enables threshold enforcement (e.g., \"must average ≥ 4.0 to deploy\")\n\nEvaluating Both FMs answer the same queries with the same retrieved context — 2 FMs Claude judges both, producing directly comparable scores Scoring example:\n\nFM A Score\n\nFM B Score\n\n\"Dosage for metformin?\"\n\n5\n\n4\n\nFM A cited exact guidelines; FM B was slightly vague\n\n\"Contraindications for aspirin?\"\n\n3\n\n5\n\nFM A missed renal impairment; FM B was comprehensive\n\n\"Symptoms of Type 2 diabetes?\"\n\n4\n\n4\n\nBoth accurate and complete\n\nQuery\n\nReasoning\n\n4. Evaluation Dataset Design Each entry in the evaluation dataset combines a chunking strategy with test queries:\nQuery: \"What are the side effects of lisinopril?\" ├── Chunking Strategy A (500-token) → retrieves chunks → FM A generates → scored ├── Chunking Strategy A (500-token) → retrieves chunks → FM B generates → scored ├── Chunking Strategy B (semantic) → retrieves chunks → FM A generates → scored └── Chunking Strategy B (semantic) → retrieves chunks → FM B generates → scored\n\n5. Quality Threshold Enforcement The 1-5 scoring directly enables deployment gating:\nMetric\n\nThreshold\n\nStrategy A + FM A\n\nStrategy B + FM B\n\nAvg generation score\n\n≥ 4.0\n\n3.8 ❌\n\n4.5 ✅\n\nPrecision@5\n\n≥ 0.75\n\n0.60 ❌\n\n0.82 ✅\n\nFaithfulness\n\n≥ 4.0\n\n4.2 ✅\n\n4.7 ✅\n\nOnly combinations meeting all thresholds are approved for deployment.\n\nWhy This Matters for Medical Use Cases Medical RAG systems have zero tolerance for inaccuracy. Option B's configuration ensures:\n• • • •\n\nChunking comparison → best retrieval strategy selected via precision metrics FM comparison → best generation model selected via judge scores Threshold enforcement → only combinations exceeding quality bars reach production Single unified evaluation → chunking × FM interactions are captured holistically\n\nThis is why a retrieve-and-generate evaluation with quantitative scoring is essential — you're making deployment decisions that directly impact patient safety.",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q080",
@@ -1213,7 +1294,8 @@
     "D": "Configure Amazon Q Business to federate data across Amazon S3, Amazon Kinesis, and Amazon SageMaker Feature Store. Configure Amazon EventBridge to invoke data ingestion jobs. Use custom AWS Lambda functions to filter large language model (LLM) outputs for ethical compliance before returning results to users."
    },
    "answer": "B",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q081",
@@ -1229,7 +1311,8 @@
     "E": "Use AWS CloudFormation to create a custom Amazon Bedrock guardrail that has a mask filtering policy. Use stack sets to deploy the guardrail to each account in the organization."
    },
    "answer": "BD",
-   "explanation": "🗳\n\nD → Stack sets deploy guardrails (block policy) to every account\nB → SCP ensures employees can ONLY use approved models AND must specify the guardrail ID in\nevery call\n\nWhy Option A is wrong: Result: every Bedrock invocation is restricted to approved models and\nfiltered through the deployed guardrail\n\nplits enforcement across two different mechanisms unnecessarily. Permissions boundaries must\nbe managed per IAM role — more overhead than a single SCP that handles both constraints. B\nconsolidates both requirements into one SCP"
+   "explanation": "🗳\n\nD → Stack sets deploy guardrails (block policy) to every account B → SCP ensures employees can ONLY use approved models AND must specify the guardrail ID in every call\n\nWhy Option A is wrong: Result: every Bedrock invocation is restricted to approved models and filtered through the deployed guardrail\n\nplits enforcement across two different mechanisms unnecessarily. Permissions boundaries must be managed per IAM role — more overhead than a single SCP that handles both constraints. B consolidates both requirements into one SCP",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q082",
@@ -1244,7 +1327,8 @@
     "D": "Integrate an Amazon API Gateway REST API with an AWS Lambda function that invokes Amazon Bedrock. Use Lambda response streaming to stream responses. Enforce token limits within the Lambda function. Implement retry logic by using Lambda and API Gateway timeout configurations."
    },
    "answer": "D",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q083",
@@ -1259,7 +1343,8 @@
     "D": "Create separate Amazon Bedrock endpoints for simple and complex inquiries. Implement a rule- based routing system based on keyword detection. Use on-demand pricing for the smaller model and provisioned throughput for the larger model."
    },
    "answer": "B",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q084",
@@ -1274,7 +1359,8 @@
     "D": "Use Amazon Kendra to improve roast log retrieval accuracy. Store normalized prompt metadata within Amazon DynamoDB. Use AWS Step Functions to orchestrate multistep prompts."
    },
    "answer": "A",
-   "explanation": "🗳\n\n    Requirement                                    How A solves it\n\n                        Prompt Management with approval workflows ensures\n                        identical, vetted prompts are used consistently across all Regions\n 99.5% output\n                        — no prompt drift or unauthorized changes. Provisioned\n consistency\n                        throughput provides dedicated model capacity, eliminating\n                        variability from shared infrastructure\n\n                        Provisioned throughput guarantees dedicated compute capacity\n Inference latency\n                        — eliminates queuing delays, cold starts, and throttling that cause\n < 1 second\n                        slow inference during the retrieval step\n\n                 Guardrails with semantic denial rules evaluate outputs against\n Block unsafe    safety policies — detects and blocks dangerous\n recommendations recommendations (e.g., excessive brewing temperatures) before\n                 they reach users"
+   "explanation": "🗳\n\nRequirement\n\nHow A solves it\n\n99.5% output consistency\n\nPrompt Management with approval workflows ensures identical, vetted prompts are used consistently across all Regions — no prompt drift or unauthorized changes. Provisioned throughput provides dedicated model capacity, eliminating variability from shared infrastructure\n\nInference latency < 1 second\n\nProvisioned throughput guarantees dedicated compute capacity — eliminates queuing delays, cold starts, and throttling that cause slow inference during the retrieval step\n\nGuardrails with semantic denial rules evaluate outputs against Block unsafe safety policies — detects and blocks dangerous recommendations recommendations (e.g., excessive brewing temperatures) before they reach users",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q085",
@@ -1289,7 +1375,9 @@
     "D": "Create separate AWS accounts for each Region with individual compliance frameworks. Use Amazon SageMaker AI with custom monitoring to track model performance and compliance with data residency requirements. Create manual reports for each regulatory jurisdiction."
    },
    "answer": "C",
-   "explanation": "🗳\n\n Requirement                                      How C solves it\n\n Data               Region-specific S3 bucket policies enforce that data stays in the\n residency &        correct geographic Region. S3 Object Lock provides WORM (Write\n storage            Once Read Many) compliance — data cannot be tampered with or\n compliance         deleted, meeting strict regulatory retention requirements\n\n Processing         Pre-processing data within the Region based on geographic origin\n within same        ensures that European data is processed in European Regions, Asian\n continent          data in Asian Regions, etc. — before it ever reaches Bedrock\n\n Audit trails of\n                    CloudTrail immutable logs provide tamper-proof, regulatory-grade\n decision-\n                    audit trails of all application activities and AI decision processes\n making\n\n Data              Amazon Macie automatically discovers, classifies, and protects\n classification    sensitive data — identifying PII, financial data, and other regulated\n capabilities      content across the S3 data stores"
+   "explanation": "🗳\n\nRequirement\n\nHow C solves it\n\nData residency & storage compliance\n\nRegion-specific S3 bucket policies enforce that data stays in the correct geographic Region. S3 Object Lock provides WORM (Write Once Read Many) compliance — data cannot be tampered with or deleted, meeting strict regulatory retention requirements\n\nProcessing within same continent\n\nPre-processing data within the Region based on geographic origin ensures that European data is processed in European Regions, Asian data in Asian Regions, etc. — before it ever reaches Bedrock\n\nAudit trails of decisionmaking\n\nCloudTrail immutable logs provide tamper-proof, regulatory-grade audit trails of all application activities and AI decision processes\n\nData classification capabilities\n\nAmazon Macie automatically discovers, classifies, and protects sensitive data — identifying PII, financial data, and other regulated content across the S3 data stores",
+   "explanationSource": "ExamTopics PDF (community discussion)",
+   "note": "Answer from PDF; reviewer considers it debatable"
   },
   {
    "id": "Q086",
@@ -1304,7 +1392,8 @@
     "D": "Use Amazon SageMaker Model Monitor to detect model behavior drift. Use AWS WAF to filter content. Store customer interactions in an encrypted Amazon RDS database. Use Amazon API Gateway to create custom HTTP APIs to integrate with the compliance dashboard."
    },
    "answer": "A",
-   "explanation": "🗳\n\n    Aspect                  Option A                               Option C\n\n                  Guardrails, Model\n Services                                        Agents, Knowledge Bases, Guardrails,\n                  Evaluation, DynamoDB,\n involved                                        OpenSearch, QuickSight\n                  CloudWatch\n\n                All fully                        OpenSearch requires cluster sizing, node\n Infrastructure\n                serverless/managed —             management, scaling policies, index\n management\n                zero cluster management          lifecycle\n\n                  Configure guardrails +         Set up KB (vector store, data ingestion,\n Setup\n                  DynamoDB table +               chunking), Agents, OpenSearch cluster,\n complexity\n                  CloudWatch metrics             QuickSight dashboards\n\n Operational\n                  Minimal                        Significantly more\n overhead"
+   "explanation": "🗳\n\nAspect Services involved\n\nOption A Guardrails, Model Evaluation, DynamoDB, CloudWatch\n\nAll fully Infrastructure serverless/managed — management zero cluster management\n\nOption C Agents, Knowledge Bases, Guardrails, OpenSearch, QuickSight OpenSearch requires cluster sizing, node management, scaling policies, index lifecycle\n\nSetup complexity\n\nConfigure guardrails + DynamoDB table + CloudWatch metrics\n\nSet up KB (vector store, data ingestion, chunking), Agents, OpenSearch cluster, QuickSight dashboards\n\nOperational overhead\n\nMinimal\n\nSignificantly more",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q087",
@@ -1319,7 +1408,8 @@
     "D": "Configure the FM to request temporary credentials from AWS STS. Access the data by using presigned S3 URLs that are generated by an API that applies business unit and Regional filters. Use AWS CloudTrail to collect comprehensive audit trails of data access."
    },
    "answer": "B",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q088",
@@ -1334,7 +1424,8 @@
     "D": "Use the latest Amazon reranker model through the reranking configuration within Amazon Bedrock Knowledge Bases. Use the model to improve document relevance scoring and to reorder results based on contextual assessments."
    },
    "answer": "D",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q089",
@@ -1349,7 +1440,8 @@
     "D": "Use toxicity detection with thresholds configured to 0.5 for all categories. Use parallel processing for both prompt safety classification and personally identifiable information (PII) detection with entity redaction. Apply Amazon CloudWatch alarms to filter metrics."
    },
    "answer": "A",
-   "explanation": "🗳\n\nCustomer Message → [Parallel Execution]\n                    ├── Toxicity Detection\n                    ├── Prompt Safety Classification\n\n                          └── PII Detection\n                         → [All pass?] → FM processing\n                         → [Any fail?] → Block/Flag"
+   "explanation": "🗳\n\nCustomer Message → [Parallel Execution] ├── Toxicity Detection ├── Prompt Safety Classification\n\n└── PII Detection → [All pass?] → FM processing → [Any fail?] → Block/Flag",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q090",
@@ -1364,7 +1456,8 @@
     "D": "Implement text-to-SQL transformations with SQL validations to accurately retrieve relevant booking patterns, preferences, and loyalty information from the RDS database. Use the results to generate personalized cabin upgrade recommendations. Apply Amazon Bedrock guardrails to filter responses. Use confidence scoring and semantic similarity searches to reduce hallucinations."
    },
    "answer": "B",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q091",
@@ -1379,7 +1472,8 @@
     "D": "Configure a cross-Region Amazon Bedrock guardrail to apply a set of content and word filters. Set the guardrail to detect mode during development and testing. Switch to mask mode for production deployment."
    },
    "answer": "B",
-   "explanation": "Requirement How D solves it Amazon Titan Embeddings converts journal abstracts into dense Semantic vector representations that capture semantic meaning — queries find text search conceptually similar content, not just keyword matches Text + Aurora PostgreSQL stores vectors alongside metadata columns in the metadata same table — a single query can filter by metadata AND rank by vector search similarity simultaneously Match pgvector extension provides native similarity operators (<-> cosine similar distance, <=> inner product) — directly compares abstract embeddings abstracts to find matches < 1 million Aurora PostgreSQL with pgvector comfortably handles this scale — well files within its performance envelope Least Aurora Serverless auto-scales capacity (even to zero), eliminates operational instance management. Titan Embeddings is fully managed via API — no overhead model hosting\n\n🗳\n\n Requirement                                 How B solves it\n\n                 Sensitive information filters are the specific Bedrock guardrail type\n Prevent PII\n                 designed to detect personal information (names, SSNs, account\n exposure\n                 numbers, etc.)\n\n Evaluate        Mask mode during development replaces detected PII with\n effectiveness   placeholders (e.g., {NAME}) — developers can see exactly where and\n before          what the guardrail catches, measure detection accuracy, and identify\n production      gaps without exposing real data\n\n Production      Block mode in production prevents any response containing PII from\n protection      reaching customers — strictest enforcement\n\n                 Deploying a copy of the guardrail to each Region ensures all\n Data\n                 processing occurs locally where each customer is located — no cross-\n residency\n                 Region data movement\n\nOption A : Cross-Region directly violates data residency — customer data would traverse\nRegions. Detect mode only logs PII detections but still passes PII through to the user — doesn't\nprevent exposure in production"
+   "explanation": "🗳\n\nRequirement\n\nHow B solves it\n\nPrevent PII exposure\n\nSensitive information filters are the specific Bedrock guardrail type designed to detect personal information (names, SSNs, account numbers, etc.)\n\nEvaluate effectiveness before production\n\nMask mode during development replaces detected PII with placeholders (e.g., {NAME}) — developers can see exactly where and what the guardrail catches, measure detection accuracy, and identify gaps without exposing real data\n\nProduction protection\n\nBlock mode in production prevents any response containing PII from reaching customers — strictest enforcement\n\nData residency\n\nDeploying a copy of the guardrail to each Region ensures all processing occurs locally where each customer is located — no crossRegion data movement\n\nOption A : Cross-Region directly violates data residency — customer data would traverse Regions. Detect mode only logs PII detections but still passes PII through to the user — doesn't prevent exposure in production",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q092",
@@ -1394,7 +1488,9 @@
     "D": "Use Amazon Titan Embeddings in Amazon Bedrock to create vector representations of the digitized files. Store embeddings in an Amazon Aurora PostgreSQL Serverless database that has the pgvector extension."
    },
    "answer": "D",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF",
+   "note": "Answer from PDF; reviewer considers it debatable"
   },
   {
    "id": "Q093",
@@ -1410,7 +1506,8 @@
     "E": "Configure the source S3 bucket to send notifications to the Step Functions workflow when an object is created in the bucket."
    },
    "answer": "CD",
-   "explanation": "🗳\n\n  Requirement                                     How D solves it\n\n \"As soon as\n                     S3 event notifications to EventBridge trigger immediately on object\n new files are\n                     creation\n created\"\n\n                     EventBridge rule matches S3 PutObject events and invokes the Step\n Reliable\n                     Functions workflow — this is the supported pattern for S3 → Step\n invocation\n                     Functions\n\n   Requirement                                      How C solves it\n\n Audio → text          Transcribe converts MP3 recordings to text with validated job\n conversion            completion\n\n Structured            Lambda constructs a well-engineered prompt with the transcript\n summaries +           text, then invokes Bedrock FMs to produce structured analysis\n sentiment             output\n\n 20 MB                 Lambda handles reading large transcripts from S3 (Transcribe\n recordings            outputs to S3), avoiding Step Functions' 256 KB state payload limit"
+   "explanation": "🗳\n\nRequirement\n\nHow D solves it\n\n\"As soon as new files are created\"\n\nS3 event notifications to EventBridge trigger immediately on object creation\n\nReliable invocation\n\nEventBridge rule matches S3 PutObject events and invokes the Step Functions workflow — this is the supported pattern for S3 → Step Functions\n\nRequirement\n\nHow C solves it\n\nAudio → text conversion\n\nTranscribe converts MP3 recordings to text with validated job completion\n\nStructured summaries + sentiment\n\nLambda constructs a well-engineered prompt with the transcript text, then invokes Bedrock FMs to produce structured analysis output\n\n20 MB recordings\n\nLambda handles reading large transcripts from S3 (Transcribe outputs to S3), avoiding Step Functions' 256 KB state payload limit",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q094",
@@ -1425,7 +1522,8 @@
     "D": "Create a second knowledge base. Set up an S3 Lifecycle configuration on the bucket to remove reports that are older than 3 years. Invoke an AWS Lambda function that syncs the bucket with the original knowledge base when a new report is uploaded to the bucket. Use Amazon Comprehend to detect and redact PII before syncing the bucket with the second knowledge base. When a user interacts with the AI assistant, redirect the model to the appropriate knowledge base depending on the user’s Cognito user group."
    },
    "answer": "C",
-   "explanation": "🗳\n\n  Requirement                                     How C solves it\n\n Surgeons see        Surgeon Cognito group → ApplyGuardrail with a permissive\n PII                 configuration (no PII redaction) — full patient data visible\n\n Engineers get       Engineer Cognito group → ApplyGuardrail with sensitive information\n PII redacted        filters enabled — PII automatically masked in responses\n\n Only reports <      S3 Lifecycle configuration automatically deletes reports older than 3\n 3 years old         years from the bucket\n\n Knowledge\n                     Daily Lambda sync ensures the KB reflects the bucket's current state\n base stays\n                     — including removals from Lifecycle expiration\n current\n\n Existing            Builds on the existing Bedrock KB and Cognito authentication —\n architecture        minimal new infrastructure"
+   "explanation": "🗳 Requirement\n\nHow C solves it\n\nSurgeons see PII\n\nSurgeon Cognito group → ApplyGuardrail with a permissive configuration (no PII redaction) — full patient data visible\n\nEngineers get PII redacted\n\nEngineer Cognito group → ApplyGuardrail with sensitive information filters enabled — PII automatically masked in responses\n\nOnly reports < 3 years old\n\nS3 Lifecycle configuration automatically deletes reports older than 3 years from the bucket\n\nKnowledge base stays current\n\nDaily Lambda sync ensures the KB reflects the bucket's current state — including removals from Lifecycle expiration\n\nExisting architecture\n\nBuilds on the existing Bedrock KB and Cognito authentication — minimal new infrastructure",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q095",
@@ -1440,7 +1538,8 @@
     "D": "Configure CloudWatch custom dashboards that integrate operational metrics with imported business metrics. Set up CloudWatch composite alarms with anomaly detection. Use Amazon SNS to create alarm actions to notify stakeholders when correlated metrics indicate performance issues."
    },
    "answer": "D",
-   "explanation": "🗳\n\n  Requirement                                     How D solves it\n\n Correlate\n                      CloudWatch custom dashboards integrate operational metrics\n technical +\n                      alongside imported business metrics — single pane of glass showing\n business\n                      both dimensions\n metrics\n\n Automatic            Anomaly detection automatically learns baseline patterns and\n degradation          detects deviations — no manual threshold tuning needed for\n alerts               \"degradation\" detection\n\n                      Composite alarms combine multiple individual alarms (e.g., latency\n Correlated\n                      spike AND conversion drop) — triggering only when correlated\n alerting\n                      metrics together indicate a real issue\n\n Stakeholder         SNS alarm actions deliver alerts to appropriate stakeholders when\n notifications       composite alarm conditions are met\n\n Comprehensive Unified dashboards show technical metrics (token usage, latency,\n visibility    errors) alongside business metrics (conversion, revenue)"
+   "explanation": "🗳\n\nRequirement\n\nHow D solves it\n\nCorrelate technical + business metrics\n\nCloudWatch custom dashboards integrate operational metrics alongside imported business metrics — single pane of glass showing both dimensions\n\nAutomatic degradation alerts\n\nAnomaly detection automatically learns baseline patterns and detects deviations — no manual threshold tuning needed for \"degradation\" detection\n\nCorrelated alerting\n\nComposite alarms combine multiple individual alarms (e.g., latency spike AND conversion drop) — triggering only when correlated metrics together indicate a real issue\n\nStakeholder notifications\n\nSNS alarm actions deliver alerts to appropriate stakeholders when composite alarm conditions are met\n\nComprehensive Unified dashboards show technical metrics (token usage, latency, visibility errors) alongside business metrics (conversion, revenue)",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q096",
@@ -1455,7 +1554,8 @@
     "D": "Deploy the FM in Amazon SageMaker AI in eu-north-1. Configure a SageMaker AI VPC endpoint. Extend existing SCPs to allow employees to use the SageMaker AI endpoint. Integrate the FM in SageMaker AI with the business application."
    },
    "answer": "C",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q097",
@@ -1470,7 +1570,8 @@
     "D": "Create an Amazon Bedrock agent to orchestrate multiple AWS Lambda functions to decompose queries. Create an Amazon Bedrock knowledge base to store the reference medical documents. Use the agent's built-in knowledge base capabilities. Add deep research and reasoning capabilities to the agent to reduce ambiguity in the medical terminology."
    },
    "answer": "B",
-   "explanation": "Requirement How B solves it Reduce Query decomposition breaks complex medical queries into focused semantic sub-queries — each sub-query targets a specific aspect, preventing dilution diluted results from overly broad searches Domain- Bedrock knowledge base indexes medical documents — retrieval is specific grounded in actual domain vocabulary, reducing ambiguity in terms like terminology \"MI\" (myocardial infarction vs. mitral insufficiency) 1,000 Bedrock Flows provide a streamlined, managed orchestration pipeline queries/min, (FM + KB) — no agent reasoning loops, no Lambda cold starts, no multi- <2s model handoffs adding latency response Least Everything is fully managed: KB handles indexing/retrieval, query operational decomposition is a native KB feature (toggle on), Flows handle overhead orchestration — zero custom code The architecture: Query arrives → Bedrock Flow receives it KB query decomposition splits complex query into focused sub-queries Each sub-query retrieves from medical document KB with precision FM synthesizes decomposed results into a comprehensive, accurate answer"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q098",
@@ -1485,7 +1586,8 @@
     "D": "Use AWS Lambda functions to create an automated testing framework that samples production traffic and routes duplicate requests to the updated model version. Use Amazon Comprehend sentiment analysis to compare results. Block deployment if sentiment scores decrease."
    },
    "answer": "B",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q099",
@@ -1500,7 +1602,8 @@
     "D": "Reinforce the requirement to include the new promotional message within product recommendations by using an output indicator in prompts to the FM."
    },
    "answer": "D",
-   "explanation": "🗳\n\nThis is fundamentally a prompt engineering problem — the FM isn't consistently following the\ninstruction to include the promotional message. An output indicator is the standard technique to\nsolve this:"
+   "explanation": "🗳 This is fundamentally a prompt engineering problem — the FM isn't consistently following the instruction to include the promotional message. An output indicator is the standard technique to solve this:",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q100",
@@ -1515,7 +1618,8 @@
     "D": "Configure OpenID Connect (OIDC) federation between Microsoft Entra ID and IAM. Use attribute- based access control to map department attributes to specific model access permissions. Apply SCP policies to restrict access to Amazon Bedrock FM families based on department. Use Microsoft Entra ID’s built-in logging capabilities to maintain an audit trail of model interactions."
    },
    "answer": "A",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q101",
@@ -1530,7 +1634,8 @@
     "D": "Use an Amazon Bedrock knowledge base as the vector store. Use Amazon Kendra to perform multilingual document processing. Configure the vector store to automatically handle language detection and translation for each query."
    },
    "answer": "A",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q102",
@@ -1546,7 +1651,8 @@
     "E": "Switch to Amazon SageMaker Asynchronous Inference for all requests. Store requests in an Amazon S3 bucket. Set the minimum number of instances to 0."
    },
    "answer": "AD",
-   "explanation": "🗳\n\n Problem                                       How D solves it\n\n Cold         Setting minimum instances > 0 ensures at least one warm instance is\n start        always running — eliminates cold start delays that cause multi-second\n latency      waits\n\n Time-to-\n              Response streaming sends tokens to the user as they're generated rather\n first-\n              than waiting for the full response — directly addresses the \"abandoned after\n token\n              2 seconds waiting for the first token\" problem\n (TTFT)\n\n p95\n latency      Streaming delivers the first token in milliseconds once inference begins,\n under        combined with warm instances means no startup delay\n 800ms\n\n   Problem                                      How A solves it\n\n Model\n                 Model preload upon container startup ensures weights are in GPU\n loading\n                 memory before any request arrives — no lazy loading delays\n latency\n\n            Dynamic batching groups concurrent requests into a single inference\n Throughput\n            pass, improving GPU utilization and reducing per-request queuing time\n under load\n            during peak traffic\n\n Uneven\n                 Batching smooths out latency variance by processing requests efficiently\n response\n                 rather than sequentially\n times\n\nTogether: warm instances (D) + preloaded models (A) = zero cold start. Streaming (D) = instant\nfirst token. Dynamic batching (A) = consistent performance under load."
+   "explanation": "🗳\n\nProblem\n\nHow D solves it\n\nCold start latency\n\nSetting minimum instances > 0 ensures at least one warm instance is always running — eliminates cold start delays that cause multi-second waits\n\nTime-tofirsttoken (TTFT)\n\nResponse streaming sends tokens to the user as they're generated rather than waiting for the full response — directly addresses the \"abandoned after 2 seconds waiting for the first token\" problem\n\np95 latency under 800ms\n\nStreaming delivers the first token in milliseconds once inference begins, combined with warm instances means no startup delay\n\nProblem\n\nHow A solves it\n\nModel loading latency\n\nModel preload upon container startup ensures weights are in GPU memory before any request arrives — no lazy loading delays\n\nDynamic batching groups concurrent requests into a single inference Throughput pass, improving GPU utilization and reducing per-request queuing time under load during peak traffic Uneven response times\n\nBatching smooths out latency variance by processing requests efficiently rather than sequentially\n\nTogether: warm instances (D) + preloaded models (A) = zero cold start. Streaming (D) = instant first token. Dynamic batching (A) = consistent performance under load.",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q103",
@@ -1561,7 +1667,8 @@
     "D": "Create Amazon CloudWatch dashboards to monitor response quality and latency metrics. Implement custom logic in the Lambda functions to select models based on metric thresholds. Use environment variables that are stored in AWS Systems Manager Parameter Store to define model selection parameters that can be updated across Regions."
    },
    "answer": "A",
-   "explanation": "🗳\n\n  Requirement                                     How A solves it\n\n Dynamic\n                    Feature flags in AppConfig define model selection criteria — switch\n model\n                    between models by updating configuration, not code\n selection\n\n No code            The AppConfig Agent Lambda extension retrieves configurations at\n changes or         runtime — model preferences are decoupled from application code\n redeployment       entirely\n\n Gradual 20%        AppConfig's linear deployment strategy natively supports\n traffic rollout    percentage-based rollouts (e.g., start at 20%, increment over time)\n\n Auto-rollback\n                    AppConfig validation rules monitor error rates during deployment\n at >1% error\n                    and automatically roll back if the threshold is exceeded\n rate\n\n                    AppConfig is a Regional service that can be configured identically\n Multi-Region\n                    across all three Regions"
+   "explanation": "🗳 Requirement\n\nHow A solves it\n\nDynamic model selection\n\nFeature flags in AppConfig define model selection criteria — switch between models by updating configuration, not code\n\nNo code changes or redeployment\n\nThe AppConfig Agent Lambda extension retrieves configurations at runtime — model preferences are decoupled from application code entirely\n\nGradual 20% traffic rollout\n\nAppConfig's linear deployment strategy natively supports percentage-based rollouts (e.g., start at 20%, increment over time)\n\nAuto-rollback at >1% error rate\n\nAppConfig validation rules monitor error rates during deployment and automatically roll back if the threshold is exceeded\n\nMulti-Region\n\nAppConfig is a Regional service that can be configured identically across all three Regions",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q104",
@@ -1577,7 +1684,8 @@
     "E": "Enable IAM authentication for the OpenSearch Serverless domain. Add the es:ESHttp* permission to the Lambda function execution role."
    },
    "answer": "AB",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q105",
@@ -1592,7 +1700,8 @@
     "D": "Train a custom Amazon SageMaker AI model to securely transform text to SQL. Attach VPC endpoints to isolate the customer data database. Store query history in Amazon DynamoDB."
    },
    "answer": "B",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q106",
@@ -1607,7 +1716,8 @@
     "D": "Use Amazon Bedrock Data Automation (BDA) with AWS Lambda functions to process batches of content files. Fine-tune foundation models (FMs) in Amazon Bedrock to classify documents across all content types. Store the processed data in Amazon ElastiCache (Redis OSS) by using Cluster Mode with sharding. Use Amazon Bedrock Prompt Management for version control."
    },
    "answer": "B",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q107",
@@ -1622,7 +1732,8 @@
     "D": "Use the Strands SDK to deploy multiple agents that connect to multiple knowledge bases that contain specialized medical documents. Compare the responses of the agents. Evaluate the integration of the agents with the company’s existing systems."
    },
    "answer": "A",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q108",
@@ -1637,7 +1748,8 @@
     "D": "Combine the sample prompts into a single JSON document. Create an Amazon Bedrock knowledge base from the document. Create an Amazon Bedrock evaluation job that uses the retrieval and response generation evaluation type. Specify an Amazon S3 bucket as the output. Run an evaluation job for each FM."
    },
    "answer": "B",
-   "explanation": "🗳"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q109",
@@ -1652,7 +1764,8 @@
     "D": "Implement response streaming to display partial responses as the application generates them. Set a 30-second timeout for Lambda function execution time. Store complete response records in Amazon S3."
    },
    "answer": "D",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q110",
@@ -1668,7 +1781,8 @@
     "E": "Configure Amazon Bedrock intelligent prompt routing."
    },
    "answer": "AC",
-   "explanation": "Together: Prompt Management governs the prompt lifecycle (version, test, audit) → Flows\noperationalizes those prompts into integrated application workflows.\n\n Requirement                                   How A solves it\n\n Version          Prompt Management provides native prompt versioning — create,\n control          iterate, and track prompt versions within the Bedrock console\n\n                  Parameterized variables allow testing different prompt variants against\n Test prompt\n                  the same FM or across different FMs for each use case (assistants,\n variations\n                  graders, analytics)\n\n                  Prompt Management natively integrates with CloudTrail — all prompt\n Audit trails     changes and usage are automatically logged without additional\n                  configuration\n\n                  Versioned prompts with parameters ensure all sub-applications\n Consistency\n                  reference the same approved prompt version\n\n   Requirement                                   How C solves it\n\n Integration into      Flows creates managed workflows that chain FMs, prompts, and\n main                  AWS services into production-ready pipelines for each sub-\n application           application\n\n Consistency           Flows connects directly with Prompt Management versioned\n across sub-           prompts — all workflow nodes reference the same governed prompt\n applications          versions\n\n Least\n                       Fully managed, visual workflow builder — no custom orchestration\n operational\n                       code needed\n overhead\n\nWhy C is not correct: Adds redundant operational overhead — Bedrock Prompt Management\nalready integrates with CloudTrail for audit trails natively. AWS Config rules for prompt tracking\nrequire custom configuration and maintenance"
+   "explanation": "Together: Prompt Management governs the prompt lifecycle (version, test, audit) → Flows operationalizes those prompts into integrated application workflows.\n\nRequirement\n\nHow A solves it\n\nVersion control\n\nPrompt Management provides native prompt versioning — create, iterate, and track prompt versions within the Bedrock console\n\nTest prompt variations\n\nParameterized variables allow testing different prompt variants against the same FM or across different FMs for each use case (assistants, graders, analytics)\n\nAudit trails\n\nPrompt Management natively integrates with CloudTrail — all prompt changes and usage are automatically logged without additional configuration\n\nConsistency\n\nVersioned prompts with parameters ensure all sub-applications reference the same approved prompt version\n\nRequirement\n\nHow C solves it\n\nIntegration into main application\n\nFlows creates managed workflows that chain FMs, prompts, and AWS services into production-ready pipelines for each subapplication\n\nConsistency across subapplications\n\nFlows connects directly with Prompt Management versioned prompts — all workflow nodes reference the same governed prompt versions\n\nLeast operational overhead\n\nFully managed, visual workflow builder — no custom orchestration code needed\n\nWhy C is not correct: Adds redundant operational overhead — Bedrock Prompt Management already integrates with CloudTrail for audit trails natively. AWS Config rules for prompt tracking require custom configuration and maintenance",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q111",
@@ -1683,7 +1797,8 @@
     "D": "Use Amazon EventBridge Pipes to invoke resolvers based on Amazon CloudWatch log patterns. Store response metadata in Amazon DynamoDB. Configure a TTL and versioned writes. Use Amazon Q Developer to dynamically generate fallback prompts that are routed through a Lambda coordinator."
    },
    "answer": "A",
-   "explanation": "Issue                                       How A solves it\n\n Expired\n secrets       Lambda functions retrieve and pass updated secret metadata as outputs\n not           at each workflow step — agents always receive fresh credentials because\n refreshed     the data flows through the current execution, not a stale cache\n in time\n\n Agents\n using         Step Functions Map states run agent workflows in parallel with freshly\n stale data    resolved secrets passed via Lambda outputs — the execution pipeline\n despite       itself guarantees current data at each invocation rather than relying on\n drift         alerts to trigger manual refresh\n alerts\n\n Outdated      AWS AppConfig versions all prompt flows with feature gating — faulty\n templates     templates can be instantly rolled back to a known-good version, preventing\n causing       cascading propagation. AppConfig's deployment strategies (percentage-\n cascading     based rollout, automatic rollback on alarms) provide production-safe\n failures      template management"
+   "explanation": "Issue\n\nHow A solves it\n\nExpired secrets not refreshed in time\n\nLambda functions retrieve and pass updated secret metadata as outputs at each workflow step — agents always receive fresh credentials because the data flows through the current execution, not a stale cache\n\nAgents using stale data despite drift alerts\n\nStep Functions Map states run agent workflows in parallel with freshly resolved secrets passed via Lambda outputs — the execution pipeline itself guarantees current data at each invocation rather than relying on alerts to trigger manual refresh\n\nOutdated templates causing cascading failures\n\nAWS AppConfig versions all prompt flows with feature gating — faulty templates can be instantly rolled back to a known-good version, preventing cascading propagation. AppConfig's deployment strategies (percentagebased rollout, automatic rollback on alarms) provide production-safe template management",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q112",
@@ -1698,7 +1813,8 @@
     "D": "Enable AgentCore Observability and send trace data to Amazon CloudWatch Logs. Use a custom AWS Lambda function to extract tool performance metrics from the logs. Use Amazon Managed Grafana to visualize trends."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q113",
@@ -1714,7 +1830,8 @@
     "E": "Implement RAG by using a knowledge base to index the customer data with vector embeddings. Retrieve only the most semantically relevant information for each recommendation request based on the current customer context."
    },
    "answer": "AE",
-   "explanation": "Answers: AE The combined architecture: Knowledge Base (E) → indexes all customer data with embeddings → retrieves only semantically relevant information Chunking (A) → if retrieved data still exceeds context limits → divides into processable segments → synthesizes comprehensive recommendation"
+   "explanation": "The combined architecture:\nKnowledge Base (E) → indexes all customer data with embeddings → retrieves only semantically relevant information Chunking (A) → if retrieved data still exceeds context limits → divides into processable segments → synthesizes comprehensive recommendation",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q114",
@@ -1729,7 +1846,8 @@
     "D": "Use Amazon SQS with different SQS queues for each content type. Configure AWS Lambda consumers that analyze content and invoke appropriate FMs based on message attributes by using Amazon Bedrock with an AWS SDK."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q115",
@@ -1744,7 +1862,8 @@
     "D": "Build a custom solution by using Amazon SageMaker AI to train a classifier model on historical responses to detect anomalies when the solution compares responses from the new FM version to previous patterns."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q116",
@@ -1759,7 +1878,8 @@
     "D": "Deploy both models on Amazon EC2 instances and enable auto scaling. Use a custom application heuristic to route requests to the appropriate instance based on phrase length and keyword rules."
    },
    "answer": "C",
-   "explanation": "Answer : C Requirement How C solves it Near real-time Fargate processes messages from the first queue, invokes the small for high- model, and returns results immediately for scores ≥ 0.65 confidence Async for low- Requests with confidence < 0.65 are placed on a second SQS queue confidence — true asynchronous processing with the larger model Scale for SQS absorbs traffic bursts as a buffer; Fargate auto-scales task count sudden spikes based on queue depth Cost The large model is invoked only for requests routed to the second optimization queue — requests with high confidence never touch it Decoupled Two SQS queues completely decouple: ingest → small model components / processing → large model processing. If any component fails, high resiliency messages persist in the queue and are retried Why Option A is wrong: The larger model is called synchronously, directly violating the asynchronous processing requirement for low-confidence requests. Tightly coupled — API Gateway → small model → large model is a synchronous chain with no decoupling. A failure in the large model blocks the entire request"
+   "explanation": "Requirement\n\nHow C solves it\n\nNear real-time for highconfidence\n\nFargate processes messages from the first queue, invokes the small model, and returns results immediately for scores ≥ 0.65\n\nAsync for lowconfidence\n\nRequests with confidence < 0.65 are placed on a second SQS queue — true asynchronous processing with the larger model\n\nScale for sudden spikes\n\nSQS absorbs traffic bursts as a buffer; Fargate auto-scales task count based on queue depth\n\nCost optimization\n\nThe large model is invoked only for requests routed to the second queue — requests with high confidence never touch it\n\nDecoupled components / high resiliency\n\nTwo SQS queues completely decouple: ingest → small model processing → large model processing. If any component fails, messages persist in the queue and are retried\n\nWhy Option A is wrong:\n\nThe larger model is called synchronously, directly violating the asynchronous processing requirement for low-confidence requests. Tightly coupled — API Gateway → small model → large\n\nmodel is a synchronous chain with no decoupling. A failure in the large model blocks the entire request",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q117",
@@ -1774,7 +1894,8 @@
     "D": "Configure an AWS Step Functions workflow that includes steps to perform pre-checks and post- checks by using the ApplyGuardrail API and the InvokeModelWithResponseStream API. Attach the guardrail to the check steps. Use process controls such as code reviews instead of IAM enforcement to ensure that guardrails are always applied."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q118",
@@ -1789,7 +1910,8 @@
     "D": "Configure an AWS Lambda function to search for PII data. Implement a step in the Lambda function code to store the PII in a second S3 bucket and non-PII data into a third S3 bucket."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q119",
@@ -1804,7 +1926,8 @@
     "D": "Create an Amazon Bedrock automatic model evaluation job with a custom prompt dataset. Set up anomaly detection alarms to identify factual inaccuracies. Implement Amazon SNS notifi- cations when inaccuracies are detected."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q120",
@@ -1819,7 +1942,8 @@
     "D": "Configure Amazon CloudWatch Synthetics canaries to invoke the FM APIs. Compare re-sponses with baseline scripts. Create CloudWatch alarms based on canary success rates."
    },
    "answer": "B",
-   "explanation": ":"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q121",
@@ -1834,7 +1958,8 @@
     "D": "Build a custom evaluation framework that uses AWS Amplify as the frontend and AWS Lambda functions as the backend. Implement crowd-sourcing features in which team members vote on response quality. Use Amazon Comprehend to analyze sentiments in responses and to evaluate for consistency across languages. The"
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q122",
@@ -1849,7 +1974,8 @@
     "D": "Build an Amazon Lex chat-based AI assistant with aliases that route a percentage of queries to two Amazon SageMaker AI endpoints for recommendations. Log interactions to Amazon CloudWatch Logs. Conduct quarterly manual audits for hallucination and prompt-injection de- tection. Store feedback in Amazon RDS with encryption. The"
    },
    "answer": "C",
-   "explanation": ":\n\n    Requirement                                      How C solves it\n\n Multi-step\n                         Bedrock AgentCore orchestrates: input sanitization → knowledge\n workflow\n                         retrieval → fact consistency check → recommendation generation\n orchestration\n\n Trusted\n                        Curated Amazon Kendra indexes provide retrieval from verified\n knowledge\n                        internal documents and real-time market data sources\n retrieval\n\n                        Dedicated Lambda function sanitizes and validates inputs before\n Input validation\n                        FM processing\n\n Real-time\n                        Post-generation Lambda checks fact consistency on every\n problematic\n                        response; SageMaker Model Monitor continuously tracks\n response\n                        anomalies\n detection\n\n Explicit user\n                        DynamoDB stores user feedback with low-latency writes\n ratings / feedback\n\n                        Lambda function splits traffic between prompt/model variants — a\n A/B testing\n                        clean, controllable approach\n\n Track\n                        SageMaker Model Monitor provides continuous data drift and\n performance over\n                        output anomaly tracking with historical dashboards\n time\n\n Immutable,             CloudTrail audit logs → S3 with Object Lock = write-once, tamper-\n compliance-ready       evident (WORM) storage meeting regulated audit retention\n storage                requirements"
+   "explanation": ":\n\nRequirement Multi-step workflow orchestration\n\nHow C solves it Bedrock AgentCore orchestrates: input sanitization → knowledge retrieval → fact consistency check → recommendation generation\n\nTrusted knowledge retrieval\n\nCurated Amazon Kendra indexes provide retrieval from verified internal documents and real-time market data sources\n\nInput validation\n\nDedicated Lambda function sanitizes and validates inputs before FM processing\n\nReal-time problematic response detection\n\nPost-generation Lambda checks fact consistency on every response; SageMaker Model Monitor continuously tracks anomalies\n\nExplicit user ratings / feedback\n\nDynamoDB stores user feedback with low-latency writes\n\nA/B testing\n\nLambda function splits traffic between prompt/model variants — a clean, controllable approach\n\nTrack performance over time\n\nSageMaker Model Monitor provides continuous data drift and output anomaly tracking with historical dashboards\n\nImmutable, compliance-ready storage\n\nCloudTrail audit logs → S3 with Object Lock = write-once, tamperevident (WORM) storage meeting regulated audit retention requirements",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q123",
@@ -1864,7 +1990,8 @@
     "D": "Deploy an Amazon Neptune cluster with specialized vector endpoints. Configure custom similarity computation functions. Use the Neptune bulk loader API to manage vector updates across the product catalog. The"
    },
    "answer": "A",
-   "explanation": ":\n\n   Requirement                                    How A solves it\n\n Millions of          OpenSearch's k-NN plugin (HNSW/Faiss/Lucene engines) natively\n embeddings           indexes and searches millions of vectors efficiently\n\n Hourly updates       Multi-node architecture supports index refresh operations and\n + new products       dynamic document ingestion without downtime\n\n                  Memory circuit breakers prevent out-of-memory crashes during\n Peak event       traffic surges. Dedicated vector operation queues (thread pools)\n latency/failures isolate similarity search from other operations, preventing resource\n                  contention\n\n                      Multi-node horizontal scaling distributes vector search load across\n Surge capacity       data nodes, and dedicated queues ensure vector operations get\n                      priority during peaks\n\nWhy C is wrong\n\nDesigned for RAG-based Q&A, not high-throughput product recommendation engines processing\nmillions of embeddings. \"Custom vector partitioning\" and \"hierarchical metadata structures\" are\nnot standard KB configuration options. Doesn't address the core performance/scaling problem"
+   "explanation": ":\n\nRequirement\n\nHow A solves it\n\nMillions of embeddings\n\nOpenSearch's k-NN plugin (HNSW/Faiss/Lucene engines) natively indexes and searches millions of vectors efficiently\n\nHourly updates + new products\n\nMulti-node architecture supports index refresh operations and dynamic document ingestion without downtime\n\nMemory circuit breakers prevent out-of-memory crashes during Peak event traffic surges. Dedicated vector operation queues (thread pools) latency/failures isolate similarity search from other operations, preventing resource contention\n\nSurge capacity\n\nWhy C is wrong\n\nMulti-node horizontal scaling distributes vector search load across data nodes, and dedicated queues ensure vector operations get priority during peaks\n\nDesigned for RAG-based Q&A, not high-throughput product recommendation engines processing millions of embeddings. \"Custom vector partitioning\" and \"hierarchical metadata structures\" are not standard KB configuration options. Doesn't address the core performance/scaling problem",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q124",
@@ -1879,7 +2006,8 @@
     "D": "Store patient data in an Amazon Bedrock knowledge base. Use Amazon Comprehend Medi-cal to identify PHI. Configure an AWS Lambda function to manage data retention according to healthcare policies."
    },
    "answer": "B",
-   "explanation": "Answer : B"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q125",
@@ -1894,7 +2022,8 @@
     "D": "Use Amazon Textract to analyze document structures and extract text. Use Amazon Compre- hend to detect PII and analyze sentiment. Design prompt engineering strategies that use struc- tured metadata to improve FM reasoning and reduce hallucinations."
    },
    "answer": "C",
-   "explanation": "Requirement                                    How C solves it\n\n                     Bedrock Guardrails sensitive information filters automatically\n PII redaction       detect and mask/block PII in both inputs and outputs — no separate\n                     service pipeline needed\n\n Formatting      Lambda preprocessing functions standardize document formats\n inconsistencies before inference — straightforward, serverless, and scalable\n\n                     Few-shot prompting with standardized examples teaches the model\n Consistent FM\n                     how to handle different document types consistently — a technique,\n performance\n                     not additional infrastructure\n\n Regulatory           Guardrails natively log all PII handling decisions for audit trails,\n compliance           meeting financial regulation requirements out of the box\n\n Least\n                      Guardrails are configured once in the Bedrock console — no model\n operational\n                      training, no multi-service orchestration, no custom ML pipelines\n overhead"
+   "explanation": "Requirement\n\nPII redaction\n\nHow C solves it Bedrock Guardrails sensitive information filters automatically detect and mask/block PII in both inputs and outputs — no separate service pipeline needed\n\nFormatting Lambda preprocessing functions standardize document formats inconsistencies before inference — straightforward, serverless, and scalable Consistent FM performance\n\nFew-shot prompting with standardized examples teaches the model how to handle different document types consistently — a technique, not additional infrastructure\n\nRegulatory compliance\n\nGuardrails natively log all PII handling decisions for audit trails, meeting financial regulation requirements out of the box\n\nLeast operational overhead\n\nGuardrails are configured once in the Bedrock console — no model training, no multi-service orchestration, no custom ML pipelines",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q126",
@@ -1909,7 +2038,8 @@
     "D": "Configure SCPs for the organization to explicitly allow the AI assistant’s execution role prin- cipal to perform dynamodb:Getltem and dynamodb:Query actions across all member accounts. Configure the AI assistant to reference cross-account DynamoDB table ARNs directly in their resource definitions."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q127",
@@ -1924,7 +2054,8 @@
     "D": "Enable session isolation in Amazon Bedrock API calls. Clear conversation history between requests to prevent patient information from persisting across multiple case analyses."
    },
    "answer": "A",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q128",
@@ -1939,7 +2070,8 @@
     "D": "Configure Amazon Bedrock guardrails for the prompts by using content filters. Set the content filter strength to high and set the guardrail action to block. Add the guardrail to the flow. Reduce the inference temperature in the flow."
    },
    "answer": "B",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q129",
@@ -1954,7 +2086,8 @@
     "D": "Implement a post-processing action group by using an AWS Lambda function that retrieves 50 documents and calculates cosine similarity scores between the query embedding and each document embedding by using Amazon Titan Embeddings. Configure the action group to sort by similarity score and return the top 10 documents."
    },
    "answer": "B",
-   "explanation": ":\n\n Requirement                                     How B solves it\n\n Relevant         Initial retrieval still fetches 50 documents (capturing those buried\n precedents       results), then the cross-encoder reranker evaluates each query-\n at positions     document pair holistically to re-score and surface the truly relevant\n 15-40            ones to the top\n\n Context\n                  After reranking, only the top 10 highest-scored documents are passed\n window (10\n                  to the FM — perfectly fitting the constraint\n docs)\n\n                  Reranking adds minimal overhead (typically hundreds of milliseconds).\n 3-second\n                  Amazon Bedrock knowledge bases support reranking natively, keeping\n latency\n                  the pipeline well within the SLA\n\n                  Cross-encoders are fundamentally more accurate than bi-encoders\n Improved         (used in initial semantic search) because they process the query and\n relevance        document together rather than comparing pre-computed embeddings\n                  independently"
+   "explanation": ":\n\nRequirement\n\nHow B solves it\n\nRelevant precedents at positions 15-40\n\nInitial retrieval still fetches 50 documents (capturing those buried results), then the cross-encoder reranker evaluates each querydocument pair holistically to re-score and surface the truly relevant ones to the top\n\nContext window (10 docs)\n\nAfter reranking, only the top 10 highest-scored documents are passed to the FM — perfectly fitting the constraint\n\n3-second latency\n\nReranking adds minimal overhead (typically hundreds of milliseconds).\nAmazon Bedrock knowledge bases support reranking natively, keeping the pipeline well within the SLA\n\nImproved relevance\n\nCross-encoders are fundamentally more accurate than bi-encoders (used in initial semantic search) because they process the query and document together rather than comparing pre-computed embeddings independently",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q130",
@@ -1969,7 +2102,8 @@
     "D": "Use AWS Outposts to process and store sensitive on-premises patient data in countries that have data residency requirements. Deploy AWS Wavelength at remote clinics to perform real-time inference."
    },
    "answer": "D",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q131",
@@ -1984,7 +2118,8 @@
     "D": "Deploy multiple identical AWS Step Functions state machines that use multiple Amazon Bedrock models behind an Amazon API Gateway API. Use a custom health check AWS Lambda function to route requests to whichever state machine responds fastest."
    },
    "answer": "A",
-   "explanation": ":\n\n Requirement                                     How A solves it\n\n                  DynamoDB tracks invocation success/failure counts with TTL-based\n Detect >10%\n                  records, enabling precise error rate calculation within any sliding\n errors in 60s\n                  window\n\n Switch to        Circuit breaker transitions from Closed → Open state when the\n alternate        threshold is breached, and Step Functions routes to the alternate\n path             processing path\n\n                  Circuit breaker's Half-Open state periodically tests Bedrock availability\n Automatic\n                  and automatically transitions back to Closed (normal) when the service\n recovery\n                  recovers — no manual intervention\n\n 15-minute        Step Functions (Express Workflows) supports up to 5-minute\n processing       executions, and Standard Workflows can orchestrate the full pipeline\n SLA              well within 15 minutes\n\nOption C is Retry/Catch handles individual invocation failures, not aggregate error rate\nmonitoring. EventBridge cannot dynamically re-route traffic within a running Step Functions\nexecution. CloudWatch alarm evaluation periods introduce latency that may miss the precise 60-\nsecond window requirement"
+   "explanation": ":\nRequirement\n\nHow A solves it\n\nDetect >10% errors in 60s\n\nDynamoDB tracks invocation success/failure counts with TTL-based records, enabling precise error rate calculation within any sliding window\n\nSwitch to alternate path\n\nCircuit breaker transitions from Closed → Open state when the threshold is breached, and Step Functions routes to the alternate processing path\n\nAutomatic recovery\n\nCircuit breaker's Half-Open state periodically tests Bedrock availability and automatically transitions back to Closed (normal) when the service recovers — no manual intervention\n\n15-minute processing SLA\n\nStep Functions (Express Workflows) supports up to 5-minute executions, and Standard Workflows can orchestrate the full pipeline well within 15 minutes\n\nOption C is Retry/Catch handles individual invocation failures, not aggregate error rate monitoring. EventBridge cannot dynamically re-route traffic within a running Step Functions execution. CloudWatch alarm evaluation periods introduce latency that may miss the precise 60second window requirement",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q132",
@@ -1999,7 +2134,8 @@
     "D": "Create an Amazon SageMaker AI processing job that configures Anthropic Claude Opus in Amazon Bedrock to produce a comprehensive multimodal analysis for each video. Configure the processing job to extract metadata by using a single inference request and to index results in Amazon OpenSearch Service to provide temporal search capabilities."
    },
    "answer": "B",
-   "explanation": "Claude's multimodal capabilities generate rich, natural-language scene descriptions from video\nframes — something no single-purpose service can do\n\nIncorrect Option C Rekognition detects text/labels but cannot generate rich scene descriptions\n(only a multimodal LLM can). Each service (Rekognition, Comprehend, Transcribe) processes\nindependently, making cross-metadata synchronization difficult. Comprehend only analyzes text-\nbased sentiment, missing visual emotional cues"
+   "explanation": "Claude's multimodal capabilities generate rich, natural-language scene descriptions from video frames — something no single-purpose service can do Incorrect Option C Rekognition detects text/labels but cannot generate rich scene descriptions (only a multimodal LLM can). Each service (Rekognition, Comprehend, Transcribe) processes independently, making cross-metadata synchronization difficult. Comprehend only analyzes textbased sentiment, missing visual emotional cues",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   },
   {
    "id": "Q133",
@@ -2014,7 +2150,8 @@
     "D": "Configure resource-based policies on S3 buckets in each source account to allow access from the GenAI application in Account C. Configure identity-based policies for the FM's service role that allow access only to specific data columns by using AWS Lake Formation tag-based access controls. Set up a VPC endpoint in each account to provide secure cross-account access."
    },
    "answer": "C",
-   "explanation": ""
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q134",
@@ -2029,7 +2166,8 @@
     "D": "Use a single Amazon Bedrock AgentCore agent with AWS Lambda based tools to integrate with all internal and external systems. Use AWS Step Functions to orchestrate the approval workflow."
    },
    "answer": "B",
-   "explanation": ":"
+   "explanation": "",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q135",
@@ -2044,8 +2182,9 @@
     "D": "Configure applications that run in the United States to use provisioned throughput with the InvokeModel API. Configure European applications to use a Europe-specific geographic inference profile to ensure data sovereignty. Configure automatic scaling for provisioned capacity based on utilization metrics. Use Amazon EventBridge and AWS Lambda functions to implement cross- Region failover mechanisms."
    },
    "answer": "A",
-   "explanation": "Answer in examtopics is A but Quick and I picked D",
-   "note": "Answer uncertain; verify"
+   "explanation": "",
+   "note": "Answer uncertain; verify",
+   "explanationSource": "none in source PDF"
   },
   {
    "id": "Q136",
@@ -2060,8 +2199,9 @@
     "D": "Change the evaluation type to Summarization and the metric type to Correctness in the evaluation configurations. The"
    },
    "answer": "A",
-   "explanation": ". Create a trust policy that defines Amazon Bedrock as the service\nprincipal. Attach the trust policy to the service role.\n\nHere's why:\n\nThe scenario describes creating a service role and attaching an IAM permissions policy (what the\nrole can do), but it never mentions creating a trust policy (who can assume the role). Every IAM\nservice role requires both:\n\n   •    Permissions policy — grants actions like invoking FMs and accessing S3 ✅ (already done)\n   •    Trust policy — defines which AWS service (e.g., bedrock.amazonaws.com) is allowed to\n        assume the role ❌ (missing)\n\nWithout the trust policy, Amazon Bedrock cannot assume the service role, which directly causes\nthe AccessDenied exception.\n\nWhy the other options are wrong\n\nTable\n\n                       Option                                      Why it's incorrect\n\n                                                      CORS governs browser-based cross-origin\n                                                      requests; it's irrelevant to a server-side\n B – Configure CORS on S3\n                                                      Bedrock evaluation job and wouldn't cause\n                                                      an AccessDenied on role assumption\n                                                      TREX is a valid built-in evaluation dataset for\n C – Change TREX to Gigaword                          text generation; switching datasets doesn't\n                                                      resolve IAM permission issues\n\n                                          Changing the evaluation type/metric is a\nD – Change to Summarization/Correctness   configuration choice, not a fix for an access\n                                          control error"
+   "explanation": ". Create a trust policy that defines Amazon Bedrock as the service principal. Attach the trust policy to the service role.\nHere's why:\nThe scenario describes creating a service role and attaching an IAM permissions policy (what the role can do), but it never mentions creating a trust policy (who can assume the role). Every IAM service role requires both:\n•\n\nPermissions policy — grants actions like invoking FMs and accessing S3 ✅ (already done)\n\n•\n\nTrust policy — defines which AWS service (e.g., bedrock.amazonaws.com) is allowed to assume the role ❌ (missing)\n\nWithout the trust policy, Amazon Bedrock cannot assume the service role, which directly causes the AccessDenied exception.\n\nWhy the other options are wrong Table Option\n\nB – Configure CORS on S3\n\nC – Change TREX to Gigaword\n\nWhy it's incorrect CORS governs browser-based cross-origin requests; it's irrelevant to a server-side Bedrock evaluation job and wouldn't cause an AccessDenied on role assumption TREX is a valid built-in evaluation dataset for text generation; switching datasets doesn't resolve IAM permission issues\n\nD – Change to Summarization/Correctness\n\nChanging the evaluation type/metric is a configuration choice, not a fix for an access control error",
+   "explanationSource": "ExamTopics PDF (community discussion)"
   }
  ],
- "note": "Auto-extracted via pdftotext; domains keyword-inferred; explanations are raw PDF discussion text."
+ "note": "Answers from ExamTopics PDF (7 filled/judged). Explanations are community discussion text from the PDF where present."
 }

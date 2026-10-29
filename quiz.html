@@ -12,20 +12,23 @@ input[type=radio],input[type=checkbox]{width:1.2em;height:1.2em;vertical-align:m
 button{font-size:1.05rem;min-height:48px}pre{font-size:.85rem}
 @media(max-width:600px){html{font-size:19px}body{margin:.5em auto;padding:0 .5em}.card{padding:1em}h1{font-size:1.4rem}
 button{width:100%;margin:.5em 0}p{font-size:1.15rem}}
+.ex{background:#f6f7f9;padding:.6em .9em;border-radius:6px;max-height:60vh;overflow:auto;font-size:.95rem}.ex p{font-size:.95rem;margin:.4em 0}
 </style></head><body><h1>AIP-C01 Practice</h1><div class="card" id="app"></div><script>
 // ===== Password: change it here =====
 const QUIZ_PASSWORD="1234";
 let Q=[];let i=0,score=0,stats={},done=false;
 const app=document.getElementById('app');
 function show(){const q=Q[i];done=false;const multi=q.answer.length>1;
-app.innerHTML=`<div class="meta">${i+1}/${Q.length} · ${q.id} · ${q.domain} · Score ${score}</div><p>${q.question}</p>`+
-Object.entries(q.options).map(([k,v])=>`<label id="l${k}"><input type="${multi?'checkbox':'radio'}" name="o" value="${k}"> <b>${k}.</b> ${v}</label>`).join('')+
+app.innerHTML=`<div class="meta">${i+1}/${Q.length} · ${q.id} · ${q.domain} · Score ${score}</div><p>${esc(q.question)}</p>`+
+Object.entries(q.options).map(([k,v])=>`<label id="l${k}"><input type="${multi?'checkbox':'radio'}" name="o" value="${k}"> <b>${k}.</b> ${esc(v)}</label>`).join('')+
 `<button id="sb" onclick="check()">Submit</button><button class="sec" onclick="finish()">End</button><div id="fb"></div>`;}
 function check(){if(done)return;const q=Q[i];const sel=[...document.querySelectorAll('input:checked')].map(e=>e.value).sort().join('');if(!sel)return;done=true;document.getElementById("sb").style.display="none";document.querySelectorAll("input").forEach(e=>e.disabled=true);
 const ok=sel===q.answer.split('').sort().join('');const d=stats[q.domain]||(stats[q.domain]={c:0,t:0});d.t++;if(ok){score++;d.c++}
 for(const k of q.answer)document.getElementById('l'+k).classList.add('ok');for(const k of sel)if(!q.answer.includes(k))document.getElementById('l'+k).classList.add('bad');
-document.getElementById('fb').innerHTML=`<h3>${ok?'✅ Correct':'❌ Incorrect — answer '+q.answer}</h3>`+(q.explanation?`<details><summary>Explanation</summary><pre></pre></details>`:'')+
-`<button onclick="next()">${i+1<Q.length?'Next':'Finish'}</button>`;const p=document.querySelector('#fb pre');if(p)p.textContent=q.explanation;}
+document.getElementById('fb').innerHTML=`<h3>${ok?'✅ Correct':'❌ Incorrect — answer '+q.answer}</h3>`+(q.explanation?`<details><summary>Explanation</summary><div class="ex"></div></details>`:'<p class="meta">No explanation in source PDF.</p>')+
+`<button onclick="next()">${i+1<Q.length?'Next':'Finish'}</button>`;const p=document.querySelector('#fb .ex');if(p)p.innerHTML=md(q.explanation);}
+function esc(t){return t.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function md(t){return esc(t).split(/\n{2,}/).map(x=>'<p>'+x.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>').join('')}
 function next(){i++;i<Q.length?show():finish()}
 function finish(){const t=Object.values(stats).reduce((a,d)=>a+d.t,0);
 app.innerHTML=`<h2>Score: ${score}/${t} (${t?Math.round(score*100/t):0}%)</h2><table>`+
