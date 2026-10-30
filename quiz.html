@@ -98,6 +98,7 @@ header{background:#ffffffe6}
 .vt{background:none;border:1px solid #e3ebea;color:#0e5c58;min-height:0;padding:.2em .7em;font-size:.78rem;border-radius:999px;font-weight:600;width:auto}
 #lang{font:inherit;font-size:.8rem;color:#0e5c58;background:#f4f7f7;border:1px solid #e3ebea;border-radius:8px;padding:.2em .3em;font-weight:600}.lseg{margin:0 0 1em}
 body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Hiragino Sans","Hiragino Kaku Gothic ProN","PingFang SC","Noto Sans CJK JP","Noto Sans CJK SC","Yu Gothic","Microsoft YaHei",sans-serif}
+html,body{overflow-x:hidden;max-width:100%}main,#app,.card,.qt,.opts,.opt,#fb,.ex,details{min-width:0;max-width:100%;box-sizing:border-box}.qt,.opt,.opt>span,#fb,.ex,.orig .meta,.tx{overflow-wrap:anywhere;word-break:break-word;line-break:auto}.opt>span:last-child{flex:1 1 auto;min-width:0;line-height:1.6}.ex pre,.ex code{white-space:pre-wrap;overflow-wrap:anywhere}
 </style></head><body>
 <header><div class="hd"><b onclick="home()">AIP-C01 <i id="hp">Practice</i></b><select id="lang" onchange="setLang(this.value)" aria-label="Language"><option value="en">EN</option><option value="ja">日本語</option><option value="zh">中文</option></select><span class="chip" id="cl" onclick="listView()">List</span><span class="chip" id="cw" onclick="startMode('wrong')"></span><span class="chip" id="cm" onclick="startMode('mark')"></span></div></header>
 <main><div class="card" id="app"></div></main><script>
