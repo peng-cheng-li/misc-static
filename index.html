@@ -103,7 +103,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue"
 <main><div class="card" id="app"></div></main><script>
 // ===== Password: change it here =====
 const QUIZ_PASSWORD="1234";
-const PDF_URL="../materials/practice-exams/AIP-C01-ExamTopics.pdf";
+const PDF_URL=/\/app\/[^/]*$/.test(location.pathname)?"../materials/practice-exams/AIP-C01-ExamTopics.pdf":"AIP-C01-ExamTopics.pdf";
 const BANK_URL="../content/question-bank.json";
 const KEY="aipc01-progress-v1";
 const LANG_KEY="aipc01-lang";
