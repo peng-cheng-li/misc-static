@@ -5369,5 +5369,504 @@
     }
   ],
   "note": "Answers from ExamTopics PDF (7 filled/judged). Explanations are community discussion text from the PDF where present.",
-  "reviewed": "2026-10-30 full-text review of all 136; 0 changes, 9 flagged"
+  "reviewed": "2026-10-30 full-text review of all 136; 0 changes, 9 flagged",
+  "glossary": [
+    {
+      "name": "Amazon Bedrock",
+      "re": "\\bBedrock\\b",
+      "en": "Fully managed service to access foundation models (Claude, Nova, Titan, etc.) via API, with RAG, agents and guardrails built in.",
+      "ja": "Claude・Nova・Titan などの基盤モデルを API で使えるフルマネージドサービス。RAG、エージェント、ガードレール機能も備える。",
+      "zh": "通过 API 使用 Claude、Nova、Titan 等基础模型的全托管服务，内置 RAG、Agent 和护栏功能。"
+    },
+    {
+      "name": "Bedrock Guardrails",
+      "re": "[Gg]uardrail",
+      "en": "Configurable safety filters for Bedrock: content filters, denied topics, word filters, PII masking, contextual grounding checks.",
+      "ja": "Bedrock の安全フィルター。有害コンテンツ、拒否トピック、単語フィルター、PII マスク、グラウンディングチェックを設定できる。",
+      "zh": "Bedrock 的安全过滤器：内容过滤、拒绝主题、词语过滤、PII 脱敏、上下文依据检查。"
+    },
+    {
+      "name": "Bedrock Knowledge Bases",
+      "re": "[Kk]nowledge [Bb]ase",
+      "en": "Managed RAG: ingests your documents, embeds them into a vector store, and retrieves relevant chunks (Retrieve / RetrieveAndGenerate).",
+      "ja": "マネージド RAG。文書を取り込みベクトル化して保存し、関連チャンクを検索する（Retrieve / RetrieveAndGenerate）。",
+      "zh": "托管式 RAG：导入文档、向量化存储，并检索相关片段（Retrieve / RetrieveAndGenerate）。"
+    },
+    {
+      "name": "Bedrock Agents",
+      "re": "Bedrock [Aa]gents?\\b|action group",
+      "en": "Managed agents that plan multi-step tasks, call APIs via action groups, and query knowledge bases.",
+      "ja": "複数ステップのタスクを計画し、アクショングループで API を呼び、ナレッジベースを参照するマネージドエージェント。",
+      "zh": "可规划多步骤任务、通过操作组调用 API、查询知识库的托管 Agent。"
+    },
+    {
+      "name": "Bedrock AgentCore",
+      "re": "AgentCore",
+      "en": "Platform to deploy and run agents at scale with managed runtime, memory, identity, gateway (tools) and observability.",
+      "ja": "エージェントを本番運用する基盤。ランタイム、メモリ、ID、ツール用ゲートウェイ、可観測性をマネージドで提供。",
+      "zh": "大规模部署运行 Agent 的平台，提供托管运行时、记忆、身份、工具网关和可观测性。"
+    },
+    {
+      "name": "Bedrock Prompt Management",
+      "re": "Prompt [Mm]anagement",
+      "en": "Stores, versions and tests reusable prompt templates with variables and variants.",
+      "ja": "変数やバリアント付きのプロンプトテンプレートを保存・バージョン管理・テストする機能。",
+      "zh": "保存、版本管理和测试带变量与变体的提示模板。"
+    },
+    {
+      "name": "Bedrock Flows",
+      "re": "Bedrock [Ff]lows?\\b|\\bflow node|prompts node",
+      "en": "Visual workflow builder that links prompts, models, knowledge bases, guardrails and Lambda into a flow.",
+      "ja": "プロンプト、モデル、ナレッジベース、ガードレール、Lambda をつなぐビジュアルワークフロー。",
+      "zh": "把提示、模型、知识库、护栏和 Lambda 串成流程的可视化工作流。"
+    },
+    {
+      "name": "Provisioned Throughput",
+      "re": "[Pp]rovisioned [Tt]hroughput|model units?",
+      "en": "Purchased dedicated model capacity (model units) for consistent throughput; invoke it by its provisioned model ARN.",
+      "ja": "専用のモデル容量（モデルユニット）を購入して安定スループットを確保。プロビジョニング済みモデル ARN で呼び出す。",
+      "zh": "购买专用模型容量（模型单元）以获得稳定吞吐，需用预置模型 ARN 调用。"
+    },
+    {
+      "name": "Cross-Region inference",
+      "re": "[Cc]ross-Region inference|inference profile|\\bCRI\\b",
+      "en": "Inference profiles that route on-demand requests across several Regions (e.g. US, EU, global) for more throughput and resilience.",
+      "ja": "推論プロファイルでオンデマンド要求を複数リージョン（US、EU、グローバル等）に分散し、スループットと耐障害性を高める。",
+      "zh": "通过推理配置文件把按需请求分发到多个区域（如 US、EU、全球），提升吞吐和韧性。"
+    },
+    {
+      "name": "Intelligent prompt routing",
+      "re": "prompt rout",
+      "en": "Bedrock feature that routes each prompt between models in a family based on predicted quality and cost.",
+      "ja": "予測品質とコストに応じて、同じファミリー内のモデル間でプロンプトを自動振り分けする Bedrock 機能。",
+      "zh": "根据预测质量和成本，在同一系列模型间自动路由提示的 Bedrock 功能。"
+    },
+    {
+      "name": "Bedrock model evaluation",
+      "re": "evaluation job|Bedrock [Ee]valuation|LLM-as-a-judge|judge model",
+      "en": "Runs automatic, LLM-as-a-judge or human evaluations of models/RAG on your datasets and reports metrics.",
+      "ja": "データセットを使い、自動・LLM-as-a-judge・人手でモデルや RAG を評価し指標を出す機能。",
+      "zh": "用数据集对模型或 RAG 做自动、LLM 评审或人工评估并输出指标。"
+    },
+    {
+      "name": "Amazon Titan Embeddings",
+      "re": "Titan (Text )?Embeddings|Titan Multimodal",
+      "en": "Amazon's embedding models that turn text (or images) into vectors for semantic search and RAG.",
+      "ja": "テキスト（や画像）をベクトルに変換する Amazon の埋め込みモデル。意味検索・RAG に使う。",
+      "zh": "将文本（或图像）转换为向量的 Amazon 嵌入模型，用于语义搜索和 RAG。"
+    },
+    {
+      "name": "Amazon Nova",
+      "re": "\\bNova\\b",
+      "en": "Amazon's own family of foundation models (Micro, Lite, Pro, etc.) available on Bedrock.",
+      "ja": "Bedrock で使える Amazon 独自の基盤モデルファミリー（Micro、Lite、Pro など）。",
+      "zh": "Amazon 自研基础模型系列（Micro、Lite、Pro 等），在 Bedrock 上使用。"
+    },
+    {
+      "name": "Bedrock Data Automation",
+      "re": "Data Automation|\\bBDA\\b",
+      "en": "Extracts structured insights from documents, images, audio and video using generative AI.",
+      "ja": "生成 AI で文書・画像・音声・動画から構造化された情報を抽出する機能。",
+      "zh": "利用生成式 AI 从文档、图像、音频和视频中提取结构化信息。"
+    },
+    {
+      "name": "Amazon SageMaker AI",
+      "re": "SageMaker",
+      "en": "Platform to build, train, tune and host your own ML models (endpoints, pipelines, notebooks).",
+      "ja": "独自 ML モデルの構築・学習・チューニング・ホスティング（エンドポイント、パイプライン等）を行うプラットフォーム。",
+      "zh": "构建、训练、调优和托管自有 ML 模型（端点、管道、笔记本）的平台。"
+    },
+    {
+      "name": "AWS Lambda",
+      "re": "\\bLambda\\b",
+      "en": "Serverless functions that run code on events without managing servers (max 15 min per invocation).",
+      "ja": "サーバー管理不要でイベント駆動にコードを実行するサーバーレス関数（1 回最大 15 分）。",
+      "zh": "无需管理服务器、由事件触发运行代码的无服务器函数（单次最长 15 分钟）。"
+    },
+    {
+      "name": "AWS Step Functions",
+      "re": "Step Functions",
+      "en": "Serverless workflow orchestration with states, retries, parallel branches and human-approval callbacks.",
+      "ja": "状態、リトライ、並列分岐、人による承認（コールバック）を扱えるサーバーレスなワークフロー編成サービス。",
+      "zh": "无服务器工作流编排，支持状态、重试、并行分支和人工审批回调。"
+    },
+    {
+      "name": "Amazon API Gateway",
+      "re": "API Gateway",
+      "en": "Managed front door for REST, HTTP and WebSocket APIs with auth, throttling and integrations.",
+      "ja": "REST・HTTP・WebSocket API の入口。認証、スロットリング、各種統合を提供するマネージドサービス。",
+      "zh": "托管的 REST、HTTP、WebSocket API 入口，提供认证、限流与集成。"
+    },
+    {
+      "name": "Amazon EventBridge",
+      "re": "EventBridge",
+      "en": "Serverless event bus and scheduler that routes events between AWS services and apps by rules.",
+      "ja": "ルールに基づき AWS サービスやアプリ間でイベントを配信するサーバーレスのイベントバス／スケジューラー。",
+      "zh": "按规则在 AWS 服务和应用间路由事件的无服务器事件总线和调度器。"
+    },
+    {
+      "name": "Amazon SQS",
+      "re": "\\bSQS\\b",
+      "en": "Fully managed message queue that decouples and buffers components.",
+      "ja": "コンポーネント間を疎結合にし、負荷を緩衝するフルマネージドなメッセージキュー。",
+      "zh": "用于解耦和缓冲各组件的全托管消息队列。"
+    },
+    {
+      "name": "Amazon SNS",
+      "re": "\\bSNS\\b",
+      "en": "Pub/sub notification service that fans out messages to subscribers (email, SMS, Lambda, SQS).",
+      "ja": "購読者（メール、SMS、Lambda、SQS）にメッセージを配信する Pub/Sub 通知サービス。",
+      "zh": "向订阅者（邮件、短信、Lambda、SQS）分发消息的发布/订阅通知服务。"
+    },
+    {
+      "name": "Amazon S3",
+      "re": "\\bS3\\b",
+      "en": "Durable object storage for files and data lakes, with versioning, lifecycle rules and metadata.",
+      "ja": "ファイルやデータレイク用の高耐久オブジェクトストレージ。バージョニング、ライフサイクル、メタデータに対応。",
+      "zh": "高持久性对象存储，用于文件和数据湖，支持版本控制、生命周期和元数据。"
+    },
+    {
+      "name": "Amazon DynamoDB",
+      "re": "DynamoDB|Dyna-moDB",
+      "en": "Serverless NoSQL key-value database with single-digit millisecond latency.",
+      "ja": "1 桁ミリ秒の低レイテンシーを持つサーバーレス NoSQL（キーバリュー）データベース。",
+      "zh": "个位数毫秒延迟的无服务器 NoSQL 键值数据库。"
+    },
+    {
+      "name": "Amazon RDS / Aurora",
+      "re": "\\bRDS\\b|Aurora",
+      "en": "Managed relational databases (MySQL, PostgreSQL…); Aurora PostgreSQL supports pgvector for vectors.",
+      "ja": "マネージドなリレーショナル DB（MySQL、PostgreSQL 等）。Aurora PostgreSQL は pgvector でベクトル検索可能。",
+      "zh": "托管关系型数据库（MySQL、PostgreSQL 等）；Aurora PostgreSQL 可用 pgvector 存向量。"
+    },
+    {
+      "name": "Amazon OpenSearch",
+      "re": "OpenSearch",
+      "en": "Search and analytics engine with k-NN vector search, keyword search and hybrid search (Service or Serverless).",
+      "ja": "k-NN ベクトル検索、キーワード検索、ハイブリッド検索ができる検索・分析エンジン（Service / Serverless）。",
+      "zh": "支持 k-NN 向量、关键词和混合搜索的搜索分析引擎（托管版或 Serverless）。"
+    },
+    {
+      "name": "Amazon Kendra",
+      "re": "Kendra",
+      "en": "ML-powered enterprise search service over documents with connectors and relevance tuning.",
+      "ja": "コネクタと関連度調整を備えた、ML による企業向けドキュメント検索サービス。",
+      "zh": "基于 ML 的企业文档搜索服务，带连接器和相关性调优。"
+    },
+    {
+      "name": "Amazon Neptune",
+      "re": "Neptune",
+      "en": "Managed graph database; Neptune Analytics powers GraphRAG in Bedrock Knowledge Bases.",
+      "ja": "マネージドなグラフ DB。Neptune Analytics は Bedrock ナレッジベースの GraphRAG に使われる。",
+      "zh": "托管图数据库；Neptune Analytics 用于 Bedrock 知识库的 GraphRAG。"
+    },
+    {
+      "name": "Amazon ElastiCache / MemoryDB",
+      "re": "ElastiCache|MemoryDB|\\bDAX\\b",
+      "en": "In-memory caches/databases (Redis/Valkey compatible) for very low-latency reads.",
+      "ja": "超低レイテンシーの読み取り用インメモリキャッシュ／DB（Redis・Valkey 互換）。",
+      "zh": "超低延迟读取的内存缓存/数据库（兼容 Redis/Valkey）。"
+    },
+    {
+      "name": "Amazon CloudWatch",
+      "re": "CloudWatch",
+      "en": "Monitoring service: metrics, logs, alarms, dashboards, anomaly detection and Logs Insights queries.",
+      "ja": "メトリクス、ログ、アラーム、ダッシュボード、異常検出、Logs Insights を提供する監視サービス。",
+      "zh": "监控服务：指标、日志、告警、仪表板、异常检测和 Logs Insights 查询。"
+    },
+    {
+      "name": "AWS CloudTrail",
+      "re": "CloudTrail",
+      "en": "Records AWS API calls (who did what, when) for auditing; CloudTrail Lake stores and queries them.",
+      "ja": "AWS API 呼び出し（誰がいつ何をしたか）を監査用に記録。CloudTrail Lake で保存・検索できる。",
+      "zh": "记录 AWS API 调用（谁、何时、做了什么）用于审计；CloudTrail Lake 可存储与查询。"
+    },
+    {
+      "name": "AWS X-Ray",
+      "re": "X-Ray",
+      "en": "Distributed tracing that shows requests across services to find latency and errors.",
+      "ja": "サービスをまたぐリクエストを追跡し、遅延やエラー箇所を特定する分散トレーシング。",
+      "zh": "分布式追踪，展示跨服务请求以定位延迟和错误。"
+    },
+    {
+      "name": "AWS Config",
+      "re": "AWS Config\\b",
+      "en": "Tracks resource configuration changes and evaluates compliance rules.",
+      "ja": "リソース設定の変更履歴を記録し、コンプライアンスルールを評価するサービス。",
+      "zh": "跟踪资源配置变更并评估合规规则。"
+    },
+    {
+      "name": "Amazon Macie",
+      "re": "Macie",
+      "en": "Uses ML to discover and classify sensitive data (PII) stored in Amazon S3.",
+      "ja": "ML を使って Amazon S3 に保存された機密データ（PII）を検出・分類するサービス。",
+      "zh": "利用 ML 发现并分类存储在 Amazon S3 中的敏感数据（PII）。"
+    },
+    {
+      "name": "Amazon Comprehend",
+      "re": "Comprehend(?! Medical)",
+      "en": "NLP service for entities, sentiment, key phrases, classification and PII detection in text.",
+      "ja": "テキストのエンティティ、感情、キーフレーズ、分類、PII 検出を行う自然言語処理サービス。",
+      "zh": "文本实体、情感、关键短语、分类和 PII 检测的 NLP 服务。"
+    },
+    {
+      "name": "Amazon Comprehend Medical",
+      "re": "Comprehend Medical",
+      "en": "Extracts medical entities and PHI from clinical text.",
+      "ja": "臨床テキストから医療エンティティや PHI（保護対象医療情報）を抽出するサービス。",
+      "zh": "从临床文本中提取医疗实体和 PHI（受保护健康信息）。"
+    },
+    {
+      "name": "Amazon Textract",
+      "re": "Textract",
+      "en": "Extracts text, forms and tables from scanned documents (OCR+).",
+      "ja": "スキャン文書からテキスト、フォーム、表を抽出する（高度な OCR）サービス。",
+      "zh": "从扫描文档中提取文本、表单和表格（增强 OCR）。"
+    },
+    {
+      "name": "Amazon Rekognition",
+      "re": "Rekognition",
+      "en": "Image and video analysis: objects, faces, text and content moderation.",
+      "ja": "画像・動画解析（物体、顔、文字、不適切コンテンツのモデレーション）。",
+      "zh": "图像和视频分析：物体、人脸、文字和内容审核。"
+    },
+    {
+      "name": "Amazon Transcribe",
+      "re": "Transcribe",
+      "en": "Speech-to-text, including real-time streaming with partial results.",
+      "ja": "音声をテキストに変換。部分結果付きのリアルタイムストリーミングにも対応。",
+      "zh": "语音转文字，支持带部分结果的实时流式转写。"
+    },
+    {
+      "name": "Amazon Lex",
+      "re": "\\bLex\\b",
+      "en": "Builds chatbots and voice bots with intents and slots.",
+      "ja": "インテントとスロットでチャットボット／音声ボットを作るサービス。",
+      "zh": "用意图和槽位构建聊天机器人和语音机器人。"
+    },
+    {
+      "name": "Amazon Polly",
+      "re": "\\bPolly\\b",
+      "en": "Text-to-speech service.",
+      "ja": "テキストを音声に変換するサービス。",
+      "zh": "文字转语音服务。"
+    },
+    {
+      "name": "Amazon Augmented AI (A2I)",
+      "re": "\\bA2I\\b|Augmented AI",
+      "en": "Adds human review workflows to ML predictions (e.g. low-confidence results).",
+      "ja": "ML の予測結果（低信頼度など）に人によるレビューを組み込むサービス。",
+      "zh": "为 ML 预测（如低置信度结果）加入人工审核流程。"
+    },
+    {
+      "name": "Amazon Q Business",
+      "re": "Q Business",
+      "en": "Managed generative-AI assistant over enterprise data with connectors and ACL-aware answers.",
+      "ja": "コネクタで企業データに接続し、アクセス権を考慮して回答する生成 AI アシスタント。",
+      "zh": "连接企业数据、按权限作答的托管生成式 AI 助手。"
+    },
+    {
+      "name": "Amazon Q Developer",
+      "re": "Q Developer",
+      "en": "AI coding assistant in IDEs; customizations let it learn from your internal code.",
+      "ja": "IDE 向け AI コーディング支援。カスタマイズで社内コードを学習させられる。",
+      "zh": "IDE 中的 AI 编程助手；定制功能可学习内部代码。"
+    },
+    {
+      "name": "Amazon Cognito",
+      "re": "Cognito",
+      "en": "User sign-up/sign-in and token-based (OAuth/OIDC) authentication for apps.",
+      "ja": "アプリのユーザー登録・サインインと OAuth/OIDC トークン認証を提供。",
+      "zh": "为应用提供用户注册登录和基于令牌（OAuth/OIDC）的认证。"
+    },
+    {
+      "name": "AWS IAM",
+      "re": "\\bIAM\\b(?! Identity Center)",
+      "en": "Controls who can do what on which AWS resources via roles and policies (incl. condition keys).",
+      "ja": "ロールとポリシー（条件キー含む）で、誰がどのリソースに何をできるかを制御。",
+      "zh": "通过角色和策略（含条件键）控制谁能对哪些资源做什么。"
+    },
+    {
+      "name": "IAM Identity Center",
+      "re": "Identity Center",
+      "en": "Central single sign-on and workforce identity across AWS accounts and apps.",
+      "ja": "複数の AWS アカウントやアプリへのシングルサインオンと従業員 ID を一元管理。",
+      "zh": "跨 AWS 账户和应用的集中单点登录与员工身份管理。"
+    },
+    {
+      "name": "AWS Organizations / SCPs",
+      "re": "\\bSCPs?\\b|Organizations|Control Tower",
+      "en": "Manage many accounts centrally; service control policies set the maximum permissions allowed.",
+      "ja": "複数アカウントを一元管理。SCP（サービスコントロールポリシー）で許可の上限を設定する。",
+      "zh": "集中管理多个账户；服务控制策略（SCP）设定允许权限的上限。"
+    },
+    {
+      "name": "AWS Lake Formation",
+      "re": "Lake Formation|LF-[Tt]ag",
+      "en": "Governs data lakes with fine-grained (table/column/row) and tag-based access control across accounts.",
+      "ja": "データレイクを統制し、テーブル・列・行単位やタグベースのアクセス制御をアカウント横断で行う。",
+      "zh": "治理数据湖，跨账户提供表/列/行级及基于标签的细粒度访问控制。"
+    },
+    {
+      "name": "AWS Glue",
+      "re": "\\bGlue\\b",
+      "en": "Serverless ETL, data catalog, crawlers and data quality rules.",
+      "ja": "サーバーレスの ETL、データカタログ、クローラー、データ品質ルールを提供。",
+      "zh": "无服务器 ETL、数据目录、爬网程序和数据质量规则。"
+    },
+    {
+      "name": "Amazon Athena",
+      "re": "Athena",
+      "en": "Serverless SQL queries directly on data in S3.",
+      "ja": "S3 上のデータに直接 SQL を実行するサーバーレスクエリサービス。",
+      "zh": "直接对 S3 数据执行 SQL 的无服务器查询服务。"
+    },
+    {
+      "name": "Amazon Kinesis / Data Firehose",
+      "re": "Kinesis|Firehose",
+      "en": "Real-time streaming data ingestion (Data Streams) and delivery to destinations (Firehose).",
+      "ja": "リアルタイムのストリーミングデータ取り込み（Data Streams）と配信（Firehose）。",
+      "zh": "实时流数据采集（Data Streams）与投递（Firehose）。"
+    },
+    {
+      "name": "Amazon QuickSight",
+      "re": "Quick ?Sight",
+      "en": "BI dashboards and visualizations.",
+      "ja": "BI ダッシュボードと可視化のサービス。",
+      "zh": "BI 仪表板与可视化服务。"
+    },
+    {
+      "name": "Amazon Managed Grafana",
+      "re": "Grafana",
+      "en": "Managed Grafana dashboards for metrics and logs.",
+      "ja": "メトリクスやログ用のマネージド Grafana ダッシュボード。",
+      "zh": "托管的 Grafana 指标和日志仪表板。"
+    },
+    {
+      "name": "AWS AppConfig",
+      "re": "AppConfig",
+      "en": "Safely deploys runtime configuration and feature flags with validation and automatic rollback.",
+      "ja": "実行時設定や機能フラグを、検証と自動ロールバック付きで安全にデプロイする。",
+      "zh": "安全发布运行时配置和功能开关，支持校验与自动回滚。"
+    },
+    {
+      "name": "Systems Manager Parameter Store",
+      "re": "Parameter Store|Systems Manager",
+      "en": "Stores configuration values and secrets as parameters (no deployment strategies).",
+      "ja": "設定値やシークレットをパラメータとして保存（段階デプロイ機能はない）。",
+      "zh": "以参数形式存储配置值和机密（无发布策略）。"
+    },
+    {
+      "name": "AWS Secrets Manager",
+      "re": "Secrets Manager",
+      "en": "Stores and rotates secrets such as passwords and API keys.",
+      "ja": "パスワードや API キーなどのシークレットを保存・ローテーションする。",
+      "zh": "存储并轮换密码、API 密钥等机密。"
+    },
+    {
+      "name": "AWS KMS",
+      "re": "\\bKMS\\b",
+      "en": "Creates and manages encryption keys used to encrypt data (e.g. SSE-KMS).",
+      "ja": "データ暗号化（SSE-KMS など）に使う暗号鍵を作成・管理する。",
+      "zh": "创建和管理用于数据加密（如 SSE-KMS）的密钥。"
+    },
+    {
+      "name": "VPC endpoint / PrivateLink",
+      "re": "VPC endpoint|PrivateLink|interface endpoint",
+      "en": "Private connection from your VPC to AWS services without going over the internet.",
+      "ja": "インターネットを経由せず VPC から AWS サービスへ私設接続する仕組み。",
+      "zh": "无需经过互联网，从 VPC 私有连接到 AWS 服务。"
+    },
+    {
+      "name": "AWS WAF",
+      "re": "\\bWAF\\b",
+      "en": "Web application firewall that filters HTTP requests by rules.",
+      "ja": "ルールで HTTP リクエストをフィルタリングする Web アプリケーションファイアウォール。",
+      "zh": "按规则过滤 HTTP 请求的 Web 应用防火墙。"
+    },
+    {
+      "name": "AWS CloudFormation",
+      "re": "CloudFormation|\\bCDK\\b",
+      "en": "Infrastructure as code (templates / CDK) to deploy AWS resources repeatably; Guard checks policies.",
+      "ja": "テンプレートや CDK で AWS リソースを再現可能にデプロイする IaC。Guard でポリシー検査。",
+      "zh": "用模板或 CDK 可重复部署 AWS 资源的基础设施即代码；Guard 做策略检查。"
+    },
+    {
+      "name": "AWS CodePipeline",
+      "re": "CodePipeline",
+      "en": "Managed CI/CD pipeline service.",
+      "ja": "マネージドな CI/CD パイプラインサービス。",
+      "zh": "托管的 CI/CD 流水线服务。"
+    },
+    {
+      "name": "AWS AppSync / Amplify",
+      "re": "AppSync|Amplify",
+      "en": "AppSync: managed GraphQL APIs with real-time subscriptions; Amplify: tools to build web/mobile front ends.",
+      "ja": "AppSync はリアルタイム購読付きマネージド GraphQL API、Amplify は Web/モバイル開発ツール。",
+      "zh": "AppSync：带实时订阅的托管 GraphQL API；Amplify：Web/移动前端开发工具。"
+    },
+    {
+      "name": "Amazon EC2 / ECS / EKS",
+      "re": "\\bEC2\\b|\\bECS\\b|\\bEKS\\b|Fargate",
+      "en": "Compute: virtual servers (EC2) and container orchestration (ECS, EKS; Fargate is serverless containers).",
+      "ja": "コンピューティング：仮想サーバー（EC2）とコンテナ管理（ECS・EKS、Fargate はサーバーレス）。",
+      "zh": "计算：虚拟服务器（EC2）和容器编排（ECS、EKS；Fargate 为无服务器容器）。"
+    },
+    {
+      "name": "Amazon CloudFront",
+      "re": "CloudFront",
+      "en": "Content delivery network (CDN) that caches content near users.",
+      "ja": "ユーザーの近くでコンテンツをキャッシュ配信する CDN。",
+      "zh": "在用户附近缓存分发内容的 CDN。"
+    },
+    {
+      "name": "Global Accelerator / Route 53",
+      "re": "Global Accelerator|Route 53",
+      "en": "Route 53 is DNS with health checks/failover; Global Accelerator routes traffic over the AWS global network.",
+      "ja": "Route 53 はヘルスチェック・フェイルオーバー付き DNS、Global Accelerator は AWS 網経由で通信を高速化。",
+      "zh": "Route 53 是带健康检查与故障转移的 DNS；Global Accelerator 经 AWS 全球网络加速流量。"
+    },
+    {
+      "name": "AWS Outposts / Wavelength",
+      "re": "Outposts|Wavelength",
+      "en": "Outposts runs AWS infrastructure on premises; Wavelength puts compute at 5G network edges.",
+      "ja": "Outposts はオンプレミスで AWS 基盤を動かし、Wavelength は 5G 網のエッジで計算を行う。",
+      "zh": "Outposts 在本地运行 AWS 基础设施；Wavelength 将计算放在 5G 网络边缘。"
+    },
+    {
+      "name": "Amazon EMR",
+      "re": "\\bEMR\\b",
+      "en": "Managed big-data clusters (Spark, Hadoop).",
+      "ja": "マネージドなビッグデータクラスター（Spark、Hadoop）。",
+      "zh": "托管大数据集群（Spark、Hadoop）。"
+    },
+    {
+      "name": "Amazon DocumentDB",
+      "re": "DocumentDB",
+      "en": "Managed MongoDB-compatible document database.",
+      "ja": "MongoDB 互換のマネージドドキュメント DB。",
+      "zh": "兼容 MongoDB 的托管文档数据库。"
+    },
+    {
+      "name": "Model Context Protocol (MCP)",
+      "re": "\\bMCP\\b|Model Context Protocol",
+      "en": "Open protocol for connecting AI agents to tools and data sources through MCP servers.",
+      "ja": "AI エージェントを MCP サーバー経由でツールやデータに接続するオープンプロトコル。",
+      "zh": "通过 MCP 服务器将 AI Agent 连接到工具和数据源的开放协议。"
+    },
+    {
+      "name": "Strands Agents SDK",
+      "re": "Strands",
+      "en": "Open-source AWS SDK for building AI agents in code (model-driven, tool use, multi-agent).",
+      "ja": "AI エージェントをコードで構築する AWS のオープンソース SDK（ツール利用、マルチエージェント）。",
+      "zh": "AWS 开源的 AI Agent 开发 SDK（工具调用、多 Agent）。"
+    },
+    {
+      "name": "RAG",
+      "re": "Retrieval Augmented Generation|\\bRAG\\b",
+      "en": "Retrieval Augmented Generation: retrieve relevant documents and add them to the prompt to ground answers.",
+      "ja": "検索拡張生成：関連文書を検索してプロンプトに加え、回答を根拠付ける手法。",
+      "zh": "检索增强生成：检索相关文档并加入提示，使回答有依据。"
+    }
+  ]
 }
