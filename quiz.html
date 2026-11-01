@@ -9,6 +9,7 @@ main{max-width:680px;margin:auto;padding:2em 1.25em 4em}
 .bar{height:3px;background:var(--rule);border-radius:2px;overflow:hidden}.bar div{height:100%;background:var(--acc);transition:width .3s}
 .tags{display:flex;gap:1em;align-items:center;flex-wrap:wrap;margin-bottom:1em;font-size:.8rem;color:var(--mut)}.tag{font-weight:600;color:var(--ink2)}.tag.d,.tag.m{font-weight:400;color:var(--mut)}
 .star{margin-left:auto;background:none;border:0;font-size:1.2rem;line-height:1;cursor:pointer;color:#c5c9cf;padding:.2em;min-height:0;width:auto}.star.on{color:var(--acc)}.star:hover{background:none}
+.tts{margin-left:auto;font:inherit;font-size:.8rem;padding:.25em .8em;border-radius:999px;border:1px solid rgba(127,127,127,.35);background:rgba(255,255,255,.35);color:inherit;cursor:pointer;backdrop-filter:blur(6px)}.tts.on{background:#2563eb;color:#fff;border-color:#2563eb}.tts+.star{margin-left:.4em}
 .qt{font-size:1.1rem;line-height:1.7;margin:0 0 1.6em;font-weight:500;letter-spacing:-.003em}
 .hint{font-size:.8rem;color:var(--mut);margin:-1em 0 .8em}details.orig+.hint{margin-top:.6em;position:static}details.orig{margin-bottom:0}
 .opt{display:flex;gap:.9em;align-items:flex-start;padding:.9em 1em;margin:.5em 0;border:1px solid var(--rule);border-radius:10px;cursor:pointer;font-size:.95rem;color:var(--ink2);transition:border-color .12s,background .12s}
@@ -121,7 +122,7 @@ let GL=[];function gterms(txt,skip){return GL.filter(g=>g.r.test(txt)&&!(skip&&s
 function t(k,...a){let x=(I18N[LANG]||I18N.en)[k];if(x==null)x=I18N.en[k]||k;return x.replace(/\{(\d)\}/g,(_,i)=>a[i])}
 const T=t;
 function langSeg(){return '<div class="seg lseg">'+[['en','EN'],['ja','日本語'],['zh','中文']].map(([c,l])=>`<button class="${LANG===c?'on':''}" onclick="setLang('${c}')">${l}</button>`).join('')+'</div>'}
-function setLang(l){LANG=l;localStorage.setItem(LANG_KEY,l);document.documentElement.lang=l==='zh'?'zh-CN':l;const s=document.getElementById('lang');if(s)s.value=l;document.title=t('practice')+' · AIP-C01';
+function setLang(l){ttsStop();LANG=l;localStorage.setItem(LANG_KEY,l);document.documentElement.lang=l==='zh'?'zh-CN':l;const s=document.getElementById('lang');if(s)s.value=l;document.title=t('practice')+' · AIP-C01';
 if(view==='init')return;if(view==='gate'){const v=(document.getElementById('pw')||{}).value||'';gate(true);document.getElementById('pw').value=v;return}
 chips();if(view==='home')home();else if(view==='list')listView();else if(view==='fin')finish();else if(view==='q'){if(done){const fb=document.getElementById('fb');k++;k--;show()}else show()}}
 let Q=[],byId={},S,mode,list=[],k=0,sess,done=false;
@@ -134,7 +135,7 @@ function flow(b){const L=b.trim().split('\n'),h=L.shift();return '<div class="fl
 function md0(t){return esc(t).split(/\n{2,}/).map(x=>'<p>'+x.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>').join('')}
 function exl(t,ans){const SEP=/(?<=^|[。．.!?！？；;]\s*)(?=(?:答|[A-F])(?:\s*[:：]|\s+[-–]\s|\s*(?:と|および|and|和|、|,)\s*[A-F]\b|\s+(?:は|が|を|では|も|は、)|\s*[（(]))/;const LB=/^(答|[A-F])((?:\s*(?:と|および|and|和|、|,)\s*[A-F])*)/;const fm=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');return String(t||'').split(/\[\[flow\]\]([\s\S]*?)\[\[\/flow\]\]/).map((x,i)=>i%2?flow(x):x.split(/\n{2,}/).filter(s=>s.trim()).map(par=>{const ch=par.split(SEP).map(s=>s.trim()).filter(Boolean);if(ch.filter(c=>LB.test(c)).length<2&&!(ch.length>1))return '<p>'+fm(par)+'</p>';return '<ul class="exl">'+ch.map(c=>{const m=c.match(LB);if(!m)return '<li><div>'+fm(c)+'</div></li>';const ls=(m[1]==='答'?'A':m[1])+(m[2]||'').replace(/[^A-F]/g,'');const body=c.replace(/^(答|[A-F])\s*[:：]\s*/,'').replace(/^(答|[A-F])\s+[-–]\s+/,'');const ok=[...ls].every(l=>(ans||'').includes(l));return '<li><span class="lb'+(ok?' lok':'')+'">'+[...ls].join('·')+'</span><div>'+fm(body)+'</div></li>'}).join('')+'</ul>'}).join('')).join('')}
 function md(t){return String(t||'').split(/\[\[flow\]\]([\s\S]*?)\[\[\/flow\]\]/).map((x,i)=>i%2?flow(x):md0(x)).join('')}
-function home(){if(!Q.length)return;view='home';scrollTo(0,0);const a=Object.values(S.ans),c=a.filter(x=>x.ok).length,w=Object.keys(S.wrong).length,m=S.marks.length,has=S.pos>0&&S.pos<Q.length;
+function home(){ttsStop();if(!Q.length)return;view='home';scrollTo(0,0);const a=Object.values(S.ans),c=a.filter(x=>x.ok).length,w=Object.keys(S.wrong).length,m=S.marks.length,has=S.pos>0&&S.pos<Q.length;
 app.className='card home';app.innerHTML=`<h2>${t('practice')}</h2><div class="meta">AWS Generative AI Developer – Professional · ${t('nq',Q.length)}</div>
 <div class="stats"><div class="st"><b>${a.length}</b><small>${t('answered')}</small></div><div class="st"><b>${a.length?Math.round(c*100/a.length):0}%</b><small>${t('accuracy')}</small></div><div class="st"><b>${w}</b><small>${t('toreview')}</small></div></div>
 <div class="menu">${has?`<button class="mi hi" onclick="startMode('all',true)"><span class="ic">▶</span><span><b>${t('cont')}</b><small>${t('qof',S.pos+1,Q.length)}</small></span><span class="go">›</span></button>`:''}
@@ -150,7 +151,7 @@ else{list=S.marks.map(id=>byId[id]).filter(x=>x!=null);k=0}
 if(!list.length)return home();save();show()}
 let LF={q:'',f:'all'};
 function seg(on){return `<div class="seg"><button class="${on==='card'?'on':''}" onclick="startMode('all',true)">${t('card')}</button><button class="${on==='list'?'on':''}" onclick="listView()">${t('list')}</button></div>`}
-function listView(){if(!Q.length)return;view='list';scrollTo(0,0);mode='all';app.className='card';
+function listView(){ttsStop();if(!Q.length)return;view='list';scrollTo(0,0);mode='all';app.className='card';
 app.innerHTML=seg('list')+`<input class="lsearch" id="ls" type="search" inputmode="numeric" placeholder="${t('search')}" value="${esc(LF.q)}"><div class="flt">${[['all',t('fall')],['todo',t('ftodo')],['ok',t('fok')],['bad',t('fbad')],['mark',t('saved')]].map(([k,l])=>`<button class="${LF.f===k?'on':''}" onclick="LF.f='${k}';listView()">${l}</button>`).join('')}</div><div class="lsum" id="lsum"></div><div class="ql" id="ql"></div>`;
 const e=document.getElementById('ls');e.oninput=()=>{LF.q=e.value;renderList()};e.onkeydown=x=>{if(x.key==='Enter'){const n=parseInt(e.value,10);if(n>=1&&n<=Q.length)jump(n-1)}};renderList()}
 function renderList(){const t=LF.q.trim().toLowerCase(),n=/^\d+$/.test(t)?parseInt(t,10):null;
@@ -161,9 +162,15 @@ document.getElementById('lsum').textContent=T('nofq',r.length,Q.length);
 document.getElementById('ql').innerHTML=r.map(x=>`<div class="qi" onclick="jump(${x.i})"><span class="n">${x.q.id}</span><span class="tx">${esc(LQ(x.q))}</span><span class="bm">${x.m?'★':''}</span><span class="s ${x.a?(x.a.ok?'ok':'bad'):'no'}">${x.a?(x.a.ok?'✓':'✕'):''}</span></div>`).join('')||'<div class="meta" style="padding:1em 0">'+T('nomatch')+'</div>'}
 function jump(i){mode='all';sess={c:0,t:0,stats:{},done:{}};list=Q.map((_,x)=>x);k=i;S.pos=i;save();show()}
 const MN={get all(){return t('allq')},get wrong(){return t('revm')},get mark(){return t('saved')}};
-function show(){view='q';scrollTo(0,0);done=false;app.className='card';const q=Q[list[k]],multi=q.answer.length>1,mk=S.marks.includes(q.id);
+const TTSL={en:['🔊 Read aloud','⏹ Stop'],ja:['🔊 読み上げ','⏹ 停止'],zh:['🔊 朗读','⏹ 停止']};function TTL(){return TTSL[LANG]||TTSL.en}
+function ttsStop(){try{if(window.speechSynthesis)speechSynthesis.cancel()}catch(e){}const b=document.getElementById('tts');if(b){b.classList.remove('on');b.textContent=TTL()[0]}}
+function ttsToggle(){const ss=window.speechSynthesis;if(!ss)return;if(ss.speaking||ss.pending){ttsStop();return}if(view!=='q')return;const q=Q[list[k]],o=LOP(q);
+const u=new SpeechSynthesisUtterance(LQ(q)+'\n'+Object.entries(o).map(([a,v])=>a+'. '+v).join('\n'));u.lang=LANG==='ja'?'ja-JP':LANG==='zh'?'zh-CN':'en-US';const v=ss.getVoices().find(x=>x.lang&&x.lang.replace('_','-').startsWith(u.lang.slice(0,2)));if(v)u.voice=v;
+const b=document.getElementById('tts');u.onend=u.onerror=()=>{if(document.getElementById('tts')===b)ttsStop()};ss.cancel();ss.speak(u);if(b){b.classList.add('on');b.textContent=TTL()[1]}}
+addEventListener('pagehide',ttsStop);
+function show(){ttsStop();view='q';scrollTo(0,0);done=false;app.className='card';const q=Q[list[k]],multi=q.answer.length>1,mk=S.marks.includes(q.id);
 app.innerHTML=(mode==='all'?seg('card'):'')+`<div class="prog"><div class="pt"><b>${t('qn',k+1,list.length)}${mode==='all'?'':' · '+MN[mode]}</b><span>${t('ncorrect',sess.c,sess.t)}</span></div><div class="bar"><div style="width:${((k+1)/list.length*100).toFixed(1)}%"></div></div></div>
-<div class="tags"><span class="tag">${q.id}</span><span class="tag d">${esc(q.domain)}</span>${multi?`<span class="tag m">${t('choose',q.answer.length)}</span>`:''}<button class="star ${mk?'on':''}" id="st" onclick="mark('${q.id}')" title="${t('saveq')}">${mk?'★':'☆'}</button></div>
+<div class="tags"><span class="tag">${q.id}</span><span class="tag d">${esc(q.domain)}</span>${multi?`<span class="tag m">${t('choose',q.answer.length)}</span>`:''}${window.speechSynthesis?`<button class="tts" id="tts" onclick="ttsToggle()">${TTL()[0]}</button>`:''}<button class="star ${mk?'on':''}" id="st" onclick="mark('${q.id}')" title="${t('saveq')}">${mk?'★':'☆'}</button></div>
 <div class="qt">${esc(LQ(q))}</div>${tq(q)?`<details class="orig"><summary>${t('orig')}</summary><div class="meta" style="white-space:pre-wrap">${esc(q.question)}\n\n${Object.entries(q.options).map(([k,v])=>k+'. '+esc(v)).join('\n')}</div></details>`:''}${multi?'<div class="hint">'+t('selectn',q.answer.length)+'</div>':''}<div class="opts ${multi?'multi':''}">`+
 Object.entries(LOP(q)).map(([o,v])=>`<label class="opt" id="l${o}"><input type="${multi?'checkbox':'radio'}" name="o" value="${o}" onchange="pick()"><span class="k">${o}</span><span>${esc(v)}</span></label>`).join('')+
 `</div><div class="row" id="ac"><button class="sec" onclick="finish()">${t('end')}</button>${k>0?`<button class="sec" onclick="prev()">‹ ${t('prev')}</button>`:''}<button id="sb" onclick="check()" disabled>${t('submit')}</button></div><div id="fb"></div>`;const r=sess.done&&sess.done[k];if(r){for(const o of r.sel)document.querySelector('input[value="'+o+'"]').checked=true;check(r.sel)}}
@@ -188,7 +195,7 @@ document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><h3>${
 (q.explanation?`<details class="gls"><summary>${t('expl')}</summary><div class="ex"></div></details>`:'<div class="meta">'+t('noexpl')+'</div>')+(q.note?`<div class="meta">${t('note')}${esc(q.note)}</div>`:'')+`</div>`;
 const p=document.querySelector('#fb .ex');if(p)p.innerHTML=exl(LEX(q),q.answer);{const fb=document.getElementById('fb'),gh=gbox(gterms(q.question+' '+Object.values(q.options).join(' ')+' '+(q.explanation||'')),t('gl'),false);if(fb&&gh){const w=document.createElement('div');w.innerHTML=gh;const bx=fb.querySelector('.fb')||fb;const dd=bx.querySelector(':scope>details');dd?dd.after(w.firstChild):bx.appendChild(w.firstChild)}}if(!rp)document.getElementById('fb').scrollIntoView({behavior:'smooth',block:'nearest'})}
 function next(){k++;k<list.length?show():finish()}
-function finish(){view='fin';scrollTo(0,0);const n=sess.t,c=sess.c,pc=n?Math.round(c*100/n):0;
+function finish(){ttsStop();view='fin';scrollTo(0,0);const n=sess.t,c=sess.c,pc=n?Math.round(c*100/n):0;
 app.className='card';app.innerHTML=`<div class="logo">${MN[mode]} · ${t('res')}</div><div class="big">${pc}%<small>${c} / ${n}</small></div><div class="meta" style="margin:.8em 0 2.2em">${n?'':T('noans')}</div>`+
 (n?Object.entries(sess.stats).map(([d,s])=>{const p=Math.round(s.c*100/s.t);return`<div class="dr"><div class="pt"><span>${esc(d)}</span><b>${s.c}/${s.t}</b></div><div class="bar"><div style="width:${p}%"></div></div></div>`}).join(''):'')+
 `<div class="row"><button class="sec" onclick="home()">${T('home')}</button><button onclick="startMode('${mode}',${mode==='all'})">${mode==='all'?T('keep'):T('again2')}</button></div>`}
