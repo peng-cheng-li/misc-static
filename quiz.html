@@ -105,8 +105,7 @@ html,body{overflow-x:hidden;max-width:100%}main,#app,.card,.qt,.opts,.opt,#fb,.e
 .exl{list-style:none;margin:.3em 0;padding:0}.exl li{display:flex;gap:.6em;align-items:flex-start;padding:.6em 0;border-top:1px solid #e3ecea;line-height:1.6}.exl li:first-child{border-top:0}.exl .lb{flex:none;min-width:1.8em;text-align:center;font-weight:700;font-size:.8rem;padding:.15em .45em;border-radius:6px;background:#eef2f1;color:var(--ink2)}.exl .lb.lok{background:#dff0ea;color:var(--ok)}.exl li>div{min-width:0}mark.kw{background:none;color:#d70015;font-weight:700;padding:0}
 
 
-#app{touch-action:pan-y;position:relative}
-.zhint{position:absolute;top:50%;transform:translateY(-50%);font-size:1.9rem;line-height:1;color:var(--mut);opacity:.35;pointer-events:none;z-index:3}.zhint.zl{left:.15em}.zhint.zr{right:.15em}
+#app{touch-action:pan-y}
 html,body{touch-action:manipulation}
 #vp{position:relative}
 #vp.swiping{overflow:hidden}
@@ -259,7 +258,7 @@ function QMR(){try{return JSON.parse(localStorage.getItem('aipc01-qmres'))||{}}c
 function qmStart(){if(!Q.length)return;startMode('qm',true)}
 function qmList(){mode='qm';listView()}
 function qHTML(kk){const q=Q[list[kk]],multi=q.answer.length>1,mk=S.marks.includes(q.id);
-return '<span class="zhint zl">‹</span><span class="zhint zr">›</span>'+(mode==='all'||mode==='qm'?seg('card'):'')+`<div class="prog"><div class="pt"><b>${t('qn',kk+1,list.length)}${mode==='all'?'':' · '+MN[mode]}</b><span>${t('ncorrect',sess.c,sess.t)}</span></div><div class="bar"><div style="width:${((kk+1)/list.length*100).toFixed(1)}%"></div></div></div>
+return (mode==='all'||mode==='qm'?seg('card'):'')+`<div class="prog"><div class="pt"><b>${t('qn',kk+1,list.length)}${mode==='all'?'':' · '+MN[mode]}</b><span>${t('ncorrect',sess.c,sess.t)}</span></div><div class="bar"><div style="width:${((kk+1)/list.length*100).toFixed(1)}%"></div></div></div>
 <div class="tags"><span class="tag">${q.id}</span><span class="tag d">${esc(q.domain)}</span>${multi?`<span class="tag m">${t('choose',q.answer.length)}</span>`:''}<button class="star ${mk?'on':''}" id="st" onclick="mark('${q.id}')" title="${t('saveq')}">${mk?'★':'☆'}</button><span class="trow">${window.speechSynthesis?`<span class="tools" id="tools"><button type="button" class="tts" id="tts" onmousedown="event.preventDefault()" onclick="event.preventDefault();ttsToggle()" title="${TTL()[0]}" aria-label="${TTL()[0]}" aria-pressed="false">${TTI[0]}</button><span class="trk" id="trk" style="--pp:${((TRATE()-0.5)/1.5).toFixed(3)}"><span class="fill" aria-hidden="true"><span class="wave">${'<i></i>'.repeat(90)}</span></span><input type="range" id="rate" min="0.5" max="2" step="0.05" value="${TRATE()}" oninput="ttsRate(this.value)" title="${TTR()}" aria-label="${TTR()}"></span><span class="rv" id="rv">${TRATE().toFixed(2)}x</span></span>`:''}</span></div>
 <div class="qbox"><div class="qt">${mode==='qm'?hl(LQ(q),MK(q,LANG).stem):esc(LQ(q))}</div></div>${tq(q)?`<details class="orig"><summary>${t('orig')}</summary><div class="meta" style="white-space:pre-wrap">${origHL(q,false)}</div></details>`:''}${multi?'<div class="hint">'+t('selectn',q.answer.length)+'</div>':''}<div class="opts ${multi?'multi':''}">`+
 Object.entries(LOP(q)).map(([o,v])=>`<label class="opt" id="l${o}"><input type="${multi?'checkbox':'radio'}" name="o" value="${o}" onchange="pick()"><span class="k">${o}</span><span>${esc(v)}</span></label>`).join('')+
