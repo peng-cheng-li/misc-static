@@ -106,12 +106,13 @@ html,body{overflow-x:hidden;max-width:100%}main,#app,.card,.qt,.opts,.opt,#fb,.e
 
 
 #app{touch-action:pan-y}
+.swtrk{display:flex;align-items:flex-start;width:300%}.swpane{flex:none;width:33.333333%;min-width:0;pointer-events:none}#app.swiping{overflow:hidden}
 @keyframes swInL{from{transform:translateX(56px);opacity:.3}to{transform:translateX(0);opacity:1}}
 @keyframes swInR{from{transform:translateX(-56px);opacity:.3}to{transform:translateX(0);opacity:1}}
 #app.swL{animation:swInL .2s ease}
 #app.swR{animation:swInR .2s ease}
 #thb{background:none;border:0;min-height:0;width:auto;padding:.25em .05em;font-size:1.05rem;line-height:1;color:var(--mut);box-shadow:none;flex:none}
-html[data-theme="dark"]{--bg:#0a0e0d;--ink:#edf2f0;--ink2:#a9b8b3;--mut:#7c8a86;--rule:#222d2a;--soft:#141c1a;--acc:#2fc4b2;--accs:#173430;--ok:#2fc4b2;--okb:#122b28;--bad:#ff7a6b;--badb:#331e22;color-scheme:dark;background:#0a0e0d}
+html[data-theme="dark"]{--bg:#0a0e0d;--ink:#edf2f0;--ink2:#c4d1cc;--mut:#9aa9a3;--rule:#222d2a;--soft:#141c1a;--acc:#2fc4b2;--accs:#173430;--ok:#2fc4b2;--okb:#122b28;--bad:#ff7a6b;--badb:#331e22;color-scheme:dark;background:#0a0e0d}
 html[data-theme="dark"] body{background:#0a0e0d;background-image:radial-gradient(60% 42% at 0% 0%,rgba(20,80,70,.35),transparent 70%),radial-gradient(55% 40% at 100% 30%,rgba(24,44,66,.35),transparent 70%);color:var(--ink)}
 html[data-theme="dark"] header{background:rgba(10,14,13,.86);border-bottom:1px solid #1f2a27}
 html[data-theme="dark"] .card,html[data-theme="dark"] .st,html[data-theme="dark"] .mi,html[data-theme="dark"] .menu .mi:last-child{background:#131918;border:1px solid #22302b;box-shadow:0 1px 2px rgba(0,0,0,.35),0 6px 18px rgba(0,0,0,.35);backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -169,12 +170,13 @@ html[data-theme="dark"] .trk input::-moz-range-thumb{background:#dfe9e7}
 html[data-theme="dark"] .exl li{border-top-color:#26332f}
 html[data-theme="dark"] .exl .lb{background:#1d2c29;color:var(--ink2)}
 html[data-theme="dark"] .exl .lb.lok{background:#14463c;color:#7fe0d2}
-.hd{gap:.6em}
-.hd b{white-space:nowrap;flex:0 1 auto;overflow:hidden}
-.chip{white-space:nowrap}
-#thb{font-size:.98rem;padding:.15em 0}
-header{padding-left:1em;padding-right:1em}
-</style><script>(function(){try{var s=localStorage.getItem('aipc01-theme')||'auto';if(s==='dark'||(s==='auto'&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.dataset.theme='dark'}catch(e){}})()</script></head><body>
+.hd{gap:.55em}
+.hd b{white-space:nowrap;flex:0 1 auto;overflow:hidden;font-size:.9rem}
+.chip{white-space:nowrap;font-size:.8rem}
+#lang{font-size:.76rem;padding:.15em .2em}
+#thb{font-size:.95rem;padding:.15em 0}
+header{padding-left:.9em;padding-right:.9em}
+</style><script>(function(){try{var s=localStorage.getItem('aipc01-theme');if(s==='dark'||(s!=='light'&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.dataset.theme='dark'}catch(e){}})()</script></head><body>
 <header><div class="hd"><b onclick="home()">AIP-C01 <i id="hp">Practice</i></b><select id="lang" onchange="setLang(this.value)" aria-label="Language"><option value="en">EN</option><option value="ja">日本語</option><option value="zh">中文</option></select><button id="thb" type="button" onclick="cycleTheme()" aria-label="Theme">🌗</button><span class="chip" id="cl" onclick="listView()">List</span><span class="chip" id="cw" onclick="startMode('wrong')"></span><span class="chip" id="cm" onclick="startMode('mark')"></span></div></header>
 <main><div class="card" id="app"></div></main><script>
 // ===== Password: change it here =====
@@ -250,31 +252,37 @@ function origHL(q,sa=true){const m=(q.mem||{}).en||{stem:[],ans:{}};return hl(q.
 function QMR(){try{return JSON.parse(localStorage.getItem('aipc01-qmres'))||{}}catch(e){return{}}}
 function qmStart(){if(!Q.length)return;startMode('qm',true)}
 function qmList(){mode='qm';listView()}
-function show(){ttsStop();view='q';scrollTo(0,0);done=false;app.className='card';const q=Q[list[k]],multi=q.answer.length>1,mk=S.marks.includes(q.id);
-app.innerHTML=(mode==='all'||mode==='qm'?seg('card'):'')+`<div class="prog"><div class="pt"><b>${t('qn',k+1,list.length)}${mode==='all'?'':' · '+MN[mode]}</b><span>${t('ncorrect',sess.c,sess.t)}</span></div><div class="bar"><div style="width:${((k+1)/list.length*100).toFixed(1)}%"></div></div></div>
+function qHTML(kk){const q=Q[list[kk]],multi=q.answer.length>1,mk=S.marks.includes(q.id);
+return (mode==='all'||mode==='qm'?seg('card'):'')+`<div class="prog"><div class="pt"><b>${t('qn',kk+1,list.length)}${mode==='all'?'':' · '+MN[mode]}</b><span>${t('ncorrect',sess.c,sess.t)}</span></div><div class="bar"><div style="width:${((kk+1)/list.length*100).toFixed(1)}%"></div></div></div>
 <div class="tags"><span class="tag">${q.id}</span><span class="tag d">${esc(q.domain)}</span>${multi?`<span class="tag m">${t('choose',q.answer.length)}</span>`:''}<button class="star ${mk?'on':''}" id="st" onclick="mark('${q.id}')" title="${t('saveq')}">${mk?'★':'☆'}</button><span class="trow">${window.speechSynthesis?`<span class="tools" id="tools"><button type="button" class="tts" id="tts" onmousedown="event.preventDefault()" onclick="event.preventDefault();ttsToggle()" title="${TTL()[0]}" aria-label="${TTL()[0]}" aria-pressed="false">${TTI[0]}</button><span class="trk" id="trk" style="--pp:${((TRATE()-0.5)/1.5).toFixed(3)}"><span class="fill" aria-hidden="true"><span class="wave">${'<i></i>'.repeat(90)}</span></span><input type="range" id="rate" min="0.5" max="2" step="0.05" value="${TRATE()}" oninput="ttsRate(this.value)" title="${TTR()}" aria-label="${TTR()}"></span><span class="rv" id="rv">${TRATE().toFixed(2)}x</span></span>`:''}</span></div>
 <div class="qbox"><div class="qt">${mode==='qm'?hl(LQ(q),MK(q,LANG).stem):esc(LQ(q))}</div></div>${tq(q)?`<details class="orig"><summary>${t('orig')}</summary><div class="meta" style="white-space:pre-wrap">${origHL(q,false)}</div></details>`:''}${multi?'<div class="hint">'+t('selectn',q.answer.length)+'</div>':''}<div class="opts ${multi?'multi':''}">`+
 Object.entries(LOP(q)).map(([o,v])=>`<label class="opt" id="l${o}"><input type="${multi?'checkbox':'radio'}" name="o" value="${o}" onchange="pick()"><span class="k">${o}</span><span>${esc(v)}</span></label>`).join('')+
-`</div><div class="row" id="ac"><button class="sec" onclick="finish()">${t('end')}</button>${k>0?`<button class="sec" onclick="prev()">‹ ${t('prev')}</button>`:''}<button id="sb" onclick="check()" disabled>${t('submit')}</button></div><div id="fb"></div>`;const r=sess.done&&sess.done[k];if(r){for(const o of r.sel)document.querySelector('input[value="'+o+'"]').checked=true;check(r.sel)}}
+`</div><div class="row" id="ac"><button class="sec" onclick="finish()">${t('end')}</button>${kk>0?`<button class="sec" onclick="prev()">‹ ${t('prev')}</button>`:''}<button id="sb" onclick="check()" disabled>${t('submit')}</button></div><div id="fb"></div>`}
+function show(){ttsStop();view='q';scrollTo(0,0);done=false;app.className='card';app.innerHTML=qHTML(k);const r=sess.done&&sess.done[k];if(r){for(const o of r.sel)document.querySelector('input[value="'+o+'"]').checked=true;check(r.sel)}}
 function pick(){document.querySelectorAll('.opt').forEach(l=>l.classList.toggle('sel',l.querySelector('input').checked));document.getElementById('sb').disabled=!document.querySelector('input:checked')}
 function mark(id){const x=S.marks.indexOf(id);x<0?S.marks.push(id):S.marks.splice(x,1);save();const b=document.getElementById('st');if(b){b.classList.toggle('on',x<0);b.textContent=x<0?'★':'☆';b.classList.remove('pop','fade');void b.offsetWidth;b.classList.add(x<0?'pop':'fade')}}
 function prev(){if(k>0){k--;show()}}
-// ===== Card swipe navigation (left = next, right = prev) =====
-(function(){let sx=0,sy=0,dx=0,lock=0,drag=false,st=0,busy=false;
-function slideTo(goNext){if(busy)return;busy=true;app.style.transition='transform .2s cubic-bezier(.5,0,.8,.4),opacity .2s';app.style.transform='translateX('+(goNext?-105:105)+'%)';app.style.opacity='.12';let fin=false;const done=()=>{if(fin)return;fin=true;if(goNext)next();else prev();app.style.transition='none';app.style.transform='translateX('+(goNext?55:-55)+'%)';app.style.opacity='.2';void app.offsetWidth;app.style.transition='transform .3s cubic-bezier(.22,.9,.26,1),opacity .3s';app.style.transform='';app.style.opacity='';setTimeout(()=>{app.style.transition='';app.style.transform='';busy=false},320)};const h=e=>{if(e.propertyName==='transform'){app.removeEventListener('transitionend',h);done()}};app.addEventListener('transitionend',h);setTimeout(done,250)}
-app.addEventListener('touchstart',e=>{if(view!=='q'||busy)return;const t=e.changedTouches[0];sx=t.clientX;sy=t.clientY;st=Date.now();dx=0;lock=0;drag=!(e.target.closest&&e.target.closest('input,select,textarea,button'));app.style.transition='none'},{passive:true});
-app.addEventListener('touchmove',e=>{if(!drag||view!=='q')return;const t=e.changedTouches[0],mx=t.clientX-sx,my=t.clientY-sy;if(!lock){if(Math.abs(mx)>10&&Math.abs(mx)>Math.abs(my)*1.35)lock=1;else if(Math.abs(my)>10)lock=-1}if(lock===1){dx=mx;e.preventDefault();const lim=innerWidth*0.5,a=Math.abs(dx),r=a>lim?lim+(a-lim)*0.35:a;app.style.transform='translateX('+((dx>0?1:-1)*r)+'px)';app.style.opacity=String(Math.max(.3,1-a/(innerWidth*1.5)))}},{passive:false});
-function endSw(){if(!drag)return;drag=false;app.style.opacity='';if(lock!==1){lock=0;dx=0;app.style.transition='transform .22s ease';app.style.transform='';return}const dt=Date.now()-st,adx=Math.abs(dx),go=(adx>64||(dt<260&&adx>42));if(go&&dx<0&&k<list.length-1)slideTo(true);else if(go&&dx>0&&k>0)slideTo(false);else{app.style.transition='transform .28s cubic-bezier(.22,.9,.26,1)';app.style.transform='';setTimeout(()=>{app.style.transition=''},300)}lock=0;dx=0}
+// ===== Card swipe: 3-pane track, the next card slides in with your finger =====
+(function(){let sx=0,sy=0,dx=0,lock=0,drag=false,st=0,busy=false,trk=null,W=0;
+function contentW(){const cs=getComputedStyle(app);return app.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)}
+function buildTrack(){W=contentW();trk=document.createElement('div');trk.className='swtrk';const mk=h=>{const p=document.createElement('div');p.className='swpane';if(h!=null)p.innerHTML=h;return p};const pPrev=mk(k>0?qHTML(k-1):null),pNext=mk(k<list.length-1?qHTML(k+1):null),pCur=mk(null);while(app.firstChild)pCur.appendChild(app.firstChild);trk.append(pPrev,pCur,pNext);app.appendChild(trk);app.classList.add('swiping');trk.style.transform='translateX('+(-W)+'px)'}
+function dropTrack(){if(!trk)return;const cur=trk.children[1];while(cur.firstChild)app.appendChild(cur.firstChild);trk.remove();trk=null;app.classList.remove('swiping')}
+function finishTo(target,nav){busy=true;trk.style.transition='transform .34s cubic-bezier(.22,.9,.26,1)';trk.style.transform='translateX('+target+'px)';let fin=false;const done=()=>{if(fin)return;fin=true;if(nav){k+=nav;show()}else dropTrack();busy=false};trk.addEventListener('transitionend',function h(e){if(e.propertyName==='transform'){if(trk)trk.removeEventListener('transitionend',h);done()}});setTimeout(done,420)}
+function goNav(dir){if(busy||view!=='q')return;if(dir>0&&k>=list.length-1)return;if(dir<0&&k<=0)return;buildTrack();void trk.offsetWidth;finishTo(-W+dir*W,dir)}
+app.addEventListener('touchstart',e=>{if(view!=='q'||busy)return;const t=e.changedTouches[0];sx=t.clientX;sy=t.clientY;st=Date.now();dx=0;lock=0;drag=!(e.target.closest&&e.target.closest('input,select,textarea,button'))},{passive:true});
+app.addEventListener('touchmove',e=>{if(!drag||view!=='q'||busy)return;const t=e.changedTouches[0],mx=t.clientX-sx,my=t.clientY-sy;if(!lock){if(Math.abs(mx)>10&&Math.abs(mx)>Math.abs(my)*1.35)lock=1;else if(Math.abs(my)>10)lock=-1}if(lock===1){if(!trk)buildTrack();dx=mx;e.preventDefault();let off=-W+mx;if((k===0&&mx>0)||(k===list.length-1&&mx<0))off=-W+mx*0.32;trk.style.transform='translateX('+off+'px)'}},{passive:false});
+function endSw(){if(!drag)return;drag=false;if(!trk||lock!==1){lock=0;dx=0;return}const dt=Date.now()-st,adx=Math.abs(dx),far=adx>W*0.22,flick=dt<260&&adx>42;if((far||flick)&&dx<0&&k<list.length-1)finishTo(-2*W,1);else if((far||flick)&&dx>0&&k>0)finishTo(0,-1);else finishTo(-W,0);lock=0;dx=0}
 app.addEventListener('touchend',endSw);
-app.addEventListener('touchcancel',()=>{drag=false;lock=0;dx=0;app.style.transition='transform .22s ease';app.style.transform='';app.style.opacity=''});
-document.addEventListener('keydown',e=>{if(view!=='q'||busy)return;if(e.key==='ArrowLeft'&&k>0)slideTo(false);else if(e.key==='ArrowRight'&&k<list.length-1)slideTo(true)});
+app.addEventListener('touchcancel',()=>{drag=false;if(trk&&lock===1)finishTo(-W,0);lock=0;dx=0});
+document.addEventListener('keydown',e=>{if(view!=='q')return;if(e.key==='ArrowLeft')goNav(-1);else if(e.key==='ArrowRight')goNav(1)});
 })();
-// ===== Theme: auto (follows system) / light / dark =====
-const THEME_KEY='aipc01-theme';const THG={auto:'🌗',light:'☀️',dark:'🌙'};const THN={en:['Theme: auto (follows system)','Theme: light','Theme: dark'],ja:['テーマ：自動（システム連動）','テーマ：ライト','テーマ：ダーク'],zh:['主题：自动（跟随系统）','主题：浅色','主题：深色']};
-function themeSet(){try{return localStorage.getItem(THEME_KEY)||'auto'}catch(e){return 'auto'}}
-function applyTheme(){const s=themeSet(),d=s==='dark'||(s==='auto'&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.theme=d?'dark':'light';document.documentElement.style.colorScheme=d?'dark':'light';const b=document.getElementById('thb');if(b){b.textContent=THG[s]||THG.auto;const L=THN[LANG]||THN.en;b.title=b.ariaLabel=L[s==='light'?1:s==='dark'?2:0]}}
-function cycleTheme(){const o=['auto','light','dark'],n=o[(o.indexOf(themeSet())+1)%3];try{localStorage.setItem(THEME_KEY,n)}catch(e){}applyTheme()}
-if(window.matchMedia){const mq=matchMedia('(prefers-color-scheme: dark)');if(mq.addEventListener)mq.addEventListener('change',()=>{if(themeSet()==='auto')applyTheme()})}
+// ===== Theme: light / dark toggle (first visit follows system) =====
+const THEME_KEY='aipc01-theme';const THN={en:['Theme: light','Theme: dark'],ja:['テーマ：ライト','テーマ：ダーク'],zh:['主题：浅色','主题：深色']};
+function themeStored(){try{const v=localStorage.getItem(THEME_KEY);return v==='light'||v==='dark'?v:null}catch(e){return null}}
+function themeEff(){return themeStored()||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}
+function applyTheme(){const d=themeEff()==='dark';document.documentElement.dataset.theme=d?'dark':'light';document.documentElement.style.colorScheme=d?'dark':'light';const b=document.getElementById('thb');if(b){b.textContent=d?'🌙':'☀️';const L=THN[LANG]||THN.en;b.title=b.ariaLabel=L[d?1:0]}}
+function cycleTheme(){const n=themeEff()==='dark'?'light':'dark';try{localStorage.setItem(THEME_KEY,n)}catch(e){}applyTheme()}
+if(window.matchMedia){const mq=matchMedia('(prefers-color-scheme: dark)');if(mq.addEventListener)mq.addEventListener('change',()=>{if(!themeStored())applyTheme()})}
 applyTheme();
 function check(rp){if(done)return;const q=Q[list[k]];const sel=[...document.querySelectorAll('input:checked')].map(e=>e.value).sort().join('');if(!sel)return;done=true;{const om=document.querySelector('details.orig .meta');if(om)om.innerHTML=origHL(q)}
 document.querySelectorAll("input").forEach(e=>e.disabled=true);
