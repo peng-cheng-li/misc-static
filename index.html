@@ -137,7 +137,7 @@ html[data-theme="dark"] .opt.bad{background:#331e22;border-color:#e05a4d;color:v
 html[data-theme="dark"] .opt .k{border-color:#3a4d48}
 html[data-theme="dark"] .opt.sel .k,html[data-theme="dark"] .opt.ok .k{background:#0d9488;border-color:#0d9488;color:#fff}
 html[data-theme="dark"] .opt.bad .k{background:#c2402f;border-color:#c2402f;color:#fff}
-html[data-theme="dark"] button:not(.mi):not(.tts):not(.star):not(.vt):not(.ghost){background:#0d9488;border-color:#0d9488}
+html[data-theme="dark"] button:where(:not(.mi):not(.tts):not(.star):not(.vt):not(.ghost)){background:#0d9488;border-color:#0d9488}
 html[data-theme="dark"] button.sec,html[data-theme="dark"] button.sec:hover{background:#171f1d;border-color:#26332f;color:var(--ink2);box-shadow:none}
 html[data-theme="dark"] .tts,html[data-theme="dark"] .star{background:none}
 html[data-theme="dark"] .fb{background:#0e1413;border-top-color:#222d2a}
@@ -148,8 +148,8 @@ html[data-theme="dark"] .dr{background:#171f1d}
 html[data-theme="dark"] .gls,html[data-theme="dark"] .flow{background:#141c1a;border-color:#26332f}
 html[data-theme="dark"] .fn{background:#131918;border-color:#26332f}
 html[data-theme="dark"] .seg{background:#182120}
-html[data-theme="dark"] .seg button{background:none;color:var(--ink2);box-shadow:none}
-html[data-theme="dark"] .seg button.on{background:#2a3633;color:#edf2f0;box-shadow:none}
+html[data-theme="dark"] .seg button{background:none;color:#8fa39c;box-shadow:none}
+html[data-theme="dark"] .seg button.on{background:#2e3b36;color:#fff;font-weight:600;box-shadow:none}
 html[data-theme="dark"] .flt button{background:#171f1d;color:var(--ink2);border-color:#26332f}
 html[data-theme="dark"] .flt button.on{background:#0d9488;color:#fff;border-color:#0d9488}
 html[data-theme="dark"] .vt{background:none;border-color:#26332f;color:var(--acc)}
@@ -267,16 +267,16 @@ function pick(){document.querySelectorAll('.opt').forEach(l=>l.classList.toggle(
 function mark(id){const x=S.marks.indexOf(id);x<0?S.marks.push(id):S.marks.splice(x,1);save();const b=document.getElementById('st');if(b){b.classList.toggle('on',x<0);b.textContent=x<0?'★':'☆';b.classList.remove('pop','fade');void b.offsetWidth;b.classList.add(x<0?'pop':'fade')}}
 function prev(){if(k>0){k--;show()}}
 // ===== Card swipe (Swiper-style): whole cards on a track, translate3d, finger-follow via rAF =====
-(function(){const vp=document.getElementById('vp');let sx=0,sy=0,dx=0,lock=0,drag=false,st=0,busy=false,trk=null,W=0,raf=0,pendOff=null;
-function setOff(px){if(trk)trk.style.transform='translate3d('+px+'px,0,0)'}
+(function(){const vp=document.getElementById('vp');let sx=0,sy=0,dx=0,lock=0,drag=false,st=0,busy=false,trk=null,W=0,raf=0,pendOff=null,lastOff=0,vel=0,lastMX=0,lastMT=0;
+function setOff(px){lastOff=px;if(trk)trk.style.transform='translate3d('+px+'px,0,0)'}
 function queueOff(px){pendOff=px;if(!raf)raf=requestAnimationFrame(()=>{raf=0;if(trk&&pendOff!=null){setOff(pendOff);pendOff=null}})}
-function buildTrack(){W=vp.clientWidth;vp.style.height=app.offsetHeight+'px';vp.classList.add('swiping');trk=document.createElement('div');trk.className='swtrk2';const mk=h=>{const d=document.createElement('div');d.className='card swcl';if(h!=null)d.innerHTML=h;return d};trk.append(mk(k>0?qHTML(k-1):null),app,mk(k<list.length-1?qHTML(k+1):null));vp.appendChild(trk);setOff(-W)}
-function teardown(){if(!trk)return;const t=trk;trk=null;vp.classList.remove('swiping');vp.style.height='';vp.appendChild(app);t.remove()}
-function finishTo(target,nav){busy=true;if(raf){cancelAnimationFrame(raf);raf=0;pendOff=null}trk.style.transition='transform .32s cubic-bezier(.25,.8,.25,1)';setOff(target);let fin=false;const done=()=>{if(fin)return;fin=true;teardown();if(nav){k+=nav;show()}busy=false};trk.addEventListener('transitionend',function h(e){if(e.propertyName==='transform'){const t=trk;done();if(t)t.removeEventListener('transitionend',h)}});setTimeout(done,400)}
+let HS=[0,0,0];function buildTrack(){W=vp.clientWidth;vp.classList.add('swiping');trk=document.createElement('div');trk.className='swtrk2';const mk=h=>{const d=document.createElement('div');d.className='card swcl';if(h!=null)d.innerHTML=h;return d};trk.append(mk(k>0?qHTML(k-1):null),app,mk(k<list.length-1?qHTML(k+1):null));vp.appendChild(trk);HS=[trk.children[0].offsetHeight,app.offsetHeight,trk.children[2].offsetHeight];vp.style.height=Math.max(HS[0],HS[1],HS[2])+'px';setOff(-W)}
+function teardown(){if(!trk)return;const t=trk;trk=null;vp.classList.remove('swiping');vp.style.height='';vp.style.transition='';vp.appendChild(app);t.remove()}
+function finishTo(target,nav){busy=true;const curOff=pendOff!=null?pendOff:lastOff;if(raf){cancelAnimationFrame(raf);raf=0;pendOff=null}const dist=Math.abs(target-curOff),dur=Math.max(140,Math.min(360,Math.round(110+dist/W*230)));trk.style.transition='transform '+dur+'ms cubic-bezier(.25,.8,.25,1)';vp.style.transition='height '+dur+'ms cubic-bezier(.25,.8,.25,1)';vp.style.height=(nav?HS[nav<0?0:2]:HS[1])+'px';setOff(target);let fin=false;const done=()=>{if(fin)return;fin=true;teardown();if(nav){k+=nav;show()}busy=false};trk.addEventListener('transitionend',function h(e){if(e.propertyName==='transform'){const t=trk;done();if(t)t.removeEventListener('transitionend',h)}});setTimeout(done,dur+90)}
 function goNav(dir){if(busy||view!=='q')return;if(dir>0&&k>=list.length-1)return;if(dir<0&&k<=0)return;buildTrack();void trk.offsetWidth;finishTo(-W+dir*W,dir)}
-vp.addEventListener('touchstart',e=>{if(view!=='q'||busy)return;const t=e.changedTouches[0];sx=t.clientX;sy=t.clientY;st=Date.now();dx=0;lock=0;drag=!(e.target.closest&&e.target.closest('input,select,textarea,button'))},{passive:true});
-vp.addEventListener('touchmove',e=>{if(!drag||view!=='q'||busy)return;const t=e.changedTouches[0],mx=t.clientX-sx,my=t.clientY-sy;if(!lock){if(Math.abs(mx)>10&&Math.abs(mx)>Math.abs(my)*1.35)lock=1;else if(Math.abs(my)>10)lock=-1}if(lock===1){if(!trk)buildTrack();dx=mx;e.preventDefault();let off=-W+mx;if((k===0&&mx>0)||(k===list.length-1&&mx<0))off=-W+mx*0.32;queueOff(off)}},{passive:false});
-function endSw(){if(!drag)return;drag=false;if(!trk||lock!==1){lock=0;dx=0;return}const dt=Date.now()-st,adx=Math.abs(dx),far=adx>W*0.22,flick=dt<260&&adx>42;if((far||flick)&&dx<0&&k<list.length-1)finishTo(-2*W,1);else if((far||flick)&&dx>0&&k>0)finishTo(0,-1);else finishTo(-W,0);lock=0;dx=0}
+vp.addEventListener('touchstart',e=>{if(view!=='q'||busy)return;const t=e.changedTouches[0];sx=t.clientX;sy=t.clientY;st=Date.now();dx=0;lock=0;vel=0;lastMX=0;lastMT=st;drag=!(e.target.closest&&e.target.closest('input,select,textarea,button'))},{passive:true});
+vp.addEventListener('touchmove',e=>{if(!drag||view!=='q'||busy)return;const t=e.changedTouches[0],mx=t.clientX-sx,my=t.clientY-sy;if(!lock){if(Math.abs(mx)>10&&Math.abs(mx)>Math.abs(my)*1.35)lock=1;else if(Math.abs(my)>10)lock=-1}if(lock===1){if(!trk)buildTrack();dx=mx;const now=Date.now();if(now>lastMT){vel=0.7*vel+0.3*((mx-lastMX)/(now-lastMT));lastMX=mx;lastMT=now}e.preventDefault();let off=-W+mx;if((k===0&&mx>0)||(k===list.length-1&&mx<0))off=-W+mx*0.32;queueOff(off)}},{passive:false});
+function endSw(){if(!drag)return;drag=false;if(!trk||lock!==1){lock=0;dx=0;return}const dt=Date.now()-st,adx=Math.abs(dx),far=adx>W*0.22,flick=(dt<260&&adx>42)||(Math.abs(vel)>0.35&&adx>25&&Math.sign(vel)===Math.sign(dx));if((far||flick)&&dx<0&&k<list.length-1)finishTo(-2*W,1);else if((far||flick)&&dx>0&&k>0)finishTo(0,-1);else finishTo(-W,0);lock=0;dx=0}
 vp.addEventListener('touchend',endSw);
 vp.addEventListener('touchcancel',()=>{drag=false;if(trk&&lock===1)finishTo(-W,0);lock=0;dx=0});
 document.addEventListener('keydown',e=>{if(view!=='q')return;if(e.key==='ArrowLeft')goNav(-1);else if(e.key==='ArrowRight')goNav(1)});
