@@ -235,7 +235,7 @@ function md0(t){return esc(t).split(/\n{2,}/).map(x=>'<p>'+x.replace(/\*\*(.+?)\
 function exl(t,ans){const SEP=/(?<=^|[。．.!?！？；;]\s*)(?=(?:答|[A-F])(?:\s*[:：]|\s+[-–]\s|\s*(?:と|および|and|和|、|,)\s*[A-F]\b|\s+(?:は|が|を|では|も|は、)|\s*[（(]))/;const LB=/^(答|[A-F])((?:\s*(?:と|および|and|和|、|,)\s*[A-F])*)/;const fm=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');return String(t||'').split(/\[\[flow\]\]([\s\S]*?)\[\[\/flow\]\]/).map((x,i)=>i%2?flow(x):x.split(/\n{2,}/).filter(s=>s.trim()).map(par=>{const ch=par.split(SEP).map(s=>s.trim()).filter(Boolean);if(ch.filter(c=>LB.test(c)).length<2&&!(ch.length>1))return '<p>'+fm(par)+'</p>';return '<ul class="exl">'+ch.map(c=>{const m=c.match(LB);if(!m)return '<li><div>'+fm(c)+'</div></li>';const ls=(m[1]==='答'?'A':m[1])+(m[2]||'').replace(/[^A-F]/g,'');const body=c.replace(/^(答|[A-F])\s*[:：]\s*/,'').replace(/^(答|[A-F])\s+[-–]\s+/,'');const ok=[...ls].every(l=>(ans||'').includes(l));return '<li><span class="lb'+(ok?' lok':'')+'">'+[...ls].join('·')+'</span><div>'+fm(body)+'</div></li>'}).join('')+'</ul>'}).join('')).join('')}
 function md(t){return String(t||'').split(/\[\[flow\]\]([\s\S]*?)\[\[\/flow\]\]/).map((x,i)=>i%2?flow(x):md0(x)).join('')}
 function home(){ttsStop();if(!Q.length)return;view='home';scrollTo(0,0);const a=Object.values(S.ans),c=a.filter(x=>x.ok).length,w=Object.keys(S.wrong).length,m=S.marks.length,has=S.pos>0&&S.pos<Q.length;
-app.className='card home';app.innerHTML=`<h2>${t('practice')}</h2><div class="meta">AWS Generative AI Developer – Professional · ${t('nq',Q.length)}</div><div class="bld">build 1104-12 · <span id="syncst"></span><span id="syncwho"></span>${(window.__syncHome&&window.__syncHome())||''}</div>
+app.className='card home';app.innerHTML=`<h2>${t('practice')}</h2><div class="meta">AWS Generative AI Developer – Professional · ${t('nq',Q.length)}</div><div class="bld">build 1104-13 · <span id="syncst"></span><span id="syncwho"></span>${(window.__syncHome&&window.__syncHome())||''}</div>
 <div class="stats"><div class="st"><b>${a.length}</b><small>${t('answered')}</small></div><div class="st"><b>${a.length?Math.round(c*100/a.length):0}%</b><small>${t('accuracy')}</small></div><div class="st"><b>${w}</b><small>${t('toreview')}</small></div></div>
 <div class="menu">${has?`<button class="mi hi" onclick="startMode('all',true)"><span class="ic">▶</span><span><b>${t('cont')}</b><small>${t('qof',S.pos+1,Q.length)}</small></span><span class="go">›</span></button>`:''}
 <button class="mi" onclick="startMode('all',false)"><span class="ic">≡</span><span><b>${has?t('over'):t('all')}</b><small>${t('alld')}</small></span><span class="go">›</span></button>
@@ -343,13 +343,13 @@ function offlinePrompt(){const b=document.getElementById("offbox");b.hidden=!b.h
 function offlineEnter(){if(document.getElementById("opw").value===QUIZ_PASSWORD){localStorage.setItem("qa","1");start()}else{document.getElementById("ope").textContent=t("pwbad");document.getElementById("opw").select()}}
 setLang(LANG);gate();</script><script>
 const SYNC_API="https://aipc01-sync.logipab.workers.dev";
-let syncTimer=null,syncBusy=false,lastSyncTxt='';
+let syncTimer=null,syncBusy=false,lastSyncTxt='',syncDirty=false;
 function syncToken(){return localStorage.getItem("aipc01-token")}
 function syncStatus(txt){lastSyncTxt=txt;const el=document.getElementById("syncst");if(el)el.textContent=txt}
 function syncPayload(){let qmpos=null,qmres=null;try{qmpos=JSON.parse(localStorage.getItem("aipc01-qmpos"));qmres=JSON.parse(localStorage.getItem("aipc01-qmres"))}catch(e){}
 return {v:1,updated_at:+(localStorage.getItem("aipc01-updated")||0),S:S,qmpos:qmpos,qmres:qmres}}
-window.__syncT=function(){localStorage.setItem("aipc01-updated",Date.now());if(!syncToken())return;syncStatus(t('syncing'));clearTimeout(syncTimer);syncTimer=setTimeout(syncPush,900)};
-async function syncPush(){if(!syncToken()||syncBusy)return;syncBusy=true;try{const r=await fetch(SYNC_API+"/progress",{method:"PUT",headers:{"Content-Type":"application/json","Authorization":"Bearer "+syncToken()},body:JSON.stringify({progress:syncPayload()})});if(r.status===401)syncStatus(t('syncout'));else if(r.ok)syncStatus(t('synced'));else syncStatus(t('syncerr'))}catch(e){syncStatus(t('syncerr'))}syncBusy=false}
+window.__syncT=function(){localStorage.setItem("aipc01-updated",Date.now());if(!syncToken())return;syncDirty=true;syncStatus(t('syncing'));clearTimeout(syncTimer);syncTimer=setTimeout(syncPush,900)};
+async function syncPush(){if(!syncToken()||syncBusy)return;syncBusy=true;try{const r=await fetch(SYNC_API+"/progress",{method:"PUT",headers:{"Content-Type":"application/json","Authorization":"Bearer "+syncToken()},body:JSON.stringify({progress:syncPayload()})});if(r.status===401)syncStatus(t('syncout'));else if(r.ok){syncDirty=false;syncStatus(t('synced'))}else syncStatus(t('syncerr'))}catch(e){syncStatus(t('syncerr'))}syncBusy=false}
 function mergeS(a,b,au,bu){const M={pos:(bu>au?b.pos:a.pos),ans:{},wrong:{},marks:[]};
 const ids=new Set([...Object.keys(a.ans||{}),...Object.keys(b.ans||{})]);
 ids.forEach(id=>{const x=a.ans[id],y=b.ans[id];M.ans[id]=!x?y:!y?x:((y.t||0)>(x.t||0)?y:x)});
@@ -360,9 +360,11 @@ async function syncPull(){if(!syncToken())return;syncStatus(t('syncing'));try{co
 if(j.progress&&j.progress.S){const lu=+(localStorage.getItem("aipc01-updated")||0);const merged=mergeS(S,j.progress.S,lu,j.progress.updated_at||0);const changed=JSON.stringify(merged)!==JSON.stringify(S);S=merged;localStorage.setItem(KEY,JSON.stringify(S));
 if(j.progress.qmres&&!localStorage.getItem("aipc01-qmres"))localStorage.setItem("aipc01-qmres",JSON.stringify(j.progress.qmres));
 if(changed){localStorage.setItem("aipc01-updated",Date.now());chips();if(view==='home')home();syncPush()}else syncStatus(t('synced'))}else syncPush()}catch(e){syncStatus(t('syncerr'))}}
+function syncFlush(){if(!syncToken()||!syncDirty)return;try{fetch(SYNC_API+"/progress",{method:"PUT",keepalive:true,headers:{"Content-Type":"application/json","Authorization":"Bearer "+syncToken()},body:JSON.stringify({progress:syncPayload()})}).then(r=>{if(r.ok)syncDirty=false}).catch(()=>{})}catch(e){}}
 function logout(){localStorage.removeItem("aipc01-token");localStorage.removeItem("aipc01-user");localStorage.removeItem("qa");location.reload()}
 window.__syncHome=function(){setTimeout(()=>{syncStatus(lastSyncTxt||(syncToken()?t('synced'):''));const w=document.getElementById("syncwho");if(w){const u=localStorage.getItem("aipc01-user");w.innerHTML=syncToken()?(' · ID '+u+' · <a href="#" onclick="logout();return false">'+t('logout')+'</a>'):''}},0);return ''};
-document.addEventListener("visibilitychange",()=>{if(!document.hidden&&typeof view!=='undefined'&&view==='home')syncPull()});
+document.addEventListener("visibilitychange",()=>{if(document.hidden){clearTimeout(syncTimer);syncFlush()}else if(typeof view!=='undefined'&&view==='home')syncPull()});
+window.addEventListener("pagehide",()=>{clearTimeout(syncTimer);syncFlush()});
 if(syncToken())setTimeout(syncPull,700);
 </script>
 </body></html>
