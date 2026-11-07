@@ -189,7 +189,7 @@ html[data-theme="dark"] .s.no{background:#1d2c29;color:var(--mut)}
 html[data-theme="dark"] .bar{background:#22302b}
 html[data-theme="dark"] .prog{border-bottom-color:rgba(255,255,255,.08)}
 html[data-theme="dark"] mark.kw{color:#ff7a6b}
-html[data-theme="dark"] .star{color:#54655f}
+html[data-theme="dark"] .star{color:#9fb0a9}html[data-theme="dark"] .star.on{color:#f5b301;text-shadow:0 0 8px rgba(245,179,1,.65),0 0 2px #b07d00,0 1px 3px rgba(245,179,1,.5)}
 html[data-theme="dark"] .tts{color:#7d8f8a}
 html[data-theme="dark"] .trk input::-webkit-slider-thumb{background:#dfe9e7}
 html[data-theme="dark"] .trk input::-moz-range-thumb{background:#dfe9e7}
@@ -235,7 +235,7 @@ function md0(t){return esc(t).split(/\n{2,}/).map(x=>'<p>'+x.replace(/\*\*(.+?)\
 function exl(t,ans){const SEP=/(?<=^|[。．.!?！？；;]\s*)(?=(?:答|[A-F])(?:\s*[:：]|\s+[-–]\s|\s*(?:と|および|and|和|、|,)\s*[A-F]\b|\s+(?:は|が|を|では|も|は、)|\s*[（(]))/;const LB=/^(答|[A-F])((?:\s*(?:と|および|and|和|、|,)\s*[A-F])*)/;const fm=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');return String(t||'').split(/\[\[flow\]\]([\s\S]*?)\[\[\/flow\]\]/).map((x,i)=>i%2?flow(x):x.split(/\n{2,}/).filter(s=>s.trim()).map(par=>{const ch=par.split(SEP).map(s=>s.trim()).filter(Boolean);if(ch.filter(c=>LB.test(c)).length<2&&!(ch.length>1))return '<p>'+fm(par)+'</p>';return '<ul class="exl">'+ch.map(c=>{const m=c.match(LB);if(!m)return '<li><div>'+fm(c)+'</div></li>';const ls=(m[1]==='答'?'A':m[1])+(m[2]||'').replace(/[^A-F]/g,'');const body=c.replace(/^(答|[A-F])\s*[:：]\s*/,'').replace(/^(答|[A-F])\s+[-–]\s+/,'');const ok=[...ls].every(l=>(ans||'').includes(l));return '<li><span class="lb'+(ok?' lok':'')+'">'+[...ls].join('·')+'</span><div>'+fm(body)+'</div></li>'}).join('')+'</ul>'}).join('')).join('')}
 function md(t){return String(t||'').split(/\[\[flow\]\]([\s\S]*?)\[\[\/flow\]\]/).map((x,i)=>i%2?flow(x):md0(x)).join('')}
 function home(){ttsStop();if(!Q.length)return;view='home';scrollTo(0,0);const a=Object.values(S.ans),c=a.filter(x=>x.ok).length,w=Object.keys(S.wrong).length,m=S.marks.length,has=S.pos>0&&S.pos<Q.length;
-app.className='card home';app.innerHTML=`<h2>${t('practice')}</h2><div class="meta">AWS Generative AI Developer – Professional · ${t('nq',Q.length)}</div><div class="bld">build 1104-14 · <span id="syncst"></span><span id="syncwho"></span>${(window.__syncHome&&window.__syncHome())||''}</div>
+app.className='card home';app.innerHTML=`<h2>${t('practice')}</h2><div class="meta">AWS Generative AI Developer – Professional · ${t('nq',Q.length)}</div><div class="bld">build 1104-15 · <span id="syncst"></span><span id="syncwho"></span>${(window.__syncHome&&window.__syncHome())||''}</div>
 <div class="stats"><div class="st"><b>${a.length}</b><small>${t('answered')}</small></div><div class="st"><b>${a.length?Math.round(c*100/a.length):0}%</b><small>${t('accuracy')}</small></div><div class="st"><b>${w}</b><small>${t('toreview')}</small></div></div>
 <div class="menu">${has?`<button class="mi hi" onclick="startMode('all',true)"><span class="ic">▶</span><span><b>${t('cont')}</b><small>${t('qof',S.pos+1,Q.length)}</small></span><span class="go">›</span></button>`:''}
 <button class="mi" onclick="startMode('all',false)"><span class="ic">≡</span><span><b>${has?t('over'):t('all')}</b><small>${t('alld')}</small></span><span class="go">›</span></button>
