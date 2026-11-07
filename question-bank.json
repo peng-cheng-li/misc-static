@@ -42,55 +42,34 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST custom development effort",
-      "real time",
-      "fairness",
-      "bias",
-      "alert",
-      "15%"
+      "fairness evaluation",
+      "detect and measure bias"
      ],
      "ans": {
       "C": [
-       "combine SageMaker Clarify bias",
-       "SageMaker Clarify",
-       "composite",
-       "latency"
+       "SageMaker Clarify"
       ]
      }
     },
     "ja": {
      "stem": [
-      "最小限のカスタム開発労力",
-      "リアルタイム",
-      "偏り",
-      "公平性",
-      "アラート",
-      "15%"
+      "公平性評価",
+      "偏りを検出して測定"
      ],
      "ans": {
       "C": [
-       "SageMaker Clarify",
-       "な公平性評価ダッシュボード",
-       "レイテンシーメトリクス",
-       "バイアスメトリクス"
+       "SageMaker Clarify"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的定制开发工作",
-      "实时",
-      "公平",
-      "偏差",
-      "警报",
-      "15%"
+      "公平性评估",
+      "检测和衡量"
      ],
      "ans": {
       "C": [
-       "SageMaker Clarify",
-       "公平性评估仪表板",
-       "延迟指标相结合",
-       "分析模型输出"
+       "SageMaker Clarify"
       ]
      }
     }
@@ -142,59 +121,55 @@
    "mem": {
     "en": {
      "stem": [
-      "regulatory",
-      "inappropriate"
+      "high-risk conversation patterns",
+      "content about competitors",
+      "not factually grounded"
      ],
      "ans": {
       "A": [
        "denied topics"
       ],
       "D": [
-       "competitors as custom word filters",
-       "input and output actions"
+       "custom word filters"
       ],
-      "F": []
+      "F": [
+       "high grounding score threshold"
+      ]
      }
     },
     "ja": {
      "stem": [
-      "規制",
-      "不適切"
+      "リスクの高い会話パターン",
+      "競合他社に関するコンテンツ",
+      "事実に基づいていない主張"
      ],
      "ans": {
       "A": [
-       "リスクの高い会話パターン",
-       "追加"
+       "拒否されたトピック"
       ],
       "D": [
-       "入力および出力アクション",
-       "カスタム単語フィルター",
-       "ブロック",
-       "追加"
+       "カスタム単語フィルター"
       ],
       "F": [
-       "高く設定"
+       "グラウンディング スコアのしきい値を高く"
       ]
      }
     },
     "zh": {
      "stem": [
-      "监管"
+      "高风险对话模式",
+      "有关竞争对手的内容",
+      "事实主张"
      ],
      "ans": {
       "A": [
-       "话模式添加",
-       "主题护栏",
-       "拒绝"
+       "拒绝的主题"
       ],
       "D": [
-       "自定义单词过滤器",
-       "添加竞争",
-       "输出操作",
-       "姓名作"
+       "自定义单词过滤器"
       ],
       "F": [
-       "较高"
+       "较高的接地分数阈值"
       ]
      }
     }
@@ -239,34 +214,38 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "RequestResponse invocation type",
+      "frequent timeouts"
+     ],
      "ans": {
       "A": [
        "Amplify AI Kit",
-       "optimize client-side rendering",
-       "GraphQL",
-       "responses"
+       "streaming responses"
       ]
      }
     },
     "ja": {
-     "stem": [],
+     "stem": [
+      "RequestResponse 呼び出しタイプ",
+      "頻繁なタイムアウト"
+     ],
      "ans": {
       "A": [
        "Amplify AI Kit",
-       "GraphQL",
-       "クライアント側のレンダリング",
-       "最適化"
+       "ストリーミング応答"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "RequestResponse 调用类型",
+      "频繁超时"
+     ],
      "ans": {
       "A": [
        "Amplify AI Kit",
-       "GraphQL",
-       "优化客户端渲染"
+       "流式响应"
       ]
      }
     }
@@ -312,51 +291,34 @@
    "mem": {
     "en": {
      "stem": [
-      "real-time",
-      "regulations",
-      "compliance",
-      "regulatory",
-      "cost"
+      "without deploying new code",
+      "require immediate propagation"
      ],
      "ans": {
       "C": [
-       "Expose",
-       "Agent",
-       "configurations",
-       "appropriate"
+       "AWS AppConfig Agent"
       ]
      }
     },
     "ja": {
      "stem": [
-      "リアルタイム",
-      "規制",
-      "コンプライアンス",
-      "コスト"
+      "新しいコードを展開せずに",
+      "即時に伝播"
      ],
      "ans": {
       "C": [
-       "Agent",
-       "ユーザーリクエストご",
-       "ルーティング設定",
-       "適切な"
+       "AWS AppConfig Agent"
       ]
      }
     },
     "zh": {
      "stem": [
-      "实时",
-      "法规",
-      "合规",
-      "监管",
-      "成本"
+      "无需部署新代码",
+      "立即传播"
      ],
      "ans": {
       "C": [
-       "每个用户请求获取路由",
-       "每个请求选择适当",
-       "运行业务逻辑",
-       "终端节点公开"
+       "AWS AppConfig 代理"
       ]
      }
     }
@@ -402,49 +364,37 @@
    "mem": {
     "en": {
      "stem": [
-      "minimize ongoing orchestration effort",
-      "LEAST maintenance",
-      "sensitive information",
-      "inappropriate",
-      "consistent"
+      "centrally manage prompt variants",
+      "adjust content moderation criteria"
      ],
      "ans": {
       "A": [
-       "sensitive term lists",
-       "have category",
-       "reusable",
-       "variants"
+       "Prompt Management",
+       "category filters"
       ]
      }
     },
     "ja": {
      "stem": [
-      "最小限のメンテナンス",
-      "機密情報",
-      "不適切",
-      "一貫"
+      "プロンプト バリアントを一元管理",
+      "コンテンツモデレーション基準"
      ],
      "ans": {
       "A": [
-       "再利用可能なテンプレート",
-       "カテゴリフィルター",
-       "プロンプト管理",
-       "機密用語リスト"
+       "Prompt Management",
+       "カテゴリフィルター"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的维护",
-      "敏感信息",
-      "一致"
+      "集中管理跨业务部门和团队的提示变体",
+      "内容审核标准"
      ],
      "ans": {
       "A": [
-       "应用具有类别过滤器",
-       "敏感术语列表",
-       "提示变体",
-       "阻止禁止"
+       "Prompt Management",
+       "类别过滤器"
       ]
      }
     }
@@ -490,59 +440,37 @@
    "mem": {
     "en": {
      "stem": [
-      "minimize operational overhead",
-      "operational overhead",
-      "latency",
-      "real-time",
-      "regulation",
-      "regulatory",
-      "metadata",
-      "10 million"
+      "filter documents by metadata",
+      "10 million document embeddings"
      ],
      "ans": {
       "A": [
-       "Anthropic Claude foundation model",
        "OpenSearch Serverless",
-       "Knowledge Bases",
-       "FM"
+       "metadata filtering"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用上のオーバーヘッド",
-      "低遅延",
-      "リアルタイム",
-      "規制",
-      "メタデータ",
-      "1,000 万"
+      "メタデータによって文書をフィルター",
+      "1,000 万件のドキュメント埋め込み"
      ],
      "ans": {
       "A": [
-       "Anthropic Claude foundation model",
        "OpenSearch Serverless",
-       "メタデータのフィルタリング",
-       "ベクトル検索機能"
+       "メタデータのフィルタリング"
       ]
      }
     },
     "zh": {
      "stem": [
-      "减少运营开销",
-      "减少管理",
-      "运营开销",
-      "低延迟",
-      "实时",
-      "监管",
-      "元数据",
-      "1000 万"
+      "过滤文档",
+      "1000 万个文档嵌入"
      ],
      "ans": {
       "A": [
        "OpenSearch Serverless",
-       "提供矢量搜索功能",
-       "元数据过滤",
-       "基础模型"
+       "元数据过滤"
       ]
      }
     }
@@ -588,45 +516,34 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "latency"
+      "exact medical terms and acronyms",
+      "semantically similar but irrelevant"
      ],
      "ans": {
       "A": [
-       "improve semantic understanding",
-       "keyword matching",
-       "acronym matching",
-       "exact term"
+       "hybrid search"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "正確"
+      "正確な医学用語や頭字語",
+      "意味的には類似しているが無関係な"
      ],
      "ans": {
       "A": [
-       "組み合わせてハイブリッド検索",
-       "頭字語の正確な一致",
-       "ベクトルの類似性",
-       "キーワードの一致"
+       "ハイブリッド検索"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "延迟"
+      "确切医学术语和首字母缩略词",
+      "语义相似但不相关的文档"
      ],
      "ans": {
       "A": [
-       "关键字匹配相结合",
-       "首字母缩略词匹配",
-       "提高语义理解",
-       "向量相似性"
+       "混合搜索"
       ]
      }
     }
@@ -672,46 +589,37 @@
    "mem": {
     "en": {
      "stem": [
-      "sensitive customer",
-      "private",
-      "VPC"
+      "only private connectivity",
+      "fine-grained column-level access"
      ],
      "ans": {
       "A": [
-       "conditions on inference",
-       "LF-tag-based",
-       "column-level cross-account",
-       "data-plane"
+       "interface VPC endpoints",
+       "LF-tag-based access control"
       ]
      }
     },
     "ja": {
      "stem": [
-      "機密性の高い",
-      "プライベート",
-      "VPC"
+      "プライベート接続のみ",
+      "きめ細かい列レベルのアクセス"
      ],
      "ans": {
       "A": [
-       "ランタイムのインターフェイス",
-       "データプレーンのポリシー",
-       "承認されたエンドポイント",
-       "タグベースのアクセス制御"
+       "インターフェイス VPC エンドポイント",
+       "LF タグベースのアクセス制御"
       ]
      }
     },
     "zh": {
      "stem": [
-      "敏感",
-      "私有",
-      "VPC"
+      "私有连接",
+      "细粒度的列级访问"
      ],
      "ans": {
       "A": [
-       "仅允许调用经批准",
-       "列级跨账户授权",
-       "数据平面策略",
-       "数据存储账户"
+       "接口 VPC 终端节点",
+       "基于 LF 标签的访问控制"
       ]
      }
     }
@@ -757,49 +665,37 @@
    "mem": {
     "en": {
      "stem": [
-      "audit",
-      "multiple AWS Regions",
-      "version",
-      "consistent"
+      "hundreds of prompt templates",
+      "version control with approval workflows"
      ],
      "ans": {
       "B": [
-       "CloudTrail for audit logging",
-       "Management",
-       "IAM",
-       "specifying variables"
+       "Prompt Management",
+       "CloudTrail"
       ]
      }
     },
     "ja": {
      "stem": [
-      "監査",
-      "バージョン",
-      "一貫",
-      "AWS"
+      "何百ものプロンプト テンプレート",
+      "承認ワークフローを備えたバージョン管理"
      ],
      "ans": {
       "B": [
-       "Management",
-       "IAM",
-       "パラメータ化されたプロンプト",
-       "監査ログ用"
+       "Prompt Management",
+       "CloudTrail"
       ]
      }
     },
     "zh": {
      "stem": [
-      "审计",
-      "版本",
-      "一致",
-      "AWS"
+      "数百个提示模板",
+      "带有审批工作流程的版本控制"
      ],
      "ans": {
       "B": [
-       "Management",
-       "IAM策略控制审批权限",
-       "参数化提示模板",
-       "审核日志记录"
+       "Prompt Management",
+       "CloudTrail"
       ]
      }
     }
@@ -845,41 +741,34 @@
    "mem": {
     "en": {
      "stem": [
-      "minimal latency",
-      "real-time",
-      "45 seconds"
+      "character by character"
      ],
      "ans": {
       "A": [
-       "WebSocket",
-       "stream partial"
+       "WebSocket API",
+       "InvokeModelWithResponseStream"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "リアルタイム",
-      "45 秒"
+      "1 文字ずつ"
      ],
      "ans": {
       "A": [
-       "WebSocket",
-       "通じて部分応答",
-       "ストリーミング"
+       "WebSocket API",
+       "InvokeModelWithResponseStream"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "实时",
-      "45 秒"
+      "逐个字符"
      ],
      "ans": {
       "A": [
-       "WebSocket",
-       "连接流式传输部分响应"
+       "WebSocket API",
+       "InvokeModelWithResponseStream"
       ]
      }
     }
@@ -928,51 +817,48 @@
    "mem": {
     "en": {
      "stem": [
-      "consistent"
+      "four required inputs",
+      "bullying language",
+      "does not want to block"
      ],
      "ans": {
       "A": [
-       "Management",
-       "Select"
+       "specify the required inputs as variables"
       ],
       "D": [
-       "insults"
+       "insults content filter",
+       "Set the filter response to detect"
       ]
      }
     },
     "ja": {
      "stem": [
-      "一貫"
+      "4 つの必須入力",
+      "いじめの言葉",
+      "ブロックすることは望んでいません"
      ],
      "ans": {
       "A": [
-       "レスポンスの出力形式",
-       "プロンプト管理",
-       "選択"
+       "必要な入力を変数として指定"
       ],
       "D": [
-       "侮辱コンテンツフィルター",
-       "フィルターの応答",
-       "検出"
+       "侮辱コンテンツフィルター"
       ]
      }
     },
     "zh": {
      "stem": [
-      "语言",
-      "一致"
+      "四个必需的输入",
+      "欺凌性语言",
+      "不想阻止所有标记的回复"
      ],
      "ans": {
       "A": [
-       "Management",
-       "所需输入指定",
-       "提示添加",
-       "选择"
+       "将所需输入指定为变量"
       ],
       "D": [
-       "应用侮辱内容过滤器",
-       "滤波器响应",
-       "要检测"
+       "侮辱内容过滤器",
+       "设置要检测的滤波器响应"
       ]
      }
     }
@@ -1018,49 +904,37 @@
    "mem": {
     "en": {
      "stem": [
-      "hallucinations",
-      "human review",
-      "accuracy",
-      "costs"
+      "identify hallucinations",
+      "reduce human review costs"
      ],
      "ans": {
       "D": [
-       "LLM-as-a-judge evaluation",
-       "Bedrock evaluation",
-       "SageMaker Feature",
-       "maintain evaluation datasets"
+       "LLM-as-a-judge",
+       "targeted human reviews"
       ]
      }
     },
     "ja": {
      "stem": [
-      "幻覚",
-      "人間によるレビュー",
-      "精度",
-      "コスト",
-      "拡張"
+      "幻覚を特定",
+      "人間によるレビューのコストを削減"
      ],
      "ans": {
       "D": [
-       "SageMaker Feature",
-       "ハイブリッド評価システム",
-       "自動化された裁判官",
-       "評価データセット"
+       "裁判官としての LLM 評価",
+       "対象を絞った人間によるレビュー"
       ]
      }
     },
     "zh": {
      "stem": [
-      "幻觉",
-      "人工审核",
-      "成本"
+      "识别生成内容中的幻觉",
+      "降低人工审核成本"
      ],
      "ans": {
       "D": [
-       "SageMaker Feature",
-       "维护评估数据集",
        "混合评估系统",
-       "初步筛选回答"
+       "有针对性的人工审查"
       ]
      }
     }
@@ -1109,55 +983,43 @@
    "mem": {
     "en": {
      "stem": [
-      "sensitive data",
-      "cross-Region"
+      "cross-Region inference (CRI)",
+      "precise access control"
      ],
      "ans": {
       "B": [
-       "SCPs",
-       "nova-pro-v1",
-       "0"
+       "eu.amazon.nova-pro-v1:0 inference profile"
       ],
       "D": [
-       "European Union AWS Regions that can serve",
-       "roles have permissions",
-       "Validate",
-       "nova-pro"
+       "eu.amazon.nova-pro.v1:0 inference profile"
       ]
      }
     },
     "ja": {
      "stem": [
-      "機密データ",
-      "クロスリージョン",
-      "正確"
+      "クロスリージョン推論 (CRI)",
+      "正確なアクセス制御"
      ],
      "ans": {
       "B": [
-       "nova-pro-v1"
+       "eu.amazon.nova-pro-v1:0 推論プロファイル"
       ],
       "D": [
-       "nova-pro",
-       "きるすべての欧州連合",
-       "呼び出す権限",
-       "通じて"
+       "eu.amazon.nova-pro.v1:0 推論プロファイル"
       ]
      }
     },
     "zh": {
      "stem": [
-      "敏感数据",
-      "跨区域"
+      "必须保留在欧盟范围内",
+      "精确的访问控制"
      ],
      "ans": {
       "B": [
-       "nova-pro-v1"
+       "eu.amazon.nova-pro-v1:0 推理配置文件"
       ],
       "D": [
-       "nova-pro",
-       "角色是否有权",
-       "模型提供服务",
-       "所有欧盟"
+       "eu.amazon.nova-pro.v1:0 推理配置文件"
       ]
      }
     }
@@ -1203,55 +1065,37 @@
    "mem": {
     "en": {
      "stem": [
-      "personally identifiable information",
-      "PII",
-      "sensitive content",
-      "compliance",
-      "audit",
-      "harmful"
+      "minimal false positives",
+      "multiple handling strategies"
      ],
      "ans": {
       "C": [
-       "custom blocked messages",
-       "output evaluations",
-       "clear definitions",
-       "both input"
+       "content filters to medium",
+       "mask PII"
       ]
      }
     },
     "ja": {
      "stem": [
-      "個人を特定できる情報",
-      "PII",
-      "機密",
-      "コンプライアンス",
-      "監査",
-      "有害"
+      "誤検知を最小限に抑えて",
+      "複数の処理戦略"
      ],
      "ans": {
       "C": [
-       "拒否されるトピック",
-       "入力内の財務情報",
-       "出力評価の両方",
-       "明確な定義"
+       "コンテンツ フィルターを中に設定",
+       "PII をマスク"
       ]
      }
     },
     "zh": {
      "stem": [
-      "个人身份信息",
-      "PII",
-      "敏感",
-      "合规",
-      "审计",
-      "有害"
+      "最大限度地减少误报",
+      "多种处理策略"
      ],
      "ans": {
       "C": [
-       "自定义阻止消息",
-       "投资建议主题",
-       "明确定义",
-       "屏蔽响应"
+       "将内容过滤器设置为中",
+       "屏蔽响应中的 PII"
       ]
      }
     }
@@ -1296,35 +1140,38 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "not in the company's product catalog",
+      "are unique"
+     ],
      "ans": {
       "C": [
-       "Retrieval Augmented Generation",
-       "PerformanceConfigLatency parameter",
-       "RAG",
-       "knowledge base"
+       "Amazon Bedrock knowledge base",
+       "Retrieval Augmented Generation (RAG)"
       ]
      }
     },
     "ja": {
-     "stem": [],
+     "stem": [
+      "製品カタログにない製品を推奨",
+      "ほとんどが独自のもの"
+     ],
      "ans": {
       "C": [
-       "RAG",
-       "ナレッジベース",
-       "検索拡張生成",
-       "パラメーター"
+       "ナレッジベースを作成",
+       "検索拡張生成 (RAG)"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "不在该公司的产品目录中",
+      "大多数交互都是独特的"
+     ],
      "ans": {
       "C": [
-       "RAG",
-       "检索增强生成",
-       "知识库",
-       "参数"
+       "Knowledge Bases",
+       "检索增强生成 (RAG)"
       ]
      }
     }
@@ -1373,63 +1220,43 @@
    "mem": {
     "en": {
      "stem": [
-      "MOST scalable",
-      "scalable"
+      "preserve memory across interactions",
+      "session-based permissions"
      ],
      "ans": {
       "A": [
-       "AgentCore",
-       "event handling",
-       "session-aware",
-       "observability"
+       "Amazon Bedrock AgentCore"
       ],
       "B": [
-       "REST APIs without",
-       "REST APIs",
-       "EventBridge",
-       "AgentCore"
+       "Register the Lambda functions and the REST APIs as actions"
       ]
      }
     },
     "ja": {
      "stem": [
-      "最もスケーラブル",
-      "自動",
-      "スケーラブル"
+      "対話間でメモリを保持",
+      "セッションベースの権限"
      ],
      "ans": {
       "A": [
-       "AgentCore",
-       "セッション対応推論",
-       "備えたエージェント",
-       "および可観測性"
+       "Amazon Bedrock AgentCore"
       ],
       "B": [
-       "EventBridge",
-       "AgentCore",
-       "アクション",
-       "コードなし"
+       "アクションとして登録"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最具可扩展",
-      "自动",
-      "可扩展"
+      "在交互过程中保留内存",
+      "基于会话的权限"
      ],
      "ans": {
       "A": [
-       "AgentCore",
-       "具有内置身份支持",
-       "会话感知推理",
-       "管理内存"
+       "Amazon Bedrock AgentCore"
       ],
       "B": [
-       "EventBridge",
-       "AgentCore",
-       "而无需自定义编排代码",
-       "能够调用"
+       "注册为操作"
       ]
      }
     }
@@ -1475,52 +1302,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "regulatory",
-      "accurate",
-      "3 seconds"
+      "multi-hop relationships",
+      "highly interconnected entities"
      ],
      "ans": {
       "A": [
-       "automatically identify related information across documents",
-       "multi-hop relationships between entities",
-       "Neptune Analytics",
-       "Graph RAG"
+       "Graph RAG",
+       "Neptune Analytics"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "規制",
-      "正確",
-      "拡張",
-      "3 秒"
+      "マルチホップ関係",
+      "高度に相互接続されたエンティティ"
      ],
      "ans": {
       "A": [
-       "Neptune Analytics",
        "Graph RAG",
-       "ドキュメント全体の関連情報",
-       "分析"
+       "Neptune Analytics"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "监管",
-      "准确",
-      "3 秒"
+      "多跳关系",
+      "高度互连的实体"
      ],
      "ans": {
       "A": [
-       "Neptune Analytics",
        "Graph RAG",
-       "自动识别跨文档",
-       "存储财务数据"
+       "Neptune Analytics"
       ]
      }
     }
@@ -1566,54 +1378,37 @@
    "mem": {
     "en": {
      "stem": [
-      "real-time",
-      "hallucinations",
-      "consistent",
-      "costs",
-      "cost",
-      "40%"
+      "near real-time monitoring",
+      "abnormal token consumption"
      ],
      "ans": {
       "C": [
        "contextual grounding checks",
-       "text output logging",
-       "anomaly detection",
-       "guardrails"
+       "anomaly detection alarms"
       ]
      }
     },
     "ja": {
      "stem": [
-      "最小限のカスタム開発作業",
-      "リアルタイム",
-      "幻覚",
-      "一貫",
-      "コスト"
+      "ほぼリアルタイムの監視",
+      "異常なトークン消費"
      ],
      "ans": {
       "C": [
-       "応じた接地チェック",
-       "テキスト出力ログ",
-       "異常検出アラーム",
-       "ガードレール"
+       "状況に応じた接地チェック",
+       "異常検出アラーム"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的定制开发工作",
-      "实时",
-      "幻觉",
-      "一致",
-      "成本",
-      "40%"
+      "近乎实时的监控",
+      "异常代币消耗"
      ],
      "ans": {
       "C": [
-       "文本输出日志记录",
-       "下文接地检查",
-       "异常检测警报",
-       "护栏"
+       "上下文接地检查",
+       "异常检测警报"
       ]
      }
     }
@@ -1659,42 +1454,37 @@
    "mem": {
     "en": {
      "stem": [
-      "audit",
-      "metadata",
-      "traceable"
+      "fully traceable",
+      "data source registration"
      ],
      "ans": {
       "D": [
-       "across services",
-       "attribute"
+       "register all data sources",
+       "CloudTrail to log access"
       ]
      }
     },
     "ja": {
      "stem": [
-      "監査",
-      "メタデータ",
-      "追跡"
+      "完全に追跡可能",
+      "データ ソースの登録"
      ],
      "ans": {
       "D": [
-       "サービス間のアクセス",
-       "べてのデータソース",
-       "属性データ"
+       "すべてのデータソースを登録",
+       "CloudTrail を使用して"
       ]
      }
     },
     "zh": {
      "stem": [
-      "元数据",
-      "可追溯"
+      "完全可追溯",
+      "数据源注册"
      ],
      "ans": {
       "D": [
-       "数据目录注册所有数据源",
-       "元数据标签应",
-       "属性数据源",
-       "记录跨服务"
+       "注册所有数据源",
+       "使用 AWS CloudTrail 记录"
       ]
      }
     }
@@ -1740,47 +1530,35 @@
    "mem": {
     "en": {
      "stem": [
-      "compliance",
-      "10 seconds",
-      "45 seconds"
+      "sequential processing takes 45 seconds",
+      "within 10 seconds"
      ],
      "ans": {
       "B": [
-       "CloudWatch metrics",
-       "Parallel state",
-       "Bedrock client",
-       "model inference latency"
+       "Parallel state"
       ]
      }
     },
     "ja": {
      "stem": [
-      "コンプライアンス",
-      "10 秒",
-      "45 秒"
+      "順次処理にはバッチごとに 45 秒",
+      "10 秒以内に完了"
      ],
      "ans": {
       "B": [
-       "クライアントのタイムアウト",
-       "モデル推論のレイテンシー",
-       "分析タイプご",
-       "メトリクス"
+       "並列状態",
+       "同時に呼び出します"
       ]
      }
     },
     "zh": {
      "stem": [
-      "合规",
-      "5 个",
-      "10 秒",
-      "45 秒"
+      "顺序处理需要 45 秒",
+      "在 10 秒内完成分析"
      ],
      "ans": {
       "B": [
-       "每种分析类型调用单独",
-       "跟踪执行时间",
-       "模型推理延迟",
-       "行状态结合"
+       "并行状态"
       ]
      }
     }
@@ -1826,40 +1604,37 @@
    "mem": {
     "en": {
      "stem": [
-      "sensitive customer",
-      "audit",
-      "prompt injection",
-      "cross-Region"
+      "sophisticated prompt injection attacks",
+      "cross-Region failover capabilities"
      ],
      "ans": {
       "A": [
-       "inference",
-       "profile"
+       "guardrail profile to implement cross-Region guardrail inference",
+       "detailed guardrail intervention events"
       ]
      }
     },
     "ja": {
      "stem": [
-      "機密性の高い",
-      "監査"
+      "プロンプト インジェクション攻撃",
+      "リージョン間のフェイルオーバー"
      ],
      "ans": {
       "A": [
-       "プロファイル",
-       "実装"
+       "ガードレール プロファイル",
+       "ガードレール介入イベントをキャプチャ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "敏感",
-      "Region"
+      "即时注入攻击",
+      "跨Region的故障转移能力"
      ],
      "ans": {
       "A": [
-       "文件实现跨Region",
-       "护栏干预事件",
-       "护栏推理"
+       "Guardrails配置文件",
+       "详细的Guardrails干预事件"
       ]
      }
     }
@@ -1906,49 +1681,37 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "real-time",
-      "versions",
-      "version"
+      "automated gradual traffic shifting",
+      "halt deployments and revert"
      ],
      "ans": {
       "A": [
-       "Step",
-       "provisioned throughput",
-       "time period",
-       "workflow"
+       "Step Functions workflow",
+       "trigger a traffic rollback"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "リアルタイム",
-      "自動",
-      "バージョン"
+      "自動化された段階的なトラフィックの移行",
+      "手動介入なしで導入を停止"
      ],
      "ans": {
       "A": [
-       "Step",
-       "トラフィックのロールバック",
-       "新しいモデルバージョン",
-       "モデルのバージョン"
+       "Step Functions ワークフロー",
+       "トラフィックのロールバックをトリガー"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "实时",
-      "自动",
-      "版本"
+      "自动逐步进行流量转移",
+      "无需任何手动干预"
      ],
      "ans": {
       "A": [
-       "Step",
-       "指标满足阈值时增加流量",
-       "发布新模型版本时调用",
-       "分阶段转移流量"
+       "Step Functions 工作流程",
+       "触发流量回滚"
       ]
      }
     }
@@ -1994,47 +1757,33 @@
    "mem": {
     "en": {
      "stem": [
-      "throttled",
-      "throttling",
-      "consistent",
-      "10,000 requests"
+      "provisioned capacity is unused",
+      "on- demand requests are being throttled"
      ],
      "ans": {
       "B": [
-       "ID parameter",
-       "CreateProvisionedModelThroughput",
-       "Replace",
-       "ARN"
+       "ARN of the provisioned model"
       ]
      }
     },
     "ja": {
      "stem": [
-      "スロットル",
-      "1 時間",
-      "10,000 件"
+      "プロビジョニングされた容量が未使用"
      ],
      "ans": {
       "B": [
-       "CreateProvisionedModelThroughput",
-       "ARN",
-       "パラメーター",
-       "置き換え"
+       "プロビジョニングされたモデルの ARN"
       ]
      }
     },
     "zh": {
      "stem": [
-      "限制",
-      "一致",
-      "10,000 个"
+      "预置容量未使用",
+      "按需请求受到限制"
      ],
      "ans": {
       "B": [
-       "CreateProvisionedModelThroughput",
-       "ARN",
-       "参数替换",
-       "返回"
+       "预配置模型的 ARN"
       ]
      }
     }
@@ -2080,47 +1829,34 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "latency",
-      "3 seconds"
+      "cite specific sources",
+      "link data claims to source documents"
      ],
      "ans": {
       "A": [
-       "Messages",
-       "RAG",
-       "S3",
-       "high-relevance thresholds"
+       "source attribution enabled"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "3 秒"
+      "特定のソースを引用",
+      "データ クレームをソース ドキュメントにリンク"
      ],
      "ans": {
       "A": [
-       "Messages",
-       "RAG",
-       "ナレッジベース",
-       "ソース帰属"
+       "ソース帰属を有効にして"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "延迟",
-      "3 秒"
+      "引用具体的数据来源",
+      "将数据声明链接到源文档"
      ],
      "ans": {
       "A": [
-       "Messages",
-       "RAG",
-       "高相关性阈值",
-       "供审核之用"
+       "启用来源归因"
       ]
      }
     }
@@ -2166,51 +1902,36 @@
    "mem": {
     "en": {
      "stem": [
-      "sensitive financial",
-      "regulation",
-      "alert",
-      "costs",
-      "5,000 requests"
+      "proactively alert when applications approach model-specific token limits",
+      "allocate costs across business units"
      ],
      "ans": {
       "A": [
-       "DynamoDB",
        "model-specific tokenizers",
-       "approach thresholds",
-       "report costs"
+       "estimate token usage before sending requests"
       ]
      }
     },
     "ja": {
      "stem": [
-      "機密",
-      "規制",
-      "コスト",
-      "5,000 件"
+      "モデル固有のトークン制限に近づいたときに事前に警告"
      ],
      "ans": {
       "A": [
-       "DynamoDB",
        "モデル固有のトークナイザー",
-       "詳細なトークン",
-       "しきい値"
+       "トークンの使用量を見積もる"
       ]
      }
     },
     "zh": {
      "stem": [
-      "敏感",
-      "限制",
-      "警报",
-      "成本",
-      "5,000 个"
+      "接近特定于模型的令牌限制",
+      "主动发出警报"
      ],
      "ans": {
       "A": [
-       "DynamoDB",
-       "请求接近阈值时触发警报",
-       "发送请求之前估计令牌",
-       "开发特定于模型"
+       "特定于模型的标记器",
+       "估计令牌使用情况"
       ]
      }
     }
@@ -2256,47 +1977,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "audit"
+      "integrate with an order management API",
+      "maintain context throughout multi-turn interactions"
      ],
      "ans": {
       "D": [
-       "Retrieval Augmentation Generation",
-       "capture audit trails",
-       "Associate",
-       "RAG"
+       "action groups to integrate with the order management API",
+       "trace events to capture audit trails"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "監査",
-      "10,000 件"
+      "注文管理 API と統合して",
+      "複数ターンの対話を通じてコンテキストを維持"
      ],
      "ans": {
       "D": [
-       "Retrieval Augmentation Generation",
-       "RAG",
-       "ナレッジベース",
-       "エージェント"
+       "アクション グループ",
+       "トレース イベントを有効にして監査証跡をキャプチャ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "10,000 个",
-      "50,000 个"
+      "与订单管理 API 集成",
+      "在与客户的多轮交互中维护上下文"
      ],
      "ans": {
       "D": [
-       "RAG",
-       "检索增强生成",
-       "捕获审计跟踪",
-       "带有操作组"
+       "操作组",
+       "启用跟踪事件以捕获审计跟踪"
       ]
      }
     }
@@ -2342,45 +2053,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "consistency"
+      "exceed the 256 KB quota",
+      "uses an Amazon S3 bucket for process storage"
      ],
      "ans": {
       "B": [
-       "ResultSelector field",
-       "Bedrock integration",
-       "ResultPath field",
-       "bucket URI"
+       "S3 bucket URI in the input parameter",
+       "ResultPath field and the ResultSelector field"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "一貫"
+      "256 KB クォータを頻繁に超え",
+      "Amazon S3 バケットを使用します"
      ],
      "ans": {
       "B": [
-       "大規模な出力の入力パラメータ",
-       "順次検証ワークフロー",
-       "ルーティング",
-       "フィールド"
+       "S3 バケット URI",
+       "ResultPath フィールドと ResultSelector フィールド"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "一致"
+      "超过 256 KB 配额",
+      "使用 Amazon S3 存储桶进行流程存储"
      ],
      "ans": {
       "B": [
-       "同时维护顺序验证工作流程",
-       "代理步骤之间路由",
-       "实现大型输出",
-       "输入参数"
+       "S3 存储桶 URI",
+       "ResultPath 字段和 ResultSelector 字段"
       ]
      }
     }
@@ -2426,65 +2129,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST development effort",
-      "cost-effectively",
-      "cost",
-      "scale",
-      "50 million",
-      "20 million",
-      "200 million",
-      "95%",
-      "500 ms"
+      "semantic search solution",
+      "20 million restaurants and 200 million reviews"
      ],
      "ans": {
       "B": [
-       "semantically similar results",
-       "k-nearest neighbors",
-       "users submit",
-       "menu items"
+       "generate vector embeddings",
+       "k-nearest neighbors (k-NN) searches"
       ]
      }
     },
     "ja": {
      "stem": [
-      "最小限の開発労力",
-      "コスト効率",
-      "言語",
-      "コスト",
-      "拡張",
-      "5,000 万",
-      "2,000 万",
-      "2 億",
-      "95%",
-      "500 ミリ秒"
+      "セマンティック検索ソリューション",
+      "2,000 万のレストランと 2 億件のレビュー"
      ],
      "ans": {
       "B": [
-       "レストランの説明",
-       "メニュー項目",
-       "類似した結果",
-       "基礎モデル"
+       "ベクトル埋め込みを生成します",
+       "k 最近傍 (k-NN) 検索"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的开发工作",
-      "经济高效",
-      "语言",
-      "扩展",
-      "5000 万",
-      "2000 万",
-      "2 亿",
-      "500 毫秒",
-      "95%"
+      "语义搜索解决方案",
+      "2000 万家餐厅和 2 亿条评论"
      ],
      "ans": {
       "B": [
-       "当用户提交自然语言查询时",
-       "菜单项生成矢量嵌入",
-       "根据餐厅描述",
-       "查找语义相似"
+       "生成矢量嵌入",
+       "k 最近邻 (k-NN) 搜索"
       ]
      }
     }
@@ -2530,44 +2205,37 @@
    "mem": {
     "en": {
      "stem": [
-      "versions",
-      "consistent",
-      "consistencies"
+      "inconsistent summaries when handling complex clinical documents",
+      "historical records of prompt versions"
      ],
      "ans": {
       "B": [
-       "automated testing framework",
-       "performance patterns",
-       "contains complex",
-       "code repository"
+       "version control for prompts in a code repository",
+       "automated testing framework to compare prompt versions"
       ]
      }
     },
     "ja": {
      "stem": [
-      "バージョン",
-      "一貫"
+      "複雑な臨床文書を処理する場合",
+      "プロンプト バージョンの履歴記録を維持"
      ],
      "ans": {
       "B": [
-       "定量化可能な評価指標",
-       "複雑な臨床文書",
-       "フレームワーク",
-       "含むテスト"
+       "コード リポジトリ内のプロンプトのバージョン管理",
+       "自動テスト フレームワーク"
       ]
      }
     },
     "zh": {
      "stem": [
-      "版本",
-      "一致"
+      "处理复杂的临床文档时",
+      "维护即时版本的历史记录"
      ],
      "ans": {
       "B": [
-       "包含复杂临床文档",
-       "可量化评估指标",
-       "自动化测试框架",
-       "比较提示版本"
+       "对代码存储库中的提示实施版本控制",
+       "自动化测试框架"
       ]
      }
     }
@@ -2616,68 +2284,43 @@
    "mem": {
     "en": {
      "stem": [
-      "hallucination",
-      "hallucinations",
-      "accurate",
-      "accuracy",
-      "3 seconds"
+      "surge in hallucination outputs",
+      "basic one-shot prompt that includes the full document"
      ],
      "ans": {
       "A": [
-       "require step-by-step reasoning",
-       "explicit fact verification",
-       "CoT",
-       "zero-shot chain-of-thought"
+       "explicit fact verification"
       ],
       "B": [
-       "Apply semantic chunking and tuned embeddings",
-       "Retrieval Augmented Generation",
-       "RAG",
-       "ground summaries"
+       "semantic chunking and tuned embeddings"
       ]
      }
     },
     "ja": {
      "stem": [
-      "幻覚",
-      "正確",
-      "1 時間",
-      "3 秒"
+      "幻覚出力が急増",
+      "ワンショット プロンプト"
      ],
      "ans": {
       "A": [
-       "CoT",
-       "ゼロショット思考連鎖",
-       "各サマリー",
-       "な事実検証"
+       "明示的な事実検証"
       ],
       "B": [
-       "Retrieval Augmented Generation",
-       "RAG",
-       "調整された埋め込み",
-       "コンテンツの要約"
+       "セマンティック チャンキングと調整された埋め込み"
       ]
      }
     },
     "zh": {
      "stem": [
-      "幻觉",
-      "准确",
-      "1,000 个",
-      "3 秒"
+      "幻觉输出激增",
+      "基本的一次性提示"
      ],
      "ans": {
       "A": [
-       "CoT",
-       "模型生成每个摘要之前",
-       "实现零样本思想链",
-       "这些指令需要"
+       "明确的事实验证"
       ],
       "B": [
-       "RAG",
-       "检索增强生成",
-       "知识库结合",
-       "语义分块"
+       "语义分块和调整的嵌入"
       ]
      }
     }
@@ -2723,43 +2366,37 @@
    "mem": {
     "en": {
      "stem": [
-      "alerts",
-      "10 minutes"
+      "compared to established baselines",
+      "alerts with correlation data within 10 minutes"
      ],
      "ans": {
       "C": [
-       "recommendation quality",
-       "request types",
-       "user segments",
-       "dimensions"
+       "CloudWatch Application Insights",
+       "anomaly detection on the model metrics"
       ]
      }
     },
     "ja": {
      "stem": [
-      "アラート",
-      "10 分"
+      "確立されたベースラインと比較して",
+      "相関データを含むアラートを 10 分以内に"
      ],
      "ans": {
       "C": [
-       "アプリケーションリソース",
-       "レコメンデーションの品質",
-       "リクエストタイプ",
-       "モデルメトリクス"
+       "CloudWatch Application Insights",
+       "CloudWatch 異常検出"
       ]
      }
     },
     "zh": {
      "stem": [
-      "警报",
-      "10 分"
+      "与既定基线相比",
+      "在 10 分钟内生成带有相关数据的警报"
      ],
      "ans": {
       "C": [
-       "建立日志模式分析",
-       "应用程序资源",
-       "具有请求类型",
-       "用户细分维度"
+       "CloudWatch Application Insights",
+       "异常检测"
       ]
      }
     }
@@ -2805,40 +2442,37 @@
    "mem": {
     "en": {
      "stem": [
-      "consistent"
+      "exceed the FM's context window limits",
+      "truncated outputs"
      ],
      "ans": {
       "C": [
-       "RetrieveAndGenerate API call",
-       "breakpoint percentile threshold",
-       "embedding similarity scores",
-       "buffer size"
+       "semantic chunking with a breakpoint percentile threshold of 95%",
+       "RetrieveAndGenerate API"
       ]
      }
     },
     "ja": {
      "stem": [
-      "一貫"
+      "コンテキスト ウィンドウの制限を超える",
+      "切り詰められた出力"
      ],
      "ans": {
       "C": [
-       "埋め込み類似性スコア",
-       "文のセマンティック",
-       "バッファ"
+       "セマンティック チャンク",
+       "RetrieveAndGenerate API 呼び出し"
       ]
      }
     },
     "zh": {
      "stem": [
-      "限制",
-      "一致"
+      "超出 FM 上下文窗口限制",
+      "被截断的输出"
      ],
      "ans": {
       "C": [
-       "断点百分位数阈值",
-       "缓冲区大小",
-       "语义分块",
-       "个句子"
+       "语义分块，断点百分位数阈值为 95%",
+       "RetrieveAndGenerate API 调用"
       ]
      }
     }
@@ -2885,49 +2519,37 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "real-time",
-      "scaling",
-      "200 ms"
+      "500,000 concurrent calls",
+      "less than 200 ms end- to-end latency"
      ],
      "ans": {
       "B": [
-       "automatic scaling policies",
-       "low-latency"
+       "low-latency, real-time optimized model",
+       "automatic scaling policies"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "リアルタイム",
-      "自動",
-      "500,000 件",
-      "200 ミリ秒"
+      "500,000 件の同時呼び出し",
+      "200 ミリ秒未満"
      ],
      "ans": {
       "B": [
-       "最適化されたモデル",
-       "自動スケーリング",
-       "低レイテンシー",
-       "ポリシー"
+       "低レイテンシーでリアルタイムに最適化されたモデル",
+       "自動スケーリング ポリシー"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "实时",
-      "自动",
-      "扩展",
-      "500,000 个",
-      "200 毫秒"
+      "500,000 个并发调用",
+      "端到端延迟低于 200 毫秒"
      ],
      "ans": {
       "B": [
-       "自动扩展策略",
-       "实时优化",
-       "低延迟"
+       "低延迟、实时优化的模型",
+       "自动扩展策略"
       ]
      }
     }
@@ -2976,58 +2598,46 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "accuracy"
+      "custom ecommerce datasets to use as standardized evaluation inputs",
+      "accuracy metrics for text generation and summarization"
      ],
      "ans": {
       "A": [
-       "cross- origin resource sharing",
-       "CORS"
+       "cross- origin resource sharing (CORS) permissions"
       ],
       "C": [
-       "Bedrock console",
-       "BERT",
-       "URI",
-       "contains"
+       "real world knowledge (RWK) score for text generation",
+       "BERT Score for summarization"
       ]
      }
     },
     "ja": {
      "stem": [
-      "精度"
+      "カスタム e コマース データセット",
+      "テキスト生成と要約の精度メトリクス"
      ],
      "ans": {
       "A": [
-       "CORS",
-       "クロスオリジン",
-       "リソース共有"
+       "クロスオリジン リソース共有 (CORS) 権限"
       ],
       "C": [
-       "BERT",
-       "URI",
-       "コンソールのスケジュール",
-       "従ってモデル評価ジョブ"
+       "実世界知識 (RWK) スコア",
+       "BERT スコア"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "准确"
+      "自定义电子商务数据集",
+      "文本生成和摘要的准确性指标"
      ],
      "ans": {
       "A": [
-       "CORS",
-       "便评估作业能够访问数据集",
-       "跨源资源共享"
+       "跨源资源共享 (CORS) 权限"
       ],
       "C": [
-       "BERT",
-       "URI",
-       "提供包含数据集",
-       "测量文本生成"
+       "现实世界知识 (RWK) 分数",
+       "BERT 分数"
       ]
      }
     }
@@ -3073,46 +2683,37 @@
    "mem": {
     "en": {
      "stem": [
-      "regulatory",
-      "audit",
-      "human oversight"
+      "a human technician must review all AI-generated recommendations",
+      "store all human technician review decisions for audit purposes"
      ],
      "ans": {
       "B": [
-       "waitForTaskToken",
-       "pause execution",
-       "completes",
-       "decision"
+       "waitForTaskToken API to pause execution",
+       "SendTaskSuccess API"
       ]
      }
     },
     "ja": {
      "stem": [
-      "規制",
-      "監査",
-      "人間による監視"
+      "人間の技術者がレビューする必要があります",
+      "監査目的で技術者によるレビューの決定をすべて保存"
      ],
      "ans": {
       "B": [
-       "waitForTaskToken",
-       "完了したら",
-       "一時停止",
-       "承認決定"
+       "waitForTaskToken API",
+       "SendTaskSuccess API"
       ]
      }
     },
     "zh": {
      "stem": [
-      "监管",
-      "审计",
-      "人工监督"
+      "技术人员必须审查所有人工智能生成的建议",
+      "存储所有技术人员审查决定以供审计之用"
      ],
      "ans": {
       "B": [
-       "waitForTaskToken",
-       "函数调用具有批准决定",
-       "技术人员完成审核后",
-       "包含人工批准步骤"
+       "waitForTaskToken API",
+       "SendTaskSuccess API"
       ]
      }
     }
@@ -3165,90 +2766,61 @@
    "mem": {
     "en": {
      "stem": [
-      "personally identifiable information",
-      "PII",
-      "auditability",
-      "human reviewers",
-      "scale",
-      "99.9%"
+      "redact personally identifiable information (PII) before inference",
+      "route low-confidence document extraction results to human reviewers",
+      "same AWS Region as the loan applicant"
      ],
      "ans": {
       "A": [
-       "Route low-confidence pages",
-       "Augmented AI",
-       "Textract",
-       "A2I"
+       "Amazon Textract and Amazon Augmented AI (Amazon A2I)",
+       "Route low-confidence pages to human reviewers"
       ],
       "B": [
-       "prevent inappropriate or unauthorized content",
-       "AWS Lambda functions",
-       "enforce data residency requirements",
-       "redact PII"
+       "redact PII",
+       "Region-specific IAM roles to enforce data residency"
       ],
       "E": [
-       "transforms validated data into optimized prompts",
-       "AWS Glue Data Quality",
-       "AWS Step Functions",
-       "orchestrate a review workflow"
+       "AWS Glue Data Quality to validate the structured document data"
       ]
      }
     },
     "ja": {
      "stem": [
-      "個人識別情報",
-      "PII",
-      "監査",
-      "拡張",
-      "99.9%"
+      "推論の前に個人識別情報 (PII) を編集",
+      "信頼性の低いドキュメントの抽出結果を",
+      "同じ AWS リージョン内の人間のレビュー担当者"
      ],
      "ans": {
       "A": [
-       "Augmented AI",
-       "Textract",
-       "スキャンされたドキュメント",
-       "人間のレビュー担当者"
+       "Amazon Textract と Amazon Augmented AI (Amazon A2I)",
+       "信頼性の低いページは人間のレビュー担当者にルーティング"
       ],
       "B": [
-       "抽出されたデータへのアクセス",
-       "モデル出力内の不適切また",
-       "送信されたドキュメント",
-       "無許可のコンテンツ"
+       "PII を検出して編集",
+       "リージョン固有の IAM ロール"
       ],
       "E": [
-       "AWS Glue Data Quality",
-       "AWS Step Functions",
-       "含むレビューワークフロー",
-       "最適化されたプロンプト"
+       "AWS Glue Data Quality"
       ]
      }
     },
     "zh": {
      "stem": [
-      "个人身份信息",
-      "PII",
-      "人工审核",
-      "扩展",
-      "25,000 个",
-      "99.9%"
+      "在推理之前编辑个人身份信息 (PII)",
+      "将低可信度文档提取结果发送给",
+      "同一 AWS 区域的人工审核员"
      ],
      "ans": {
       "A": [
-       "Augmented AI",
-       "Textract",
-       "低置信度页面发送给人工审阅者",
-       "提取相关数据"
+       "Amazon Textract 和 Amazon Augmented AI (Amazon A2I)",
+       "将低置信度页面发送给人工审阅者"
       ],
       "B": [
-       "强制执行数据驻留要求",
-       "出现不当或未经授权",
-       "防止模型输出",
-       "区域特定"
+       "检测并编辑 PII",
+       "区域特定的 IAM 角色"
       ],
       "E": [
-       "AWS Step Functions",
-       "验证结构化文档数据",
-       "编排审核工作流程",
-       "包括提示工程步骤"
+       "AWS Glue 数据质量"
       ]
      }
     }
@@ -3294,42 +2866,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "personal information"
+      "Each department can belong to only a single group",
+      "respects access controls based on the user's IAM Identity Center group membership"
      ],
      "ans": {
       "B": [
-       "corresponding"
+       "single JSON file named acl.json at the top level",
+       "map each department's S3 prefix to its corresponding IAM Identity Center group"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用上のオーバーヘッド",
-      "個人情報",
-      "言語"
+      "1 つのグループにのみ所属できます",
+      "IAM Identity Center グループ メンバーシップに基づいたアクセス制御"
      ],
      "ans": {
       "B": [
-       "いう名前の単一",
-       "マップ",
-       "対応"
+       "acl.json という名前の単一の JSON ファイル",
+       "S3 プレフィックスを対応する IAM Identity Center グループにマップ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "个人信息",
-      "语言"
+      "每个部门只能属于 AWS IAM Identity Center 中的一个组",
+      "遵守基于用户 IAM Identity Center 组成员身份的访问控制"
      ],
      "ans": {
       "B": [
-       "添加访问控制条目",
-       "前缀映射",
-       "其相应"
+       "在 S3 存储桶的顶层创建一个名为 acl.json 的 JSON 文件",
+       "将每个部门的 S3 前缀映射到其相应的 IAM 身份中心组"
       ]
      }
     }
@@ -3375,40 +2942,34 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "hallucinate"
+      "based only on approved medical documentation",
+      "must cite specific sources"
      ],
      "ans": {
       "B": [
-       "RetrieveAndGenerate"
+       "RetrieveAndGenerate API to return citations"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "幻覚"
+      "承認された医療文書のみに基づいて",
+      "特定の情報源を引用"
      ],
      "ans": {
       "B": [
-       "RetrieveAndGenerate",
-       "デプロイ",
-       "接続"
+       "RetrieveAndGenerate API を使用して"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "幻觉"
+      "仅根据批准的医疗文件",
+      "必须引用特定来源"
      ],
      "ans": {
       "B": [
-       "RetrieveAndGenerate",
-       "知识库返回引文",
-       "其连接"
+       "RetrieveAndGenerate API"
       ]
      }
     }
@@ -3454,49 +3015,38 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "real-time",
-      "real time",
-      "streaming",
-      "1 second"
+      "while a customer is still speaking",
+      "bidirectional streaming",
+      "end-to-end latency under 1 second"
      ],
      "ans": {
       "B": [
-       "deliver fragments of transcribed",
-       "InvokeModelWithResponseStream",
-       "customers finish speaking",
-       "Forward"
+       "partial results enabled",
+       "InvokeModelWithResponseStream API"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "リアルタイム",
-      "ストリーミング",
-      "1 秒"
+      "顧客が話している間に",
+      "双方向ストリーミングをサポート"
      ],
      "ans": {
       "B": [
-       "InvokeModelWithResponseStream",
-       "話し終わる前",
-       "フラグメント",
-       "な結果"
+       "部分的な結果を有効にして",
+       "InvokeModelWithResponseStream API"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "实时",
-      "1 秒"
+      "在客户仍在讲话时",
+      "必须支持双向流"
      ],
      "ans": {
       "B": [
-       "InvokeModelWithResponseStream",
-       "客户说完之前传送转录文本",
-       "响应流式传输至呼叫",
-       "文本片段转发"
+       "启用了部分结果",
+       "InvokeModelWithResponseStream API"
       ]
      }
     }
@@ -3542,44 +3092,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST infrastructure management",
-      "personally identifiable information",
-      "PII",
-      "inappropriate"
+      "does not process or produce inappropriate content",
+      "must not expose personally identifiable information (PII)"
      ],
      "ans": {
       "D": [
-       "guardrails",
-       "built-in"
+       "Amazon Comprehend PII detection",
+       "Amazon Rekognition image moderation"
       ]
      }
     },
     "ja": {
      "stem": [
-      "個人を特定できる情報",
-      "PII",
-      "不適切"
+      "不適切なコンテンツを処理または生成しない",
+      "個人を特定できる情報 (PII) を公開してはなりません"
      ],
      "ans": {
       "D": [
-       "ガードレール",
-       "組み込み"
+       "Amazon Comprehend PII 検出",
+       "Rekognition のイメージモデレーション"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的基础设施管理",
-      "个人身份信息",
-      "PII",
-      "不当"
+      "不会处理或产生不当内容",
+      "不得公开作品中的个人身份信息 (PII)"
      ],
      "ans": {
       "D": [
-       "预处理内容",
-       "过滤内容",
-       "内置",
-       "护栏"
+       "内置 Amazon Bedrock Guardrails来过滤内容",
+       "Amazon Comprehend PII 检测"
       ]
      }
     }
@@ -3624,31 +3167,33 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "does not want to make project-level modifications",
+      "approved resources"
+     ],
      "ans": {
       "D": [
-       "data sources",
-       "customization"
+       "Amazon Q Developer customization"
       ]
      }
     },
     "ja": {
-     "stem": [],
+     "stem": [
+      "プロジェクトレベルの変更を望んでいません"
+     ],
      "ans": {
       "D": [
-       "承認されたデータソース",
-       "カスタマイズ"
+       "Amazon Q Developer カスタマイズ"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "不想进行项目级别的修改"
+     ],
      "ans": {
       "D": [
-       "开发应用程序",
-       "包含批准",
-       "数据源",
-       "自定义"
+       "Amazon Q Developer 自定义"
       ]
      }
     }
@@ -3694,52 +3239,34 @@
    "mem": {
     "en": {
      "stem": [
-      "MOST cost-effectively",
-      "low latency",
-      "consistent",
-      "cost",
-      "40%"
+      "40% of inquiries follow similar patterns that share the same context",
+      "MOST cost-effectively"
      ],
      "ans": {
       "A": [
-       "optimized in the performance configuration of the request",
-       "setting the latency parameter",
-       "latency-optimized"
+       "latency-optimized inference",
+       "prompt caching to handle the repetitive inquiries"
       ]
      }
     },
     "ja": {
      "stem": [
-      "コスト効率",
-      "低遅延",
-      "一貫",
-      "コスト",
-      "50,000 件",
-      "150,000 件",
-      "40%"
+      "40% は、同じコンテキストを共有する同様のパターン"
      ],
      "ans": {
       "A": [
-       "レイテンシーパラメーター",
        "レイテンシー最適化推論",
-       "設定"
+       "プロンプト キャッシュ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最具成本",
-      "低延迟",
-      "一致",
-      "成本",
-      "15 万",
-      "40%"
+      "40% 的查询遵循共享相同上下文的相似模式"
      ],
      "ans": {
       "A": [
        "延迟优化推理",
-       "处理重复查询",
-       "延迟参数",
        "提示缓存"
       ]
      }
@@ -3786,63 +3313,37 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "scale",
-      "15 million",
-      "500 tokens",
-      "40%",
-      "2 seconds",
-      "90 GB",
-      "360 GB"
+      "fixed-length blocks of 500 tokens",
+      "often splits contextually linked information"
      ],
      "ans": {
       "C": [
-       "sections rather than fixed token limits",
-       "semantic boundaries such as complete",
-       "Regenerate",
-       "Update"
+       "semantic boundaries such as complete legal arguments",
+       "Regenerate vector embeddings"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "1,500 万",
-      "768 次",
-      "500 トークン",
-      "40%",
-      "2 秒",
-      "90 GB",
-      "360 GB",
-      "GB"
+      "500 トークンの固定長ブロックに分割",
+      "文脈に関連した情報が別個のチャンクに分割される"
      ],
      "ans": {
       "C": [
-       "合わせてベクトル埋め込み",
-       "固定されたトークン制限",
-       "新しいチャンク構造",
-       "チャンキング戦略"
+       "セマンティック境界を使用する",
+       "ベクトル埋め込みを再生成します"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "法规",
-      "1500 万",
-      "500 个",
-      "40%",
-      "2 秒",
-      "90 GB",
-      "360 GB",
-      "GB"
+      "将文本分割成 500 个标记的固定长度块",
+      "将上下文相关的信息"
      ],
      "ans": {
       "C": [
-       "重新生成向量嵌入",
-       "块结构保持一致",
-       "更新分块策略",
-       "条款或部分"
+       "更新分块策略以使用语义边界",
+       "重新生成向量嵌入"
       ]
      }
     }
@@ -3889,40 +3390,37 @@
    "mem": {
     "en": {
      "stem": [
-      "encrypted"
+      "maintain conversational context across multiple interactions",
+      "clarification workflows to handle ambiguous user queries"
      ],
      "ans": {
       "B": [
-       "DynamoDPurchase on-demand capacity",
-       "Callback patterns",
-       "Standard",
-       "Wait"
+       "Step Functions Standard workflow",
+       "Wait for a Callback patterns"
       ]
      }
     },
     "ja": {
      "stem": [
-      "暗号化"
+      "会話コンテキストを維持する必要があります",
+      "明確化ワークフローを実行"
      ],
      "ans": {
       "B": [
-       "Standard",
-       "明確化ワークフロー",
-       "オンデマンド容量",
-       "コールバック"
+       "Step Functions Standard ワークフロー",
+       "コールバックを待つ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "加密"
+      "维护对话上下文",
+      "运行澄清工作流程来处理不明确的用户查询"
      ],
      "ans": {
       "B": [
-       "Standard",
-       "编排澄清工作流程",
-       "包括等待回调模式",
-       "管理工作流程"
+       "Step Functions Standard 工作流程",
+       "等待回调模式"
       ]
      }
     }
@@ -3968,46 +3466,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST development effort",
-      "auditable",
-      "metadata"
+      "validate data quality, create auditable metadata",
+      "customize text chunking"
      ],
      "ans": {
       "B": [
-       "Glue ETL jobs",
-       "Glue crawler",
-       "Glue",
-       "transformation scripts"
+       "AWS Glue crawler to catalog data sources",
+       "AWS Glue Data Quality to validate and monitor data quality"
       ]
      }
     },
     "ja": {
      "stem": [
-      "最小限の開発労力",
-      "監査",
-      "メタデータ"
+      "監査可能なメタデータを作成",
+      "テキストチャンクをカスタマイズ"
      ],
      "ans": {
       "B": [
-       "Glue",
-       "カスタム変換スクリプト",
-       "検証および監視",
-       "データソース"
+       "AWS Glue クローラー",
+       "AWS Glue Data Quality"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的开发工作",
-      "审计",
-      "元数据"
+      "创建可审计的元数据",
+      "自定义文本分块"
      ],
      "ans": {
       "B": [
-       "Glue",
-       "运行自定义转换脚本",
-       "爬网程序",
-       "数据源"
+       "AWS Glue 爬网程序",
+       "AWS Glue 数据质量"
       ]
      }
     }
@@ -4053,40 +3542,37 @@
    "mem": {
     "en": {
      "stem": [
-      "accuracy"
+      "vector searches are evaluating too many documents",
+      "will not benefit from additional fine tuning"
      ],
      "ans": {
       "C": [
-       "Bedrock knowledge base",
-       "indexing S3 object",
-       "metadata-aware"
+       "metadata-aware filtering",
+       "indexing S3 object metadata"
       ]
      }
     },
     "ja": {
      "stem": [
-      "不適切",
-      "精度",
-      "拡張"
+      "あまりにも多くのドキュメントが評価されている",
+      "追加の微調整によるメリットがない"
      ],
      "ans": {
       "C": [
-       "認識したフィルタリング",
-       "ナレッジベース内",
-       "作成",
-       "有効"
+       "メタデータを認識したフィルタリング",
+       "S3 オブジェクトのメタデータのインデックス"
       ]
      }
     },
     "zh": {
      "stem": [
-      "准确"
+      "矢量搜索正在评估太多",
+      "不会从额外的微调中受益"
      ],
      "ans": {
       "C": [
-       "象元数据建立索引",
        "元数据感知过滤",
-       "知识库"
+       "对 S3 对象元数据建立索引"
       ]
      }
     }
@@ -4132,33 +3618,32 @@
    "mem": {
     "en": {
      "stem": [
-      "accuracy"
+      "small proprietary dataset that has a low index count",
+      "maximize accuracy"
      ],
      "ans": {
       "A": [
-       "horizontal scaling"
+       "Flat algorithm"
       ]
      }
     },
     "ja": {
      "stem": [
-      "精度",
-      "拡張"
+      "インデックス数が少ない小さな独自のデータセット"
      ],
      "ans": {
       "A": [
-       "パフォーマンスメトリック",
-       "フラット"
+       "フラット アルゴリズム"
       ]
      }
     },
     "zh": {
      "stem": [
-      "准确"
+      "索引计数较低的小型专有数据集"
      ],
      "ans": {
       "A": [
-       "水平扩展策略"
+       "Flat 算法配置索引"
       ]
      }
     }
@@ -4204,62 +3689,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "cost-effective",
-      "personally identifiable information",
-      "PII",
-      "cost",
-      "50 GB",
-      "4 hours"
+      "50 GB of historical customer conversations",
+      "finish within 4 hours"
      ],
      "ans": {
       "D": [
-       "similarity search capabilities",
-       "Serverless",
-       "Directly",
-       "Step"
+       "Amazon Comprehend to detect PII",
+       "Amazon OpenSearch Serverless to store vectors"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "コスト効率",
-      "個人識別情報",
-      "PII",
-      "コスト",
-      "50 GB",
-      "4 時間",
-      "GB"
+      "50 GB の顧客の会話履歴",
+      "4 時間以内に完了"
      ],
      "ans": {
       "D": [
-       "Serverless",
-       "Step",
-       "データ処理パイプライン",
-       "類似性検索機能"
+       "PII を検出し",
+       "OpenSearch Serverless"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "成本效益",
-      "个人身份信息",
-      "PII",
-      "成本",
-      "50 GB",
-      "4 小时",
-      "GB"
+      "50 GB 的历史客户对话",
+      "必须在 4 小时内完成"
      ],
      "ans": {
       "D": [
-       "Serverless",
-       "Step",
-       "提供相似性搜索功能",
-       "数据处理管道"
+       "Amazon Comprehend 检测 PII",
+       "Amazon OpenSearch Serverless 集成"
       ]
      }
     }
@@ -4305,43 +3765,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead"
+      "perform A/B testing for new features without redeploying code",
+      "validate model parameters like temperature and maximum token limits before applying changes"
      ],
      "ans": {
       "C": [
-       "perform A/B testing",
-       "Define JSON schema",
-       "AppConfig Agent",
-       "AppConfig"
+       "AWS AppConfig to manage model configurations",
+       "JSON schema validation rules for model parameters"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド"
+      "コードを再デプロイせずに新機能の A/B テスト",
+      "温度や最大トークン制限などのモデル パラメーターを検証"
      ],
      "ans": {
       "C": [
-       "AppConfig Agent",
-       "モデル構成",
-       "機能フラグ",
-       "テスト"
+       "AWS AppConfig",
+       "JSONスキーマ検証ルール"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "限制"
+      "在不重新部署代码的情况下对新功能进行 A/B 测试",
+      "验证温度和最大代币限制等模型参数"
      ],
      "ans": {
       "C": [
-       "AppConfig",
-       "功能标志执行",
-       "定义模型参数",
-       "模式验证规则"
+       "AWS AppConfig",
+       "JSON 模式验证规则"
       ]
      }
     }
@@ -4387,53 +3841,37 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "multiple AWS Regions",
-      "10,000 requests",
-      "30,000 requests",
-      "2 seconds"
+      "surges of up 30,000 requests each hour",
+      "throughput bottlenecks"
      ],
      "ans": {
       "B": [
-       "reduce API overhead",
-       "automatically distribute traffic",
-       "cross-Region",
-       "token batching"
+       "token batching to reduce API overhead",
+       "cross-Region inference profiles"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "1 時間",
-      "10,000 件",
-      "30,000 件",
-      "2 秒",
-      "AWS"
+      "30,000 件のリクエストが急増",
+      "スループットのボトルネック"
      ],
      "ans": {
       "B": [
-       "利用可能なリージョン全体",
        "トークンのバッチ処理",
-       "オーバーヘッド",
-       "トラフィック"
+       "クロスリージョン推論プロファイル"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "10,000 个",
-      "30,000 个",
-      "2 秒",
-      "AWS"
+      "每小时会激增 30,000 个请求",
+      "吞吐量瓶颈"
      ],
      "ans": {
       "B": [
-       "可用区域之间自动分配流量",
-       "令牌批处理",
-       "跨区域推理",
-       "减少"
+       "令牌批处理以减少 API 开销",
+       "跨区域推理配置文件"
       ]
      }
     }
@@ -4479,46 +3917,37 @@
    "mem": {
     "en": {
      "stem": [
-      "low latency",
-      "consistent",
-      "40%"
+      "varied phrasing or wording to ask the same questions",
+      "semantically equivalent questions receive consistent answers"
      ],
      "ans": {
       "C": [
-       "OpenSearch Service that has k-nearest neighbor",
-       "approximate k-NN technique",
-       "k-NN",
-       "query-response"
+       "store query-response text pairs",
+       "approximate k-NN technique to find similar queries"
       ]
      }
     },
     "ja": {
      "stem": [
-      "低遅延",
-      "一貫",
-      "40%"
+      "同じ質問をするのにさまざまな言い回しや言葉遣い",
+      "意味的に同等の質問に対して一貫した回答"
      ],
      "ans": {
       "C": [
-       "k-NN",
-       "応答のテキストのペア",
-       "類似したクエリ",
-       "見つけ"
+       "クエリと応答のテキストのペアを保存",
+       "近似 k-NN 手法"
       ]
      }
     },
     "zh": {
      "stem": [
-      "低延迟",
-      "一致",
-      "40%"
+      "使用不同的措辞或措辞来提出相同的问题",
+      "语义等效的问题得到一致的答案"
      ],
      "ans": {
       "C": [
-       "k-NN",
-       "存储查询-响应文本",
-       "查找相似",
-       "最近邻"
+       "存储查询-响应文本对",
+       "近似 k-NN 技术"
       ]
      }
     }
@@ -4563,35 +3992,36 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "only authorized users can access the MCP server",
+      "Model Context Protocol (MCP) server"
+     ],
      "ans": {
       "C": [
-       "Amazon API Gateway HTTP API",
-       "enforce OAuth 2",
-       "Streamable HTTP",
-       "Amazon Cognito"
+       "Streamable HTTP transport",
+       "Amazon Cognito to enforce OAuth 2.1"
       ]
      }
     },
     "ja": {
-     "stem": [],
+     "stem": [
+      "許可されたユーザーのみが MCP サーバーにアクセス"
+     ],
      "ans": {
       "C": [
-       "Amazon API Gateway HTTP API",
-       "Streamable HTTP",
-       "プロキシ",
-       "作成"
+       "Streamable HTTP トランスポート",
+       "OAuth 2.1 を強制"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "只有授权用户才能访问 MCP 服务器"
+     ],
      "ans": {
       "C": [
-       "Amazon API Gateway HTTP API",
-       "Streamable HTTP",
-       "代理解决方案",
-       "请求代理"
+       "Streamable HTTP 传输",
+       "强制实施 OAuth 2.1"
       ]
      }
     }
@@ -4637,34 +4067,37 @@
    "mem": {
     "en": {
      "stem": [
-      "MOST operational efficiency"
+      "modules must operate sequentially",
+      "graceful degradation during service disruptions"
      ],
      "ans": {
       "B": [
-       "four tasks"
+       "Step Functions state machine with four tasks",
+       "retry and catch branches"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用効率"
+      "モジュールは順番に動作する必要があります",
+      "サービス中断時の適切な機能低下"
      ],
      "ans": {
       "B": [
-       "タスクステップご",
-       "キャッチ分岐",
-       "再試行分岐"
+       "4 つのタスクを含む AWS Step Functions ステートマシン",
+       "再試行分岐とキャッチ分岐"
       ]
      }
     },
     "zh": {
      "stem": [
-      "运营效率"
+      "模块必须按顺序运行",
+      "在服务中断期间提供优雅的降级"
      ],
      "ans": {
       "B": [
-       "包含四个运行代理",
-       "每个任务步骤"
+       "四个运行代理和奖励 Lambda 函数的任务",
+       "重试和捕获分支"
       ]
      }
     }
@@ -4709,35 +4142,38 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "capture a specific portion from the template",
+      "store model responses back to the original S3 bucket"
+     ],
      "ans": {
       "B": [
-       "Express workflow state machine",
-       "intrinsic function Pass",
-       "integration GetObject",
-       "integration PutObject"
+       "GetObject step to retrieve the original communications",
+       "intrinsic function Pass step"
       ]
      }
     },
     "ja": {
-     "stem": [],
+     "stem": [
+      "テンプレートから特定の部分をキャプチャ",
+      "モデルの応答を元の S3 バケットに保存"
+     ],
      "ans": {
       "B": [
-       "ワークフロー",
-       "組み込み関数",
-       "ステート",
-       "元の通信"
+       "GetObject ステップ",
+       "組み込み関数 Pass ステップ"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "从模板中捕获特定部分",
+      "将模型响应存储回原始 S3 存储桶"
+     ],
      "ans": {
       "B": [
-       "步骤检索原始通信",
-       "工作流程状态机",
-       "内部函数",
-       "结果传递"
+       "GetObject 步骤",
+       "内部函数 Pass 步骤"
       ]
      }
     }
@@ -4783,50 +4219,36 @@
    "mem": {
     "en": {
      "stem": [
-      "compliant",
-      "regulations",
-      "human reviews",
-      "accurate",
-      "scale"
+      "combine automated quality evaluations at scale with targeted human reviews",
+      "factually accurate, compliant with financial regulations"
      ],
      "ans": {
       "B": [
-       "Anthropic Claude Sonnet",
-       "Bedrock evaluations",
-       "Bedrock guardrails",
-       "Augmented"
+       "Claude Sonnet as a judge model",
+       "Amazon A2I) human reviews for flagged critical interactions"
       ]
      }
     },
     "ja": {
      "stem": [
-      "規制",
-      "自動",
-      "人間によるレビュー",
-      "正確"
+      "大規模な自動化された品質評価と",
+      "的を絞った人間によるレビューを組み合わせる"
      ],
      "ans": {
       "B": [
-       "Anthropic Claude Sonnet",
-       "Augmented",
-       "財務ポリシーへの準拠",
-       "ガードレール"
+       "判定モデルとして使用する",
+       "Amazon A2I) 人間によるレビュー"
       ]
      }
     },
     "zh": {
      "stem": [
-      "法规",
-      "自动",
-      "人工审查",
-      "准确"
+      "将大规模的自动化质量评估与对关键交互的有针对性的人工审查结合起来"
      ],
      "ans": {
       "B": [
-       "Anthropic Claude Sonnet",
-       "Augmented",
-       "检查响应是否符合财务政策",
-       "标记关键交互"
+       "作为判断模型来评估",
+       "Amazon A2I) 人工评论"
       ]
      }
     }
@@ -4872,43 +4294,37 @@
    "mem": {
     "en": {
      "stem": [
-      "real-time",
-      "scalable"
+      "multi-agent architecture",
+      "appropriate domain-specific responses"
      ],
      "ans": {
       "A": [
-       "Retrieval Augmented Generation",
-       "RAG",
-       "route queries",
-       "specialized"
+       "supervisor agent to perform natural language intent classification",
+       "route queries to specialized collaborator agents"
       ]
      }
     },
     "ja": {
      "stem": [
-      "リアルタイム",
-      "スケーラブル"
+      "マルチエージェント アーキテクチャ",
+      "ドメイン固有の応答"
      ],
      "ans": {
       "A": [
-       "RAG",
-       "各専門コラボレーター",
-       "自然言語の意図分類",
-       "専門のコラボレータ"
+       "自然言語の意図分類を実行",
+       "専門のコラボレータ エージェントにルーティング"
       ]
      }
     },
     "zh": {
      "stem": [
-      "实时",
-      "可扩展"
+      "多代理架构",
+      "针对特定领域的查询的适当答复"
      ],
      "ans": {
       "A": [
-       "RAG",
-       "知识库隔离每个代理",
-       "每个专业协作者代理",
-       "部门特定知识库结合"
+       "自然语言意图分类",
+       "将查询路由到专门的协作代理"
       ]
      }
     }
@@ -4953,32 +4369,37 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "easily switch between FMs for testing purposes",
+      "test the effectiveness of various FMs in each environment"
+     ],
      "ans": {
       "C": [
-       "fromFoundationModelId",
-       "FoundationModel",
-       "deployment stage",
-       "actions"
+       "fromFoundationModelId()",
+       "deployment stage for each environment"
       ]
      }
     },
     "ja": {
-     "stem": [],
+     "stem": [
+      "各環境でのテスト目的で FM を簡単に切り替える"
+     ],
      "ans": {
       "C": [
-       "デプロイステージ",
-       "持つパイプライン"
+       "fromFoundationModelId()",
+       "環境ごとにデプロイステージ"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "在 FM 之间轻松切换",
+      "测试各种 FM 在每种环境中的有效性"
+     ],
      "ans": {
       "C": [
-       "每个环境都有",
-       "该管道",
-       "阶段"
+       "fromFoundationModelId()",
+       "每个环境都有一个部署阶段"
       ]
      }
     }
@@ -5024,43 +4445,37 @@
    "mem": {
     "en": {
      "stem": [
-      "real time",
-      "consistent"
+      "separate access controls for each hotel",
+      "room availability information in near real time"
      ],
      "ans": {
       "C": [
-       "Schedule regular synchronization",
-       "real-time room availability information",
-       "less critical information",
-       "multi-account structure"
+       "one Amazon Bedrock knowledge base for each hotel",
+       "direct data ingestion"
       ]
      }
     },
     "ja": {
      "stem": [
-      "リアルタイム",
-      "一貫"
+      "ホテルごとに個別のアクセス制御",
+      "ほぼリアルタイムで空室情報"
      ],
      "ans": {
       "C": [
-       "リアルタイムの空室情報",
-       "直接データ取り込み",
-       "重要度の低い情報",
-       "スケジュール"
+       "ホテルごとに 1 つの Amazon Bedrock ナレッジベース",
+       "直接データ取り込み"
       ]
      }
     },
     "zh": {
      "stem": [
-      "实时",
-      "一致"
+      "为公司管理的每家酒店维护单独的访问控制",
+      "近乎实时地提供房间可用性信息"
      ],
      "ans": {
       "C": [
-       "提供实时房间可用性信息",
-       "安排定期同步不太重要",
-       "直接数据摄取",
-       "多账户结构"
+       "为多账户结构中的每家酒店实施一个 Amazon Bedrock Knowledge Bases",
+       "直接数据摄取"
       ]
      }
     }
@@ -5106,34 +4521,38 @@
    "mem": {
     "en": {
      "stem": [
-      "real time",
-      "serverless",
-      "without modifying",
-      "rollback"
+      "without modifying or redeploying Lambda code in real time",
+      "safe rollout of configuration changes and validation and rollback"
      ],
      "ans": {
-      "B": []
+      "B": [
+       "Store the active model provider in AWS AppConfig",
+       "read the configuration at runtime"
+      ]
      }
     },
     "ja": {
      "stem": [
-      "リアルタイム",
-      "サーバーレス",
-      "ロールバック"
+      "Lambda コードをリアルタイムで変更または再デプロイすることなく",
+      "構成変更の安全なロールアウト"
      ],
      "ans": {
-      "B": []
+      "B": [
+       "AWS AppConfig",
+       "実行時に設定を読み取り"
+      ]
      }
     },
     "zh": {
      "stem": [
-      "实时",
-      "无服务器",
-      "无需实时修改",
-      "回滚"
+      "无需实时修改或重新部署 Lambda 代码",
+      "配置更改的安全推出以及验证和回滚功能"
      ],
      "ans": {
-      "B": []
+      "B": [
+       "AWS AppConfig",
+       "在运行时读取配置"
+      ]
      }
     }
    }
@@ -5178,45 +4597,37 @@
    "mem": {
     "en": {
      "stem": [
-      "automatically",
-      "streaming"
+      "intermittent API timeouts",
+      "broken response chunks"
      ],
      "ans": {
       "B": [
-       "connections are re-established",
-       "circuit breaker pattern",
-       "error rates exceed",
-       "successfully received"
+       "exponential backoff with jitter",
+       "circuit breaker pattern"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "自動的に",
-      "ストリーミング"
+      "断続的な API タイムアウト",
+      "応答チャンクの破損"
      ],
      "ans": {
       "B": [
-       "ストリーミング応答ハンドラー",
-       "チャンク配信のタイムアウト",
-       "事前定義されたしきい値",
-       "伴う指数バックオフ"
+       "ジッターを伴う指数バックオフ",
+       "サーキット ブレーカー パターン"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "自动",
-      "限制"
+      "间歇性 API 超时",
+      "响应块损坏"
      ],
      "ans": {
       "B": [
-       "该断路器模式会暂时禁用重试",
-       "当错误率超过预定义阈值时",
-       "重新建立连接时智能地",
-       "自适应重试策略"
+       "带有抖动的指数退避",
+       "断路器模式"
       ]
      }
     }
@@ -5262,48 +4673,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational effort",
-      "personally identifiable information",
-      "PII",
-      "audit"
+      "must not send PII in prompts to the GenAI model",
+      "must not respond to customer requests to provide investment advice"
      ],
      "ans": {
       "C": [
-       "Bedrock guardrails",
-       "Converse API",
-       "sensitive information policy",
-       "invocations"
+       "sensitive information policy to detect and filter PII",
+       "topic policy to ensure that the AI assistant avoids investment advice topics"
       ]
      }
     },
     "ja": {
      "stem": [
-      "最小限の運用労力",
-      "個人を特定できる情報",
-      "PII",
-      "監査"
+      "プロンプト内の PII を GenAI モデルに送信してはなりません",
+      "投資アドバイスを提供するという顧客の要求に応じてはなりません"
      ],
      "ans": {
       "C": [
-       "Converse API",
        "機密情報ポリシー",
-       "モデルの呼び出し",
-       "フィルタリング"
+       "トピック ポリシー"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的操作工作",
-      "个人身份信息",
-      "PII"
+      "不得在提示中向 GenAI 模型发送 PII",
+      "不得响应客户请求提供投资建议"
      ],
      "ans": {
       "C": [
-       "Converse API",
-       "确保AI助手避开投资建议话题",
-       "应用敏感信息策略",
-       "记录模型调用"
+       "敏感信息策略来检测和过滤 PII",
+       "话题策略"
       ]
      }
     }
@@ -5349,51 +4749,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "audit",
-      "2 seconds"
+      "documenting reasoning and by citing sources",
+      "comprehensive audit trails for all responses"
      ],
      "ans": {
       "A": [
-       "Multi-AZ architecture",
-       "FM",
-       "authoritative content",
-       "low-latency delivery"
+       "Enable tracing for Amazon Bedrock agents",
+       "reference and cite authoritative content"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "監査",
-      "拡張",
-      "10,000 人",
-      "2 秒"
+      "推論を文書化し",
+      "包括的な監査証跡を取得"
      ],
      "ans": {
       "A": [
-       "証拠のプレゼンテーション",
-       "構造化されたプロンプト",
-       "低レイテンシーの配信",
-       "ナレッジベース"
+       "Amazon Bedrock エージェントのトレースを有効",
+       "信頼できるコンテンツを参照および引用"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "审计",
-      "10,000 个",
-      "2 秒"
+      "通过记录推理和引用用于检索增强生成 (RAG) 的来源",
+      "全面审计跟踪"
      ],
      "ans": {
       "A": [
-       "函数扩展应用程序",
-       "提供低延迟交付",
-       "提供证据演示",
-       "引用权威内容"
+       "启用 Amazon Bedrock 代理的跟踪",
+       "引用和引用权威内容"
       ]
      }
     }
@@ -5439,39 +4825,35 @@
    "mem": {
     "en": {
      "stem": [
-      "metadata",
-      "consistent"
+      "document timestamps, author information, and research domain classifications",
+      "without accessing the full content"
      ],
      "ans": {
       "A": [
-       "Amazon"
+       "Store document timestamps in Amazon S3 system metadata",
+       "custom user-defined metadata to store author information"
       ]
      }
     },
     "ja": {
      "stem": [
-      "メタデータ",
-      "一貫",
-      "精度"
+      "文書のタイムスタンプ、作成者情報、研究ドメインの分類"
      ],
      "ans": {
       "A": [
-       "Amazon",
-       "システムのメタデータ"
+       "Amazon S3 システムのメタデータ",
+       "カスタムのユーザー定義メタデータ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "元数据",
-      "一致"
+      "文档时间戳、作者信息和研究领域分类"
      ],
      "ans": {
       "A": [
-       "Amazon",
-       "实现自定义用户定义",
-       "文档时间戳存储",
-       "系统元数据"
+       "Amazon S3 系统元数据",
+       "自定义用户定义的元数据"
       ]
      }
     }
@@ -5517,48 +4899,37 @@
    "mem": {
     "en": {
      "stem": [
-      "minimize architectural complexity",
-      "latency",
-      "real-time",
-      "accuracy"
+      "must retain full ownership and control over their own data",
+      "does not want to deploy and manage services in each customer's environment"
      ],
      "ans": {
       "A": [
-       "enrich prompts at runtime",
-       "Q Business",
-       "secure API",
-       "relevant content"
+       "designates Example Corp as a data accessor",
+       "retrieve relevant content by using a secure API"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "リアルタイム",
-      "精度"
+      "自分のデータに対する完全な所有権と制御を保持",
+      "各顧客の環境にサービスを展開して管理することを望んでいません"
      ],
      "ans": {
       "A": [
-       "Q Business",
-       "顧客の内部データ",
-       "関連コンテンツ",
-       "アクセサー"
+       "データ アクセサーとして指定",
+       "安全な API を使用して"
       ]
      }
     },
     "zh": {
      "stem": [
-      "减少其集成模式中的架构复杂",
-      "延迟",
-      "实时",
-      "准确"
+      "保留对其自身数据的完全所有权和控制权",
+      "不想在每个客户的环境中部署和管理服务"
      ],
      "ans": {
       "A": [
-       "Q Business",
-       "Corp作",
-       "包含客户内部数据",
-       "数据访问者"
+       "指定Example Corp作为数据访问者",
+       "使用安全API检索相关内容"
       ]
      }
     }
@@ -5603,35 +4974,36 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "semantic relationships between legal concepts, specific legal terminology, and citations",
+      "return precise results"
+     ],
      "ans": {
       "B": [
-       "optimize result relevance",
-       "Apply",
-       "reranker model",
-       "architecture"
+       "hybrid search architecture that combines vector search with keyword search",
+       "reranker model"
       ]
      }
     },
     "ja": {
      "stem": [
-      "正確"
+      "法的概念、特定の法的用語、引用の間の意味的関係を特定",
+      "正確な結果を返さなければなりません"
      ],
      "ans": {
       "B": [
-       "キーワード検索",
-       "結果の関連性",
-       "リランカー",
-       "サービス"
+       "ハイブリッド検索アーキテクチャ",
+       "リランカー モデル"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "识别法律概念、特定法律术语和引文之间的语义关系",
+      "返回精确的结果"
+     ],
      "ans": {
       "B": [
-       "关键字搜索相结合",
-       "优化结果相关性",
        "混合搜索架构",
        "重新排序模型"
       ]
@@ -5682,65 +5054,49 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "real-time",
-      "alerting"
+      "unpredictable token consumption patterns",
+      "real-time visibility into token usage patterns across multiple models"
      ],
      "ans": {
       "B": [
-       "Logs Insights",
-       "continuous monitoring",
-       "identify high",
-       "log widgets"
+       "CloudWatch Logs Insights to analyze Amazon Bedrock invocation logs",
+       "usage attribution by application"
       ],
       "C": [
-       "combine native",
-       "thresholds",
-       "monitor"
+       "native Amazon Bedrock token and invocation CloudWatch metrics",
+       "CloudWatch alarms to monitor token usage thresholds"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用上のオーバーヘッド",
-      "リアルタイム",
-      "アラート"
+      "予測できないトークン消費パターン",
+      "トークンの使用パターンをリアルタイムで可視化"
      ],
      "ans": {
       "B": [
-       "Logs Insights",
-       "トークン消費パターン",
-       "アプリケーションご",
-       "率の高いシナリオ"
+       "CloudWatch Logs Insights",
+       "アプリケーションごとの使用量の属性"
       ],
       "C": [
-       "組み合わせたカスタム",
-       "量のしきい値",
-       "ネイティブ",
-       "アラーム"
+       "ネイティブ Amazon Bedrock トークン",
+       "CloudWatch アラームを設定して"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "实时",
-      "警报"
+      "不可预测的令牌消耗模式",
+      "代币使用模式的实时可见性"
      ],
      "ans": {
       "B": [
-       "Logs Insights",
-       "了解令牌消耗模式",
-       "日志小部件添加",
-       "实现持续监控"
+       "CloudWatch Logs Insights",
+       "应用程序的使用归因"
       ],
       "C": [
-       "结合了本机",
-       "控制面板",
-       "监控令牌",
-       "警报"
+       "本机 Amazon Bedrock 令牌",
+       "CloudWatch 警报以监控令牌使用阈值"
       ]
      }
     }
@@ -5789,60 +5145,46 @@
    "mem": {
     "en": {
      "stem": [
-      "real time",
-      "compliance",
-      "consistent"
+      "consistent high-throughput access for batch processing",
+      "run workloads across cloud infrastructure and on-premises infrastructure"
      ],
      "ans": {
       "B": [
-       "consistent performance for high-volume workloads",
-       "provisioned throughput"
+       "provisioned throughput in Amazon Bedrock to ensure consistent performance"
       ],
       "C": [
-       "support for edge deployment",
-       "support hybrid deployment",
-       "Neo"
+       "Amazon SageMaker Neo",
+       "edge deployment"
       ]
      }
     },
     "ja": {
      "stem": [
-      "リアルタイム",
-      "コンプライアンス",
-      "一貫"
+      "バッチ処理のために一貫した高スループットのアクセス",
+      "クラウド インフラストラクチャとオンプレミス インフラストラクチャ全体で"
      ],
      "ans": {
       "B": [
-       "一貫したパフォーマンス",
-       "大容量のワークロード",
-       "構成",
-       "確保"
+       "Provisioned Throughputを構成して"
       ],
       "C": [
-       "Neo",
-       "エッジデプロイメント",
-       "ハイブリッド展開",
-       "サポート"
+       "SageMaker Neo",
+       "エッジデプロイメント"
       ]
      }
     },
     "zh": {
      "stem": [
-      "实时",
-      "合规",
-      "一致"
+      "一致的高吞吐量访问来进行批处理",
+      "跨云基础设施和本地基础设施运行工作负载"
      ],
      "ans": {
       "B": [
-       "确保大容量工作负载",
-       "预置吞吐量",
-       "一致性能"
+       "配置Provisioned Throughput"
       ],
       "C": [
-       "Neo",
-       "支持边缘",
-       "支持混合",
-       "编排"
+       "SageMaker Neo",
+       "边缘部署"
       ]
      }
     }
@@ -5888,43 +5230,37 @@
    "mem": {
     "en": {
      "stem": [
-      "versioned",
-      "consistently"
+      "standardized components for security controls, observability practices, and deployment patterns",
+      "reusable, versioned, and governed consistently"
      ],
      "ans": {
       "B": [
-       "centralized repository that performs version control",
-       "CI/CD pipeline",
-       "repeatable deployments across",
-       "Establish"
+       "standardized AWS CloudFormation templates",
+       "CloudFormation Guard"
       ]
      }
     },
     "ja": {
      "stem": [
-      "バージョン",
-      "一貫"
+      "標準化されたコンポーネントを確立",
+      "再利用可能であり、バージョン管理され"
      ],
      "ans": {
       "B": [
-       "パイプライン",
-       "ユニット全体",
-       "リポジトリ",
-       "作成"
+       "標準化された AWS CloudFormation テンプレート",
+       "CloudFormation Guard"
       ]
      }
     },
     "zh": {
      "stem": [
-      "版本",
-      "一致"
+      "建立架构良好的标准化组件",
+      "可重用的、版本化的"
      ],
      "ans": {
       "B": [
-       "建立执行版本控制",
-       "各个业务部门",
-       "一致且可重复",
-       "存储库"
+       "标准化的 AWS CloudFormation 模板",
+       "CloudFormation Guard"
       ]
      }
     }
@@ -5970,52 +5306,40 @@
    "mem": {
     "en": {
      "stem": [
-      "multilingual",
-      "languages",
-      "consistent",
-      "45 minutes"
+      "inconsistent behavior across languages",
+      "identical questions",
+      "block deployment if quality thresholds are not met"
      ],
      "ans": {
       "D": [
-       "Bedrock model",
-       "CI/CD",
-       "hallucination thresholds",
-       "test conversations"
+       "standardized multilingual test conversations with identical meaning",
+       "Amazon Bedrock model evaluation jobs"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動",
-      "多言語",
-      "言語",
-      "一貫",
-      "45 分"
+      "言語間で一貫性のない動作",
+      "同じ質問が提示されると",
+      "品質のしきい値が満たされていない場合"
      ],
      "ans": {
       "D": [
-       "モデル評価ジョブ",
-       "失敗したリリース",
-       "幻覚のしきい値",
-       "同一の意味"
+       "同一の意味を持つ標準化された多言語テスト会話",
+       "Amazon Bedrock モデル評価ジョブ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动",
-      "多语言",
-      "语言",
-      "一致",
-      "45 分",
-      "15,000 个"
+      "在不同语言之间表现出不一致的行为",
+      "当提出相同的问题时",
+      "如果未达到质量阈值"
      ],
      "ans": {
       "D": [
-       "建立具有相同含义",
-       "标准化多语言测试",
-       "模型评估作业",
-       "行运行测试"
+       "具有相同含义的标准化多语言测试对话",
+       "Amazon Bedrock 模型评估作业"
       ]
      }
     }
@@ -6061,42 +5385,37 @@
    "mem": {
     "en": {
      "stem": [
-      "automatically",
-      "consistent"
+      "identify which specific tool integrations cause abnormal token consumption",
+      "automatically adjust thresholds as traffic patterns change"
      ],
      "ans": {
       "C": [
-       "Apply",
-       "extract tool-specific",
-       "anomaly detection",
-       "adjust baselines"
+       "metric filters to extract tool-specific invocation patterns",
+       "anomaly detection alarms that adjust baselines"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動的に",
-      "一貫"
+      "どの特定のツール統合が異常なトークン消費を引き起こしているか",
+      "トラフィック パターンの変化に応じてしきい値を自動的に調整"
      ],
      "ans": {
       "C": [
-       "ツール固有の呼び出しパターン",
-       "メトリクスフィルター",
-       "異常検出アラーム",
-       "抽出"
+       "ツール固有の呼び出しパターンを抽出",
+       "異常検出アラーム"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动"
+      "识别哪些特定工具集成导致异常令牌消耗",
+      "随着流量模式的变化自动调整阈值"
      ],
      "ans": {
       "C": [
-       "调整每个工具指标",
-       "提取特定于工具",
-       "异常检测警报",
-       "指标过滤器"
+       "提取特定于工具的调用模式",
+       "异常检测警报"
       ]
      }
     }
@@ -6142,49 +5461,37 @@
    "mem": {
     "en": {
      "stem": [
-      "low latency",
-      "regulations",
-      "cross-Region",
-      "consistently"
+      "European user data to remain within Europe- based AWS Regions",
+      "service degradation when Regional traffic spikes reach service quotas"
      ],
      "ans": {
       "B": [
-       "cross-Region inference profiles by specifying geographical codes",
-       "profile IDs",
-       "InvokeModel",
-       "APIs"
+       "specifying geographical codes in profile IDs",
+       "cross-Region inference profiles"
       ]
      }
     },
     "ja": {
      "stem": [
-      "低い遅延",
-      "規制",
-      "クロスリージョン",
-      "一貫"
+      "ヨーロッパのユーザーデータをヨーロッパを拠点とする AWS リージョン内に留めておく",
+      "サービスの低下が発生"
      ],
      "ans": {
       "B": [
-       "InvokeModel",
-       "適切な地域のエンドポイント",
-       "北米のユーザー",
-       "プロファイル"
+       "プロファイル ID に地理コードを指定",
+       "クロスリージョン推論プロファイル"
       ]
      }
     },
     "zh": {
      "stem": [
-      "降低运营复杂",
-      "低延迟",
-      "法规",
-      "跨区域"
+      "欧洲用户数据保留在基于欧洲的 AWS 区域内",
+      "区域流量峰值达到服务配额"
      ],
      "ans": {
       "B": [
-       "InvokeModel",
-       "当应用程序调用",
-       "指定地理代码",
-       "北美用户定向"
+       "在配置文件 ID 中指定地理代码",
+       "跨区域推理配置文件"
       ]
      }
     }
@@ -6230,32 +5537,35 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "real-time"
+      "proprietary data must not leave the company's immediate geographic area",
+      "near real-time, low-latency performance"
      ],
      "ans": {
-      "B": []
+      "B": [
+       "Deploy an Amazon Bedrock model in each AWS Region",
+       "Store the knowledge bases in Amazon S3 in each Region"
+      ]
      }
     },
     "ja": {
      "stem": [
-      "低遅延",
-      "リアルタイム"
+      "専有データは、会社のすぐ近くの地理的領域を離れてはなりません"
      ],
      "ans": {
       "B": [
-       "いる各リージョン"
+       "各 AWS リージョンに Amazon Bedrock モデルをデプロイ",
+       "各リージョンの Amazon S3 にナレッジベースを保存"
       ]
      }
     },
     "zh": {
      "stem": [
-      "低延迟",
-      "实时"
+      "专有数据不得离开公司的直接地理区域"
      ],
      "ans": {
       "B": [
-       "知识库存储"
+       "在公司运营的每个 AWS 区域中部署 Amazon Bedrock 模型",
+       "将Knowledge Bases存储在公司运营的每个区域的 Amazon S3 中"
       ]
      }
     }
@@ -6301,40 +5611,40 @@
    "mem": {
     "en": {
      "stem": [
-      "consistent"
+      "Python SDK to analyze reports on demand",
+      "JavaScript SDK to batch process",
+      "maintain conversational context throughout multi-tum interactions"
      ],
      "ans": {
       "D": [
-       "Pass previous messages",
-       "maintain conversational context",
-       "request messages array",
-       "SDKs"
+       "Converse API and IAM roles for authentication",
+       "Pass previous messages in the request messages array"
       ]
      }
     },
     "ja": {
      "stem": [
-      "一貫"
+      "Python SDK を使用して",
+      "JavaScript SDK を使用して",
+      "会話コンテキストを維持し"
      ],
      "ans": {
       "D": [
-       "会話のコンテキスト",
-       "インターフェイス",
-       "前のメッセージ",
-       "メッセージ配列"
+       "Converse API と IAM ロール",
+       "以前のメッセージをリクエスト メッセージ配列に渡します"
       ]
      }
     },
     "zh": {
      "stem": [
-      "一致"
+      "使用 Python SDK 来按需分析报告",
+      "使用 JavaScript SDK 按计划批量处理",
+      "维护对话上下文"
      ],
      "ans": {
       "D": [
-       "传递请求消息数组",
-       "先前消息",
-       "维护会话",
-       "建立一致"
+       "Converse API 和 IAM 角色进行身份验证",
+       "传递请求消息数组中的先前消息"
       ]
      }
     }
@@ -6380,45 +5690,37 @@
    "mem": {
     "en": {
      "stem": [
-      "serverless",
-      "throttling",
-      "cost"
+      "throttling errors during peak usage times",
+      "does not require a fixed hourly cost during low traffic periods"
      ],
      "ans": {
       "C": [
-       "OutputTokenCount",
-       "InputTokenCount",
-       "Throttles",
-       "inference endpoints"
+       "Distribute traffic across cross- Region inference endpoints",
+       "Invocation Throttles"
       ]
      }
     },
     "ja": {
      "stem": [
-      "サーバーレス",
-      "スロットル",
-      "スロットリング",
-      "コスト"
+      "スロットル エラーが発生したと報告",
+      "時間当たりの固定コストを必要としない"
      ],
      "ans": {
       "C": [
-       "OutputTokenCount",
-       "InputTokenCount"
+       "クロスリージョン推論エンドポイント全体にトラフィックを分散",
+       "呼び出しスロットル"
       ]
      }
     },
     "zh": {
      "stem": [
-      "无服务器",
-      "限制",
-      "成本"
+      "遇到限制错误",
+      "在低流量期间不需要固定每小时成本"
      ],
      "ans": {
       "C": [
-       "OutputTokenCount",
-       "InputTokenCount",
        "跨区域推理端点分配流量",
-       "监视关键指标"
+       "调用限制"
       ]
      }
     }
@@ -6465,40 +5767,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead"
+      "do not maintain states between invocations",
+      "accessible to both internal applications and authorized third-party partners"
      ],
      "ans": {
       "C": [
-       "InvokeFunctionUrl",
-       "SigV4",
-       "URLs",
-       "AWS"
+       "Lambda function URLs",
+       "Streamable HTTP transport and SigV4"
       ]
      }
     },
     "ja": {
      "stem": [
-      "最小限の運用オーバーヘッド",
-      "運用オーバーヘッド"
+      "呼び出し間の状態は維持されません",
+      "認定されたサードパーティ パートナーの両方がアクセス"
      ],
      "ans": {
       "C": [
-       "InvokeFunctionUrl",
-       "SigV4",
-       "有効"
+       "Lambda 関数 URL",
+       "Streamable HTTP トランスポートと SigV4"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销"
+      "不维护调用之间的状态",
+      "内部应用程序和授权的第三方合作伙伴访问"
      ],
      "ans": {
       "C": [
-       "InvokeFunctionUrl",
-       "SigV4"
+       "Lambda 函数 URL",
+       "Streamable HTTP 传输和 SigV4"
       ]
      }
     }
@@ -6544,46 +5843,37 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "real-time",
-      "throttling"
+      "prevent cascading failures during throttling events",
+      "distributed tracing across service boundaries"
      ],
      "ans": {
       "B": [
-       "filter service components",
-       "X-Ray",
-       "exponential backoff",
-       "annotations"
+       "standard retry mode and exponential backoff with jitter",
+       "AWS X-Ray tracing with annotations"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "リアルタイム",
-      "スロットリング"
+      "スロットリング イベント中の連鎖的な障害を防止",
+      "サービス境界を越えた分散トレース"
      ],
      "ans": {
       "B": [
-       "X-Ray",
-       "標準の再試行モード",
-       "伴う指数バックオフ",
-       "コンポーネント"
+       "標準の再試行モードとジッターを伴う指数バックオフ",
+       "AWS X-Ray トレース"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "实时",
-      "限制"
+      "防止限制事件期间发生级联故障",
+      "跨服务边界的分布式跟踪"
      ],
      "ans": {
       "B": [
-       "X-Ray",
-       "标准重试模式",
-       "筛选服务组件",
-       "指数退避"
+       "标准重试模式和带抖动的指数退避",
+       "AWS X-Ray 跟踪"
       ]
      }
     }
@@ -6629,38 +5919,35 @@
    "mem": {
     "en": {
      "stem": [
-      "audit"
+      "secure model I/O, control foundation model (FM) access patterns",
+      "audit of who accessed what and when"
      ],
      "ans": {
       "B": [
-       "enforce specific GuardrailIdentifier",
-       "ModelId values",
-       "IAM condition",
-       "alert on unexpected"
+       "attribute-based controls to map departments to specific permissions",
+       "IAM condition keys to enforce specific GuardrailIdentifier and ModelId values"
       ]
      }
     },
     "ja": {
      "stem": [
-      "監査"
+      "誰がいつ何にアクセスしたかの監査"
      ],
      "ans": {
       "B": [
-       "アクティビティの管理イベント",
-       "予期しないアクティビティ",
-       "属性ベースの制御",
-       "レベルのやり取り"
+       "属性ベースの制御を備えた IAM",
+       "IAM 条件キーを使用して、特定の GuardrailIdentifier および ModelId 値"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "对谁访问什么以及何时访问的审核"
+     ],
      "ans": {
       "B": [
-       "条件键强制执行特定",
-       "详细文件级交互",
-       "定义访问控制",
-       "基于属性"
+       "基于属性的控制来定义访问控制",
+       "IAM 条件键强制执行特定的 GuardrailIdentifier 和 ModelId 值"
       ]
      }
     }
@@ -6706,40 +5993,37 @@
    "mem": {
     "en": {
      "stem": [
-      "automatically"
+      "automatically re-train and re-deploy the model",
+      "when an employee uploads a new customer data file to the S3 bucket"
      ],
      "ans": {
       "D": [
-       "first state receives",
-       "Standard",
-       "first state",
-       "next state"
+       "Step Functions Standard workflow",
+       "SageMaker Pipelines"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動的に"
+      "モデルを自動的に再トレーニングし",
+      "従業員が新しい顧客データ ファイルを S3 バケットにアップロードするとき"
      ],
      "ans": {
       "D": [
-       "Standard",
-       "ワークフロー内の次の状態",
-       "パイプライン",
-       "最初の状態"
+       "Step Functions Standard ワークフロー",
+       "SageMaker Pipelines"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动"
+      "自动重新训练模型并将其重新部署",
+      "当员工将新的客户数据文件上传到 S3 存储桶时"
      ],
      "ans": {
       "D": [
-       "标准工作流程",
-       "存储桶时调用",
-       "管道重新",
-       "运行管道"
+       "Step Functions 标准工作流程",
+       "SageMaker Pipelines"
       ]
      }
     }
@@ -6784,37 +6068,38 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "compare multiple chunking strategies",
+      "evaluate the generation quality of two foundation models (FMs)"
+     ],
      "ans": {
       "B": [
-       "retrieve-and-generate",
-       "responses",
-       "dataset",
-       "1-5"
+       "retrieve-and-generate evaluation job",
+       "precision at k metrics"
       ]
      }
     },
     "ja": {
      "stem": [
-      "拡張"
+      "複数のチャンキング戦略を比較",
+      "2 つの基盤モデル (FM) の生成品質を評価"
      ],
      "ans": {
       "B": [
-       "各チャンキング戦略",
-       "生成の評価ジョブ",
-       "評価データセット",
-       "カスタム精度"
+       "取得と生成の評価ジョブ",
+       "k メトリクスでのカスタム精度"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "比较多种分块策略",
+      "评估两个基础模型 (FM) 的生成质量"
+     ],
      "ans": {
       "B": [
-       "每个分块策略包含",
-       "生成评估作业",
-       "自定义精度",
-       "评估数据集"
+       "检索并生成评估作业",
+       "k 指标的自定义精度"
       ]
      }
     }
@@ -6860,43 +6145,37 @@
    "mem": {
     "en": {
      "stem": [
-      "audit",
-      "audits"
+      "ingest multimodal data",
+      "avoid speculative behavioral interpretations"
      ],
      "ans": {
       "B": [
-       "Retrieval Augmented Generation",
-       "Processing",
-       "Transcribe",
-       "AppConfig"
+       "SageMaker Processing and Amazon Transcribe to pre-process multimodal data",
+       "guardrails to restrict speculative outputs"
       ]
      }
     },
     "ja": {
      "stem": [
-      "監査",
-      "言語"
+      "マルチモーダルなデータを取り込む",
+      "推測的な行動解釈を回避"
      ],
      "ans": {
       "B": [
-       "Retrieval Augmented Generation",
-       "Processing",
-       "マルチモーダルデータ",
-       "ナレッジベース"
+       "SageMaker Processing と Amazon Transcribe",
+       "ガードレールを適用して、投機的な出力を制限"
       ]
      }
     },
     "zh": {
      "stem": [
-      "审计",
-      "语言"
+      "摄取多模式数据",
+      "避免推测性行为解释"
      ],
      "ans": {
       "B": [
-       "Retrieval Augmented Generation",
-       "Processing",
-       "预处理多模式数据",
-       "限制投机产出"
+       "SageMaker Processing 和 Amazon Transcribe 预处理多模式数据",
+       "Guardrails来限制投机产出"
       ]
      }
     }
@@ -6944,34 +6223,50 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "prevent specific topics and proprietary information from being included in prompts",
+      "employees can use only approved Amazon Bedrock models"
+     ],
      "ans": {
       "B": [
-       "specify"
+       "SCP that allows employees to use only approved models",
+       "specify a guardrail identifier in calls"
       ],
-      "D": []
+      "D": [
+       "block filtering policy",
+       "stack sets to deploy the guardrail to each account"
+      ]
      }
     },
     "ja": {
-     "stem": [],
+     "stem": [
+      "特定のトピックや専有情報が含まれないように",
+      "承認された Amazon Bedrock モデルのみを使用"
+     ],
      "ans": {
       "B": [
-       "構成"
+       "従業員が承認されたモデルのみを使用できるようにする SCP",
+       "ガードレール識別子を指定"
       ],
       "D": [
-       "ブロック"
+       "ブロック フィルタリング ポリシー",
+       "スタック セットを使用して"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "防止特定主题和专有信息包含在",
+      "员工只能使用经批准的 Amazon Bedrock 型号"
+     ],
      "ans": {
       "B": [
-       "指定护栏标识符",
-       "要求员工"
+       "允许员工仅使用经批准的模型",
+       "指定Guardrails标识符"
       ],
       "D": [
-       "具有块过滤策略"
+       "块过滤策略",
+       "使用堆栈集"
       ]
      }
     }
@@ -7017,43 +6312,38 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "reduce latency"
+      "stream responses to reduce latency",
+      "enforce token limits",
+      "handle model timeouts and partial responses"
      ],
      "ans": {
       "D": [
-       "REST",
-       "invokes"
+       "API Gateway REST API",
+       "Lambda response streaming to stream responses"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "レイテンシ",
-      "ストリーミング"
+      "応答をストリーミングしてレイテンシを短縮",
+      "トークン制限を適用"
      ],
      "ans": {
       "D": [
-       "REST",
-       "タイムアウト設定",
-       "関数内"
+       "API Gateway REST API",
+       "Lambda 応答ストリーミング"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "延迟",
-      "限制",
-      "流式"
+      "流式传输响应以减少延迟",
+      "强制执行令牌限制"
      ],
      "ans": {
       "D": [
-       "REST",
-       "实现重试逻辑"
+       "API Gateway REST API",
+       "Lambda 响应流"
       ]
      }
     }
@@ -7099,55 +6389,34 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST implementation effort",
-      "cost-effective",
-      "latency",
-      "automatically",
-      "cost",
-      "70%",
-      "30%"
+      "70% of customer inquiries are simple product questions",
+      "30% of inquiries are complex return policy questions"
      ],
      "ans": {
       "B": [
-       "intelligent prompt",
-       "return policy",
-       "automatically",
-       "product"
+       "intelligent prompt routing"
       ]
      }
     },
     "ja": {
      "stem": [
-      "最小限の実装労力",
-      "費用対効果",
-      "自動的に",
-      "70%",
-      "30%"
+      "70% は",
+      "30% は、高度な推論を必要とする複雑な返品ポリシー"
      ],
      "ans": {
       "B": [
-       "より機能の高い大型モデル",
-       "複雑な返品ポリシー",
-       "インテリジェント",
-       "単純な製品"
+       "インテリジェント プロンプト ルーティング"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的实施工作",
-      "经济高效",
-      "延迟",
-      "自动",
-      "70%",
-      "30%"
+      "70% 的客户询问都是简单的产品问题",
+      "30% 的询问是复杂的退货政策问题"
      ],
      "ans": {
       "B": [
-       "退货政策查询路由至功能更强大",
-       "智能提示路由自动分析查询",
-       "产品查询路由至较小",
-       "较大型号"
+       "智能提示路由"
       ]
      }
     }
@@ -7193,59 +6462,38 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "hallucinated",
-      "multiple AWS Regions",
-      "metadata",
-      "consistent",
-      "consistency",
-      "99.5%",
-      "1 second"
+      "99.5% output consistency for identical inputs",
+      "inference latency of less than 1 second",
+      "block unsafe or hallucinated recommendations"
      ],
      "ans": {
       "A": [
-       "guardrails that have semantic denial rules",
-       "Management",
-       "Apply",
-       "provisioned throughput"
+       "provisioned throughput to stabilize inference latency",
+       "Prompt Management to manage prompts by using approval workflows"
       ]
      }
     },
     "ja": {
      "stem": [
-      "レイテンシー",
-      "幻覚",
-      "メタデータ",
-      "一貫",
-      "99.5%",
-      "1 秒",
-      "AWS"
+      "99.5% の出力一貫性を保証",
+      "1 秒未満の推論レイテンシー"
      ],
      "ans": {
       "A": [
-       "セマンティック拒否ルール",
-       "推論レイテンシー",
-       "承認ワークフロー",
-       "プロンプト管理"
+       "Provisioned Throughput",
+       "承認ワークフローを使用してプロンプトを管理"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "幻觉",
-      "元数据",
-      "一致",
-      "99.5%",
-      "1 秒",
-      "AWS"
+      "输出一致性达到 99.5%",
+      "推理延迟小于 1 秒"
      ],
      "ans": {
       "A": [
-       "Management",
-       "应用具有语义拒绝规则",
-       "稳定推理延迟",
-       "审批工作流程"
+       "预配置吞吐量部署 Amazon Bedrock 以稳定推理延迟",
+       "通过审批工作流程来管理提示"
       ]
      }
     }
@@ -7292,43 +6540,37 @@
    "mem": {
     "en": {
      "stem": [
-      "regulations",
-      "audit"
+      "Data residency and processing must occur within the same continent",
+      "provide data classification capabilities"
      ],
      "ans": {
       "C": [
-       "Region-specific S3 bucket",
-       "S3 Object Lock",
-       "geographic origin before sending",
-       "Pre-process"
+       "S3 Object Lock with Region-specific S3 bucket policies",
+       "Amazon Macie to classify the data"
       ]
      }
     },
     "ja": {
      "stem": [
-      "規制",
-      "監査"
+      "データの常駐と処理は同じ大陸内で行われる必要があります",
+      "データ分類機能を提供"
      ],
      "ans": {
       "C": [
-       "リージョン固有",
-       "データポイント",
-       "オブジェクト",
-       "バケット"
+       "S3 オブジェクト ロック",
+       "Amazon Macie を使用してデータを分類"
       ]
      }
     },
     "zh": {
      "stem": [
-      "法规",
-      "审计"
+      "数据驻留和处理必须发生在同一大陆内",
+      "提供数据分类功能"
      ],
      "ans": {
       "C": [
-       "存储桶策略结合",
-       "源预处理区域内",
-       "数据点发送",
-       "区域特定"
+       "S3 对象锁定与区域特定的 S3 存储桶策略",
+       "Amazon Macie 对数据进行分类"
       ]
      }
     }
@@ -7374,63 +6616,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "real time",
-      "regulatory",
-      "compliance",
-      "audit",
-      "hallucinations",
-      "60 days",
-      "200 ms"
+      "monitor model behavior drift in real time",
+      "maintain audit trails of all prompt-response pairs",
+      "deploy the solution within 60 days"
      ],
      "ans": {
       "A": [
-       "capture audit trails",
-       "Evaluation",
-       "DynamoDB",
-       "TTL"
+       "Amazon Bedrock Model Evaluation to detect hallucinations",
+       "Store prompt-response pairs in Amazon DynamoDB to capture audit trails and set a TTL"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "リアルタイム",
-      "規制",
-      "コンプライアンス",
-      "監査",
-      "幻覚",
-      "60 日",
-      "200 ミリ秒"
+      "モデルの動作のドリフトをリアルタイムで監視し",
+      "すべてのプロンプトと応答のペアの監査証跡を維持"
      ],
      "ans": {
       "A": [
-       "Evaluation",
-       "DynamoDB",
-       "カスタムコンテンツフィルター",
-       "カスタムメトリクス"
+       "Amazon Bedrock Model Evaluation を使用して幻覚を検出",
+       "TTL を設定"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "实时",
-      "监管",
-      "合规",
-      "审计",
-      "幻觉",
-      "60 天",
-      "200 毫秒"
+      "实时监控模型行为漂移"
      ],
      "ans": {
       "A": [
-       "DynamoDB",
-       "TTL",
-       "应用自定义内容过滤器",
-       "现有合规性仪表板集成"
+       "Amazon Bedrock 模型评估来检测幻觉",
+       "设置 TTL"
       ]
      }
     }
@@ -7476,48 +6692,37 @@
    "mem": {
     "en": {
      "stem": [
-      "personally identifiable information",
-      "sensitive financial",
-      "audit",
-      "multiple AWS Regions"
+      "access only authorized data subsets that have PH redacted from specific data columns",
+      "capture audit trails for all data access"
      ],
      "ans": {
       "B": [
-       "Regions as LF-Tags",
-       "LF-Tag expressions",
-       "Define",
-       "authenticate"
+       "Lake Formation permissions based on LF-Tag expressions",
+       "Define business units and Regions as LF-Tags"
       ]
      }
     },
     "ja": {
      "stem": [
-      "個人を特定できる情報",
-      "機密",
-      "監査",
-      "AWS"
+      "承認されたデータ サブセットのみにアクセス",
+      "すべてのデータ アクセスの監査証跡を取得"
      ],
      "ans": {
       "B": [
-       "権限",
-       "タグ",
-       "定義"
+       "LF-Tag 式に基づいて",
+       "LF タグとして定義"
       ]
      }
     },
     "zh": {
      "stem": [
-      "个人身份信息",
-      "敏感",
-      "审计",
-      "AWS"
+      "仅访问已从特定数据列编辑 PH 的授权数据子集",
+      "捕获所有数据访问的审计跟踪"
      ],
      "ans": {
       "B": [
-       "分配给数据库",
-       "身份验证",
-       "业务单位",
-       "区域定义"
+       "基于 LF-Tag 表达式的 Lake Formation 权限",
+       "定义为分配给数据库和表的 LF 标签"
       ]
      }
     }
@@ -7563,51 +6768,35 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "regulatory",
-      "compliance",
-      "hallucinations"
+      "semantically similar but contextually irrelevant documents",
+      "causing model hallucinations and incorrect regulatory guidance"
      ],
      "ans": {
       "D": [
-       "contextual assessments",
-       "configuration within",
-       "reranker",
-       "improve"
+       "reranking configuration within Amazon Bedrock Knowledge Bases",
+       "reorder results based on contextual assessments"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用上のオーバーヘッド",
-      "規制",
-      "幻覚"
+      "意味的には類似しているものの、文脈的に無関係なドキュメント"
      ],
      "ans": {
       "D": [
-       "文書の関連性スコア",
-       "基づいて結果",
-       "リランカー",
-       "このモデル"
+       "再ランキング設定",
+       "結果を並べ替えます"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "法规",
-      "合规",
-      "监管",
-      "幻觉"
+      "语义相似但上下文不相关的文档"
      ],
      "ans": {
       "D": [
-       "该模型改进文档相关性评分",
-       "重新排名模型",
-       "结果重新排序",
-       "下文评估"
+       "重新排名配置",
+       "根据上下文评估对结果重新排序"
       ]
      }
     }
@@ -7653,41 +6842,37 @@
    "mem": {
     "en": {
      "stem": [
-      "inappropriate",
-      "harmful"
+      "all pre-processing filters must finish before the content reaches the FM",
+      "detect potential inappropriate advice solicitation"
      ],
      "ans": {
       "A": [
-       "asynchronous API calls",
-       "without"
+       "parallel processing with asynchronous API calls",
+       "prompt safety classification for inappropriate advice solicitation"
       ]
      }
     },
     "ja": {
      "stem": [
-      "不適切",
-      "有害"
+      "階層化されたコンテンツフィルタリング",
+      "不適切なアドバイスの勧誘"
      ],
      "ans": {
       "A": [
-       "迅速な安全分類",
-       "呼び出し",
-       "編集せず",
-       "非同期"
+       "非同期 API 呼び出しで並列処理",
+       "迅速な安全分類"
       ]
      }
     },
     "zh": {
      "stem": [
-      "不当",
-      "有害"
+      "所有预处理过滤器必须在内容到达 FM 之前完成",
+      "检测潜在的不当建议征求"
      ],
      "ans": {
       "A": [
-       "征求不适当",
-       "令人反感",
-       "检测而不",
-       "异步"
+       "使用异步 API 调用的并行处理",
+       "及时的安全分类"
       ]
      }
     }
@@ -7733,29 +6918,36 @@
    "mem": {
     "en": {
      "stem": [
-      "consistent",
-      "accurate"
+      "stores customer travel history data in an Amazon RDS database",
+      "consistent, relevant, and accurate results"
      ],
      "ans": {
-      "B": []
+      "B": [
+       "text-to-SQL transformations with SQL validations",
+       "accurately retrieve relevant booking patterns"
+      ]
      }
     },
     "ja": {
      "stem": [
-      "一貫",
-      "正確"
+      "顧客の旅行履歴データを Amazon RDS データベースに保存"
      ],
      "ans": {
-      "B": []
+      "B": [
+       "SQL 検証を使用してテキストから SQL への変換",
+       "RDS データベースから正確に取得"
+      ]
      }
     },
     "zh": {
      "stem": [
-      "一致",
-      "准确"
+      "将客户旅行历史数据存储在 Amazon RDS 数据库中"
      ],
      "ans": {
-      "B": []
+      "B": [
+       "文本到 SQL 的转换",
+       "从 RDS 数据库中准确检索相关的预订模式"
+      ]
      }
     }
    }
@@ -7800,38 +6992,37 @@
    "mem": {
     "en": {
      "stem": [
-      "personal information"
+      "all processing occurs within the same AWS Region where each customer is located",
+      "evaluate how effective the AI assistant is at preventing the exposure of personal information"
      ],
      "ans": {
       "B": [
-       "Region where",
-       "company operates"
+       "mask mode during development and testing",
+       "Deploy a copy of the guardrail to each Region"
       ]
      }
     },
     "ja": {
      "stem": [
-      "個人情報"
+      "各顧客が所在する同じ AWS リージョン内で確実に行われる",
+      "個人情報の漏洩防止にどの程度効果的であるかを評価"
      ],
      "ans": {
       "B": [
-       "ガードレールのコピー",
-       "いる各リージョン",
-       "会社",
-       "事業"
+       "マスク モードに設定",
+       "各リージョンにガードレールのコピーを展開"
       ]
      }
     },
     "zh": {
      "stem": [
-      "个人信息"
+      "所有处理都发生在每个客户所在的同一 AWS 区域内",
+      "评估人工智能助手在防止个人信息泄露方面的有效性"
      ],
      "ans": {
       "B": [
-       "屏蔽模式",
-       "护栏副本",
-       "公司运营",
-       "每个区域"
+       "设置为屏蔽模式",
+       "将Guardrails副本部署到公司运营的每个区域"
       ]
      }
     }
@@ -7878,39 +7069,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "metadata",
-      "1 million"
+      "metadata of the digitized files does not contain keywords",
+      "fewer than 1 million files"
      ],
      "ans": {
       "D": [
-       "Serverless"
+       "Amazon Titan Embeddings",
+       "Aurora PostgreSQL Serverless database that has the pgvector extension"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "メタデータ",
-      "100 万"
+      "デジタル化されたファイルのメタデータにはキーワードは含まれません",
+      "100 万未満"
      ],
      "ans": {
       "D": [
-       "サーバーレス"
+       "Amazon Titan 埋め込み",
+       "pgvector 拡張子を持つ Amazon Aurora PostgreSQL サーバーレス"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "元数据",
-      "100 万"
+      "数字化文件的元数据不包含关键字",
+      "少于 100 万个"
      ],
      "ans": {
       "D": [
-       "Serverless"
+       "Amazon Titan Embeddings",
+       "pgvector 扩展名的 Amazon Aurora PostgreSQL Serverless 数据库"
       ]
      }
     }
@@ -7960,46 +7149,46 @@
    "mem": {
     "en": {
      "stem": [
-      "20 MB"
+      "as soon as new files are created",
+      "summaries and sentiment analysis for the recordings in a structured format"
      ],
      "ans": {
-      "C": [],
+      "C": [
+       "invoke Amazon Transcribe to convert audio to text"
+      ],
       "D": [
-       "EventBridge rule",
-       "EventBridge"
+       "send events to Amazon EventBridge",
+       "when an object is created in the bucket"
       ]
      }
     },
     "ja": {
      "stem": [
-      "20 MB",
-      "MB"
+      "新しいファイルが作成されるとすぐに",
+      "構造化された形式で録音の概要とセンチメント分析"
      ],
      "ans": {
       "C": [
-       "プロンプト"
+       "Amazon Transcribe を呼び出して音声をテキストに変換"
       ],
       "D": [
-       "EventBridge",
-       "イベント",
-       "ルール"
+       "イベントを Amazon EventBridge に送信",
+       "オブジェクトが作成されたときに"
       ]
      }
     },
     "zh": {
      "stem": [
-      "20 MB",
-      "MB"
+      "创建新文件后",
+      "立即以结构化格式生成录音摘要和情绪分析"
      ],
      "ans": {
       "C": [
-       "提示"
+       "调用 Amazon Transcribe 将音频转换为文本"
       ],
       "D": [
-       "EventBridge",
-       "事件发送",
-       "象时调用",
-       "规则"
+       "将事件发送到 Amazon EventBridge",
+       "在存储桶中创建对象时"
       ]
      }
     }
@@ -8045,43 +7234,40 @@
    "mem": {
     "en": {
      "stem": [
-      "personally identifiable information",
-      "PII"
+      "expose patient personally identifiable information (PII) only to surgeons",
+      "redact PII for engineers",
+      "less than 3 years old"
      ],
      "ans": {
       "C": [
-       "ApplyGuardrail",
-       "Schedule",
-       "users interact",
-       "responses"
+       "S3 Lifecycle configuration on the bucket to remove reports that are older than 3 years",
+       "ApplyGuardrail configuration that matches the user's Cognito user group"
       ]
      }
     },
     "ja": {
      "stem": [
-      "個人識別情報",
-      "PII"
+      "PII) を外科医にのみ公開",
+      "エンジニアの PII を編集",
+      "3 年未満の医療レポートのみを参照"
      ],
      "ans": {
       "C": [
-       "ApplyGuardrail",
-       "応じてエージェントの応答",
-       "ナレッジベースの間",
-       "スケジュール"
+       "S3 ライフサイクル構成を設定",
+       "Cognito ユーザー グループに一致する applyGuardrail 構成"
       ]
      }
     },
     "zh": {
      "stem": [
-      "个人身份信息",
-      "PII"
+      "仅向外科医生公开患者个人身份信息 (PII)",
+      "为工程师编辑 PII",
+      "只能参考3年以内的医疗报告"
      ],
      "ans": {
       "C": [
-       "ApplyGuardrail",
-       "知识库之间运行每日同步",
-       "用户组匹配",
-       "情况下"
+       "S3 生命周期配置以删除超过 3 年的报告",
+       "与用户的 Cognito 用户组匹配的 ApplyGuardrail 配置"
       ]
      }
     }
@@ -8127,49 +7313,36 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "automatic",
-      "alerts",
-      "version"
+      "correlates technical performance with business outcomes",
+      "unified observability solution"
      ],
      "ans": {
       "D": [
-       "indicate performance",
-       "anomaly detection",
-       "alarm actions",
-       "operational"
+       "integrate operational metrics with imported business metrics",
+       "composite alarms with anomaly detection"
       ]
      }
     },
     "ja": {
      "stem": [
-      "レイテンシー",
-      "自動",
-      "アラート",
-      "バージョン",
-      "追跡"
+      "技術的なパフォーマンスとビジネスの成果を相関"
      ],
      "ans": {
       "D": [
-       "パフォーマンスの問題",
-       "アラームアクション",
-       "運用メトリクス",
-       "相関メトリクス"
+       "運用メトリクスとインポートされたビジネスメトリクスを統合",
+       "異常検出を備えた CloudWatch 複合アラーム"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "自动",
-      "警报"
+      "将技术性能与业务成果关联起来",
+      "统一的可观察性解决方案"
      ],
      "ans": {
       "D": [
-       "具有异常检测功能",
-       "自定义控制面板",
-       "业务指标集成",
-       "运营指标"
+       "将运营指标与导入的业务指标集成",
+       "具有异常检测功能的 CloudWatch 复合警报"
       ]
      }
     }
@@ -8215,40 +7388,37 @@
    "mem": {
     "en": {
      "stem": [
-      "private"
+      "hosts the model in the eu- central-1 Region and the eu-west-3 Region",
+      "requests to the FM are private and remain with the same Regions as the FM"
      ],
      "ans": {
       "C": [
-       "calls remain within Europe",
-       "Europe-based Regions where",
-       "cross-Region inference",
-       "inference profiles"
+       "cross-Region inference through an eu.amazon.* endpoint",
+       "Amazon Bedrock VPC endpoint"
       ]
      }
     },
     "ja": {
      "stem": [
-      "プライベート"
+      "eu-central-1 リージョンと eu-west-3 リージョンでモデルをホスト",
+      "FM へのリクエストがプライベートであり"
      ],
      "ans": {
       "C": [
-       "クロスリージョン推論",
-       "利用可能なヨーロッパ",
-       "推論プロファイル",
-       "ヨーロッパ内"
+       "eu.amazon.* エンドポイントを介してクロスリージョン推論",
+       "Amazon Bedrock VPC エンドポイント"
       ]
      }
     },
     "zh": {
      "stem": [
-      "私有"
+      "将模型托管在 eu-central-1 区域和 eu-west-3 区域",
+      "向 FM 发出的请求是私有的"
      ],
      "ans": {
       "C": [
-       "确保所有呼叫均位于欧洲范围内",
-       "跨区域推理",
-       "欧洲区域",
-       "文件"
+       "通过 eu.amazon.* 端点使用跨区域推理",
+       "Amazon Bedrock VPC 终端节点"
       ]
      }
     }
@@ -8294,47 +7464,34 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "accuracy",
-      "2 seconds"
+      "complex queries",
+      "reducing semantic dilution"
      ],
      "ans": {
       "B": [
-       "flow that uses a foundation",
-       "FM",
-       "application",
-       "support"
+       "query decomposition"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "精度",
-      "1,000 件",
-      "2 秒"
+      "複雑なクエリに高精度で応答",
+      "セマンティックの希薄化を軽減"
      ],
      "ans": {
       "B": [
-       "アプリケーション",
-       "基盤モデル",
-       "サポート",
-       "フロー"
+       "クエリ分解を有効にします"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "1,000 个",
-      "2 秒"
+      "复杂的查询",
+      "减少语义稀释"
      ],
      "ans": {
       "B": [
-       "支持应用程序",
-       "基础模型"
+       "启用查询分解"
       ]
      }
     }
@@ -8380,39 +7537,36 @@
    "mem": {
     "en": {
      "stem": [
-      "automatically",
-      "human reviewers"
+      "automatically compare outputs from multiple prompt templates",
+      "prevent configurations that do not meet a predefined quality threshold from being deployed"
      ],
      "ans": {
       "B": [
-       "prompt templates change",
-       "custom prompt datasets",
-       "evaluation jobs"
+       "evaluation jobs to compare model outputs by using custom prompt datasets",
+       "deploy the configurations that have quality scores above the specified quality threshold"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動的に"
+      "複数のプロンプト テンプレートからの出力を自動的に比較"
      ],
      "ans": {
       "B": [
-       "プロンプトテンプレート",
-       "データセット",
-       "評価ジョブ",
-       "モデル出力"
+       "評価ジョブを使用して",
+       "指定された品質しきい値を超える品質スコア"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动"
+      "自动比较多个提示模板的输出",
+      "防止部署不符合预定义质量阈值的配置"
      ],
      "ans": {
       "B": [
-       "提示模板更改时运行评估作业",
-       "自定义提示数据集",
-       "比较模型输出"
+       "评估作业通过自定义提示数据集来比较模型输出",
+       "质量分数高于指定质量阈值"
       ]
      }
     }
@@ -8457,35 +7611,34 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "promotional message does not always appear in the responses",
+      "must ensure that the promotional message always appears"
+     ],
      "ans": {
       "D": [
-       "within product recommendations",
-       "Reinforce",
-       "FM",
-       "output indicator"
+       "output indicator in prompts"
       ]
      }
     },
     "ja": {
-     "stem": [],
+     "stem": [
+      "プロモーション メッセージが応答に常に表示されるわけではありません"
+     ],
      "ans": {
       "D": [
-       "新しいプロモーション",
-       "出力インジケーター",
-       "へのプロンプト",
-       "製品推奨事項"
+       "出力インジケーター"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "促销消息并不总是出现在响应中",
+      "确保促销信息始终出现在 FM 响应中"
+     ],
      "ans": {
       "D": [
-       "新促销信息包含",
-       "输出指示器",
-       "产品推荐",
-       "强化"
+       "输出指示器"
       ]
      }
     }
@@ -8531,43 +7684,40 @@
    "mem": {
     "en": {
      "stem": [
-      "audit",
-      "private"
+      "use Microsoft Entra ID to authenticate",
+      "All FM API calls must stay on private network paths",
+      "limited by department to specific model families"
      ],
      "ans": {
       "A": [
-       "allow only the required ModelId values",
-       "PrivateLink interface",
-       "runtime services",
-       "record detailed"
+       "SAML federation between Microsoft Entra ID and IAM",
+       "allow only the required ModelId values"
       ]
      }
     },
     "ja": {
      "stem": [
-      "監査",
-      "プライベート"
+      "認証に Microsoft Entra ID を使用",
+      "プライベート ネットワーク パス上に存在",
+      "部門ごとに特定のモデル ファミリに制限"
      ],
      "ans": {
       "A": [
-       "モデル呼び出しのログ",
-       "モデルの詳細な対話",
-       "インターフェイス",
-       "ランタイム"
+       "SAML フェデレーション",
+       "必要な ModelId 値のみを許可"
       ]
      }
     },
     "zh": {
      "stem": [
-      "审计",
-      "限制"
+      "使用 Microsoft Entra ID 进行身份验证",
+      "所有 FM API 调用都必须位于专用网络路径上",
+      "限制为特定型号系列"
      ],
      "ans": {
       "A": [
-       "模型调用日志记录",
-       "仅允许所需",
-       "运行时服务",
-       "部门特定"
+       "SAML 联合",
+       "仅允许所需 ModelId 值"
       ]
      }
     }
@@ -8613,43 +7763,36 @@
    "mem": {
     "en": {
      "stem": [
-      "accuracy"
+      "specialized terminology in English, French, and German",
+      "minimal custom code development and ongoing maintenance"
      ],
      "ans": {
       "A": [
-       "Apply semantic",
-       "terminology context",
-       "maintain moderate",
-       "section level"
+       "process all documents in their original language without translation",
+       "semantic chunking at the medical section level"
       ]
      }
     },
     "ja": {
      "stem": [
-      "精度",
-      "50,000 件"
+      "英語、フランス語、ドイツ語の専門用語",
+      "最小限のカスタム コード開発"
      ],
      "ans": {
       "A": [
-       "医療用語のコンテキスト",
-       "適度なベクトル次元",
-       "医療セクション",
-       "セマンティック"
+       "翻訳せずに元の言語で処理",
+       "医療セクション レベルでセマンティック チャンキング"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少定制代码开发和持续维护",
-      "准确",
-      "50,000 个"
+      "包含英语、法语和德语的专业术语"
      ],
      "ans": {
       "A": [
-       "医学部分级别应用语义分块",
-       "原始语言处理所有文档",
-       "保留医学术语",
-       "无需翻译"
+       "以原始语言处理所有文档，无需翻译",
+       "在医学部分级别应用语义分块"
       ]
      }
     }
@@ -8698,64 +7841,49 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "real-time",
-      "2 seconds",
-      "800 ms"
+      "abandoned after 2 seconds of waiting for the first token",
+      "p95 latency is under 800 ms"
      ],
      "ans": {
       "A": [
-       "preload upon container startup",
-       "process multiple user",
-       "together",
-       "dynamic"
+       "model preload upon container startup",
+       "dynamic batching"
       ],
       "D": [
-       "response streaming",
-       "greater"
+       "minimum number of instances to greater than 0",
+       "Enable response streaming"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "リアルタイム",
-      "言語",
-      "2 秒",
-      "800 ミリ秒"
+      "最初のトークンを 2 秒待機した後に",
+      "p95 遅延を 800 ミリ秒未満に"
      ],
      "ans": {
       "A": [
-       "コンテナーの起動時",
-       "モデルのプリロード",
-       "複数のユーザー要求",
-       "単一の推論パス"
+       "モデルのプリロードを有効",
+       "動的バッチ処理"
       ],
       "D": [
-       "応答ストリーミング",
-       "より大きい値",
-       "有効"
+       "インスタンスの最小数を 0 より大きい値に設定",
+       "応答ストリーミングを有効"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "实时",
-      "语言",
-      "2 秒",
-      "800 毫秒"
+      "在等待第一个令牌 2 秒后",
+      "p95 延迟低于 800 毫秒"
      ],
      "ans": {
       "A": [
-       "一起处理多个用户请求",
-       "实现动态批处理",
-       "单个推理过程",
-       "容器启动时"
+       "启用模型预加载",
+       "动态批处理"
       ],
       "D": [
-       "响应流",
-       "大于"
+       "将最小实例数设置为大于 0",
+       "启用响应流"
       ]
      }
     }
@@ -8801,53 +7929,40 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "automatically",
-      "without modifying",
-      "roll back",
-      "20%",
-      "1%"
+      "switch between models without modifying or redeploying the application code",
+      "starting with 20% of traffic",
+      "automatically roll back if error rates exceed 1%"
      ],
      "ans": {
       "A": [
-       "AppConfig Agent",
-       "linear deployment strategies",
-       "AppConfig",
-       "feature flags"
+       "AWS AppConfig to create feature flags for model selection criteria",
+       "linear deployment strategies"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "自動的に",
-      "ロールバック",
-      "1%"
+      "アプリケーション コードを変更したり再デプロイしたりすることなく",
+      "トラフィックの20％から始めて",
+      "エラー率が 1% を超えた場合に自動的にロールバック"
      ],
      "ans": {
       "A": [
-       "AppConfig Agent",
-       "モデル選択基準の機能フラグ",
-       "エラー率の検証ルール",
-       "関数の実行時"
+       "AWS AppConfig",
+       "線形展開戦略"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "自动",
-      "无需修改",
-      "回滚",
-      "20%",
-      "1%"
+      "无需修改或重新部署应用程序代码",
+      "从 20% 的流量开始",
+      "错误率超过 1% 时自动回滚"
      ],
      "ans": {
       "A": [
-       "AppConfig Agent",
-       "流量开始逐步发布新模型",
-       "函数运行时检索模型",
-       "模型选择标准"
+       "AWS AppConfig",
+       "线性部署策略"
       ]
      }
     }
@@ -8896,55 +8011,46 @@
    "mem": {
     "en": {
      "stem": [
-      "automatically",
-      "scale"
+      "400 Bad Authorization error from the BedrockAgentRuntime API",
+      "403 Forbidden error when the test attempts to access OpenSearch Serverless"
      ],
      "ans": {
       "A": [
-       "APIAccessAll",
-       "InvokeAgent",
-       "Update",
-       "bedrock"
+       "bedrock:InvokeAgent permission",
+       "aoss:APIAccessAll permission"
       ],
       "B": [
-       "pattern-based resource rules"
+       "data access policy that includes pattern-based resource rules"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動的に"
+      "400",
+      "403"
      ],
      "ans": {
       "A": [
-       "APIAccessAll",
-       "InvokeAgent",
-       "更新",
-       "含め"
+       "bedrock:InvokeAgent 権限",
+       "aoss:APIAccessAll 権限"
       ],
       "B": [
-       "パターンベースのリソース",
-       "ルール",
-       "データ",
-       "含む"
+       "パターンベースのリソース ルール"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动"
+      "400",
+      "403"
      ],
      "ans": {
       "A": [
-       "APIAccessAll",
-       "InvokeAgent",
-       "执行角色添加",
-       "更新"
+       "bedrock:InvokeAgent 权限",
+       "aoss:APIAccessAll 权限"
       ],
       "B": [
-       "包含基于模式",
-       "数据访问策略",
-       "资源规则"
+       "基于模式的资源规则"
       ]
      }
     }
@@ -8990,47 +8096,37 @@
    "mem": {
     "en": {
      "stem": [
-      "sensitive customer",
-      "audit",
-      "harmful"
+      "detect and block SQL injection attempts in natural language prompts",
+      "validate generated SQL queries against predefined schemas"
      ],
      "ans": {
       "B": [
-       "defined schemas and collect audit logs",
        "multi-stage validation pipeline",
-       "Guardrails",
-       "RDS"
+       "RDS Data API to verify queries against defined schemas"
       ]
      }
     },
     "ja": {
      "stem": [
-      "機密性の高い",
-      "監査",
-      "有害",
-      "言語"
+      "SQL インジェクションの試みを検出してブロック",
+      "生成された SQL クエリを事前定義されたスキーマに対して検証"
      ],
      "ans": {
       "B": [
-       "Guardrails",
-       "RDS",
        "多段階検証パイプライン",
-       "定義されたスキーマ"
+       "RDS Data API"
       ]
      }
     },
     "zh": {
      "stem": [
-      "敏感",
-      "有害",
-      "语言"
+      "检测并阻止 SQL 注入尝试",
+      "根据预定义模式验证生成的 SQL 查询"
      ],
      "ans": {
       "B": [
-       "Guardrails",
-       "RDS",
        "多阶段验证管道",
-       "验证查询语法"
+       "RDS 数据 API"
       ]
      }
     }
@@ -9076,51 +8172,37 @@
    "mem": {
     "en": {
      "stem": [
-      "real-time",
-      "automatically",
-      "version",
-      "accurate"
+      "more than 10,000 content sources daily",
+      "real-time collaboration with version control"
      ],
      "ans": {
       "B": [
-       "AppSync GraphQL",
-       "DynamoDCollaborate",
-       "Transcribe",
-       "Textract"
+       "Amazon Transcribe for multimedia files",
+       "AppSync GraphQL subscriptions"
       ]
      }
     },
     "ja": {
      "stem": [
-      "リアルタイム",
-      "自動的に",
-      "バージョン",
-      "正確"
+      "毎日 10,000 を超えるコンテンツ ソース",
+      "バージョン管理によるリアルタイムのコラボレーション"
      ],
      "ans": {
       "B": [
-       "AppSync GraphQL",
-       "DynamoDCollaborate",
-       "処理されたコンテンツ",
-       "バージョニング"
+       "Amazon Transcribe",
+       "AppSync GraphQL サブスクリプション"
       ]
      }
     },
     "zh": {
      "stem": [
-      "实时",
-      "自动",
-      "版本",
-      "准确",
-      "10,000 个",
-      "500 个"
+      "每天必须处理超过 10,000 个内容源",
+      "支持与版本控制的实时协作"
      ],
      "ans": {
       "B": [
-       "AppSync GraphQL",
-       "DynamoDCollaborate",
-       "提取多媒体文件",
-       "元数据实时存储"
+       "Amazon Transcribe",
+       "AppSync GraphQL 订阅"
       ]
      }
     }
@@ -9166,47 +8248,36 @@
    "mem": {
     "en": {
      "stem": [
-      "automatically",
-      "accuracy",
-      "3 weeks"
+      "has 3 weeks to validate",
+      "metrics to evaluate summarization accuracy and processing time"
      ],
      "ans": {
       "A": [
-       "Retrieval Augmented Generation",
-       "RAG",
-       "FMs",
-       "across three"
+       "50-100 anonymized patient records",
+       "judge model to evaluate accuracy metrics across three foundation models"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動的に",
-      "正確",
-      "精度",
-      "3 週間"
+      "3 週間の猶予",
+      "概念実証"
      ],
      "ans": {
       "A": [
-       "RAG",
-       "件の匿名化された患者記録",
-       "わたる精度メトリクス",
-       "含むデータセット"
+       "50 ～ 100 件の匿名化された患者記録",
+       "判定モデルを使用して"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动",
-      "准确",
-      "3 周"
+      "概念验证"
      ],
      "ans": {
       "A": [
-       "RAG",
-       "判断模型评估三个基础模型",
-       "条匿名患者记录",
-       "检索增强生成"
+       "50-100 条匿名患者记录",
+       "使用判断模型评估三个基础模型"
       ]
      }
     }
@@ -9251,32 +8322,38 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "sample prompts for evaluation",
+      "automate report generation and evaluation"
+     ],
      "ans": {
       "B": [
-       "different",
-       "generator"
+       "single JSONL document",
+       "evaluation job that uses a judge model"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動"
+      "評価用のサンプル プロンプト",
+      "レポートの生成と評価を自動化"
      ],
      "ans": {
       "B": [
-       "ジェネレーター"
+       "JSONL ドキュメント",
+       "判定モデルを使用する Amazon Bedrock 評価ジョブ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动"
+      "评估示例提示",
+      "自动生成和评估报告"
      ],
      "ans": {
       "B": [
-       "生成器",
-       "不同"
+       "JSONL 文档",
+       "使用判断模型的 Amazon Bedrock 评估作业"
       ]
      }
     }
@@ -9322,48 +8399,40 @@
    "mem": {
     "en": {
      "stem": [
-      "regulatory",
-      "4 MB",
-      "20 seconds",
-      "10 seconds"
+      "typically exceed 4 MB and require 15-20 seconds to complete",
+      "respond to customer inquiries in less than 10 seconds",
+      "retain records for 10 years"
      ],
      "ans": {
       "D": [
-       "S3",
-       "complete",
-       "records"
+       "response streaming to display partial responses",
+       "Store complete response records in Amazon S3"
       ]
      }
     },
     "ja": {
      "stem": [
-      "規制",
-      "言語",
-      "4 MB",
-      "20 秒",
-      "10 秒",
-      "MB"
+      "4 MB を超え、完了までに 15 ～ 20 秒かかる",
+      "10 秒以内に応答",
+      "記録を 10 年間保持"
      ],
      "ans": {
       "D": [
-       "完全な応答レコード",
-       "保存"
+       "応答ストリーミング",
+       "完全な応答レコードを Amazon S3 に保存"
       ]
      }
     },
     "zh": {
      "stem": [
-      "监管",
-      "语言",
-      "4 MB",
-      "20 秒",
-      "10 秒",
-      "MB"
+      "通常超过 4 MB，并且需要 15-20 秒才能完成",
+      "在 10 秒内响应客户询问",
+      "保留记录 10 年"
      ],
      "ans": {
       "D": [
-       "响应记录存储",
-       "完整"
+       "响应流",
+       "将完整的响应记录存储在 Amazon S3 中"
       ]
      }
     }
@@ -9412,66 +8481,44 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "audit",
-      "version",
-      "consistency"
+      "version control solution for the prompts",
+      "compare variants of each prompt"
      ],
      "ans": {
       "A": [
-       "Management",
-       "parameterized variables",
-       "versioned"
+       "Prompt Management to create versioned prompts"
       ],
       "C": [
-       "workflows that combine FMs",
-       "Flows",
-       "services"
+       "Amazon Bedrock Flows to create workflows"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用上のオーバーヘッド",
-      "監査",
-      "バージョン",
-      "一貫"
+      "プロンプトのバージョン管理ソリューション",
+      "各プロンプトのバリアントを比較"
      ],
      "ans": {
       "A": [
-       "パラメータ化された変数",
-       "プロンプト管理",
-       "ユースケースご",
-       "作成"
+       "Prompt Management",
+       "バージョン管理されたプロンプトを作成"
       ],
       "C": [
-       "Flows",
-       "組み合わせたワークフロー",
-       "作成"
+       "Amazon Bedrock Flows"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "审计",
-      "版本",
-      "一致"
+      "提示的版本控制解决方案",
+      "比较每个提示的变体"
      ],
      "ans": {
       "A": [
-       "Management",
-       "包括每个用例",
-       "版本化提示",
-       "参数化变量"
+       "Prompt Management"
       ],
       "C": [
-       "Flows",
-       "工作流程",
-       "结合",
-       "服务"
+       "Amazon Bedrock Flows"
       ]
      }
     }
@@ -9517,41 +8564,40 @@
    "mem": {
     "en": {
      "stem": [
-      "alerts"
+      "does not refresh expired secrets in time",
+      "agents still use stale data",
+      "Prompt flows within the application reuse outdated templates"
      ],
      "ans": {
       "A": [
-       "Step Functions Map states",
-       "Pass updated secret",
-       "roll back faulty templates",
-       "AWS AppConfig"
+       "Pass updated secret metadata through Lambda function outputs",
+       "AppConfig to version all prompt flows to gate and roll back faulty templates"
       ]
      }
     },
     "ja": {
      "stem": [
-      "アラート"
+      "期限切れのシークレットを更新しません",
+      "エージェントは依然として古いデータを使用",
+      "プロンプト フローは古いテンプレートを再利用"
      ],
      "ans": {
       "A": [
-       "AWS AppConfig",
-       "ゲートおよびロールバック",
-       "欠陥のあるテンプレート",
-       "べてのプロンプト"
+       "更新されたシークレットメタデータを Lambda 関数出力を通じて渡します",
+       "プロンプト フローをバージョン管理し"
       ]
      }
     },
     "zh": {
      "stem": [
-      "偏差",
-      "警报"
+      "没有及时刷新过期的机密",
+      "代理仍然使用过时的数据",
+      "提示流重复使用过时的模板"
      ],
      "ans": {
       "A": [
-       "AWS AppConfig",
-       "行运行代理工作流",
-       "函数输出传递更新",
-       "回滚错误模板"
+       "通过 Lambda 函数输出传递更新的秘密元数据",
+       "对所有提示流进行版本控制"
       ]
      }
     }
@@ -9597,45 +8643,37 @@
    "mem": {
     "en": {
      "stem": [
-      "consistently",
-      "40%"
+      "must use built-in Amazon Bedrock capabilities and must not require custom instrumentation",
+      "end-to-end visibility into agent interactions and tool behavior"
      ],
      "ans": {
       "A": [
-       "capture distributed traces",
-       "latency during peak",
-       "X-Ray",
-       "collection"
+       "Enable AgentCore Observability and trace collection",
+       "AWS X-Ray to capture distributed traces"
       ]
      }
     },
     "ja": {
      "stem": [
-      "一貫",
-      "10,000 件",
-      "40%"
+      "カスタム インストルメンテーションを必要としない",
+      "エンドツーエンドで可視化"
      ],
      "ans": {
       "A": [
-       "X-Ray",
-       "レイテンシのメトリクス",
-       "ツールの分散トレース",
-       "量のピーク時のエラー"
+       "AgentCore Observability とトレース収集を有効",
+       "AWS X-Ray"
       ]
      }
     },
     "zh": {
      "stem": [
-      "一致",
-      "10,000 个",
-      "40%"
+      "不得需要自定义仪器",
+      "提供端到端可见性"
      ],
      "ans": {
       "A": [
-       "X-Ray",
-       "捕获自定义工具",
-       "分布式跟踪",
-       "可视化高峰"
+       "启用 AgentCore 可观察性和跟踪收集",
+       "AWS X-Ray"
       ]
      }
     }
@@ -9683,53 +8721,47 @@
    },
    "mem": {
     "en": {
-     "stem": [],
+     "stem": [
+      "failing with context length exceeded errors",
+      "ignore portions of the input data"
+     ],
      "ans": {
       "A": [
-       "individual responses into comprehensive recommendations",
-       "process each segment separately",
-       "Invoke",
-       "chunking strategy"
+       "chunking strategy that divides the customer data into smaller segments",
+       "synthesize the individual responses"
       ],
       "E": [
-       "Retrieve",
-       "RAG",
-       "semantically relevant",
-       "vector embeddings"
+       "Retrieve only the most semantically relevant information"
       ]
      }
     },
     "ja": {
-     "stem": [],
+     "stem": [
+      "コンテキスト長超過エラーで失敗",
+      "入力データの一部が無視されている"
+     ],
      "ans": {
       "A": [
-       "より小さなセグメント",
        "チャンキング戦略",
-       "各セグメント",
-       "顧客データ"
+       "個々の応答を総合的な推奨事項に統合"
       ],
       "E": [
-       "RAG",
-       "最も関連性の高い情報のみ",
-       "顧客のコンテキスト",
-       "ベクトル埋め込み"
+       "意味的に最も関連性の高い情報のみを取得"
       ]
      }
     },
     "zh": {
-     "stem": [],
+     "stem": [
+      "因上下文长度超出错误而失败",
+      "忽略了部分输入数据"
+     ],
      "ans": {
       "A": [
-       "最后一次调用模型",
-       "单独处理每个段",
-       "个人响应综合",
-       "客户数据分"
+       "分块策略",
+       "将个人响应综合为综合建议"
       ],
       "E": [
-       "RAG",
-       "仅检索每个推荐请求",
-       "根据当前客户",
-       "向量嵌入"
+       "仅检索每个推荐请求在语义上最相关的信息"
       ]
      }
     }
@@ -9775,42 +8807,37 @@
    "mem": {
     "en": {
      "stem": [
-      "minimal latency"
+      "Simple routing based on file extension must have minimal latency",
+      "Complex routing based on content semantics requires analysis before FM selection"
      ],
      "ans": {
       "B": [
-       "Handle complex content-based",
-       "InvokeModel API",
-       "Handle simple",
-       "JSONata"
+       "hybrid solution",
+       "Step Functions state machine with JSONata"
       ]
      }
     },
     "ja": {
      "stem": [
-      "遅延",
-      "拡張"
+      "ファイル拡張子に基づく単純なルーティングでは、遅延を最小限に抑える",
+      "コンテンツのセマンティクスに基づく複雑なルーティング"
      ],
      "ans": {
       "B": [
-       "InvokeModel API",
-       "JSONata",
-       "基づいて単純なルーティング",
-       "コード内のファイル拡張子"
+       "ハイブリッド ソリューション",
+       "JSONata"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "扩展"
+      "基于文件扩展名的简单路由必须具有最小的延迟",
+      "基于内容语义的复杂路由"
      ],
      "ans": {
       "B": [
-       "InvokeModel API",
-       "JSONata",
-       "文件扩展名处理简单路由",
-       "根据应用程序代码"
+       "混合解决方案",
+       "JSONata"
       ]
      }
     }
@@ -9856,47 +8883,36 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational complexity",
-      "version",
-      "versions",
-      "consistent"
+      "detect semantic drift in responses",
+      "compare responses between current and new FM versions for 500 test cases"
      ],
      "ans": {
       "C": [
-       "evaluation jobs",
-       "evaluation",
-       "comparison",
-       "compare"
+       "model evaluation jobs to compare the new FM version against the current version",
+       "semantic similarity metrics"
       ]
      }
     },
     "ja": {
      "stem": [
-      "バージョン",
-      "一貫"
+      "応答内のセマンティック ドリフトを検出",
+      "500 のテスト ケース"
      ],
      "ans": {
       "C": [
        "モデル評価ジョブ",
-       "テストケース",
-       "履歴比較",
-       "構成"
+       "セマンティック類似性メトリック"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最低的操作复杂",
-      "版本",
-      "一致",
-      "500 个"
+      "500 个测试用例"
      ],
      "ans": {
       "C": [
-       "计算语义相似度度量",
        "模型评估作业",
-       "个测试用例",
-       "当前版本"
+       "语义相似度度量"
       ]
      }
     }
@@ -9942,49 +8958,38 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "real time",
-      "costs",
-      "scale"
+      "confidence score below 0.65",
+      "process low-confidence requests asynchronously",
+      "use decoupled components"
      ],
      "ans": {
       "C": [
-       "second SQS queue",
-       "SQS queue",
-       "Fargate",
-       "process asynchronously"
+       "Send requests to an Amazon SQS queue",
+       "place the request in a second SQS queue to process asynchronously"
       ]
      }
     },
     "ja": {
      "stem": [
-      "低遅延",
-      "リアルタイム",
-      "コスト",
-      "拡張"
+      "信頼スコアが 0.65 未満",
+      "信頼性の低いリクエストを非同期に処理"
      ],
      "ans": {
       "C": [
-       "Fargate",
-       "小さいモデル",
-       "メッセージ",
-       "キュー"
+       "Amazon SQS キューに送信",
+       "2 番目の SQS キューに配置"
       ]
      }
     },
     "zh": {
      "stem": [
-      "低延迟",
-      "实时",
-      "成本",
-      "扩展"
+      "置信度得分低于 0.65",
+      "异步处理低置信度请求"
      ],
      "ans": {
       "C": [
-       "Fargate",
-       "如果置信度得分低于",
-       "首先调用小模型",
-       "请求放入第二个"
+       "Amazon SQS 队列",
+       "第二个 SQS 队列"
       ]
      }
     }
@@ -10030,48 +9035,38 @@
    "mem": {
     "en": {
      "stem": [
-      "real time",
-      "human review",
-      "harmful"
+      "block harmful prompts before model invocations",
+      "filter streamed model outputs in real time",
+      "route flagged cases for human review"
      ],
      "ans": {
       "A": [
-       "SQS queue",
-       "GuardrailIdentifier",
-       "Enforce",
-       "Route"
+       "InvokeModelWithResponseStream API step that has the guardrail attached",
+       "Route flagged items to an Amazon SQS queue"
       ]
      }
     },
     "ja": {
      "stem": [
-      "リアルタイム",
-      "ストリーミング",
-      "人間によるレビュー",
-      "有害"
+      "モデルの呼び出し前に有害なプロンプトをブロック",
+      "ストリーミングされたモデル出力をリアルタイムでフィルタリング"
      ],
      "ans": {
       "A": [
-       "GuardrailIdentifier",
-       "設定されたアイテム",
-       "アタッチされた",
-       "関数ステップ"
+       "ApplyGuardrail API",
+       "SQS キューにルーティング"
       ]
      }
     },
     "zh": {
      "stem": [
-      "实时",
-      "流式",
-      "人工审核",
-      "有害"
+      "在模型调用之前阻止有害提示",
+      "实时过滤流式模型输出"
      ],
      "ans": {
       "A": [
-       "GuardrailIdentifier",
-       "预先检查输入",
-       "事后检查输出",
-       "附加了护栏"
+       "ApplyGuardrail API",
+       "SQS 队列"
       ]
      }
     }
@@ -10117,46 +9112,32 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational effort",
-      "personally identifiable information",
-      "PII"
+      "must mask PII from foundation model (FM) responses"
      ],
      "ans": {
       "A": [
-       "FM response",
-       "Bedrock",
-       "Define",
-       "guardrail action"
+       "set the guardrail action to MASK",
+       "apply the filter to each FM response"
       ]
      }
     },
     "ja": {
      "stem": [
-      "最小限の運用労力",
-      "個人を特定できる情報",
-      "PII"
+      "FM) 応答から PII をマスク"
      ],
      "ans": {
       "A": [
-       "Bedrock",
-       "フィルタリング",
-       "ガードレール",
-       "コンテンツ"
+       "ガードレール アクションを MASK に設定"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的操作工作量",
-      "个人身份信息",
-      "PII"
+      "从基础模型 (FM) 响应中隐藏 PII"
      ],
      "ans": {
       "A": [
-       "Bedrock",
-       "护栏操作",
-       "过滤器应",
-       "内容"
+       "将Guardrails操作设置为 MASK"
       ]
      }
     }
@@ -10202,42 +9183,37 @@
    "mem": {
     "en": {
      "stem": [
-      "hallucinations",
-      "consistencies"
+      "fabricates medical treatment recommendations that do not originate from the approved clinical guidelines",
+      "identify semantic inconsistencies when users ask similar questions in different ways"
      ],
      "ans": {
       "B": [
-       "Im- plement output diffing",
-       "validated question-answer pairs",
-       "consistency analysis",
-       "reference"
+       "reference dataset with validated question-answer pairs from clinical guidelines",
+       "output diffing"
       ]
      }
     },
     "ja": {
      "stem": [
-      "幻覚"
+      "承認された臨床ガイドラインに由来しない医療推奨事項を捏造",
+      "意味上の矛盾を特定"
      ],
      "ans": {
       "B": [
-       "含む参照データセット",
-       "応答の一貫性分析",
-       "検証済みの質問",
-       "回答のペア"
+       "検証済みの質問と回答のペアを含む参照データセット",
+       "出力の差分を実装"
       ]
      }
     },
     "zh": {
      "stem": [
-      "幻觉",
-      "一致"
+      "编造并非源自已批准的临床指南的医疗建议",
+      "识别语义不一致的情况"
      ],
      "ans": {
       "B": [
-       "响应一致性分析",
-       "实现输出差异",
-       "检测事实错误",
-       "参考数据集"
+       "经过验证的问答对创建参考数据集",
+       "实现输出差异"
       ]
      }
     }
@@ -10283,49 +9259,37 @@
    "mem": {
     "en": {
      "stem": [
-      "alerts",
-      "scale",
-      "6 months"
+      "more than 500 golden examples by using semantic similarity scoring",
+      "scale to more than 2,000 test cases within 6 months without the need to make architecture changes"
      ],
      "ans": {
       "B": [
-       "Pub- lish custom",
-       "generate metric visualizations",
-       "against ex- pected",
-       "EventBridge"
+       "EventBridge scheduled rules to run the test executions",
+       "custom metrics to Amazon CloudWatch to generate metric visualizations"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動",
-      "アラート",
-      "拡張",
-      "6 か月"
+      "500 を超えるゴールデン サンプルと比較",
+      "2,000 を超えるテスト ケースに拡張"
      ],
      "ans": {
       "B": [
-       "EventBridge",
-       "スケジュールされたルール",
-       "カスタムメトリクス",
-       "メトリクスの視覚化"
+       "EventBridge のスケジュールされたルール",
+       "カスタムメトリクスを Amazon CloudWatch に発行"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动",
-      "无需进行架构更改",
-      "警报",
-      "扩展",
-      "6 个月"
+      "与 500 多个黄金示例进行比较",
+      "扩展到 2,000 多个测试用例"
      ],
      "ans": {
       "B": [
-       "EventBridge",
-       "自定义指标发布",
-       "生成指标可视化",
-       "运行测试执行"
+       "EventBridge 计划规则",
+       "将自定义指标发布到 Amazon CloudWatch"
       ]
      }
     }
@@ -10371,65 +9335,38 @@
    "mem": {
     "en": {
      "stem": [
-      "cost-effective",
-      "regulatory",
-      "compliance",
-      "auditable",
-      "automatically",
-      "versions",
-      "version",
-      "multilingual",
-      "languages",
-      "accuracy"
+      "zero-touch promotion workflow",
+      "improve accuracy in all five languages",
+      "lower variance across similar queries"
      ],
      "ans": {
       "C": [
-       "existing CI/CD pipeline",
-       "Bedrock Evaluations",
-       "LLM-based judges",
-       "B testing"
+       "Prompt Management to implement prompt version control",
+       "Evaluations and LLM-based judges"
       ]
      }
     },
     "ja": {
      "stem": [
-      "コスト効率",
-      "規制",
-      "監査",
-      "自動的に",
-      "バージョン",
-      "多言語",
-      "言語",
-      "精度",
-      "コスト"
+      "ゼロタッチ プロモーション ワークフロー",
+      "5 つの言語すべての精度が向上"
      ],
      "ans": {
       "C": [
-       "一貫性のメトリクスの自動評価",
-       "ベースのジャッジ",
-       "プロンプト管理",
-       "パイプライン"
+       "Prompt Management",
+       "LLM ベースのジャッジ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "成本效益",
-      "监管",
-      "合规",
-      "自动",
-      "版本",
-      "多语言",
-      "语言",
-      "准确",
-      "成本"
+      "零接触推广工作流程",
+      "所有五种语言的准确性"
      ],
      "ans": {
       "C": [
-       "一致性指标执行自动评估",
-       "简化跨语言测试",
-       "提示执行",
-       "管道集成"
+       "Prompt Management",
+       "基于 LLM 的法官"
       ]
      }
     }
@@ -10475,50 +9412,36 @@
    "mem": {
     "en": {
      "stem": [
-      "real time",
-      "compliance",
-      "regulated",
-      "audit"
+      "write- once, tamper-evident storage that is suitable for regulated audit reten- tion",
+      "collect explicit user ratings and detect problematic responses in real time"
      ],
      "ans": {
       "C": [
-       "check post- generation fact consistency",
-       "Lambda function",
-       "Model Monitor",
-       "Write audit"
+       "Enable S3 Object Lock",
+       "split traffic for A/B testing"
       ]
      }
     },
     "ja": {
      "stem": [
-      "リアルタイム",
-      "コンプライアンス",
-      "規制",
-      "監査",
-      "追跡"
+      "明示的なユーザー評価を収集"
      ],
      "ans": {
       "C": [
-       "Model Monitor",
-       "生成後のファクトの一貫性",
-       "通じて監査ログ",
-       "データドリフト"
+       "S3 オブジェクト ロックを有効",
+       "A/B テスト用にトラフィックを分割"
       ]
      }
     },
     "zh": {
      "stem": [
-      "实时",
-      "合规",
-      "监管",
-      "审计"
+      "收集明确的用户评分并实时检测有问题的响应",
+      "一次写入、防篡改的存储"
      ],
      "ans": {
       "C": [
-       "Model Monitor",
-       "测试流量拆分功能",
-       "持续跟踪数据漂移",
-       "用户反馈存储"
+       "启用 S3 对象锁定",
+       "A/B 测试流量拆分"
       ]
      }
     }
@@ -10564,38 +9487,37 @@
    "mem": {
     "en": {
      "stem": [
-      "latency"
+      "millions of product embeddings that are updated hourly",
+      "high latency and occasional fail- ures when the system performs similarity searches"
      ],
      "ans": {
       "A": [
-       "surge capacity during peak usage events",
-       "Establish dedicated",
-       "OpenSearch Service",
-       "memory circuit breakers"
+       "OpenSearch Service with a multi-node architecture",
+       "dedicated vector operation queues"
       ]
      }
     },
     "ja": {
-     "stem": [],
+     "stem": [
+      "毎時間更新される何百万もの製品埋め込み",
+      "待ち時間が長くなり、場合によっては障害が発生"
+     ],
      "ans": {
       "A": [
-       "OpenSearch Service",
-       "専用のベクトル操作キュー",
-       "量のピーク時のサージ容量",
-       "アーキテクチャ"
+       "マルチノード アーキテクチャ",
+       "専用のベクトル操作キュー"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟"
+      "数百万个每小时更新的产品嵌入",
+      "高延迟和偶尔失败"
      ],
      "ans": {
       "A": [
-       "OpenSearch Service",
-       "建立专用矢量操作队列",
        "多节点架构",
-       "特定于向量"
+       "专用矢量操作队列"
       ]
      }
     }
@@ -10641,43 +9563,34 @@
    "mem": {
     "en": {
      "stem": [
-      "sensitive patient",
-      "audit"
+      "track all prompt- completion pairs with original patient data, but the company must redact any PHI from stored records"
      ],
      "ans": {
       "B": [
-       "Prompt Management",
-       "Con- figure",
-       "Guardrails",
-       "Flows"
+       "sensitive information filters to mask PHI",
+       "Store logs in Amazon S3 and configure appropriate retention settings"
       ]
      }
     },
     "ja": {
      "stem": [
-      "機密",
-      "監査",
-      "追跡"
+      "保管されている記録から PHI を編集"
      ],
      "ans": {
       "B": [
-       "Prompt Management",
-       "Guardrails",
-       "機密情報フィルター",
-       "適切な保持設定"
+       "機密情報フィルターを使用して PHI を自動的にマスク",
+       "適切な保持設定を構成"
       ]
      }
     },
     "zh": {
      "stem": [
-      "敏感"
+      "从存储的记录中编辑任何 PHI"
      ],
      "ans": {
       "B": [
-       "Prompt Management",
-       "Guardrails",
-       "敏感信息过滤器自动屏蔽",
-       "日志存储"
+       "敏感信息过滤器自动屏蔽 PHI",
+       "配置适当的保留设置"
       ]
      }
     }
@@ -10723,56 +9636,36 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "personally identifiable information",
-      "PII",
-      "regulatory",
-      "regulations",
-      "consistent",
-      "consistencies"
+      "inconsistent model performance because of poor data quality",
+      "formatting inconsistencies that confuse the FMs"
      ],
      "ans": {
       "C": [
-       "Bedrock Guardrails",
-       "few-shot prompting techniques",
-       "standardized examples",
-       "performance across"
+       "filter out PII during inference",
+       "few-shot prompting techniques"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "個人を特定できる情報",
-      "PII",
-      "規制",
-      "一貫"
+      "データ品質が低いため、モデルのパフォーマンスに一貫性がない",
+      "FM を混乱させる書式の不一致"
      ],
      "ans": {
       "C": [
-       "Bedrock Guardrails",
-       "モデルのパフォーマンス",
-       "ドキュメントの書式",
-       "フィルタリング"
+       "推論中に PII をフィルタリング",
+       "数ショット プロンプト手法"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "个人身份信息",
-      "PII",
-      "监管",
-      "法规",
-      "一致"
+      "由于数据质量差，该公司面临模型性能不一致的问题",
+      "格式不一致的情况，令 FM 感到困惑"
      ],
      "ans": {
       "C": [
-       "Bedrock Guardrails",
-       "标准化文档格式",
-       "提高跨文档类型",
+       "在推理过程中过滤掉 PII",
        "少量提示技术"
       ]
      }
@@ -10819,49 +9712,40 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "audit"
+      "perform actions on behalf of specific users",
+      "preserving user identity context",
+      "expand to more than 40 AWS accounts"
      ],
      "ans": {
       "A": [
-       "AssumeRole calls include session tags",
-       "dynamically obtain temporary credentials so",
-       "AssumeRole op- erations",
-       "outbound credential provider"
+       "outbound credential provider that runs AssumeRole op- erations",
+       "session tags to identify the end user"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "監査",
-      "50,000 件"
+      "特定のユーザーに代わってアクションを実行",
+      "ユーザー ID コンテキストを維持しながら",
+      "40 を超える AWS アカウントに拡大"
      ],
      "ans": {
       "A": [
-       "オペレーション",
-       "含まれているこ",
-       "一時資格情報",
-       "アカウント間"
+       "AssumeRole オペレーションを実行するアウトバウンド資格情報プロバイダー",
+       "セッション タグ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "审计",
-      "扩展",
-      "25 个",
-      "50,000 次"
+      "代表特定用户执行操作",
+      "保留用户身份上下文",
+      "扩展到 40 多个 AWS 账户"
      ],
      "ans": {
       "A": [
-       "出站凭据提供程序",
-       "动态获取临时凭据",
-       "权限具有信任关系",
-       "调用包含会话标记"
+       "运行 AssumeRole 操作的出站凭据提供程序",
+       "会话标记以识别最终用户"
       ]
      }
     }
@@ -10907,62 +9791,35 @@
    "mem": {
     "en": {
      "stem": [
-      "PII",
-      "regulations",
-      "audits",
-      "accuracy",
-      "500 ms",
-      "99%",
-      "95%",
-      "5%"
+      "include patient names and medical record numbers that were not present in the original case history inputs",
+      "contin- ues to generate patient-identifying information in approximately 3-5% of outputs"
      ],
      "ans": {
       "A": [
-       "guardrails with sensitive",
-       "filters",
-       "outputs"
+       "guardrails with sensitive information filters to detect and block PII in model outputs"
       ]
      }
     },
     "ja": {
      "stem": [
-      "リアルタイム",
-      "個人を特定できる情報",
-      "PII",
-      "規制",
-      "監査",
-      "精度",
-      "500 ミリ秒",
-      "99%",
-      "95%",
-      "5%"
+      "元の病歴入力には存在しなかった患者名や医療記録番号",
+      "出力の約 3 ～ 5% で患者を識別する情報を生成し続けます"
      ],
      "ans": {
       "A": [
        "機密情報フィルター",
-       "ガードレール",
-       "モデル出力内",
-       "ブロック"
+       "モデル出力内の PII を検出してブロック"
       ]
      }
     },
     "zh": {
      "stem": [
-      "实时",
-      "个人身份信息",
-      "PII",
-      "法规",
-      "准确",
-      "500 毫秒",
-      "99%",
-      "95%",
-      "5%"
+      "包含原始病史输入中不存在的患者姓名和病历编号",
+      "继续在大约 3-5% 的输出中生成患者识别信息"
      ],
      "ans": {
       "A": [
-       "敏感信息过滤器",
-       "阻止模型输出",
-       "护栏"
+       "敏感信息过滤器"
       ]
      }
     }
@@ -11008,40 +9865,37 @@
    "mem": {
     "en": {
      "stem": [
-      "inappropriate",
-      "accurate",
-      "accurately",
-      "1 second"
+      "historically inaccurate, violent, and not appropriate for children",
+      "temperature to 0.7"
      ],
      "ans": {
       "B": [
-       "responses"
+       "guardrails for the model responses by using content filters",
+       "Reduce the inference temperature"
       ]
      }
     },
     "ja": {
      "stem": [
-      "不適切",
-      "正確",
-      "30 人",
-      "1 秒"
+      "歴史的に不正確で、暴力的で、子供にとって不適切な反応",
+      "即時応答温度を0.7に設定"
      ],
      "ans": {
       "B": [
-       "モデル応答用"
+       "モデル応答用の Amazon Bedrock ガードレール",
+       "推論温度を下げます"
       ]
      }
     },
     "zh": {
      "stem": [
-      "不恰当",
-      "准确",
-      "30 名",
-      "1 秒"
+      "历史上不准确、暴力且不适合儿童的响应",
+      "温度设定为0.7"
      ],
      "ans": {
       "B": [
-       "模型响应"
+       "为模型响应配置 Amazon Bedrock Guardrails",
+       "降低流程中的推理温度"
       ]
      }
     }
@@ -11087,46 +9941,37 @@
    "mem": {
     "en": {
      "stem": [
-      "latency",
-      "3 seconds"
+      "highly relevant precedents frequently appear in positions 15-40",
+      "allows effective processing for only 10 documents for each query"
      ],
      "ans": {
       "B": [
-       "evaluate query-document pairs",
-       "language-specific configurations",
-       "cross-encoder architecture",
-       "initially retrieve"
+       "Enable reranking on the knowledge base",
+       "Return only the top 10 highest-scored documents"
       ]
      }
     },
     "ja": {
      "stem": [
-      "レイテンシ",
-      "3 秒"
+      "関連性の高い判例が結果の 15 ～ 40 位に頻繁に現れる",
+      "10 ドキュメントのみを効果的に処理できる"
      ],
      "ans": {
       "B": [
-       "個のドキュメントのみ",
-       "ドキュメントのペア",
-       "備えたリランカー",
-       "スコアの最も高い"
+       "再ランキングを有効にします",
+       "スコアの最も高い上位 10 個のドキュメントのみを返します"
       ]
      }
     },
     "zh": {
      "stem": [
-      "延迟",
-      "限制",
-      "3 秒",
-      "10 个",
-      "50 个"
+      "高度相关的先例经常出现在结果的第 15-40 位中",
+      "每次查询只能有效处理 10 个文档"
      ],
      "ans": {
       "B": [
-       "具有特定于语言",
-       "交叉编码器架构",
-       "评估查询-文档",
-       "仅返回得分最高"
+       "重新排序",
+       "仅返回得分最高的前 10 个文档"
       ]
      }
     }
@@ -11172,52 +10017,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "latency",
-      "consistent",
-      "scale",
-      "100 ms"
+      "store patient data on premises within each country",
+      "sub-100 ms inference at clinics"
      ],
      "ans": {
       "D": [
-       "Wavelength",
-       "Outposts",
-       "sensitive",
-       "real-time"
+       "AWS Outposts to process and store sensitive on-premises patient data",
+       "AWS Wavelength at remote clinics"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "低遅延",
-      "一貫",
-      "100 ミリ秒"
+      "患者データを各国内の施設に保管",
+      "100 ミリ秒未満の推論を実現"
      ],
      "ans": {
       "D": [
-       "Wavelength",
-       "Outposts",
-       "機密のオンプレミス患者データ",
-       "リアルタイム推論"
+       "AWS Outposts",
+       "AWS Wavelength"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "低延迟",
-      "一致",
-      "100 毫秒"
+      "在每个国家/地区的场所存储患者数据",
+      "低于 100 毫秒的推理"
      ],
      "ans": {
       "D": [
-       "Wavelength",
-       "Outposts",
-       "有数据驻留要求",
-       "国家/地区处理"
+       "AWS Outposts",
+       "AWS Wavelength"
       ]
      }
     }
@@ -11263,48 +10093,38 @@
    "mem": {
     "en": {
      "stem": [
-      "automatically",
-      "10%",
-      "15 minutes"
+      "error rates exceed 10% within any 60-second window",
+      "switch to an alternate process path",
+      "automatically resume normal Amazon Bedrock processing"
      ],
      "ans": {
       "A": [
-       "circuit breaker pattern by tracking",
-       "jobs between normal",
-       "DynamoDB",
-       "invocation failures"
+       "circuit breaker pattern by tracking Amazon Bedrock invocation failures in Amazon DynamoDB",
+       "route processing jobs between normal and alternate processing paths"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動的に",
-      "60 秒",
-      "10%",
-      "15 分"
+      "60 秒以内にエラー率が 10% を超えた場合",
+      "代替プロセス パスに切り替える"
      ],
      "ans": {
       "A": [
-       "DynamoDB",
-       "代替処理パスの間",
-       "呼び出しの失敗",
-       "通常の処理パス"
+       "サーキット ブレーカー パターン",
+       "通常の処理パスと代替処理パスの間で処理ジョブをルーティング"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动",
-      "60 秒",
-      "10%",
-      "15 分"
+      "任何 60 秒窗口内错误率何时超过 10%",
+      "切换到备用进程路径"
      ],
      "ans": {
       "A": [
-       "DynamoDB",
-       "备用处理路径之间路由处理作业",
-       "根据当前故障状态",
-       "正常处理路径"
+       "断路器模式",
+       "在正常处理路径和备用处理路径之间路由处理作业"
       ]
      }
     }
@@ -11350,46 +10170,37 @@
    "mem": {
     "en": {
      "stem": [
-      "automatically",
-      "metadata",
-      "10,000 hours"
+      "synchronize all metadata types with one another",
+      "jump directly to a specific moment in each video"
      ],
      "ans": {
       "B": [
-       "JSON structure",
-       "time markers enabled",
-       "frame-transcript pairs",
-       "attaches timestamps"
+       "Amazon Transcribe with time markers enabled",
+       "unified JSON structure that preserves temporal relationships"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動的に",
-      "メタデータ",
-      "10,000 時間"
+      "すべてのメタデータ タイプを相互に同期",
+      "各ビデオの特定の瞬間に直接ジャンプ"
      ],
      "ans": {
       "B": [
-       "タイムスタンプ",
-       "タイムマーカー",
-       "一定の間隔",
-       "転写のペア"
+       "タイムマーカーを有効にして Amazon Transcribe",
+       "統合された JSON 構造"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动",
-      "元数据",
-      "10,000 小时"
+      "使所有元数据类型彼此同步",
+      "直接跳转到每个视频中的特定时刻"
      ],
      "ans": {
       "B": [
-       "固定间隔提取视频帧",
-       "保留时间关系",
-       "附加时间戳",
-       "了时间标记"
+       "启用了时间标记的 Amazon Transcribe",
+       "统一 JSON 结构"
       ]
      }
     }
@@ -11435,43 +10246,37 @@
    "mem": {
     "en": {
      "stem": [
-      "personally identifiable information",
-      "PII"
+      "strict control over PII data",
+      "FM accesses only necessary data fields",
+      "secure cross-account access"
      ],
      "ans": {
       "C": [
-       "SageMaker AI",
-       "Register",
-       "have permissions",
-       "permissions"
+       "Lake Formation tag-based access controls",
+       "allow access only to specific data columns"
       ]
      }
     },
     "ja": {
      "stem": [
-      "個人を特定できる情報",
-      "PII"
+      "PII データを厳密に管理"
      ],
      "ans": {
       "C": [
-       "SageMaker AI",
-       "きるアカウント",
-       "セットアップ",
-       "持つ各ソース"
+       "Lake Formation タグベースのアクセス制御",
+       "特定のデータ列へのアクセスのみを許可"
       ]
      }
     },
     "zh": {
      "stem": [
-      "个人身份信息",
-      "PII"
+      "严格控制 PII 数据",
+      "FM 仅访问必要的数据字段"
      ],
      "ans": {
       "C": [
-       "SageMaker AI",
-       "仅允许访问特定数据列",
-       "每个有权访问特定",
-       "具有执行角色"
+       "基于标记的访问控制",
+       "仅允许访问特定数据列"
       ]
      }
     }
@@ -11517,48 +10322,37 @@
    "mem": {
     "en": {
      "stem": [
-      "LEAST operational overhead",
-      "operational overhead",
-      "real time"
+      "human-in-the-loop approval step before the optimization process is finished",
+      "support modular growth"
      ],
      "ans": {
       "B": [
-       "facilitate inter-agent messaging",
-       "Strands",
-       "Build",
-       "SDK"
+       "Strands Agents SDK and Amazon Bedrock AgentCore",
+       "Step Functions to implement a human-in-the-loop approval step"
       ]
      }
     },
     "ja": {
      "stem": [
-      "運用オーバーヘッド",
-      "リアルタイム",
-      "自動",
-      "拡張"
+      "人間参加型の承認ステップを含める",
+      "モジュールの拡張をサポート"
      ],
      "ans": {
       "B": [
-       "Strands",
-       "SDK",
-       "人間参加型の承認ステップ",
-       "複数の専門エージェント"
+       "Strands Agents SDK と Amazon Bedrock AgentCore",
+       "MCP を使用して"
       ]
      }
     },
     "zh": {
      "stem": [
-      "最少的运营开销",
-      "运营开销",
-      "实时",
-      "自动"
+      "人机交互审批步骤",
+      "支持模块化增长"
      ],
      "ans": {
       "B": [
-       "Strands",
-       "SDK",
-       "任务委托给多个专门代理",
-       "促进代理间消息传递"
+       "Strands Agents SDK 和 Amazon Bedrock AgentCore",
+       "MCP 促进代理间消息传递"
       ]
      }
     }
@@ -11605,45 +10399,37 @@
    "mem": {
     "en": {
      "stem": [
-      "high availability",
-      "500 ms"
+      "data for European customers is processed only in AWS Regions that are based in Europe",
+      "maintain high availability during connectivity disruptions"
      ],
      "ans": {
       "A": [
-       "CloudWatch alarms",
-       "53 health checks",
-       "cross-Region",
-       "EKS"
+       "dedicated European inference profile and enable Geographic cross-Region inference",
+       "Route 53 health checks"
       ]
      }
     },
     "ja": {
      "stem": [
-      "高可用性",
-      "500 ミリ秒",
-      "1,000 件"
+      "ヨーロッパの顧客のデータがヨーロッパに拠点を置く AWS リージョンでのみ処理",
+      "接続が中断されている間も高可用性を維持"
      ],
      "ans": {
       "A": [
-       "EKS",
        "グローバル推論プロファイル",
-       "アプリケーションの地理",
-       "自動フェイルオーバー"
+       "地理的クロスリージョン推論を有効"
       ]
      }
     },
     "zh": {
      "stem": [
-      "高可用",
-      "1,000 个",
-      "500 毫秒"
+      "欧洲客户的数据仅在位于欧洲的 AWS 区域进行处理",
+      "在连接中断期间保持高可用性"
      ],
      "ans": {
       "A": [
-       "EKS",
-       "自动故障转移系统",
-       "地理跨区域推理",
-       "监控利用率指标"
+       "全局推理配置文件",
+       "地理跨区域推理"
       ]
      }
     }
@@ -11689,46 +10475,37 @@
    "mem": {
     "en": {
      "stem": [
-      "automatically",
-      "accuracy"
+      "creates a service role and attaches an IAM permissions policy",
+      "it fails with an AccessDenied exception"
      ],
      "ans": {
       "A": [
-       "defines Amazon Bedrock",
-       "Attach",
-       "service principal",
-       "trust policy"
+       "trust policy that defines Amazon Bedrock as the service principal",
+       "Attach the trust policy to the service role"
       ]
      }
     },
     "ja": {
      "stem": [
-      "自動的に",
-      "言語",
-      "精度",
-      "2 週間"
+      "サービスロールを作成し",
+      "AccessDenied 例外が発生して失敗"
      ],
      "ans": {
       "A": [
-       "サービスロール",
-       "プリンシパル",
-       "信頼ポリシー",
-       "アタッチ"
+       "Amazon Bedrock をサービス プリンシパルとして定義する信頼ポリシー",
+       "信頼ポリシーをサービスロールにアタッチ"
       ]
      }
     },
     "zh": {
      "stem": [
-      "自动",
-      "语言",
-      "准确"
+      "创建一个服务角色并附加一个 IAM 权限策略",
+      "失败并出现 AccessDenied 异常"
      ],
      "ans": {
       "A": [
-       "信任策略附加",
-       "服务主体",
-       "服务角色",
-       "定义"
+       "将 Amazon Bedrock 定义为服务主体的信任策略",
+       "将信任策略附加到服务角色"
       ]
      }
     }
